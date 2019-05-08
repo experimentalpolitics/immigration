@@ -25,3 +25,5 @@ diagnosis <- diagnose_design(design, diagnosands = declare_diagnosands(select = 
 diagnosis
 
 draw_estimates(design) # this draws once and gives the estimate
+
+#amanda was here.
