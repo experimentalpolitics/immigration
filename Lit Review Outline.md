@@ -15,6 +15,31 @@ While each of these studies contribute to our understanding of the effect of fac
 
 We seek to improve on previous studies in several ways…
 
+### Swire-Thompson et al.
+
+General finding:
+
+- misinfo can be corrected, but attitudes don't change unless there is considerable more (fact-checked) misinformation than affirmed factual statements (even then effects are small) -> ratio of misinfo/factual matters
+- overall, there appears to be mostly symmetry in how supporters of Trump vs. Sanders react (e.g., both are not able to differentiate between factual statement and misinfo prior to receiving the fact-check, although it should be noted that the Sanders-misinfo is qualitatively different from Trump-misinfo). But: supporters of Trump believed significantly more in Trump misinformation than non-supporters, even after receiving corrective info.
+- corrective misinformation did not change participants' view of a politician's general veracity, they are bad at keeping a running tally of inaccuracies
+
+
+Design:
+
+- experiment showing actual statements by Trump/Sanders (some factual, some misinfo), varied the ratio of factual vs. misinfo statements
+- atttitudes / beliefs measured pre and post fact-check
+- supporter/non-supporter distinction based on feeling-thermometer split
+- 2(ratio manipulation)x2(Trump/Sanders)x2(Supporter/non-supporter)x2(pre/post fact check) between-within design
+- sample: 1,500 MTurk respondents
+
+
+Comments / Questions:
+
+- shows useful examples of how to present corrective information for future experimental designs
+- analysis clearly done by psychologist, lots of ANOVAs with three-way interactions
+- Q: this study focuses on change in feeling towards source (i.e., the politician making false statement) rather than the change in feeling towards the target (i.e., the object the false statement is about, c.f., Hopkins 2019 JOP). Important difference?
+
+
 ## Theoretical Expectations
 
 ### Motivated Reasoning 
