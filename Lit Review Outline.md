@@ -15,7 +15,22 @@ While each of these studies contribute to our understanding of the effect of fac
 
 We seek to improve on previous studies in several ways…
 
-### Swire-Thompson et al.
+
+### Hopkins et al. 2019
+
+Overview:
+
+- seven original survey experiments (various US samples) that "randomly assign respondents to receive or not receive accurate information about the prevalence of immigrants before reporting attitudes about immigrants and immigration policy"
+- information corrects misperception (i.e., reduces estimated size of immigrant population) but only has little and inconsistent impact on attitudes about immigration
+- finding is not consistent with theories of power or intergroup threat (they argue it doesn't necessarily cast doubt on the theory itself, but rather suggests that there may be other cognitive mechanisms that explain why people perceive an out-group as threatening)
+- "Misperceptions about the size of minority groups may be a consequence, rather than a cause, of attitudes toward those groups." 
+
+Comments / Questions:
+
+- good literature review, check some of their citations/discussion of previous results!
+
+
+### Swire-Thompson et al. 2019
 
 General finding:
 
