@@ -23,7 +23,7 @@ TLDR; manipulations for the control group are not actually relevant when there i
 
 **Issue 2:** Should our "solution" to issue 1 not be convincing to the group, here are some alternative frames for the control group.
 
-* food irradiation[^fn1] 
+* food irradiation<sup>[1](#myfootnote1)</sup> 
 * airbag safety - lives saved 
 * internal migration statistics 
 
@@ -33,4 +33,4 @@ TLDR; manipulations for the control group are not actually relevant when there i
 
 # Notes
 
-[^fn1]: This is when food is exposed to gamma rays to treat it for bacteria and such.
+<a name="myfootnote1">1</a>: This is when food is exposed to gamma rays to treat it for bacteria and such.
