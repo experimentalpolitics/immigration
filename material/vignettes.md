@@ -23,10 +23,25 @@ TLDR; manipulations for the control group are not actually relevant when there i
 
 **Issue 2:** Should our "solution" to issue 1 not be convincing to the group, here are some alternative frames for the control group.
 
-* food irradiation<sup>[1](#myfootnote1)</sup> 
-* airbag safety - lives saved 
-* internal migration statistics 
+potential vignettes for control group (non-political news articles)
 
+* food irradiation<sup>[1](#myfootnote1)</sup> 
+
+* Airbag Safety - lives saved 
+- Headline: The National Highway Traffic Safety Administration estimates that over 50,457 people are alive today because of their airbags since 1987.  In 2017, the use of seat belts in passenger vehicles saved an estimated 14,955 lives of occupants 5 and older. 
+- [For full story](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812683)
+
+<!--
+    SY: Safety issue would be considered as non-political yet relevant to large population across the nation which could be equivalent to immigration issue.
+-->
+
+* Internal Migration Statistics 
+- Headline: Each year, roughly 40 million Americans, or about 14 percent of the U.S. population, move at least once. Much of that movement includes younger people relocating within cities, but it is trends of Americans moving to warmer climates, more affordable areas, and better job opportunities that have largely determined migration patterns in recent decades.
+-  [For full story]((https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812683)
+
+<!--
+    SY: Internal migration is not relevant to immigration or other political issue. However, considering the impact of migration can affect your neighboring environment, job market, etc. 
+-->
 
 
 
