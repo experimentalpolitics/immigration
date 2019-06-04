@@ -1,5 +1,7 @@
 # Questionnaire - Draft
 
+Advertised as: Study on Online News and Political Attitudes
+
 *Notes*:
 
 - Only edit this file as `.md`, not `.docx`.
