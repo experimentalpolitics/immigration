@@ -23,6 +23,22 @@ Advertised as: Study on Online News and Political Attitudes
 - Post-treatment measures:
   - Sociodemographics etc. (beware of post-treatment bias!)
 
+## Description of Main Treatment
+
+- Info search: assigned to source (Fox/MSNBC) vs. choosing one
+- RT Ratio: popular vs. controversial according to Comment/RT&Like ratio
+- Control condition: now exposure
+- *Note*: Include measure to capture whether participants click on the story link in the initial tweet
+
+### Initial Tweet
+
+- Fox News - controversial ![fox_controversial](tweets/fox_controversial.png)
+- Fox News - popular ![fox_popular](tweets/fox_popular.png)
+- MSNBC - controversial ![msnbc_controversial](tweets/msnbc_controversial.png)
+- MSNBC - popular![msnbc_popular](tweets/msnbc_popular.png)
+
+### Full Story
+
 ## Detailed Question Wording
 
 *Note*: I just started collecting potential items, selection and ordering is by no means final.
@@ -71,6 +87,17 @@ Advertised as: Study on Online News and Political Attitudes
   3) 3-5 of my close friends
   4) 6-10 of my close friends
   5) More than 10 of my close friends
+
+Other items to add:
+
+- Media usage, especially twitter!
+- Ideology
+- Party identification
+- Political participation / engagement
+- Political efficacy
+- Trust in media?
+
+### Post-treatment measures
 
 - We are eager to learn what you think about various issues facing America today. Please tell us if you agree or disagree with the following statement:
 
@@ -154,3 +181,7 @@ Advertised as: Study on Online News and Political Attitudes
 
 - In general, do you think that America’s crime problems are made worse or better by people coming to live here from other countries?
   - 0 (Made worse) - 10 (Made better) & 99 (DK)
+
+- Gender
+- Education
+- Income?
