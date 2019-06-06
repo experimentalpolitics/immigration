@@ -39,6 +39,37 @@ Advertised as: Study on Online News and Political Attitudes
 
 ### Full Story
 
+#### Immigrant Entrepreneur Numbers on the Rise
+
+> Immigrant-owned businesses employed almost 8 million American workers
+William Hall | Fox News
+
+A recent report released from the U.S. Census Bureau states that immigrant owned businesses employed over 8 million workers in fiscal year 2017, up from the 2016 total of X. This sector of the economy also saw a rise in the total number of sales over the year, increasing to almost $1.3 trillion in 2017.
+
+These statistics form into hundreds of success stories across many different sectors of the economy, especially the service industry.
+
+Eduardo Rodriguez, a 66 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. Rodriguez owns four Dulcelandia stores, which are packed with over 1,000 types of delicious candies from his home country of Mexico.
+
+After immigrating here in 1966, Rodriguez opened up the store and it became an instant gathering spot in the neighborhood. "People seem to really like what we are doing, and I'm grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice."
+
+> "We're fulfilling a niche market that people really wanted to buy from"
+
+Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops which specialize in healthy frozen yogurts with some Mexican-inspired flavors.
+
+![Percent of Immigrant Entrepreneurs](immig_entrepreneurs.png)
+
+"Our community is very strong and hard-working — resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself —Little Village is full of people who came to this country to achieve the American Dream."
+
+The Rodriguez's story is just one of many: as more immigrants look to open their own businesses, and employ more workers, many markets, both broad and niche, will continue to expand, providing more fuel to the many different sectors of the economy.
+
+*William Hall is a Politics Reporter for Fox News.*
+
+### Sources
+
+- [Immigrant story](https://www.cnbc.com/2017/05/02/how-successful-immigrant-entrepreneurs-are-changing-chicago-and-the-us.html)
+- [Graph](https://www.inc.com/arnobio-morelix/inc-entrepreneurship-index-2018-q1.html)
+- [Immigrant Statistics](https://www.newamericaneconomy.org/methodology/) - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many differernt local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'realeased' by the US Census bureau.
+
 ## Detailed Question Wording
 
 *Note*: I just started collecting potential items, selection and ordering is by no means final.
@@ -162,9 +193,9 @@ Other items to add:
   3) Agree somewhat
   4) Agree strongly
 
-- *Immigration estimate*: Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don’t know option is also provided.]
+- *Immigration estimate*: Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don't know option is also provided.]
   - 0-100 \<response entered in textbox\>
-  - 999 Don’t know
+  - 999 Don't know
 
 - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
   1) Increased a lot
@@ -176,12 +207,13 @@ Other items to add:
 - Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
   - 0 (Generally take out more) - 10 (Generally put in more) & 99 (DK)
 
-- And would you say that America’s cultural life is generally undermined or enriched by people coming to live here from other countries?
+- And would you say that America's cultural life is generally undermined or enriched by people coming to live here from other countries?
   - 0 (Cultural life undermined) - 10 (Cultural life enriched) & 99 (DK)
 
-- In general, do you think that America’s crime problems are made worse or better by people coming to live here from other countries?
+- In general, do you think that America's crime problems are made worse or better by people coming to live here from other countries?
   - 0 (Made worse) - 10 (Made better) & 99 (DK)
 
 - Gender
 - Education
+- Employment
 - Income?
