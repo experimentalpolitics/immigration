@@ -10,30 +10,67 @@
 ## Survey Flow Overview
 
 - Pre-treatment measures:
-  - Media usage
+  - Media usage, especially twitter
+  - Political interest / participation
   - General ideology
-  - Political Interest
+  - Party identification
+  - Political efficacy
+  - Trust in media?
   - Optional: Racial resentment and similar scales
+  - Optional: Exposure to immigrants
 - Experiment:
   - First treatment: tweet (search/assigned X source X pro/con X RT ratio)
-  - First outcome: click on link or click on next?
+    - Outcome measure: click on link or click on next?
   - Second treatment: full article (same groups as before)
+    - Outcome measure: how much time spent on article?
 - Post-treatment measures
-  - Basic immigration attitudes
+  - Attitudes towards immigration
   - Perception of migrants' contribution to economy
-  - Sociodemographics etc. (beware of post-treatment bias!)
+  - Sociodemographics etc.
 
 ## Pre-treatment measures
 
-Were you born in the United States?
+**Turnout:**
+Thinking about the 2018 midterm elections, which of the following statements best describes you?
 
-  1) Yes
-  2) No [if no, as: When did you first arrive to live in the US?]
+- I did not vote in the election this November
+- I thought about voting this time but didn't
+- I usually vote but didn't this time
+- I attempted to vote but did not or could not
+- I definitely voted in the general election on November 6, 2018
 
-Are you a veteran of the U.S. armed forces?  
+**Ideology:**
+Thinking about politics these days, how would you describe your own political viewpoint?
 
-  1) Yes
-  2) No
+- Very liberal
+- Liberal
+- Slightly liberal
+- Moderate
+- Slightly conservative
+- Conservative
+- Very conservative
+- Not sure
+
+**Partisanship:**
+Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
+
+- Republican
+- Democrat
+- Independent
+- Other
+
+*If other/independent is selected:*
+Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
+
+- Democratic Party
+- Republican Party
+- Neither Party
+
+*If Republican or Democrat is selected:*
+Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
+
+- Strong
+- Not very strong
 
 In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
 
@@ -74,15 +111,6 @@ Of these close friends, how many are Hispanic or Latino immigrants?
   3) 3-5 of my close friends
   4) 6-10 of my close friends
   5) More than 10 of my close friends
-
-Other items to add:
-
-- Media usage, especially twitter!
-- Ideology
-- Party identification
-- Political participation / engagement
-- Political efficacy
-- Trust in media?
 
 ## Main Treatment
 
@@ -153,14 +181,6 @@ Do you agree strongly, agree somewhat, disagree somewhat, or disagree strongly?
   3) Agree somewhat
   4) Agree strongly
 
-Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
-
-  1) Decreased a lot
-  2) Decreased a little
-  3) Left the same
-  4) Increased a little
-  5) Increased a lot
-
 How likely is it that the immigrants currently coming into the U.S. will take jobs away from people already here?
 
   1) Not at all likely
@@ -175,33 +195,13 @@ How likely is it that current and future immigration will threaten the American 
   3) Very likely
   4) Extremely likely
 
-Please tell us if you agree or disagree with the following statement:
+Please tell us if you agree or disagree with the following statements:
 
-*As a result of more immigrants coming to [your community / this country], taxes will rise.*
-
-Would you say you agree strongly, agree somewhat, disagree somewhat, or disagree strongly?
-
-  1) Disagree strongly
-  2) Disagree somewhat
-  3) Agree somewhat
-  4) Agree strongly
-
-Please tell us if you agree or disagree with the following statement:
-
-*As a result of more immigrants coming to [your community / this country], violence and crime will increase.*
+- *As a result of more immigrants coming to [your community / this country], taxes will rise.*
+- *As a result of more immigrants coming to [your community / this country], violence and crime will increase.*
+- *[Illegal immigrants / Immigrants / Legal immigrants] could take jobs from people who are already here.*
 
 Would you say you agree strongly, agree somewhat, disagree somewhat, or disagree strongly?
-
-  1) Disagree strongly
-  2) Disagree somewhat
-  3) Agree somewhat
-  4) Agree strongly
-
-Please tell us if you agree or disagree with the following statement:
-  
-*[Illegal immigrants / Immigrants / Legal immigrants] could take jobs from people who are already here.*
-
-Would you say you agree strongly, agree somewhat, disagree somewhat, or disagree strongly?  
 
   1) Disagree strongly
   2) Disagree somewhat
@@ -233,9 +233,56 @@ In general, do you think that America's crime problems are made worse or better 
 
 - 0 (Made worse) - 10 (Made better) & 99 (DK)
 
-Sociodemographics etc.:
+Do you consider yourself Male, Female, or other?
 
-- Gender
-- Education
-- Employment
-- Income?
+- Male
+- Female
+- Other
+
+What is your age?
+
+What is the highest level of education you have completed?
+
+- No HS
+- High school grad
+- Some college
+- 2-year
+- 4-year
+- post-grad
+
+Thinking back over the last year, what was your family’s annual income?
+
+- Less than $10,000
+- $10,000 - $19,999
+- $20,000 - $29,999
+- $30,000 - $39,999
+- $40,000 - $49,999
+- $50,000 - $59,999
+- $60,000 - $69,999
+- $70,000 - $79,999
+- $80,000 - $99,999
+- $100,000 - $119,999
+- $120,000 - $149,999
+- $150,000 or more
+- Prefer not to say
+
+Race What racial or ethnic group best describes you?
+
+- White
+- Black
+- Hispanic
+- Native American
+- Asian
+- Middle eastern
+- Mixed
+- Other
+
+Were you born in the United States?
+
+  1) Yes
+  2) No [if no, as: When did you first arrive to live in the US?]
+
+Are you a veteran of the U.S. armed forces?  
+
+  1) Yes
+  2) No
