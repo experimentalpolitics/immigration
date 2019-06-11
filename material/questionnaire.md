@@ -10,23 +10,23 @@
 ## Survey Flow Overview
 
 - Pre-treatment measures:
-  - Media usage, especially twitter
-  - Political interest / participation
-  - General ideology
-  - Party identification
-  - Political efficacy
-  - Trust in media?
-  - Optional: Racial resentment and similar scales
-  - Optional: Exposure to immigrants
+    - Media usage, especially twitter
+    - Political interest / participation
+    - General ideology
+    - Party identification
+    - Political efficacy
+    - Trust in media?
+    - Optional: Racial resentment and similar scales
+    - Optional: Exposure to immigrants
 - Experiment:
-  - First treatment: tweet (search/assigned X source X pro/con X RT ratio)
-    - Outcome measure: click on link or click on next?
-  - Second treatment: full article (same groups as before)
-    - Outcome measure: how much time spent on article?
+    - First treatment: tweet (search/assigned X source X pro/con X RT ratio)
+        - Outcome measure: click on link or click on next?
+    - Second treatment: full article (same groups as before)
+        - Outcome measure: how much time spent on article?
 - Post-treatment measures
-  - Attitudes towards immigration
-  - Perception of migrants' contribution to economy
-  - Sociodemographics etc.
+    - Attitudes towards immigration
+    - Perception of migrants' contribution to economy
+    - Sociodemographics etc.
 
 ## Pre-treatment measures
 
