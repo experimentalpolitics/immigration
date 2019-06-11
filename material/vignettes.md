@@ -13,7 +13,7 @@ This information will be migrated from the file Jason was working on.
 
 **Issue 1:** We are not certain that there is a need for a separate (neutral) vignette for the control group. See the following image for our understanding of the design:
 
-![design](design_tree.jpg)
+![design](fig/design_tree.jpg)
 
 Everything above the red line is the control group as we have thought of it before; however, we contend that the red line is the *actual* representation of the control group's progression through the survey experiment. 
 

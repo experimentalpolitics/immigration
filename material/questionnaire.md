@@ -126,7 +126,7 @@ After immigrating here in 1966, Rodriguez opened up the store and it became an i
 
 Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops which specialize in healthy frozen yogurts with some Mexican-inspired flavors.
 
-![Percent of Immigrant Entrepreneurs](immig_entrepreneurs.png)
+![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png)
 
 "Our community is very strong and hard-working — resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself —Little Village is full of people who came to this country to achieve the American Dream."
 
