@@ -5,11 +5,12 @@
 - Only edit this file as `.md` --- not `.docx`!
 - cite Hopkins 2019 as template for outcome measures
 - add item randomization
+- *additional items to consider*: political efficacy, racial resentment, turnout, how many (politicians) followed on twitter
 
 ## MTurk Details
 
 - *Title:* Media Usage and News Consumption
-- *Description:* Answer a short survey about your personal media diet as well as your attitudes towards issues currently discussed in the news.
+- *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
 - *Time Alotted:* TBD
 - *Reward*: TBD
 - *Requirements:* 90% approval rate, location US, total approved HITs no less than 100
@@ -17,78 +18,98 @@
 ## Survey Flow Overview
 
 - Pre-treatment measures:
-    - Media usage, especially twitter
-    - Political interest / participation
-    - General ideology
-    - Party identification
-    - Political efficacy
-    - Trust in media?
-    - Optional: Racial resentment and similar scales
-    - Optional: Exposure to immigrants
-- Experiment:
-    - First treatment: tweet (search/assigned X source X pro/con X RT ratio)
-        - Outcome measure: click on link or click on next?
-    - Second treatment: full article (same groups as before)
-        - Outcome measure: how much time spent on article?
-- Post-treatment measures
+    - Media usage & trust in news
+    - Social network and exposure to immigration
+    - Political attitudes & attitudes
+- Experimental manipulation:
+    - Short tweet
+    - Full story
+- Post-treatment measures:
+    - Story evaluation [*treatment group only*]
     - Attitudes towards immigration
-    - Perception of migrants' contribution to economy
-    - Evaluate Fox, MSNBC
-    - Sociodemographics etc.
+    - Sociodemographics
 
 ## Pre-treatment measures
 
-### Block 1: Media usage & news consumption
+### Block 1: Media consumption & trust in news
 
 First we want to ask a few questions about your current media diet.
+
+Internet usage
+
+News exposure
+
+**[social_view]** *(show same response options for each)* How often do you view the following social media platforms: Facebook, Twitter, Instagram
+
+1) Several times a day
+2) About once a day
+3) 3 to 6 days a week
+4) 1 to 2 days a week
+5) Every few weeks
+6) Less often
+7) Never
+8) Don’t Know
+
+**[social_post]** *(show same response options for each)* How often do you post things on the following social media platforms: Facebook, Twitter, Instagram
+
+1) Several times a day
+2) About once a day
+3) 3 to 6 days a week
+4) 1 to 2 days a week
+5) Every few weeks
+6) Less often
+7) Never
+8) Don’t Know
+
+**[social_politics]** *(show same response options for each)* How often do you post things *about politics* on the following social media platforms: Facebook, Twitter, Instagram
+
+1) Several times a day
+2) About once a day
+3) 3 to 6 days a week
+4) 1 to 2 days a week
+5) Every few weeks
+6) Less often
+7) Never
+8) Don’t Know
 
 General trust in media
 
 Rank media sources in terms of how much you trust them
 
-### Block 2: political engagement and attitudes
+### Block 2: Political attitudes & participation
 
-**Turnout:**
-Thinking about the 2018 midterm elections, which of the following statements best describes you?
-
-- I did not vote in the election this November
-- I thought about voting this time but didn't
-- I usually vote but didn't this time
-- I attempted to vote but did not or could not
-- I definitely voted in the general election on November 6, 2018
-
-**Ideology:**
+**[ideology]**
 Thinking about politics these days, how would you describe your own political viewpoint?
 
-- Very liberal
-- Liberal
-- Slightly liberal
-- Moderate
-- Slightly conservative
-- Conservative
-- Very conservative
-- Not sure
+1) Very liberal
+2) Liberal
+3) Slightly liberal
+4) Moderate
+5) Slightly conservative
+6) Conservative
+7) Very conservative
+8) Not sure
 
-**Partisanship:**
-Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
+**[party]**
+Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
 
-- Republican
-- Democrat
-- Independent
-- Other
+1) Republican
+2) Democrat
+3) Independent
+4) Other
 
-*If other/independent is selected:*
+**[party_lean]** *(if other/independent is selected)*
 Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
 
-- Democratic Party
-- Republican Party
-- Neither Party
+1) Democratic Party
+2) Republican Party
+3) Neither Party
 
-*If Republican or Democrat is selected:*
+**[party_strong]** *(if Republican or Democrat is selected)*
 Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
 
-- Strong
-- Not very strong
+1) Strong
+2) Not very strong
 
 Most important problem
 
@@ -182,6 +203,11 @@ Of these close friends, how many are Hispanic or Latino immigrants?
 
 ## Main Treatment
 
+- First treatment: tweet (search/assigned X source X pro/con X RT ratio)
+        - Outcome measure: click on link or click on next?
+    - Second treatment: full article (same groups as before)
+        - Outcome measure: how much time spent on article?
+
 - Info search: assigned to source (Fox/MSNBC) vs. choosing one
 - RT Ratio: popular vs. controversial according to Comment/RT&Like ratio
 - Control condition: now exposure
@@ -225,6 +251,11 @@ The Rodriguez's story is just one of many: as more immigrants look to open their
     - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
 
 ## Post-treatment measures
+
+- Attitudes towards immigration
+- Perception of migrants' contribution to economy
+- Evaluate Fox, MSNBC
+- Sociodemographics etc.
 
 We are eager to learn what you think about various issues facing America today.
 
