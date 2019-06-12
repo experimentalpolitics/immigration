@@ -3,9 +3,8 @@
 ## Notes
 
 - Only edit this file as `.md` --- not `.docx`!
-- cite Hopkins 2019 as template for outcome measures
 - add item randomization
-- *additional items to consider*: political efficacy, racial resentment, turnout, how many (politicians) followed on twitter
+- *additional items to consider*: political efficacy, racial resentment, turnout, how many (politicians) followed on twitter, posting on social media
 
 ## MTurk Details
 
@@ -31,125 +30,83 @@
 
 ## Pre-treatment measures
 
-### Block 1: Media consumption & trust in news
+### Block 1: Media usage & trust in news
 
 First we want to ask a few questions about your current media diet.
 
-Internet usage
-
-News exposure
-
-**[social_view]** *(show same response options for each)* How often do you view the following social media platforms: Facebook, Twitter, Instagram
-
-1) Several times a day
-2) About once a day
-3) 3 to 6 days a week
-4) 1 to 2 days a week
-5) Every few weeks
-6) Less often
-7) Never
-8) Don’t Know
-
-**[social_post]** *(show same response options for each)* How often do you post things on the following social media platforms: Facebook, Twitter, Instagram
-
-1) Several times a day
-2) About once a day
-3) 3 to 6 days a week
-4) 1 to 2 days a week
-5) Every few weeks
-6) Less often
-7) Never
-8) Don’t Know
-
-**[social_politics]** *(show same response options for each)* How often do you post things *about politics* on the following social media platforms: Facebook, Twitter, Instagram
-
-1) Several times a day
-2) About once a day
-3) 3 to 6 days a week
-4) 1 to 2 days a week
-5) Every few weeks
-6) Less often
-7) Never
-8) Don’t Know
-
 General trust in media
+
+Media usage - traditional sources
 
 Rank media sources in terms of how much you trust them
 
-### Block 2: Political attitudes & participation
+**[social_view]** *(show same response options for each)* How often do you view content on the following social media platforms: Facebook, YouTube, Instagram, Twitter, Tumblr
 
-**[ideology]**
-Thinking about politics these days, how would you describe your own political viewpoint?
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
 
-1) Very liberal
-2) Liberal
-3) Slightly liberal
-4) Moderate
-5) Slightly conservative
-6) Conservative
-7) Very conservative
-8) Not sure
+**[social_politics]** *(show same response options for each)* How often do you view content *about politics* on the following social media platforms: Facebook, Twitter, Instagram
 
-**[party]**
-Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
 
-1) Republican
-2) Democrat
-3) Independent
-4) Other
+### Block 2: Social network and exposure to immigration
 
-**[party_lean]** *(if other/independent is selected)*
-Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
+Many people also receive news indirectly, e.g., by talking to neighbors, friends, or family members. Next, we want to ask you a few questions about your social network.
 
-1) Democratic Party
-2) Republican Party
-3) Neither Party
+How often do you talk about politics with friends and family
 
-**[party_strong]** *(if Republican or Democrat is selected)*
-Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
+Do they know a lot about politics and the news?
 
-1) Strong
-2) Not very strong
 
-Most important problem
 
-- give 10 options, choose 3
+In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
 
-Measure of racial threat? support for welfare?
+1. Never or almost never
+2. Less than once a month
+3. 1-3 times each month
+4. At least once a week
+5. Every day
 
-### Block 3: Exposure to immigrants
+In your day-to-day life, how frequently do you have conversations with Hispanic/Latino immigrants?
 
-G3.  How would you describe the ethnic mix of your group of friends? Would you say your friends are mostly White, mostly black, mostly Hispanic, mostly Asian, a mix of people from different racial groups, or something else? 
+1. Never or almost never
+2. Less than once a month
+3. 1-3 times each month
+4. At least once a week
+5. Every day
 
-1.   Mostly white (Skip to G3b)
-2.   Mostly black (Skip to G3b)
-3.   Mostly Hispanic or Latino (Skip to G3b)
-4.   Mostly Asian (Skip to G3b)
-5.    A mix of people from different racial groups
-6. 	Something else (Skip to G3b)
-8.   DON’T KNOW (Skip to G3b)
-9.   REFUSED (Skip to G3b)
+In your day-to-day life, how frequently do you hear Spanish spoken?
 
-G3a. Would that be mostly white and black, mostly white and Hispanic, mostly Hispanic and Black, or something else?
-
-1. Mostly white and black
-2. Mostly white and Hispanic
-3. Mostly black and Hispanic
-4. Something else.
-8.   DON’T KNOW
-9.   REFUSED
+1. Never or almost never
+2. Less than once a month
+3. 1-3 times each month
+4. At least once a week
+5. Every day
 
 G3b
 How would you describe the ethnic mix of your current neighborhood where you live? Would you say it is mostly White, mostly Black, mostly Hispanic, mostly Asian, A mix of people from different racial groups, or something else? 
 
-1.   Mostly white (Skip to G3.1)
-2.   Mostly black (Skip to G3.1)
-3.   Mostly Hispanic or Latino (Skip to G3.1)
-4.   Mostly Asian (Skip to G3.1)
-5.    A mix of people from different racial groups
-6. 	Something else (Skip to G3.1)
-8.   DON’T KNOW (Skip to G3.1)
-9.   REFUSED (Skip to G3.1)
+1. Mostly white (Skip to G3.1)
+2. Mostly black (Skip to G3.1)
+3. Mostly Hispanic or Latino (Skip to G3.1)
+4. Mostly Asian (Skip to G3.1)
+5. A mix of people from different racial groups
+6. Something else (Skip to G3.1)
+7. DON’T KNOW (Skip to G3.1)
+8. REFUSED (Skip to G3.1)
 
 G3c. Would that be mostly white and black, mostly white and Hispanic, mostly Hispanic and Black, or something else?
 
@@ -160,46 +117,48 @@ G3c. Would that be mostly white and black, mostly white and Hispanic, mostly His
 8.   DON’T KNOW
 9.   REFUSED
 
+### Block 2: Political attitudes & participation
 
-In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
+**[ideology]**
+Thinking about politics these days, how would you describe your own political viewpoint?
 
-  1) Never or almost never
-  2) Less than once a month
-  3) 1-3 times each month
-  4) At least once a week
-  5) Every day
+1. Very liberal
+2. Liberal
+3. Slightly liberal
+4. Moderate
+5. Slightly conservative
+6. Conservative
+7. Very conservative
+8. Not sure
 
-In your day-to-day life, how frequently do you have conversations with Hispanic/Latino immigrants?
+**[party]**
+Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
 
-  1) Never or almost never
-  2) Less than once a month
-  3) 1-3 times each month
-  4) At least once a week
-  5) Every day
+1. Republican
+2. Democrat
+3. Independent
+4. Other
 
-In your day-to-day life, how frequently do you hear Spanish spoken?
+**[party_lean]** *(if other/independent is selected)*
+Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
 
-  1) Never or almost never
-  2) Less than once a month
-  3) 1-3 times each month
-  4) At least once a week
-  5) Every day
+1. Democratic Party
+2. Republican Party
+3. Neither Party
 
-About how many CLOSE FRIENDS do you have these days?  These are people you feel at ease with, can talk to about private matters, or call on for help.   Would you say that you have...?
+**[party_strong]** *(if Republican or Democrat is selected)*
+Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
 
-  1) No close friends
-  2) 1-2 close friends
-  3) 3-5 close friends
-  4) 6-10 close friends
-  5) More than 10 close friends
+1. Strong
+2. Not very strong
 
-Of these close friends, how many are Hispanic or Latino immigrants?
+Most important problem
 
-  1) None of my close friends
-  2) 1-2 of my close friends
-  3) 3-5 of my close friends
-  4) 6-10 of my close friends
-  5) More than 10 of my close friends
+- give 10 options, choose 3
+
+Measure of racial threat? support for welfare?
+
+\newpage
 
 ## Main Treatment
 
@@ -215,11 +174,13 @@ Of these close friends, how many are Hispanic or Latino immigrants?
 
 ### Tweets
 
-![Fox News - controversial](tweets/fox_controversial.png){width=45%}
-![Fox News - popular](tweets/fox_popular.png){width=45%}
+![Fox News - controversial](tweets/fox_controversial.png){width=50%}
+![Fox News - popular](tweets/fox_popular.png){width=50%}
 
-![MSNBC - controversial](tweets/msnbc_controversial.png){width=45%}
-![MSNBC - popular](tweets/msnbc_popular.png){width=45%}
+![MSNBC - controversial](tweets/msnbc_controversial.png){width=50%}
+![MSNBC - popular](tweets/msnbc_popular.png){width=50%}
+
+\newpage
 
 ### Full Story: Immigrant-owned Businesses on the Rise
 
@@ -237,7 +198,7 @@ Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya
 
 "Our community is very strong and hard-working -- resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself -- Little Village is full of people who came to this country to achieve the American Dream."
 
-![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png)
+![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png){width=45%}
 
 The Rodriguez's story is just one of many: as more immigrants look to open their own businesses, and employ more workers, many markets, both broad and niche, will continue to expand, providing more fuel to an already strong economy.
 
@@ -249,6 +210,8 @@ The Rodriguez's story is just one of many: as more immigrants look to open their
 - Graph: [link](https://www.inc.com/arnobio-morelix/inc-entrepreneurship-index-2018-q1.html)
 - Immigrant Statistics: [link](https://www.newamericaneconomy.org/methodology/)
     - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
+
+\newpage
 
 ## Post-treatment measures
 
@@ -269,15 +232,13 @@ How does R feel about the particular news source?
 
 ### Block 1: Main outcome measures
 
-
-
 **immig_attd:** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
 
-  1) Increased a lot
-  2) Increased a little
-  3) Left the same
-  4) Decreased a little
-  5) Decreased a lot
+1. Increased a lot
+2. Increased a little
+3. Left the same
+4. Decreased a little
+5. Decreased a lot
 
 **unemp:** Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don't know option is also provided.]
 
@@ -320,9 +281,9 @@ You answer to the previous question was *X*. Please explain your answer in a few
 
 **gender:** Do you consider yourself Male, Female, or other?
 
-1) Male
-2) Female
-3) Other
+1. Male
+2. Female
+3. Other
 
 **age:** What is your age?
 
@@ -330,43 +291,43 @@ You answer to the previous question was *X*. Please explain your answer in a few
 
 **race:** What racial or ethnic group best describes you?
 
-- White
-- Black
-- Hispanic
-- Native American
-- Asian
-- Middle eastern
-- Mixed
-- Other
+1. White
+2. Black
+3. Hispanic
+4. Native American
+5. Asian
+6. Middle eastern
+7. Mixed
+8. Other
 
 Were you born in the United States?
 
-  1) Yes
-  2) No [if no, ask: When did you first arrive to live in the US?]
+1. Yes
+2. No [if no, ask: When did you first arrive to live in the US?]
 
 What is the highest level of education you have completed?
 F8.  What is the highest grade or level of school that you have completed?
 
-1.  Less than a High school diploma ,
-2.  Graduated high school or GED,
-3.  Graduated Two-year college,
-4.  Some college but no college degree,
-5.  Graduated 4-year college,
-6.  Completed post-graduate or professional school, with degree
-7.  Other 
-8.  DON’T KNOW 
-9.   Refused/NA
+1. Less than a High school diploma,
+2. Graduated high school or GED,
+3. Graduated Two-year college,
+4. Some college but no college degree,
+5. Graduated 4-year college,
+6. Completed post-graduate or professional school, with degree
+7. Other
+8. DON’T KNOW
+9. Refused/NA
 
 Thinking back over the last year, what was your family's annual income?
 
-- Less than $20,000
-- $20,000 - $39,999
-- $40,000 - $59,999
-- $60,000 - $79,999
-- $80,000 - $99,999
-- $100,000 - $119,999
-- $120,000 or more
-- Prefer not to say
+1. Less than $20,000
+2. $20,000 - $39,999
+3. $40,000 - $59,999
+4. $60,000 - $79,999
+5. $80,000 - $99,999
+6. $100,000 - $119,999
+7. $120,000 or more
+8. Prefer not to say
 
 Zip Code
 
