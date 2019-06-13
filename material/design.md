@@ -3,21 +3,20 @@
 ## Notes
 
 - Only edit this file as `.md` --- not `.docx`!
-- add item randomization
-- *additional items to consider*: political efficacy, racial resentment, turnout, how many (politicians) followed on twitter, posting on social media
+- add item randomization etc.
 
 ## MTurk Details
 
-- *Title:* Media Use and News Consumption
+- *Title:* Media Usage and News Consumption
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
-- *Time Alotted:* TBD
-- *Reward*: TBD
+- *Length:* TBD
+- *Reward:* TBD
 - *Requirements:* 90% approval rate, location US, total approved HITs no less than 100
 
 ## Survey Flow Overview
 
 - Pre-treatment measures:
-    - Media use
+    - Media usage
     - Exposure to immigration
     - Political attitudes & participation
 - Experimental manipulation:
@@ -30,22 +29,17 @@
 
 ## Pre-treatment measures
 
-### Block 1: Media use
+### Block 1: Media usage
 
-First we want to ask a few questions about your current media use.
+First, we want to ask a few questions about your current media diet.
 
-**[social_view]** *(show same response options for each)* How often do you view content on the following social media platforms: Facebook, YouTube, Instagram, Twitter, Tumblr
+**[socialmedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms:
 
-1. Several times a day
-2. About once a day
-3. 3 to 6 days a week
-4. 1 to 2 days a week
-5. Every few weeks
-6. Less often
-7. Never
-8. Don’t Know
-
-**[social_politics]** *(show same response options for each)* How often do you view content *about politics* on the following social media platforms: Facebook, Twitter, Instagram
+- Facebook
+- YouTube
+- Instagram
+- Twitter
+- Tumblr
 
 1. Several times a day
 2. About once a day
@@ -56,17 +50,66 @@ First we want to ask a few questions about your current media use.
 7. Never
 8. Don’t Know
 
-**[polmedia]** Media usage - traditional sources
+**[socialmedia_pol]** *(show same response options for each, randomize order)* And how often do you view *political* content on these platforms?
+
+- Facebook
+- YouTube
+- Instagram
+- Twitter
+- Tumblr
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+**[tvnews]** *(show same response options for each, randomize order)* On average, how often do you watch *political news* on the following TV channels:
+
+- Fox News
+- MSNBC
+- CNN
+- NBC
+- CBS
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+**[printmedia]** *(show same response options for each, randomize order)* And how often do you read the following newspapers (online or offline):
+
+- New York Times
+- Washington Post
+- Wall Street Journal
+- USA Today
+- New York Post
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
 
 ### Block 2: Exposure to immigration
 
-Next, we want to ask a few questions about your neighborhood.
+We want to explore differences in media usage and news consumption between local communities. Please answer the following questions about your neighborhood.
 
-Zip Code
+**[zip]** What is your zip code?
 
 - *TEXTBOX*
 
-In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
+**[immig_see]** In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
 
 1. Never or almost never
 2. Less than once a month
@@ -74,7 +117,7 @@ In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in
 4. At least once a week
 5. Every day
 
-In your day-to-day life, how frequently do you have conversations with Hispanic/Latino immigrants?
+**[immig_convo]** In your day-to-day life, how frequently do you have conversations with Hispanic/Latino immigrants?
 
 1. Never or almost never
 2. Less than once a month
@@ -82,7 +125,7 @@ In your day-to-day life, how frequently do you have conversations with Hispanic/
 4. At least once a week
 5. Every day
 
-In your day-to-day life, how frequently do you hear Spanish spoken?
+**[immig_spanish]** In your day-to-day life, how frequently do you hear Spanish spoken?
 
 1. Never or almost never
 2. Less than once a month
@@ -90,10 +133,9 @@ In your day-to-day life, how frequently do you hear Spanish spoken?
 4. At least once a week
 5. Every day
 
-### Block 2: Political attitudes & participation
+### Block 3: Political attitudes & participation
 
-**[ideology]**
-Thinking about politics these days, how would you describe your own political viewpoint?
+**[ideology]** Thinking about politics these days, how would you describe your own political viewpoint?
 
 1. Very liberal
 2. Liberal
@@ -104,8 +146,7 @@ Thinking about politics these days, how would you describe your own political vi
 7. Very conservative
 8. Not sure
 
-**[party]**
-Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
+**[party]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
 
 1. Republican
 2. Democrat
@@ -125,23 +166,30 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 1. Strong
 2. Not very strong
 
-Most important problem
+**[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
 
-- give 10 options, choose 3
+1. Unemployment
+2. Inequality
+3. Federal Deficit
+4. Taxes
+5. High Cost of Living / Inflation
+6. Immigration
+7. Health Care
+8. Racism
+9. Environment / Climate Change
+10. Violence / Crime
 
 \newpage
 
 ## Experimental Manipulation
 
-- First treatment: tweet (search/assigned X source X pro/con X RT ratio)
-        - Outcome measure: click on link or click on next?
-- Second treatment: full article (same groups as before)
-        - Outcome measure: how much time spent on article?
-
-- Info search: assigned to source (Fox/MSNBC) vs. choosing one
-- RT Ratio: popular vs. controversial according to Comment/RT&Like ratio
-- Control condition: now exposure
-- *Note*: Include measure to capture whether participants click on the story link in the initial tweet
+- *Control condition:* skip this section
+- *Treatment groups:* choice/assigned X controversial/popular
+    - *Manipulation 1 (choice/assigned):* Before seeing any content, Rs can either freely choose to view a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is the same. 
+    - *Manipulation 2 (controversial/popular):* RT ratio suggests either popular (many likes/RTs, few comments) or controversial (few likes/RTs, many comments) content
+    - *Outcome measure:* click on link in tweet or click on `next` button?
+- After viewing the tweets, respondents are asked to read the full article (whether they clicked on the tweet or not).
+    - *Outcome measure:* how much time spent on article?
 
 ### Tweets
 
@@ -157,7 +205,7 @@ Most important problem
 
 William Hall | [Fox/MSNBC] News
 
-A recent report released using U.S. Census Bureau data states that immigrant owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also saw a rise in the total number of sales over the year, increasing to almost $1.3 trillion.
+A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also saw a rise in the total number of sales over the year, increasing to almost $1.3 trillion.
 
 These statistics are born out of hundreds of success stories across many different sectors of the economy, especially the service industry.
 
@@ -186,18 +234,11 @@ The Rodriguez's story is just one of many: as more immigrants look to open their
 
 ## Post-treatment measures
 
-We are eager to learn what you think about various issues facing America today.
-
 ### Block 1: Attitudes towards immigration
 
-**[unemp]** Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don't know option is also provided.]
+Next, we want to ask you a few questions about immigration.
 
-- 0-100 *SLIDER*
-- 999 Don't know
-
-Additional question on information provided in survey?
-
-**[immig_attd]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
+**[immig_attitude]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
 
 1. Increased a lot
 2. Increased a little
@@ -237,13 +278,48 @@ Additional question on information provided in survey?
 
 - *TEXTBOX*
 
+**[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
+
+- *TEXTBOX* Million
+- Don't know
+
+**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year.
+
+1. Less than $500 billion
+2. $500 billion - $1 trillion
+3. $1 trillion - $1.5 trillion
+4. $1.5 trillion - $2 trillion
+5. More than 2 trillion
+6. Don't know
+
 ## Block 3: Trust in media sources
 
-Let's briefly return to the question of different media sources.
+Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
-Rank media sources in terms of how much you trust them
+**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how much do you trust the following TV channels that their news reporting is accurate?
 
-Trust in MSNBC / Fox?
+- Fox News
+- MSNBC
+- CNN
+- NBC
+- CBS
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+**[printmedia_trust]** *(show same response options for each, randomize order)* And how much do you trust the following newspapers that their reporting is accurate?:
+
+- New York Times
+- Washington Post
+- Wall Street Journal
+- USA Today
+- New York Post
 
 ## Block 4: Sociodemographics
 
@@ -271,8 +347,8 @@ This almost completes our survey, we only need some additional information about
 **[race]** What racial or ethnic group best describes you?
 
 1. White
-2. Black
-3. Hispanic
+2. Black or African-American
+3. Hispanic or Latino
 4. Native American
 5. Asian
 6. Middle eastern
@@ -281,11 +357,11 @@ This almost completes our survey, we only need some additional information about
 
 **[educ]** What is the highest level of education that you have completed?
 
-1. Less than a High school diploma,
-2. Graduated high school or GED,
-3. Graduated Two-year college,
-4. Some college but no college degree,
-5. Graduated 4-year college,
+1. Less than a High school diploma
+2. Graduated high school or GED
+3. Graduated Two-year college
+4. Some college but no college degree
+5. Graduated 4-year college
 6. Completed post-graduate or professional school, with degree
 7. Other
 8. Don't know
