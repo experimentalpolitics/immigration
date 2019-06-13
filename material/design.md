@@ -8,7 +8,7 @@
 
 ## MTurk Details
 
-- *Title:* Media Usage and News Consumption
+- *Title:* Media Use and News Consumption
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
 - *Time Alotted:* TBD
 - *Reward*: TBD
@@ -17,28 +17,22 @@
 ## Survey Flow Overview
 
 - Pre-treatment measures:
-    - Media usage & trust in news
-    - Social network and exposure to immigration
-    - Political attitudes & attitudes
+    - Media use
+    - Exposure to immigration
+    - Political attitudes & participation
 - Experimental manipulation:
     - Short tweet
     - Full story
 - Post-treatment measures:
-    - Story evaluation [*treatment group only*]
     - Attitudes towards immigration
+    - Trust in news sources
     - Sociodemographics
 
 ## Pre-treatment measures
 
-### Block 1: Media usage & trust in news
+### Block 1: Media use
 
-First we want to ask a few questions about your current media diet.
-
-General trust in media
-
-Media usage - traditional sources
-
-Rank media sources in terms of how much you trust them
+First we want to ask a few questions about your current media use.
 
 **[social_view]** *(show same response options for each)* How often do you view content on the following social media platforms: Facebook, YouTube, Instagram, Twitter, Tumblr
 
@@ -62,15 +56,15 @@ Rank media sources in terms of how much you trust them
 7. Never
 8. Don’t Know
 
-### Block 2: Social network and exposure to immigration
+**[polmedia]** Media usage - traditional sources
 
-Many people also receive news indirectly, e.g., by talking to neighbors, friends, or family members. Next, we want to ask you a few questions about your social network.
+### Block 2: Exposure to immigration
 
-How often do you talk about politics with friends and family
+Next, we want to ask a few questions about your neighborhood.
 
-Do they know a lot about politics and the news?
+Zip Code
 
-
+- *TEXTBOX*
 
 In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
 
@@ -95,27 +89,6 @@ In your day-to-day life, how frequently do you hear Spanish spoken?
 3. 1-3 times each month
 4. At least once a week
 5. Every day
-
-G3b
-How would you describe the ethnic mix of your current neighborhood where you live? Would you say it is mostly White, mostly Black, mostly Hispanic, mostly Asian, A mix of people from different racial groups, or something else? 
-
-1. Mostly white (Skip to G3.1)
-2. Mostly black (Skip to G3.1)
-3. Mostly Hispanic or Latino (Skip to G3.1)
-4. Mostly Asian (Skip to G3.1)
-5. A mix of people from different racial groups
-6. Something else (Skip to G3.1)
-7. DON’T KNOW (Skip to G3.1)
-8. REFUSED (Skip to G3.1)
-
-G3c. Would that be mostly white and black, mostly white and Hispanic, mostly Hispanic and Black, or something else?
-
-1. Mostly white and black
-2. Mostly white and Hispanic
-3. Mostly black and Hispanic
-4. Something else.
-8.   DON’T KNOW
-9.   REFUSED
 
 ### Block 2: Political attitudes & participation
 
@@ -156,15 +129,13 @@ Most important problem
 
 - give 10 options, choose 3
 
-Measure of racial threat? support for welfare?
-
 \newpage
 
-## Main Treatment
+## Experimental Manipulation
 
 - First treatment: tweet (search/assigned X source X pro/con X RT ratio)
         - Outcome measure: click on link or click on next?
-    - Second treatment: full article (same groups as before)
+- Second treatment: full article (same groups as before)
         - Outcome measure: how much time spent on article?
 
 - Info search: assigned to source (Fox/MSNBC) vs. choosing one
@@ -215,24 +186,18 @@ The Rodriguez's story is just one of many: as more immigrants look to open their
 
 ## Post-treatment measures
 
-- Attitudes towards immigration
-- Perception of migrants' contribution to economy
-- Evaluate Fox, MSNBC
-- Sociodemographics etc.
-
 We are eager to learn what you think about various issues facing America today.
 
-### Block 1: Story Evaluation / Manipulation check [ONLY INCLUDE IN TREATMENT CONDITION]
+### Block 1: Attitudes towards immigration
 
-General comprehension question about story
+**[unemp]** Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don't know option is also provided.]
 
-Agree / Disagree with main story
+- 0-100 *SLIDER*
+- 999 Don't know
 
-How does R feel about the particular news source?
+Additional question on information provided in survey?
 
-### Block 1: Main outcome measures
-
-**immig_attd:** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
+**[immig_attd]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?  
 
 1. Increased a lot
 2. Increased a little
@@ -240,56 +205,70 @@ How does R feel about the particular news source?
 4. Decreased a little
 5. Decreased a lot
 
-**unemp:** Out of every 100 people living in the United States, how many do you think were born outside of the country? [Response is given in textbox; only responses 0-100 are allowed.  Don't know option is also provided.]
-
-- 0-100 *SLIDER*
-- 999 Don't know
-
-Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
+**[taxes]** Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
 
 - 0 (Generally take out more) - 10 (Generally put in more) & 99 (DK)
 
-You answer to the previous question was *X*. Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[taxes_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
 - *TEXTBOX*
 
-On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
+**[jobs]** On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
 
 - 0 (Take jobs away) - 10 (Create additional jobs) & 99 (DK)
 
-You answer to the previous question was *X*. Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[jobs_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
 - *TEXTBOX*
 
-And would you say that America's cultural life is generally undermined or enriched by people coming to live here from other countries?
+**[culture]** And would you say that America's cultural life is generally undermined or enriched by people coming to live here from other countries?
 
 - 0 (Cultural life undermined) - 10 (Cultural life enriched) & 99 (DK)
 
-You answer to the previous question was *X*. Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[culture_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
 - *TEXTBOX*
 
-In general, do you think that America's crime problems are made worse or better by people coming to live here from other countries?
+**[crime]** In general, do you think that America's crime problems are made worse or better by people coming to live here from other countries?
 
 - 0 (Made worse) - 10 (Made better) & 99 (DK)
 
-You answer to the previous question was *X*. Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[crime_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
 - *TEXTBOX*
 
-## Block 2: Sociodemographics
+## Block 3: Trust in media sources
 
-**gender:** Do you consider yourself Male, Female, or other?
+Let's briefly return to the question of different media sources.
+
+Rank media sources in terms of how much you trust them
+
+Trust in MSNBC / Fox?
+
+## Block 4: Sociodemographics
+
+This almost completes our survey, we only need some additional information about your background.
+
+**[gender]** Do you consider yourself Male, Female, or other?
 
 1. Male
 2. Female
 3. Other
 
-**age:** What is your age?
+**[age]** What is your age?
 
 - *TEXTBOX*
 
-**race:** What racial or ethnic group best describes you?
+**[usborn]** Were you born in the United States?
+
+1. Yes
+2. No
+
+**[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
+
+- *TEXTBOX*
+
+**[race]** What racial or ethnic group best describes you?
 
 1. White
 2. Black
@@ -300,13 +279,7 @@ You answer to the previous question was *X*. Please explain your answer in a few
 7. Mixed
 8. Other
 
-Were you born in the United States?
-
-1. Yes
-2. No [if no, ask: When did you first arrive to live in the US?]
-
-What is the highest level of education you have completed?
-F8.  What is the highest grade or level of school that you have completed?
+**[educ]** What is the highest level of education that you have completed?
 
 1. Less than a High school diploma,
 2. Graduated high school or GED,
@@ -315,10 +288,9 @@ F8.  What is the highest grade or level of school that you have completed?
 5. Graduated 4-year college,
 6. Completed post-graduate or professional school, with degree
 7. Other
-8. DON’T KNOW
-9. Refused/NA
+8. Don't know
 
-Thinking back over the last year, what was your family's annual income?
+**[income]** Thinking back over the last year, what was your family's annual income?
 
 1. Less than $20,000
 2. $20,000 - $39,999
@@ -328,7 +300,3 @@ Thinking back over the last year, what was your family's annual income?
 6. $100,000 - $119,999
 7. $120,000 or more
 8. Prefer not to say
-
-Zip Code
-
-- *TEXTBOX*
