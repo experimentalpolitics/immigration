@@ -11,7 +11,7 @@
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
 - *Length:* TBD
 - *Reward:* TBD
-- *Requirements:* 90% approval rate, location US, total approved HITs no less than 100
+- *Requirements:* 90% approval rate, location US
 
 ## Survey Flow Overview
 
@@ -101,39 +101,53 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-### Block 2: Exposure to immigration
+### Block 2: Racial attitudes (choose one set?)
 
-We want to explore differences in media usage and news consumption between local communities. Please answer the following questions about your neighborhood.
+Next are some questions about different groups in our society.
 
-**[zip]** What is your zip code?
+**[hardworking]** Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
-- *TEXTBOX*
+- Whites
+- Blacks
+- Hispanic-Americans
+- Asian-Americans
 
-**[immig_see]** In your day-to-day life, how frequently do you see Hispanic/Latino immigrants in your community?
+(1) Hard-working - (7) Lazy
 
-1. Never or almost never
-2. Less than once a month
-3. 1-3 times each month
-4. At least once a week
-5. Every day
+**[intelligent]** And do you think that people in the following groups tend to be "intelligent" or "unintelligent"? A score of '1' means that you think almost all of the people in that group tend to be "intelligent." A score of '7' means that you think most people in the group are "unintelligent." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
-**[immig_convo]** In your day-to-day life, how frequently do you have conversations with Hispanic/Latino immigrants?
+- Whites
+- Blacks
+- Hispanic-Americans
+- Asian-Americans
 
-1. Never or almost never
-2. Less than once a month
-3. 1-3 times each month
-4. At least once a week
-5. Every day
+(1) Intelligent - (7) Unintelligent
 
-**[immig_spanish]** In your day-to-day life, how frequently do you hear Spanish spoken?
+**[resentment]** Do you agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, or disagree strongly with the following statements?
 
-1. Never or almost never
-2. Less than once a month
-3. 1-3 times each month
-4. At least once a week
-5. Every day
+- Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors.
+- Generations of slavery and discrimination have created conditions that make it difficult for blacks to work their way out of the lower class.
+- Over the past few years blacks have gotten less than they deserve.
+- It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as whites.
+
+1. Agree strongly
+2. Agree somewhat
+3. Neither agree nor disagree
+4. Disagree somewhat
+5. Disagree strongly
 
 ### Block 3: Political attitudes & participation
+
+Now a few questions about politics.
+
+**[polint]** How often do you pay attention to what's going on in government and politics?
+
+1. Always
+2. Most of the time
+3. Some of the time
+4. Only now and then
+5. Hardly at all
+6. Never
 
 **[ideology]** Thinking about politics these days, how would you describe your own political viewpoint?
 
@@ -146,7 +160,7 @@ We want to explore differences in media usage and news consumption between local
 7. Very conservative
 8. Not sure
 
-**[party]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?e
+**[party]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
 
 1. Republican
 2. Democrat
@@ -192,6 +206,8 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
     - *Outcome measure:* how much time spent on article?
 
 ### Tweets
+
+*Introduction*: Mention that they have to answer questions about the article!
 
 ![Fox News - controversial](tweets/fox_controversial.png){width=50%}
 ![Fox News - popular](tweets/fox_popular.png){width=50%}
@@ -246,6 +262,22 @@ Next, we want to ask you a few questions about immigration.
 4. Decreased a little
 5. Decreased a lot
 
+**[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
+
+- *TEXTBOX* Million
+- Don't know
+
+**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year.
+
+1. Less than $500 billion
+2. $500 billion - $1 trillion
+3. $1 trillion - $1.5 trillion
+4. $1.5 trillion - $2 trillion
+5. More than 2 trillion
+6. Don't know
+
+**NOTE**: randomize order of remaining questions
+
 **[taxes]** Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
 
 - 0 (Generally take out more) - 10 (Generally put in more) & 99 (DK)
@@ -278,25 +310,11 @@ Next, we want to ask you a few questions about immigration.
 
 - *TEXTBOX*
 
-**[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
-
-- *TEXTBOX* Million
-- Don't know
-
-**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year.
-
-1. Less than $500 billion
-2. $500 billion - $1 trillion
-3. $1 trillion - $1.5 trillion
-4. $1.5 trillion - $2 trillion
-5. More than 2 trillion
-6. Don't know
-
 ## Block 3: Trust in media sources
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
-**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how much do you trust the following TV channels that their news reporting is accurate?
+**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their news reporting is accurate?
 
 - Fox News
 - MSNBC
@@ -304,16 +322,14 @@ Let's briefly return to the different media sources mentioned at the beginning o
 - NBC
 - CBS
 
-1. Several times a day
-2. About once a day
-3. 3 to 6 days a week
-4. 1 to 2 days a week
-5. Every few weeks
-6. Less often
-7. Never
-8. Don’t Know
+1. Always
+2. Most of the time
+3. About half the time
+4. Some of the time
+5. Never
+6. Don’t Know
 
-**[printmedia_trust]** *(show same response options for each, randomize order)* And how much do you trust the following newspapers that their reporting is accurate?:
+**[printmedia_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their reporting is accurate?:
 
 - New York Times
 - Washington Post
@@ -321,9 +337,28 @@ Let's briefly return to the different media sources mentioned at the beginning o
 - USA Today
 - New York Post
 
+1. Always
+2. Most of the time
+3. About half the time
+4. Some of the time
+5. Never
+6. Don’t Know
+
 ## Block 4: Sociodemographics
 
 This almost completes our survey, we only need some additional information about your background.
+
+**[zip]** What is your zip code?
+
+- *TEXTBOX*
+
+**[zip_time]** *(only ask if zip code is entered)* And how long have you lived at your current zip code?
+
+1. Less than a year
+2. 1 to 3 years
+3. 3 to 5 years
+4. More than 5 years
+5. Don't Know
 
 **[gender]** Do you consider yourself Male, Female, or other?
 
@@ -365,6 +400,8 @@ This almost completes our survey, we only need some additional information about
 6. Completed post-graduate or professional school, with degree
 7. Other
 8. Don't know
+
+**[job]** Add question about job / type of work?
 
 **[income]** Thinking back over the last year, what was your family's annual income?
 
