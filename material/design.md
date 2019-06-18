@@ -112,7 +112,7 @@ Next are some questions about different groups in our society.
 - Hispanic-Americans
 - Asian-Americans
 
-(1) Hard-working - (7) Lazy
+(1) Hard-working - (7) Lazy, (8) DK
 
 **[intelligent]** And do you think that people in the following groups tend to be "intelligent" or "unintelligent"? A score of '1' means that you think almost all of the people in that group tend to be "intelligent." A score of '7' means that you think most people in the group are "unintelligent." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
@@ -121,7 +121,7 @@ Next are some questions about different groups in our society.
 - Hispanic-Americans
 - Asian-Americans
 
-(1) Intelligent - (7) Unintelligent
+(1) Intelligent - (7) Unintelligent, (8) DK
 
 **[resentment]** Do you agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, or disagree strongly with the following statements?
 
@@ -350,7 +350,7 @@ This almost completes our survey, we only need some additional information about
 
 **[zip]** What is your zip code?
 
-- *TEXTBOX*
+- *TEXTBOX* *(response not required)*
 
 **[zip_time]** *(only ask if zip code is entered)* And how long have you lived at your current zip code?
 
