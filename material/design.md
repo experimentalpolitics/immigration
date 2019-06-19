@@ -84,7 +84,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[printmedia]** *(show same response options for each, randomize order)* And how often do you read the following newspapers (online or offline):
+**[printmedia]** *(show same response options for each, randomize order)* And how often do you read about *articles about politics* in the following newspapers (online or offline):
 
 - New York Times
 - Washington Post
@@ -101,11 +101,20 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-### Block 2: Racial attitudes (choose one set?)
+### Block 2: Racial attitudes
 
-Next are some questions about different groups in our society.
+Next are some questions about different groups in our society. *(randomize order of questions)*
 
-**[hardworking]** Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hardworking_age]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+
+- Silent Generation (born 1945 and before)
+- Baby Boomers (born 1946-1964)
+- Generation X (born 1965-1976)
+- Millennials (born 1977-1995)
+
+(1) Hard-working - (7) Lazy, (8) DK
+
+**[hardworking_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
 - Whites
 - Blacks
@@ -114,27 +123,14 @@ Next are some questions about different groups in our society.
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[intelligent]** And do you think that people in the following groups tend to be "intelligent" or "unintelligent"? A score of '1' means that you think almost all of the people in that group tend to be "intelligent." A score of '7' means that you think most people in the group are "unintelligent." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hardworking_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
-- Whites
-- Blacks
-- Hispanic-Americans
-- Asian-Americans
+- Farmers
+- Teachers
+- Lawyers
+- Bankers
 
-(1) Intelligent - (7) Unintelligent, (8) DK
-
-**[resentment]** Do you agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, or disagree strongly with the following statements?
-
-- Italians, Jewish and many other minorities overcame prejudice and worked their way up. Blacks should do the same without any special favors.
-- Generations of slavery and discrimination have created conditions that make it difficult for blacks to work their way out of the lower class.
-- Over the past few years blacks have gotten less than they deserve.
-- It's really a matter of some people not trying hard enough; if blacks would only try harder they could be just as well off as whites.
-
-1. Agree strongly
-2. Agree somewhat
-3. Neither agree nor disagree
-4. Disagree somewhat
-5. Disagree strongly
+(1) Hard-working - (7) Lazy, (8) DK
 
 ### Block 3: Political attitudes & participation
 
@@ -246,6 +242,28 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 - Immigrant Statistics: [link](https://www.newamericaneconomy.org/methodology/)
     - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
 
+### Attention checks
+
+**NOTE**: randomize order of questions
+
+Please answer the following questions about the article that you just read.
+
+**[source]** *(randomize order)*  What was the source of the article?
+
+1. Fox News
+2. MSNBC
+3. New York Times
+4. Wall Street Journal
+5. Don't know
+
+**[about]** *(randomize order)* Broadly speaking, what was this article about?
+
+1. Immigrant-owned businesses
+2. Stock market developments
+3. Innovation in the car industry
+4. Young entrepreneurs in Silicon Valley
+5. Don't know
+
 \newpage
 
 ## Post-treatment measures
@@ -294,27 +312,11 @@ Next, we want to ask you a few questions about immigration.
 
 - *TEXTBOX*
 
-**[culture]** And would you say that America's cultural life is generally undermined or enriched by people coming to live here from other countries?
-
-- 0 (Cultural life undermined) - 10 (Cultural life enriched) & 99 (DK)
-
-**[culture_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
-
-- *TEXTBOX*
-
-**[crime]** In general, do you think that America's crime problems are made worse or better by people coming to live here from other countries?
-
-- 0 (Made worse) - 10 (Made better) & 99 (DK)
-
-**[crime_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
-
-- *TEXTBOX*
-
 ## Block 3: Trust in media sources
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
-**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their news reporting is accurate?
+**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their political news reporting is accurate?
 
 - Fox News
 - MSNBC
@@ -329,7 +331,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-**[printmedia_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their reporting is accurate?:
+**[printmedia_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?:
 
 - New York Times
 - Washington Post
@@ -400,8 +402,6 @@ This almost completes our survey, we only need some additional information about
 6. Completed post-graduate or professional school, with degree
 7. Other
 8. Don't know
-
-**[job]** Add question about job / type of work?
 
 **[income]** Thinking back over the last year, what was your family's annual income?
 
