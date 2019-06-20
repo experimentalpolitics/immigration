@@ -43,10 +43,10 @@
 
 First, we want to ask a few questions about your current media diet.
 
-**[socialmedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms:
+**[socialmedia]** *(show same response options for each)* On average, how often do you use the following social media platforms?
 
-- Facebook
 - YouTube
+- Facebook
 - Instagram
 - Twitter
 - Tumblr
@@ -60,10 +60,10 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[socialmedia_pol]** *(show same response options for each, randomize order)* And how often do you view *political* content on these platforms?
+**[socialmedia_pol]** *(show same response options for each)* And how often do you view *political* content on these platforms?
 
-- Facebook
 - YouTube
+- Facebook
 - Instagram
 - Twitter
 - Tumblr
@@ -77,7 +77,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[tvnews]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels:
+**[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels:
 
 - Fox News
 - MSNBC
@@ -94,7 +94,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[printmedia]** *(show same response options for each, randomize order)* And how often do you read about articles about _politics_ in the following newspapers (online or offline):
+**[print]** *(show same response options for each, randomize order)* And how often do you read about articles about _politics_ in the following newspapers (online or offline)?
 
 - New York Times
 - Washington Post
@@ -115,7 +115,7 @@ First, we want to ask a few questions about your current media diet.
 
 Next are some questions about different groups in our society. *(randomize order of questions)*
 
-**[hardworking_age]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_age]** *(show same response options for each)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
 - Silent Generation (born 1945 and before)
 - Baby Boomers (born 1946-1964)
@@ -124,7 +124,7 @@ Next are some questions about different groups in our society. *(randomize order
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[hardworking_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
 - Whites
 - Blacks
@@ -133,7 +133,7 @@ Next are some questions about different groups in our society. *(randomize order
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[hardworking_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
 
 - Farmers
 - Teachers
@@ -150,10 +150,9 @@ Now a few questions about politics.
 
 1. Always
 2. Most of the time
-3. Some of the time
-4. Only now and then
-5. Hardly at all
-6. Never
+3. Sometimes
+4. Hardly at all
+5. Never
 
 **[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
 
@@ -179,21 +178,21 @@ Now a few questions about politics.
 7. Very conservative
 8. Not sure
 
-**[party]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
+**[pid]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
 
 1. Republican
 2. Democrat
 3. Independent
 4. Other
 
-**[party_lean]** *(if [party] == other | independent)*
-Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
+**[pid_lean]** *(if [pid] == other | independent)*
+Do you think of yourself as CLOSER to the Republican party or to the Democratic party?
 
-1. Democratic Party
-2. Republican Party
-3. Neither Party
+1. Republican party
+2. Democratic party
+3. Neither party
 
-**[party_strong]** *(if [party] == Republican | Democrat)*
+**[pid_rep/pid_dem]** *(if [pid] == Republican | Democrat)*
 Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
 
 1. Strong
