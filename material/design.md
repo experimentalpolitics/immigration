@@ -1,9 +1,33 @@
 # Study Design & Questionnaire
 
-## Notes
+## Survey Flow Overview
 
-- Only edit this file as `.md` --- not `.docx`!
-- add item randomization etc.
+- Pre-treatment measures:
+    - Media usage
+    - Stereotype battery
+    - Political attitudes & participation
+- Experimental manipulation:
+    - Tweets
+    - Full story
+    - Attention checks
+- Post-treatment measures:
+    - Attitudes towards immigration
+    - Trust in news sources
+    - Sociodemographics
+
+## Treatment Overview
+
+- **Basic design:** 2 X 2 + 1 (choice/assigned X controversial/popular + control)
+    - _Treatment 1 (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
+    - _Treatment 2 (controversial/popular):_ Comments vs. Retweets/Likes ratio suggests either popular (many likes/RTs, few comments) or controversial (few likes/RTs, many comments) content.
+    - _Control condition:_ skip tweet & full story
+
+- **Outcome measures:**
+    - Do participants directly click on the link in the tweet or click on `next` button?
+    - How much time do participants spend on the full article?
+    - Basic comprehension / attention check.
+    - Attitudes towards immigration (see post-treatement section).
+    - Trust in news sources (see post-treatement section).
 
 ## MTurk Details
 
@@ -12,20 +36,6 @@
 - *Length:* TBD
 - *Reward:* TBD
 - *Requirements:* 90% approval rate, location US
-
-## Survey Flow Overview
-
-- Pre-treatment measures:
-    - Media usage
-    - Exposure to immigration
-    - Political attitudes & participation
-- Experimental manipulation:
-    - Short tweet
-    - Full story
-- Post-treatment measures:
-    - Attitudes towards immigration
-    - Trust in news sources
-    - Sociodemographics
 
 ## Pre-treatment measures
 
@@ -67,7 +77,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[tvnews]** *(show same response options for each, randomize order)* On average, how often do you watch *political news* on the following TV channels:
+**[tvnews]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels:
 
 - Fox News
 - MSNBC
@@ -84,7 +94,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[printmedia]** *(show same response options for each, randomize order)* And how often do you read about *articles about politics* in the following newspapers (online or offline):
+**[printmedia]** *(show same response options for each, randomize order)* And how often do you read about articles about _politics_ in the following newspapers (online or offline):
 
 - New York Times
 - Washington Post
@@ -101,7 +111,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-### Block 2: Racial attitudes
+### Block 2: Stereotype battery
 
 Next are some questions about different groups in our society. *(randomize order of questions)*
 
@@ -145,6 +155,19 @@ Now a few questions about politics.
 5. Hardly at all
 6. Never
 
+**[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
+
+1. Unemployment
+2. Inequality
+3. Federal Deficit
+4. Taxes
+5. High Cost of Living / Inflation
+6. Immigration
+7. Health Care
+8. Racism
+9. Environment / Climate Change
+10. Violence / Crime
+
 **[ideology]** Thinking about politics these days, how would you describe your own political viewpoint?
 
 1. Very liberal
@@ -163,47 +186,40 @@ Now a few questions about politics.
 3. Independent
 4. Other
 
-**[party_lean]** *(if other/independent is selected)*
+**[party_lean]** *(if [party] == other | independent)*
 Do you think of yourself as CLOSER to the Republican Party or to the Democratic Party?
 
 1. Democratic Party
 2. Republican Party
 3. Neither Party
 
-**[party_strong]** *(if Republican or Democrat is selected)*
+**[party_strong]** *(if [party] == Republican | Democrat)*
 Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
 
 1. Strong
 2. Not very strong
 
-**[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
+<!-- \newpage -->
 
-1. Unemployment
-2. Inequality
-3. Federal Deficit
-4. Taxes
-5. High Cost of Living / Inflation
-6. Immigration
-7. Health Care
-8. Racism
-9. Environment / Climate Change
-10. Violence / Crime
+## Experimental manipulation
 
-\newpage
+### Instructions for participants
 
-## Experimental Manipulation
+- **Treatment 1 = choice**
+    - In the following section, we are going to show you a random tweet drawn from the accounts of several large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
+    - **[choice]** _(randomize order)_ From which Twitter account would you like to view a random tweet?
+        
+        1. Fox News
+        2. MSNBC
 
-- *Control condition:* skip this section
-- *Treatment groups:* choice/assigned X controversial/popular
-    - *Manipulation 1 (choice/assigned):* Before seeing any content, Rs can either freely choose to view a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is the same. 
-    - *Manipulation 2 (controversial/popular):* RT ratio suggests either popular (many likes/RTs, few comments) or controversial (few likes/RTs, many comments) content
-    - *Outcome measure:* click on link in tweet or click on `next` button?
-- After viewing the tweets, respondents are asked to read the full article (whether they clicked on the tweet or not).
-    - *Outcome measure:* how much time spent on article?
+- **Treatment 1 = assigned**
+    - In the following section, we are going to show you a random tweet drawn from the accounts of several large news organizations. Afterwards, we are going to ask you some questions about the content of the news story.
+    - **[assigned]** _(assignment to account invisible to participant)_
+        
+        1. Fox News
+        2. MSNBC
 
 ### Tweets
-
-*Introduction*: Mention that they have to answer questions about the article!
 
 ![Fox News - controversial](tweets/fox_controversial.png){width=50%}
 ![Fox News - popular](tweets/fox_popular.png){width=50%}
@@ -211,11 +227,13 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 ![MSNBC - controversial](tweets/msnbc_controversial.png){width=50%}
 ![MSNBC - popular](tweets/msnbc_popular.png){width=50%}
 
-\newpage
+### Introduction for full story
+
+Next, we will show you the content of the article linked in the previous tweet. Please click on the `next` button and read the story carefully. Keep in mind that you will be asked questions about the content of the article afterwards.
 
 ### Full Story: Immigrant-owned Businesses on the Rise
 
-William Hall | [Fox/MSNBC] News
+William Hall | [Fox News/MSNBC]
 
 A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
 
@@ -233,22 +251,15 @@ Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya
 
 The Rodriguez's story is just one of many. As more immigrants look to open their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide more fuel to an already strong economy.
 
-*William Hall is a Business Reporter for [Fox/MSNBC] News.*
-
-### Sources
-
-- Immigrant story: [link](https://www.cnbc.com/2017/05/02/how-successful-immigrant-entrepreneurs-are-changing-chicago-and-the-us.html)
-- Graph: [link](https://www.inc.com/arnobio-morelix/inc-entrepreneurship-index-2018-q1.html)
-- Immigrant Statistics: [link](https://www.newamericaneconomy.org/methodology/)
-    - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
+*William Hall is a Business Reporter for [Fox News/MSNBC].*
 
 ### Attention checks
 
 **NOTE**: randomize order of questions
 
-Please answer the following questions about the article that you just read.
+Please answer the following questions about the tweet as well as the article you just read.
 
-**[source]** *(randomize order)*  What was the source of the article?
+**[source]** *(randomize order)*  Which Twitter account?
 
 1. Fox News
 2. MSNBC
@@ -256,21 +267,28 @@ Please answer the following questions about the article that you just read.
 4. Wall Street Journal
 5. Don't know
 
-**[about]** *(randomize order)* Broadly speaking, what was this article about?
+**[about]** *(randomize order)* Broadly speaking, what was the news story about?
 
 1. Immigrant-owned businesses
-2. Stock market developments
-3. Innovation in the car industry
+2. Stock market development
+3. Innovation in the automotive industry
 4. Young entrepreneurs in Silicon Valley
 5. Don't know
 
-\newpage
+### Sources for story
+
+- Immigrant story: [link](https://www.cnbc.com/2017/05/02/how-successful-immigrant-entrepreneurs-are-changing-chicago-and-the-us.html)
+- Graph: [link](https://www.inc.com/arnobio-morelix/inc-entrepreneurship-index-2018-q1.html)
+- Immigrant Statistics: [link](https://www.newamericaneconomy.org/methodology/)
+    - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
+
+<!-- \newpage -->
 
 ## Post-treatment measures
 
 ### Block 1: Attitudes towards immigration
 
-Next, we want to ask you a few questions about immigration.
+In this section, we want to ask you a few questions about immigration.
 
 **[immig_attitude]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
 
@@ -312,7 +330,7 @@ Next, we want to ask you a few questions about immigration.
 
 - *TEXTBOX*
 
-## Block 3: Trust in media sources
+### Block 2: Trust in news sources
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
@@ -346,7 +364,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-## Block 4: Sociodemographics
+### Block 3: Sociodemographics
 
 This almost completes our survey, we only need some additional information about your background.
 
