@@ -43,7 +43,7 @@
 
 First, we want to ask a few questions about your current media diet.
 
-**[socialmedia]** *(show same response options for each)* On average, how often do you use the following social media platforms?
+**[smedia]** *(show same response options for each)* On average, how often do you use the following social media platforms?
 
 - YouTube
 - Facebook
@@ -60,7 +60,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[socialmedia_pol]** *(show same response options for each)* And how often do you view *political* content on these platforms?
+**[smedia_pol]** *(show same response options for each)* And how often do you view *political* content on these platforms?
 
 - YouTube
 - Facebook
@@ -115,16 +115,16 @@ First, we want to ask a few questions about your current media diet.
 
 Next are some questions about different groups in our society.
 
-**[hw_age]** *(show same response options for each)* Do you think that people in the following groups are "hard-working" or "lazy"?
+**[st_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups tend to be "intelligent" or "unintelligent"?
 
-- Silent Generation (born 1945 and before)
-- Baby Boomers (born 1946-1964)
-- Generation X (born 1965-1976)
-- Millennials (born 1977-1995)
+- Farmers
+- Teachers
+- Lawyers
+- Politicians
 
-(1) Hard-working - (7) Lazy, (8) DK
+(1) Intelligent - (7) Unintelligent, (8) DK
 
-**[hw_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"?
+**[st_race]** *(show same response options for each, randomize order)* And do you think that people in the following groups are "hard-working" or "lazy"?
 
 - Whites
 - Blacks
@@ -133,14 +133,14 @@ Next are some questions about different groups in our society.
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[hw_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"?
+**[st_age]** *(show same response options for each)* And do you think that people in the following groups are "altruistic" or "selfish"?
 
-- Farmers
-- Teachers
-- Lawyers
-- Bankers
+- Silent Generation (born 1945 and before)
+- Baby Boomers (born 1946-1964)
+- Generation X (born 1965-1976)
+- Millennials (born 1977-1995)
 
-(1) Hard-working - (7) Lazy, (8) DK
+(1) Generous - (7) selfish, (8) DK
 
 ### Block 3: Political attitudes & participation
 
@@ -167,7 +167,7 @@ Next, we would like you to answer a few questions about your political viewpoint
 9. Environment / Climate Change
 10. Violence / Crime
 
-**[ideology]** Thinking about politics these days, how would you describe your own political viewpoint?
+**[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
 1. Very liberal
 2. Liberal
@@ -287,7 +287,7 @@ Please answer the following questions about the tweet as well as the article you
 
 In this section, we want to ask you a few questions about immigration.
 
-**[immig_attitude]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
+**[immig]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
 
 1. Increased a lot
 2. Increased a little
@@ -331,7 +331,7 @@ In this section, we want to ask you a few questions about immigration.
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
-**[tvnews_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their political news reporting is accurate?
+**[tv_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their political news reporting is accurate?
 
 - Fox News
 - MSNBC
@@ -346,7 +346,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-**[printmedia_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?:
+**[print_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?:
 
 - New York Times
 - Washington Post
