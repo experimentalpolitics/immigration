@@ -1,4 +1,7 @@
-﻿# Vignette examples
+﻿# temp files
+.~*#
+
+# Vignette examples
 /VignetteExamples/
 
 # History files
