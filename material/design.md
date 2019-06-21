@@ -113,9 +113,9 @@ First, we want to ask a few questions about your current media diet.
 
 ### Block 2: Stereotype battery
 
-Next are some questions about different groups in our society. *(randomize order of questions)*
+Next are some questions about different groups in our society.
 
-**[hw_age]** *(show same response options for each)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_age]** *(show same response options for each)* Do you think that people in the following groups are "hard-working" or "lazy"?
 
 - Silent Generation (born 1945 and before)
 - Baby Boomers (born 1946-1964)
@@ -124,7 +124,7 @@ Next are some questions about different groups in our society. *(randomize order
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[hw_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_race]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"?
 
 - Whites
 - Blacks
@@ -133,7 +133,7 @@ Next are some questions about different groups in our society. *(randomize order
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[hw_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"? A score of '1' means that you think almost all of the people in that group tend to be "hard-working." A score of '7' means that you think most people in the group are "lazy." A score of '4' means that you think that most people in the group are not closer to one end or the other, and of course, you may choose any number in between.
+**[hw_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups are "hard-working" or "lazy"?
 
 - Farmers
 - Teachers
