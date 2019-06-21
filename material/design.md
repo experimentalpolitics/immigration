@@ -23,7 +23,8 @@
     - _Control condition:_ skip tweet & full story
 
 - **Outcome measures:**
-    - Do participants directly click on the link in the tweet or click on `next` button?
+    - Do participants try to click on the tweet? (i.e., multiple clicks)
+    - How much time do participants spend viewing the tweet?
     - How much time do participants spend on the full article?
     - Basic comprehension / attention check.
     - Attitudes towards immigration (see post-treatement section).
@@ -228,7 +229,7 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 
 ### Introduction for full story
 
-Next, we will show you the content of the article linked in the previous tweet. Please click on the `next` button and read the story carefully. Keep in mind that you will be asked questions about the content of the article afterwards.
+Next, we will show you the content of the article linked in the previous tweet. Please click on the `next` button and read the story carefully. Keep in mind that we will ask you questions about the content of the article afterwards.
 
 ### Full Story: Immigrant-owned Businesses on the Rise
 
@@ -262,7 +263,8 @@ Please answer the following questions about the tweet as well as the article you
 2. MSNBC
 3. New York Times
 4. Wall Street Journal
-5. Don't know
+5. Other
+6. Don't know
 
 **[about]** *(randomize order)* Broadly speaking, what was the news story about?
 
