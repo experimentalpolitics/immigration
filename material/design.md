@@ -34,7 +34,7 @@
 - *Title:* Media Usage and News Consumption
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
 - *Length:* TBD
-- *Reward:* TBD
+- *Reward:* TBD (>$0.50)
 - *Requirements:* 90% approval rate, location US
 
 ## Pre-treatment measures
@@ -144,7 +144,7 @@ Next are some questions about different groups in our society. *(randomize order
 
 ### Block 3: Political attitudes & participation
 
-Now a few questions about politics.
+Next, we would like you to answer a few questions about your political viewpoints.
 
 **[polint]** How often do you pay attention to what's going on in government and politics?
 
@@ -254,11 +254,9 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 ### Attention checks
 
-**NOTE**: randomize order of questions
+Please answer the following questions about the tweet as well as the article you just read. _(randomize order of questions)_
 
-Please answer the following questions about the tweet as well as the article you just read.
-
-**[source]** *(randomize order)*  Which Twitter account?
+**[source]** *(randomize order)*  Which Twitter account was the news story from?
 
 1. Fox News
 2. MSNBC
