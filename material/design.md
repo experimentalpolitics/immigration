@@ -257,7 +257,7 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 Please answer the following questions about the tweet as well as the article you just read. _(randomize order of questions)_
 
-**[source]** *(randomize order)*  Which Twitter account was the news story from?
+**[source]** *(randomize order)*  Which Twitter account / news organization published the story?
 
 1. Fox News
 2. MSNBC
