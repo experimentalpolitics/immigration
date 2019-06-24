@@ -299,23 +299,25 @@ In this section, we want to ask you a few questions about immigration.
 
 **[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
 
-- *TEXTBOX* Million
-- Don't know
+1. Less than 500,000
+2. 500,000 - 1 million
+3. 1 million - 5 million
+4. 5 million - 10 million
+5. More than 10 million
 
-**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year.
+**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year?
 
 1. Less than $500 billion
 2. $500 billion - $1 trillion
 3. $1 trillion - $1.5 trillion
 4. $1.5 trillion - $2 trillion
-5. More than 2 trillion
-6. Don't know
+5. More than $2 trillion
 
 **NOTE**: randomize order of remaining questions
 
 **[taxes]** Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
 
-- 0 (Generally take out more) - 10 (Generally put in more) & 99 (DK)
+- 0 (Generally take out more) - 10 (Generally put in more)
 
 **[taxes_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
@@ -323,7 +325,7 @@ In this section, we want to ask you a few questions about immigration.
 
 **[jobs]** On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
 
-- 0 (Take jobs away) - 10 (Create additional jobs) & 99 (DK)
+- 0 (Take jobs away) - 10 (Create additional jobs)
 
 **[jobs_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
 
@@ -344,7 +346,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 1. Always
 2. Most of the time
 3. About half the time
-4. Some of the time
+4. Sometimes
 5. Never
 6. Don’t Know
 
@@ -359,13 +361,32 @@ Let's briefly return to the different media sources mentioned at the beginning o
 1. Always
 2. Most of the time
 3. About half the time
-4. Some of the time
+4. Sometimes
 5. Never
 6. Don’t Know
 
 ### Block 3: Sociodemographics
 
 This almost completes our survey, we only need some additional information about your background.
+
+**[age]** What is your age?
+
+- *TEXTBOX*
+
+**[gender]** Do you consider yourself Male, Female, or other?
+
+1. Male
+2. Female
+3. Other
+
+**[usborn]** Were you born in the United States?
+
+1. Yes
+2. No
+
+**[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
+
+- *TEXTBOX*
 
 **[zip]** What is your zip code?
 
@@ -378,25 +399,6 @@ This almost completes our survey, we only need some additional information about
 3. 3 to 5 years
 4. More than 5 years
 5. Don't Know
-
-**[gender]** Do you consider yourself Male, Female, or other?
-
-1. Male
-2. Female
-3. Other
-
-**[age]** What is your age?
-
-- *TEXTBOX*
-
-**[usborn]** Were you born in the United States?
-
-1. Yes
-2. No
-
-**[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
-
-- *TEXTBOX*
 
 **[race]** What racial or ethnic group best describes you?
 
@@ -411,9 +413,9 @@ This almost completes our survey, we only need some additional information about
 
 **[educ]** What is the highest level of education that you have completed?
 
-1. Less than a High school diploma
+1. Less than a high school diploma
 2. Graduated high school or GED
-3. Graduated Two-year college
+3. Graduated two-year college
 4. Some college but no college degree
 5. Graduated 4-year college
 6. Completed post-graduate or professional school, with degree
