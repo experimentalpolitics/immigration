@@ -237,7 +237,7 @@ William Hall | [Fox News/MSNBC]
 
 A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
 
-These statistics are born out of hundreds of success stories across many different sectors of the economy, especially the service industry.
+These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
 
 Eduardo Rodriguez, a 62 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000--less than half of the national average--the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez.  He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico.
 
@@ -350,7 +350,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-**[print_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?:
+**[print_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?
 
 - New York Times
 - Washington Post
