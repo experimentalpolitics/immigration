@@ -239,6 +239,8 @@ A recent report released using U.S. Census Bureau data states that immigrant-own
 
 These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
 
+![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png){width=45%}
+
 Eduardo Rodriguez, a 62 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000--less than half of the national average--the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez.  He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico.
 
 After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. "People seem to really like what we are doing, and I'm grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice -- we're fulfilling a niche market that people really want to buy from."
@@ -246,8 +248,6 @@ After immigrating here in 1966, Rodriguez opened his first store and it became a
 Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors.
 
 "Our community is very strong and hard-working -- resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself -- Little Village is full of people who came to this country to achieve the American Dream."
-
-![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png){width=45%}
 
 The Rodriguez's story is just one of many. As more immigrants look to open their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide more fuel to an already strong economy.
 
@@ -287,15 +287,7 @@ Please answer the following questions about the tweet as well as the article you
 
 ### Block 1: Attitudes towards immigration
 
-In this section, we want to ask you a few questions about immigration.
-
-**[immig]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
-
-1. Increased a lot
-2. Increased a little
-3. Left the same
-4. Decreased a little
-5. Decreased a lot
+_(only show this message in the control condition)_ In this section, we want to ask you a few questions about immigration.
 
 **[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
 
@@ -313,13 +305,23 @@ In this section, we want to ask you a few questions about immigration.
 4. $1.5 trillion - $2 trillion
 5. More than $2 trillion
 
-**NOTE**: randomize order of remaining questions
+_(only show this message in the treatment conditions)_ In this section, we want to ask you a few questions about immigration in general.
+
+**[immig]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
+
+1. Increased a lot
+2. Increased a little
+3. Left the same
+4. Decreased a little
+5. Decreased a lot
+
+_(randomize order of remaining questions)_
 
 **[taxes]** Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
 
 - 0 (Generally take out more) - 10 (Generally put in more)
 
-**[taxes_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[taxes_oe]** Please explain your answer to the previous question in a few short sentences.
 
 - *TEXTBOX*
 
@@ -327,7 +329,7 @@ In this section, we want to ask you a few questions about immigration.
 
 - 0 (Take jobs away) - 10 (Create additional jobs)
 
-**[jobs_oe]** Please explain your answer in a few short sentences. What is the main argument that came to mind when answering the question?
+**[jobs_oe]** Please explain your answer to the previous question in a few short sentences.
 
 - *TEXTBOX*
 
