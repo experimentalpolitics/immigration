@@ -17,9 +17,8 @@
 
 ## Treatment Overview
 
-- **Basic design:** 2 X 2 + 1 (choice/assigned X controversial/popular + control)
-    - _Treatment 1 (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
-    - _Treatment 2 (controversial/popular):_ Comments vs. Retweets/Likes ratio suggests either popular (many likes/RTs, few comments) or controversial (few likes/RTs, many comments) content.
+- **Basic design:** 3-arm (choice/assigned + control)
+    - _Treatment (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
     - _Control condition:_ skip tweet & full story
 
 - **Outcome measures:**
@@ -134,7 +133,7 @@ Next are some questions about different groups in our society.
 
 (1) Hard-working - (7) Lazy, (8) DK
 
-**[st_age]** *(show same response options for each)* And do you think that people in the following groups are "altruistic" or "selfish"?
+**[st_age]** *(show same response options for each)* And do you think that people in the following groups are "generous" or "selfish"?
 
 - Silent Generation (born 1945 and before)
 - Baby Boomers (born 1946-1964)
@@ -157,16 +156,11 @@ Next, we would like you to answer a few questions about your political viewpoint
 
 **[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
 
-1. Unemployment
-2. Inequality
-3. Federal Deficit
-4. Taxes
-5. High Cost of Living / Inflation
-6. Immigration
-7. Health Care
-8. Racism
-9. Environment / Climate Change
-10. Violence / Crime
+1. Economy
+2. Federal Deficit
+3. Immigration
+4. Health Care
+5. Environment
 
 **[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
@@ -221,11 +215,9 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 
 ### Tweets
 
-![Fox News - controversial](tweets/fox_controversial.png){width=50%}
-![Fox News - popular](tweets/fox_popular.png){width=50%}
+![Fox News](tweets/fox_popular.png){width=50%}
 
-![MSNBC - controversial](tweets/msnbc_controversial.png){width=50%}
-![MSNBC - popular](tweets/msnbc_popular.png){width=50%}
+![MSNBC](tweets/msnbc_popular.png){width=50%}
 
 ### Introduction for full story
 

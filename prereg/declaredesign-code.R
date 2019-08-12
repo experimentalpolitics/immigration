@@ -34,7 +34,56 @@ draw_estimates(design) # this draws once and gives the estimate
 
 N <- 500
 
-## 2X2 + 1 design (not sure if this is the best way to implement this)
+## simplified 3-arm design
+
+outcome_means <- c(0, .2, .4)
+sd_i <- 1
+
+population <- declare_population(
+  N = N, u = rnorm(N, sd = sd_i))
+
+potential_outcomes <- declare_potential_outcomes(
+  formula = Y ~ outcome_means[1] * (Z == "1") + 
+    outcome_means[2] * (Z == "2") + 
+    outcome_means[3] * (Z == "3") + u, 
+  conditions = c("1", "2", "3"), 
+  assignment_variables = Z)
+
+estimand <- declare_estimands(
+  ate_Y_2_1 = mean(Y_Z_2 - Y_Z_1), 
+  ate_Y_3_1 = mean(Y_Z_3 - Y_Z_1), 
+  ate_Y_3_2 = mean(Y_Z_3 - Y_Z_2))
+
+assignment <- declare_assignment(
+  num_arms = 3, 
+  conditions = c("1", "2", "3"), 
+  assignment_variable = Z)
+
+reveal_Y <- declare_reveal(
+  assignment_variables = Z)
+
+estimator <- declare_estimator(
+  handler = function(data) {
+    estimates <- rbind.data.frame(
+      ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "1", condition2 = "2"), 
+      ate_Y_3_1 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "1", condition2 = "3"),
+      ate_Y_3_2 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "2", condition2 = "3"))
+    names(estimates)[names(estimates) == "N"] <- "N_DIM"
+    estimates$estimator_label <- c("DIM (Z_2 - Z_1)", "DIM (Z_3 - Z_1)", "DIM (Z_3 - Z_2)")
+    estimates$estimand_label <- rownames(estimates)
+    estimates$estimate <- estimates$coefficients
+    estimates$term <- NULL
+    return(estimates)
+  })
+
+multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + estimand + estimator
+
+diagnosis <- diagnose_design(multi_arm_design)
+
+
+
+#### Old attempt to implement 2x2 + 1 design
+
 
 # treatment effects
 mean_A0B0 <- .1
