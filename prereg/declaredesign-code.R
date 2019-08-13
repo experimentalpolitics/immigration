@@ -8,7 +8,7 @@
 ##  experimentalpolitics/immigration/declaredesign-code ##
 ##########################################################
 
-#cd("/Users/nrdavis/Dropbox/political.science/DIRECTORY_HERE")
+# no need to check working directory; code creates no output
 
 ###################   LOAD  ##############################
 
@@ -66,7 +66,7 @@ multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + es
 # single draw of simulated data
 head(draw_data(multi_arm_design))
 
-# display estimates for isngle draw
+# display estimates for single draw
 draw_estimates(multi_arm_design)
 
 # diagnose design based on 500 simulations
@@ -77,8 +77,8 @@ diagnosis
 
 
 ### conditional effects depending on media preference (ACTE following Knox)
-# Q: take into acocunt participants who are indifferent?
-# Q: add control condition (no exposire at all)?
+# Q: take into account participants who are indifferent?
+# Q: add control condition (no exposure at all)?
 # Q: S should not be randomly assigned?
 
 Nforced <- round(N/3)
