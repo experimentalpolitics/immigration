@@ -9,7 +9,7 @@
 - Experimental manipulation:
     - Tweets
     - Full story
-    - Attention checks
+    - Attention checks & article evaluation
 - Post-treatment measures:
     - Attitudes towards immigration
     - Trust in news sources
