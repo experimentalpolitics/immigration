@@ -277,16 +277,14 @@ Please answer the following questions about the tweet as well as the article you
 
 (1) Very likely - (4) Not likely, (7) Not sure
 
-**[wordpairs]** Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
+**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
 
-- [fair] Fair or unfair: (1) Very fair (2) Quite fair (3) Fair (4) Neutral (5) Unfair (6) Quite unfair (7) Very unfair
-- [friendly] Friendly or hostile: (1) Very friendly (2) Quite friendly (3) Friendly (4) Neutral (5) Hostile (6) Quite hostile (7) Very hostile
-- [good] Good or bad: (1) Very good (2) Quite good (3) Good (4) Neutral (5) Bad (6) Quite bad (7) Very bad
-- [quarrel] Quarrelsome or cooperative: (1) Very quarrelsome (2) Quite quarrelsome (3) Quarrelsome (4) Neutral (5) Cooperative (6) Quite cooperative (7) Very cooperative
-- [balanced] Balanced or skewed: (1) Very balanced (2) Quite balanced (3) Balanced (4) Neutral (5) Skewed (6) Quite skewed (7) Very skewed
-- [oneside] One-sided or even-handed: (1) Very one-sided (2) Quite one-sided (3) One-sided (4) Neutral (5) Even-handed (6) Quite even-handed (7) Very even-handed
-- [american] American or un-American: (1) Very American (2) Quite American (3) American (4) Neutral (5) Un-American (6) Quite un-American (7) Very un-American
-- [accurate] Accurate or inaccurate: (1) Very accurate (2) Quite accurate (3) Accurate (4) Neutral (5) Inaccurate (6) Quite inaccurate (7) Very inaccurate
+- [fair] (1) Fair - (5) Unfair
+- [hostile] (1) Hostile - (5) Friendly
+- [bad] (1) Bad - (5) Good
+- [skewed] (1) Skewed - (5) balanced
+- [american] (1) American - (5) Un-American
+- [accurate] (1) Accurate - (5) Inaccurate
 
 ### Sources for story
 
