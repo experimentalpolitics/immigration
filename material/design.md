@@ -26,8 +26,8 @@
     - How much time do participants spend viewing the tweet?
     - How much time do participants spend on the full article?
     - Basic comprehension / attention check.
-    - Attitudes towards immigration (see post-treatement section).
-    - Trust in news sources (see post-treatement section).
+    - Attitudes towards immigration (see post-treatment section).
+    - Trust in news sources (see post-treatment section).
 
 ## MTurk Details
 
@@ -200,7 +200,7 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 ### Instructions for participants
 
 - **Treatment 1 = choice**
-    - In the following section, we are going to show you a random tweet drawn from the accounts of several large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
+    - In the following section, we are going to show you a random tweet drawn from the accounts of two large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
     - **[choice]** _(randomize order)_ From which Twitter account would you like to view a random tweet?
         
         1. Fox News
@@ -221,7 +221,9 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 
 ### Introduction for full story
 
-Next, we will show you the content of the article linked in the previous tweet. Please click on the `next` button and read the story carefully. Keep in mind that we will ask you questions about the content of the article afterwards.
+Next, we will show you the content of the article linked in the previous tweet. **Please read the story carefully.** Keep in mind that we will ask you questions about the content of the article afterwards.
+
+_There will be a brief pause on the next screen so you can read the story._ At the end of the pause, an arrow will appear at the bottom of the screen. Once the arrow appears, you may move on to the next screen of the survey by clicking on the arrow.
 
 ### Full Story: Immigrant-owned Businesses on the Rise
 
@@ -245,7 +247,7 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 *William Hall is a Business Reporter for [Fox News/MSNBC].*
 
-### Attention checks
+### Attention checks & article evaluation
 
 Please answer the following questions about the tweet as well as the article you just read. _(randomize order of questions)_
 
@@ -265,6 +267,26 @@ Please answer the following questions about the tweet as well as the article you
 3. Innovation in the automotive industry
 4. Young entrepreneurs in Silicon Valley
 5. Don't know
+
+**[actions]** Thinking about the news article you just read, how likely would you be to:
+
+- Discuss the story with a friend
+- Forward the story to a friend or colleague via email
+- Post a link to the story on a social networking site, such as Facebook or Twitter
+- Seek out additional information from another source on the topic featured in the story
+
+(1) Very likely - (4) Not likely, (7) Not sure
+
+**[wordpairs]** Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
+
+- [fair] Fair or unfair: (1) Very fair (2) Quite fair (3) Fair (4) Neutral (5) Unfair (6) Quite unfair (7) Very unfair
+- [friendly] Friendly or hostile: (1) Very friendly (2) Quite friendly (3) Friendly (4) Neutral (5) Hostile (6) Quite hostile (7) Very hostile
+- [good] Good or bad: (1) Very good (2) Quite good (3) Good (4) Neutral (5) Bad (6) Quite bad (7) Very bad
+- [quarrel] Quarrelsome or cooperative: (1) Very quarrelsome (2) Quite quarrelsome (3) Quarrelsome (4) Neutral (5) Cooperative (6) Quite cooperative (7) Very cooperative
+- [balanced] Balanced or skewed: (1) Very balanced (2) Quite balanced (3) Balanced (4) Neutral (5) Skewed (6) Quite skewed (7) Very skewed
+- [oneside] One-sided or even-handed: (1) Very one-sided (2) Quite one-sided (3) One-sided (4) Neutral (5) Even-handed (6) Quite even-handed (7) Very even-handed
+- [american] American or un-American: (1) Very American (2) Quite American (3) American (4) Neutral (5) Un-American (6) Quite un-American (7) Very un-American
+- [accurate] Accurate or inaccurate: (1) Very accurate (2) Quite accurate (3) Accurate (4) Neutral (5) Inaccurate (6) Quite inaccurate (7) Very inaccurate
 
 ### Sources for story
 
@@ -396,25 +418,23 @@ This almost completes our survey, we only need some additional information about
 
 **[race]** What racial or ethnic group best describes you?
 
-1. White
-2. Black or African-American
-3. Hispanic or Latino
-4. Native American
-5. Asian
-6. Middle eastern
-7. Mixed
-8. Other
+1. Asian/Pacific Islanders
+2. Black or African-American (non-Hispanic)
+3. Caucasian/White (non-Hispanic)
+4. Hispanic or Latino
+5. Middle eastern
+6. Native American or Aleut
+7. Other
 
 **[educ]** What is the highest level of education that you have completed?
 
 1. Less than a high school diploma
 2. Graduated high school or GED
-3. Graduated two-year college
-4. Some college but no college degree
+3. Some college but no college degree
+4. Graduated 2-year college
 5. Graduated 4-year college
 6. Completed post-graduate or professional school, with degree
-7. Other
-8. Don't know
+7. Don't know
 
 **[income]** Thinking back over the last year, what was your family's annual income?
 
@@ -426,3 +446,28 @@ This almost completes our survey, we only need some additional information about
 6. $100,000 - $119,999
 7. $120,000 or more
 8. Prefer not to say
+
+**[marital]** Which of the following best describes your marital status?
+
+1. Single, never married
+2. Married
+3. Divorced
+4. Separated
+5. Widowed
+6. Living with partner
+
+**[church]** Not counting weddings and funerals, how often do you attend religious services?
+
+1. Never
+2. Less than once a year
+3. Once a year
+4. Several times a year
+5. Once a month
+6. Two to three times a month
+7. Nearly every week
+8. Every week
+9. More than once per week
+
+**[comments]** Thank you for answering our survey. Do you have any comments for us?
+
+- *TEXTBOX*
