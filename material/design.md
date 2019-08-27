@@ -60,23 +60,6 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[smedia_pol]** *(show same response options for each)* And how often do you view *political* content on these platforms?
-
-- YouTube
-- Facebook
-- Instagram
-- Twitter
-- Tumblr
-
-1. Several times a day
-2. About once a day
-3. 3 to 6 days a week
-4. 1 to 2 days a week
-5. Every few weeks
-6. Less often
-7. Never
-8. Don’t Know
-
 **[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels:
 
 - Fox News
@@ -157,7 +140,7 @@ Next, we would like you to answer a few questions about your political viewpoint
 **[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
 
 1. Economy
-2. Federal Deficit
+2. Terrorism
 3. Immigration
 4. Health Care
 5. Environment

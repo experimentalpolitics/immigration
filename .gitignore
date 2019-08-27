@@ -1,6 +1,6 @@
 ﻿# temp files
 .~*#
-.DS?Store
+.DS_Store
 
 # Vignette examples
 /VignetteExamples/
