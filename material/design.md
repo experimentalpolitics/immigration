@@ -60,7 +60,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-**[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels:
+**[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels (including online content)?
 
 - Fox News
 - MSNBC
