@@ -43,7 +43,7 @@
 
 First, we want to ask a few questions about your current media diet.
 
-**[smedia]** *(show same response options for each)* On average, how often do you use the following social media platforms?
+**[smedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms?
 
 - YouTube
 - Facebook
