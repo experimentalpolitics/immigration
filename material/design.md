@@ -1,4 +1,4 @@
-# Study Design & Questionnaire
+# Media Usage and News Consumption: Study Design & Questionnaire
 
 ## Survey Flow Overview
 
@@ -18,14 +18,15 @@
 ## Treatment Overview
 
 - **Basic design:** 3-arm (choice/assigned + control)
-    - _Treatment (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
-    - _Control condition:_ skip tweet & full story
+    - _Treatment (choice/assigned):_ Participants are either asked to choose whether they would like to view a tweet by Fox News or MSNBC (_choice condition_), or they are randomly assigned to one of them (_assigned condition_). The Tweet links to a news story about the positive economic impact of legal immigration to the US. After viewing the tweet, participants are asked to read the full article. Irrespective of the source (Fox News or MSNBC), the content of the tweet is held constant. 
+    - _Control condition:_ Skip tweet & full story
 
 - **Outcome measures:**
-    - Do participants try to click on the tweet? (i.e., multiple clicks)
+    - Do participants try to click on the tweet?
     - How much time do participants spend viewing the tweet?
-    - How much time do participants spend on the full article?
+    - How much time do participants spend reading the full article?
     - Basic comprehension / attention check.
+    - Attitudes towards article, sharing with others?
     - Attitudes towards immigration (see post-treatment section).
     - Trust in news sources (see post-treatment section).
 
@@ -33,8 +34,8 @@
 
 - *Title:* Media Usage and News Consumption
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
-- *Length:* TBD
-- *Reward:* TBD (>$0.50)
+- *Length:* <30 min
+- *Reward:* $2
 - *Requirements:* 90% approval rate, location US
 
 ## Pre-treatment measures
@@ -123,7 +124,7 @@ Next are some questions about different groups in our society.
 - Generation X (born 1965-1976)
 - Millennials (born 1977-1995)
 
-(1) Generous - (7) selfish, (8) DK
+(1) Generous - (7) Selfish, (8) DK
 
 ### Block 3: Political attitudes & participation
 
@@ -182,14 +183,14 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 
 ### Instructions for participants
 
-- **Treatment 1 = choice**
+- **If treatment condition = choice**
     - In the following section, we are going to show you a random tweet drawn from the accounts of two large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
     - **[choice]** _(randomize order)_ From which Twitter account would you like to view a random tweet?
         
         1. Fox News
         2. MSNBC
 
-- **Treatment 1 = assigned**
+- **If treatment condition = assigned**
     - In the following section, we are going to show you a random tweet drawn from the accounts of several large news organizations. Afterwards, we are going to ask you some questions about the content of the news story.
     - **[assigned]** _(assignment to account invisible to participant)_
         
@@ -232,7 +233,7 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 ### Attention checks & article evaluation
 
-Please answer the following questions about the tweet as well as the article you just read. _(randomize order of questions)_
+Please answer the following questions about the tweet as well as the article you just read.
 
 **[source]** *(randomize order)*  Which Twitter account / news organization published the story?
 
@@ -274,7 +275,7 @@ Please answer the following questions about the tweet as well as the article you
 - Immigrant story: [link](https://www.cnbc.com/2017/05/02/how-successful-immigrant-entrepreneurs-are-changing-chicago-and-the-us.html)
 - Graph: [link](https://www.inc.com/arnobio-morelix/inc-entrepreneurship-index-2018-q1.html)
 - Immigrant Statistics: [link](https://www.newamericaneconomy.org/methodology/)
-    - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau.
+    <!-- - This data is aggregated by a group called The New American Economy; it gathers the data from the US Census, many different local OMBs, the  National Bureau of Economic Research, and others. Not 100% sure we can say this was 'released' by the US Census bureau. -->
 
 <!-- \newpage -->
 
