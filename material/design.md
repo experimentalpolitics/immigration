@@ -452,3 +452,5 @@ This almost completes our survey, we only need some additional information about
 **[comments]** Thank you for answering our survey. Do you have any comments for us?
 
 - *TEXTBOX*
+
+**[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).

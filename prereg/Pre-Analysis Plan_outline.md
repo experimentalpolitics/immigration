@@ -119,4 +119,4 @@ halted and the treatment is administered to all study participants)
 - [ ] What are the primary model specifications? Include this in the PAP.
 - [ ] If multiple hypothesis testing will be done, how will this be accounted for in the analysis?
 
-## 4. Conclusion 
+## 4. Conclusion
