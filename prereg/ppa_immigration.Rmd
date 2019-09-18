@@ -8,7 +8,8 @@ author:
 - Shin Young Park
 date: \today
 abstract:
-  There is a growing literature in political science that explores the role social media plays in fostering misperceptions about important political issues. Focusing on immigration, recent studies (e.g., Hopkins et al. 2019) found that providing corrective information can mitigate misperceptions among citizens. However, these corrections have little to no effects on underlying attitudes. Our study contributes to this active research area by examining differential effects of corrective information from different media sources by employing a modified Preference-Incorporating Choice and Assignment Design (De Benedictis-Kessner et al. 2019).
+  "Various important issues at the center of today's politics---such as climate change and immigration---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. While these corrections have been shown to be effective in reducing misperceptions themselves, however, they appear to have little to no effects on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode of corrective information moderates their effectiveness."
+bibliography: '../../bibliography/Lab.bib'
 output: pdf_document
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
@@ -20,13 +21,13 @@ knitr::opts_chunk$set(echo = TRUE, fig.height = 2.5, fig.width = 5)
 
 # 1. Summary
 
-This document describes the pre-analysis plan for an online survey on media usage and news consumption regarding political issues. The survey seeks to learn about media viewing habits of individuals, especially on social media platforms, and how this impacts their political attitudes. In this survey experiment, participants will answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants will be asked to choose, or be assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
+This document describes the pre-analysis plan for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of immigration. In the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants will be asked to choose, or be assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
 
 # 2. Research Design
 
 ## 2.1 Hypotheses
 
-The survey experiment is designed based on existing research that examines the relationship between corrective information and attitude change. Some studies show that correcting misinformation does not always lead to attitude change (Hopkins et al. 2019; Swire-Thompson et al. 2019) while others find that media can persuade people to change their attitudes under under certain conditions (e.g. De Benedictis-Kessner et al. 2019). 
+The survey experiment is designed based on existing research that examines the relationship between corrective information and attitude change. Some studies show that correcting misinformation does not always lead to attitude change @hopkins2019muted (Hopkins et al. 2019; Swire-Thompson et al. 2019) while others find that media can persuade people to change their attitudes under under certain conditions (e.g. De Benedictis-Kessner et al. 2019). 
 
 To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: information seeking and information interpreting. 
 
@@ -124,4 +125,127 @@ Sampling and Procedures, data collection -> Mturk
 **Check list**
 - [ ] Justification of effect size used in power calculations
 
+```{r}
+library(DeclareDesign)
+
+N <- 550
+outcome_means <- c(0, .1, .3)
+sd_i <- 1
+
+population <- declare_population(
+  N = N, u = rnorm(N, sd = sd_i))
+
+potential_outcomes <- declare_potential_outcomes(
+  formula = Y ~ outcome_means[1] * (Z == "0") + 
+    outcome_means[2] * (Z == "1") + 
+    outcome_means[3] * (Z == "2") + u, 
+  conditions = c("0", "1", "2"), 
+  assignment_variables = Z)
+
+estimand <- declare_estimands(
+  ate_Y_1_0 = mean(Y_Z_1 - Y_Z_0), 
+  ate_Y_2_0 = mean(Y_Z_2 - Y_Z_0), 
+  ate_Y_2_1 = mean(Y_Z_2 - Y_Z_1))
+
+assignment <- declare_assignment(
+  num_arms = 3, 
+  conditions = c("0", "1", "2"), 
+  assignment_variable = Z)
+
+reveal_Y <- declare_reveal(
+  assignment_variables = Z)
+
+estimator <- declare_estimator(
+  handler = function(data) {
+    estimates <- rbind.data.frame(
+      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "1"), 
+      ate_Y_2_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "2"),
+      ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "1", condition2 = "2"))
+    names(estimates)[names(estimates) == "N"] <- "N_DIM"
+    estimates$estimator_label <- c("DIM (Z_1 - Z_0)", "DIM (Z_2 - Z_0)", "DID (Z_2 - Z_1)")
+    estimates$estimand_label <- rownames(estimates)
+    estimates$estimate <- estimates$coefficients
+    estimates$term <- NULL
+    return(estimates)
+  })
+
+multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + estimand + estimator
+
+# single draw of simulated data
+head(draw_data(multi_arm_design))
+
+# display estimates for single draw
+draw_estimates(multi_arm_design)
+
+# diagnose design based on 500 simulations
+# diagnosis <- diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+#   select = c("power", "bias","mean_estimate")))
+# diagnosis
+```
+
+```{r}
+### conditional effects depending on media preference (ACTE following Knox)
+# Q: take into account participants who are indifferent?
+# Q: add control condition (no exposure at all)?
+# Q: S should not be randomly assigned?
+
+Nforced <- round(N/3)
+Sfox_Afox <- .2 # note: S = preferred treatment, A = actual treatment
+Sfox_Amsnbc <- .0
+Smsnbc_Afox <- .3
+Smsnbc_Amsnbc <- .4
+sd_i <- 1
+
+population <- declare_population(
+  N = Nforced, u = rnorm(Nforced, sd = sd_i))
+
+potential_outcomes <- declare_potential_outcomes(
+  formula = Y ~ 0 + 
+    Sfox_Afox * (Z == "1") + 
+    Sfox_Amsnbc * (Z == "2") + 
+    Smsnbc_Afox * (Z == "3") + 
+    Smsnbc_Amsnbc * (Z == "4") + u, 
+  conditions = c("1", "2", "3","4"), 
+  assignment_variables = Z)
+
+estimand <- declare_estimands(
+  acte_Y_fox = mean(Y_Z_1 - Y_Z_2), 
+  acte_Y_msnbc = mean(Y_Z_4 - Y_Z_3))
+
+assignment <- declare_assignment(
+  num_arms = 4, 
+  conditions = c("1", "2", "3", "4"), 
+  assignment_variable = Z)
+
+reveal_Y <- declare_reveal(
+  assignment_variables = Z)
+
+estimator <- declare_estimator(
+  handler = function(data) {
+    estimates <- rbind.data.frame(
+      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, condition1 = "2", condition2 = "1"), 
+      acte_Y_msnbc = difference_in_means(formula = Y ~ Z, data = data, condition1 = "3", condition2 = "4"))
+    names(estimates)[names(estimates) == "N"] <- "N_DIM"
+    estimates$estimator_label <- c("DIM (Z_1 - Z_2)", "DIM (Z_4 - Z_3)")
+    estimates$estimand_label <- rownames(estimates)
+    estimates$estimate <- estimates$coefficients
+    estimates$term <- NULL
+    return(estimates)
+  })
+
+multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + estimand + estimator
+
+# single draw of simulated data
+head(draw_data(multi_arm_design))
+
+# display estimates for isngle draw
+draw_estimates(multi_arm_design)
+
+# diagnose design based on 500 simulations
+# diagnosis <- diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+#   select = c("power", "bias","mean_estimate")))
+# diagnosis
+```
+
+# References
 
