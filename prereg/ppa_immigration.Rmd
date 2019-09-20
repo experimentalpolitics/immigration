@@ -1,6 +1,6 @@
 ---
 title: 'Pre-Analysis Plan: Media Usage and News Consumption'
-author: 
+author:
 - Patrick W. Kraft
 - Nicholas R. Davis
 - Amanda J. Heideman
@@ -27,31 +27,51 @@ This document describes the pre-analysis plan for an online survey experiment on
 
 ## 2.1 Hypotheses
 
-The survey experiment is designed based on existing research that examines the relationship between corrective information and attitude change. Some studies show that correcting misinformation does not always lead to attitude change @hopkins2019muted (Hopkins et al. 2019; Swire-Thompson et al. 2019) while others find that media can persuade people to change their attitudes under under certain conditions (e.g. De Benedictis-Kessner et al. 2019). 
+The survey experiment is designed based on existing research that examines the relationship between corrective information and attitude change. Some studies show that correcting misinformation does not always lead to attitude change @hopkins2019muted (Hopkins et al. 2019; Swire-Thompson et al. 2019) while others find that media can persuade people to change their attitudes under certain conditions (e.g. De Benedictis-Kessner et al. 2019).
 
-To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: information seeking and information interpreting. 
+To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: information seeking and information interpreting.
 
 Selective exposure to information via different media sources may lead individuals to engage in a biased search process, seeking out information that supports their preconceptions and avoiding evidence that undercuts their beliefs (see Taber and Lodge 2006). This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
 
-_H 1: When free to choose what information they will expose themselves to, people will seek out confirming over disconfirming arguments._
+_H1: When free to choose what information they will expose themselves to, people will seek out confirming over disconfirming arguments._
 
 _H2: Allowing people to choose their preferred information source makes corrective information more effective._
 
 [Lit reviews on preferred info source and persuasion]
 
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned corrective information. 
+In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned corrective information.
 
-However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Lodge and Taber 2006). Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes. 
+However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Lodge and Taber 2006). Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
 
-_H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs._ 
+_H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs._
 
 [Lit review on the effect of cues/heuristics on interpreting information]
 
 We expect that citizens are more likely to alter their attitudes when the source is perceived as sympathetic to ideological predispositions.
 
+In addition to these three main hypotheses, we also develop some other hypotheses based on some secondary outcome measures:
+
+_H4: Those participants who receive the tweet and story from a 'friendly' source are more likely to click on the link including in the tweet without being prompted to do so._
+
+In our design, participants are not prompted to click the link which is included in the tweet; instead, to move forward, the participants must click the continue arrow found on the bottom of the survey.  If a participant were to click this link, we expect that this participant is more engaged with the subject matter, potentially because the source aligns with their priors.
+
+_H5: Those participants who are given the opportunity to choose the tweet and article will spend more time reading both the tweet and article compared to those who were assigned a source._
+
+<!--
+Could someone take a look at H5 - H7. I am having a difficult time differentiating how the effect of choice will impact these 3 above and beyond the impact of just choosing a news source which is similar to your priors
+-->
+
+_H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source._
+
+
+
+_H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source._
+
+
+
 ## 2.2 Treatment Effects and Measurement
 
-- **Basic design:** 3-arm (choice/assigned + control)
+- **Basic design:** 3-arm (choice or assigned + control)
 
 - _Treatment (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
 - _Control condition:_ skip tweet & full story
@@ -74,13 +94,14 @@ Finally, if a participant is randomly assigned to the control group, he/she woul
 
 ## 2.4 Main Variables of Interest
 
-Ultimately, we have two main variables of interest which coincide with our three main hypotheses found above. Our first variable of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or received FoxNews versus MSNBC. In the end, we would expect those that read a news story from a source which was consistent with their priors to update their views positively toward immigrants, given that the story has a pro-immigrant lean (H3). Additionally, we would expect that those who could choose their source would pick the source which is similar to their current media diet (H1). 
+Ultimately, we have two main variables of interest which coincide with our three main hypotheses found above. Our first variable of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or received FoxNews versus MSNBC. In the end, we would expect those that read a news story from a source which was consistent with their priors to update their views positively toward immigrants, given that the story has a pro-immigrant lean (H3). Additionally, we would expect that those who could choose their source would pick the source which is similar to their current media diet (H1).
+
 Our second major variable of interest takes this analysis one step further. Instead of simply looking at the differences between the two sources, we look at the difference-in-differences between those who were allowed to choose their source and those who were assigned (H2). This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
 
 In addition to these two main outcomes, we also evaluate four other outcome measures and conduct a simple manipulation check:
 
-Click on the Link Outcome:
-	
+**Click on the Link Outcome:**
+
 The first outcome measure we can capture is whether or not the participant voluntarily clicks on the link included in the tweet.  Because the participants will never be prompted to click this link within the directions of the survey, their willingness to do so may help us to measure their level of engagement with the content.
 
 **Time Spent on the Tweet and Story Outcome:**
@@ -89,7 +110,7 @@ We will also measure the amount of time that individuals spend reading the tweet
 
 **Sharing Outcome:**
 
-Our fourth outcome measure will look at the likelihood that the participant would share this story, either with a friend or on social media, or if he/she would be likely to seek out more information regarding the topic of the tweet and story. This measure aligns with recent research (De Benedictis-Kessner et al. 2019) and may be used to capture differences in the propensity to share between those who prefer one source over the other and between those who could choose and those who were assigned a source. 
+Our fourth outcome measure will look at the likelihood that the participant would share this story, either with a friend or on social media, or if he/she would be likely to seek out more information regarding the topic of the tweet and story. This measure aligns with recent research (De Benedictis-Kessner et al. 2019) and may be used to capture differences in the propensity to share between those who prefer one source over the other and between those who could choose and those who were assigned a source.
 
 **Evaluation of the Article Outcome:**
 
@@ -101,7 +122,7 @@ In order to ensure that the tweet and vignette were actually read, we have inclu
 
 ## 2.5 Details of Study
 
-Sampling and Procedures, data collection -> Mturk 
+Sampling and Procedures, data collection -> Mturk
 
 ### Intervention
 
@@ -136,20 +157,20 @@ population <- declare_population(
   N = N, u = rnorm(N, sd = sd_i))
 
 potential_outcomes <- declare_potential_outcomes(
-  formula = Y ~ outcome_means[1] * (Z == "0") + 
-    outcome_means[2] * (Z == "1") + 
-    outcome_means[3] * (Z == "2") + u, 
-  conditions = c("0", "1", "2"), 
+  formula = Y ~ outcome_means[1] * (Z == "0") +
+    outcome_means[2] * (Z == "1") +
+    outcome_means[3] * (Z == "2") + u,
+  conditions = c("0", "1", "2"),
   assignment_variables = Z)
 
 estimand <- declare_estimands(
-  ate_Y_1_0 = mean(Y_Z_1 - Y_Z_0), 
-  ate_Y_2_0 = mean(Y_Z_2 - Y_Z_0), 
+  ate_Y_1_0 = mean(Y_Z_1 - Y_Z_0),
+  ate_Y_2_0 = mean(Y_Z_2 - Y_Z_0),
   ate_Y_2_1 = mean(Y_Z_2 - Y_Z_1))
 
 assignment <- declare_assignment(
-  num_arms = 3, 
-  conditions = c("0", "1", "2"), 
+  num_arms = 3,
+  conditions = c("0", "1", "2"),
   assignment_variable = Z)
 
 reveal_Y <- declare_reveal(
@@ -158,7 +179,7 @@ reveal_Y <- declare_reveal(
 estimator <- declare_estimator(
   handler = function(data) {
     estimates <- rbind.data.frame(
-      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "1"), 
+      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "1"),
       ate_Y_2_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "2"),
       ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "1", condition2 = "2"))
     names(estimates)[names(estimates) == "N"] <- "N_DIM"
@@ -200,21 +221,21 @@ population <- declare_population(
   N = Nforced, u = rnorm(Nforced, sd = sd_i))
 
 potential_outcomes <- declare_potential_outcomes(
-  formula = Y ~ 0 + 
-    Sfox_Afox * (Z == "1") + 
-    Sfox_Amsnbc * (Z == "2") + 
-    Smsnbc_Afox * (Z == "3") + 
-    Smsnbc_Amsnbc * (Z == "4") + u, 
-  conditions = c("1", "2", "3","4"), 
+  formula = Y ~ 0 +
+    Sfox_Afox * (Z == "1") +
+    Sfox_Amsnbc * (Z == "2") +
+    Smsnbc_Afox * (Z == "3") +
+    Smsnbc_Amsnbc * (Z == "4") + u,
+  conditions = c("1", "2", "3","4"),
   assignment_variables = Z)
 
 estimand <- declare_estimands(
-  acte_Y_fox = mean(Y_Z_1 - Y_Z_2), 
+  acte_Y_fox = mean(Y_Z_1 - Y_Z_2),
   acte_Y_msnbc = mean(Y_Z_4 - Y_Z_3))
 
 assignment <- declare_assignment(
-  num_arms = 4, 
-  conditions = c("1", "2", "3", "4"), 
+  num_arms = 4,
+  conditions = c("1", "2", "3", "4"),
   assignment_variable = Z)
 
 reveal_Y <- declare_reveal(
@@ -223,7 +244,7 @@ reveal_Y <- declare_reveal(
 estimator <- declare_estimator(
   handler = function(data) {
     estimates <- rbind.data.frame(
-      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, condition1 = "2", condition2 = "1"), 
+      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, condition1 = "2", condition2 = "1"),
       acte_Y_msnbc = difference_in_means(formula = Y ~ Z, data = data, condition1 = "3", condition2 = "4"))
     names(estimates)[names(estimates) == "N"] <- "N_DIM"
     estimates$estimator_label <- c("DIM (Z_1 - Z_2)", "DIM (Z_4 - Z_3)")
@@ -248,4 +269,3 @@ draw_estimates(multi_arm_design)
 ```
 
 # References
-
