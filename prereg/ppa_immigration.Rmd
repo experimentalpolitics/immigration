@@ -8,48 +8,99 @@ author:
 - Shin Young Park
 date: \today
 abstract:
-  "Various important issues at the center of today's politics---such as climate change and immigration---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. While these corrections have been shown to be effective in reducing misperceptions themselves, however, they appear to have little to no effects on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode of corrective information moderates their effectiveness."
+  "Various important issues at the center of today's politics---such as climate change and immigration---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. While such corrections have been shown to be effective in reducing misperceptions, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode of corrective information moderates their effectiveness. In our experimental design, respondents are exposed to a news article about immigration reported by either Fox News or MSNBC. The main treatment consists of either assigning or allowing free-choice of the respective media source. In order to isolate the effect of delivery mode and messenger, the news content is held constant across news sources."
 bibliography: '../../bibliography/Lab.bib'
-output: pdf_document
+output: 
+  pdf_document:
+    number_sections: true
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.height = 2.5, fig.width = 5)
+library(DeclareDesign)
 ```
 
-# 1. Summary
+# Summary
 
 This document describes the pre-analysis plan for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of immigration. In the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants will be asked to choose, or be assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
 
-# 2. Research Design
+# Research Design
 
-## 2.1 Hypotheses
+## Ethics
 
-The survey experiment is designed based on existing research that examines the relationship between corrective information and attitude change. Some studies show that correcting misinformation does not always lead to attitude change @hopkins2019muted (Hopkins et al. 2019; Swire-Thompson et al. 2019) while others find that media can persuade people to change their attitudes under certain conditions (e.g. De Benedictis-Kessner et al. 2019).
+This study has been granted exempt status by the University of Wisconsin-Milwaukee's Institutional Review Board (#20.044) and has been granted approval to waive documentation of informed consent. All participants could stop participation at any time in the study and were debriefed at the end.
 
-To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: information seeking and information interpreting.
+## Sample
 
-Selective exposure to information via different media sources may lead individuals to engage in a biased search process, seeking out information that supports their preconceptions and avoiding evidence that undercuts their beliefs (see Taber and Lodge 2006). This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
+This study will be conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 30 minutes and the reward will be $2. MTurk workers are required to have a 90% approval rate and have to be located in the United States in order to be eligible to participate. In line with recent recommendations, we are going to identify and screen out bots [@kennedy2018shape].
 
-_H1: When free to choose what information they will expose themselves to, people will seek out confirming over disconfirming arguments._
+<!-- Add more details on how to identify bots -->
+
+## Overview
+
+Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by [@benedictis2019persuading] and [@knox2019design]. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition will select whether he/she wants to see a recent breaking news tweet from either FoxNews or MSNBC. Subsequently, participants are asked to read the article described in the tweet, which focuses on immigrant-owned businesses in the US. In the forced exposure condition, participatns will not have an option to select which news organization (FoxNews or MSNBC) the tweet and article come from. Finally, if a participant is randomly assigned to the control group, he/she would move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes and behavior) to the post-treatment battery (questions on attitudes toward immigrant taxation and jobs, and trust in different media sources). Ultimately, this group would completely skip the treatment of either selecting a tweet and story or being forced to read it from the two sources. For more details about the design, see Figure 1 above as well as the full questionnaire including all treatment conditions at the end of this pre-anaöysis plan.
+
+![Survey Flow](Lab-Graphic.jpg)
+
+## Outcome measures
+
+We ask several questions that measure immigration policy attitudes as well as the perceived economic effect of immigration (see full questions below). Outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
+
+Our main outcome of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or were assigned to FoxNews versus MSNBC. In general, we expect those who read a news story from a trusted news source are more inclined to report more positive views towards immigrants, given that the story has a pro-immigrant lean. Additionally, we expect that those who could choose their source are more likely to pick the source which is similar to their current media diet.
+
+Our second major variable of interest takes this analysis one step further. Instead of simply looking at the differences between the two sources, we look at the difference-in-differences between those who were allowed to choose their source and those who were assigned (H2). This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
+
+In addition to these two main comparisons, we evaluate four additional outcome measures and conduct a simple manipulation check:
+
+**Click on the Link Outcome:**
+
+The first outcome measure we can capture is whether or not the participant voluntarily clicks on the link included in the tweet.  Because the participants will never be prompted to click this link within the directions of the survey, their willingness to do so may help us to measure their level of engagement with the content.
+
+**Time Spent on the Tweet and Story Outcome:**
+
+We will also measure the amount of time that individuals spend reading the tweet and story.  Although the time spent on the tweet will not be very informative on its own, it may allow us to capture non-compliance.  The next button on the survey will not appear until ten seconds have passed; therefore, if we record the time, we will be able to tell if the respondent was uninterested in engaging in the article at all. 
+
+<!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
+
+**Sharing Outcome:**
+
+Our fourth outcome measure will look at the likelihood that the participant would share this story, either with a friend or on social media, or if he/she would be likely to seek out more information regarding the topic of the tweet and story. This measure aligns with recent research [@benedictis2019persuading] and may be used to capture differences in the propensity to share between those who prefer one source over the other and between those who could choose and those who were assigned a source.
+
+**Evaluation of the Article Outcome:**
+
+Our final outcome measure will be a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.  This measure should help us further determine the impact of the main treatment: whether the participants’ ability to choose his/her source had a significant difference on immigration attitudes compared to those who were assigned to it.
+
+**Manipulation Check:**
+
+In order to ensure that the tweet and vignette were actually read, we have included a brief manipulation check. Here, those who were in the treatment groups will read and respond to two specific questions about the article to ensure that they read and understood the material.
+
+## Hypotheses
+
+Previous research examining the relationship between corrective information and attitude change showed that correcting misinformation does not always lead to attitude change [@hopkins2019muted, @thompson2019might]. However, others find that media can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading].
+
+To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: how people seek out information and how it is ultimately interpreted.
+
+Selective exposure to information via different media sources may lead individuals to engage in a biased search process, seeking out information that supports their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
+
+_H1: When free to choose what information they will expose themselves to, people will seek out information sources that are more likely to be consistent with their prior._
 
 _H2: Allowing people to choose their preferred information source makes corrective information more effective._
 
-[Lit reviews on preferred info source and persuasion]
+<!-- [Lit reviews on preferred info source and persuasion] -->
 
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned corrective information.
+In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information.
 
-However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Lodge and Taber 2006). Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
+However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information [@Taber2006]. Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
 
 _H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs._
 
-[Lit review on the effect of cues/heuristics on interpreting information]
+<!-- [Lit review on the effect of cues/heuristics on interpreting information] -->
 
 We expect that citizens are more likely to alter their attitudes when the source is perceived as sympathetic to ideological predispositions.
 
-In addition to these three main hypotheses, we also develop some other hypotheses based on some secondary outcome measures:
+In addition to these three main hypotheses, we also develop some additional hypotheses based on our secondary outcome measures:
 
 _H4: Those participants who receive the tweet and story from a 'friendly' source are more likely to click on the link including in the tweet without being prompted to do so._
 
@@ -63,93 +114,28 @@ Could someone take a look at H5 - H7. I am having a difficult time differentiati
 
 _H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source._
 
-
-
 _H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source._
 
 
+# Estimation strategy
 
-## 2.2 Treatment Effects and Measurement
+## Statistical significance
 
-- **Basic design:** 3-arm (choice or assigned + control)
+Throughout this study, we will use two-sided tests with an $\alpha$-value of 0.05 as the cutoff for statistical significance. In our graphical displays we will additionally plot 90% intervals to signal statistical significance at $p<0.10$.
 
-- _Treatment (choice/assigned):_ Before being able to view their contents, participants are either asked to choose between a Fox News or MSNBC tweet, or they are randomly assigned to one of them. In any case, the content of the tweet is held constant. After reading the tweet, participants are asked to read the full article linked in the tweet.
-- _Control condition:_ skip tweet & full story
+## Missing data
 
-- **Outcome measures:**
-	- Do participants try to click on the tweet? (i.e., multiple clicks)
-	- How much time do participants spend viewing the tweet?
-	- How much time do participants spend on the full article?
-	- Basic comprehension / attention check.
-	- Attitudes towards immigration (see post-treatment section).
-	- Trust in news sources (see post-treatment section).
+Respondents who report "don't know" on the outcome measures (if applicable) or who skipped the question will be treated as missing and excluded from the respective analysis (basic listwise deletion). While we are going to use the manipulation checks to evaluate whether respondents read the information provided to them, we decided not to drop respondents who failed to pass the manipulation checks in the subsequent analyses [see for example @aronow2018note].
 
-## 2.3 Our Design
+## Main analyses
 
-In our design, we randomly assign participants to a free choice treatment condition, a forced exposure treatment condition, or a control group. If one is put into the free choice condition, that participant will select whether he/she wants to see a recent breaking news tweet from either FoxNews or MSNBC and will subsequently be given a link to a full length article related to the tweet. In either case, the participant will receive the exact same full length vignette regarding immigrant owned businesses which has been “written” by a contributor for either FoxNews or MSNBC. Alternatively, if one is randomly assigned to the forced exposure group, he/she will not have an option to select which news organization (FoxNews or MSNBC) the tweet and article come from.
-
-Finally, if a participant is randomly assigned to the control group, he/she would move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes and behavior) to the post-treatment battery (questions on attitudes toward immigrant taxation and jobs, and trust in different media sources). Ultimately, this group would completely skip the treatment of either selecting a tweet and story or being forced to read it from the two sources. See the diagram below for more details about the design.
-
-![Survey Flow](Lab-Graphic.jpg)
-
-## 2.4 Main Variables of Interest
-
-Ultimately, we have two main variables of interest which coincide with our three main hypotheses found above. Our first variable of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or received FoxNews versus MSNBC. In the end, we would expect those that read a news story from a source which was consistent with their priors to update their views positively toward immigrants, given that the story has a pro-immigrant lean (H3). Additionally, we would expect that those who could choose their source would pick the source which is similar to their current media diet (H1).
-
-Our second major variable of interest takes this analysis one step further. Instead of simply looking at the differences between the two sources, we look at the difference-in-differences between those who were allowed to choose their source and those who were assigned (H2). This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
-
-In addition to these two main outcomes, we also evaluate four other outcome measures and conduct a simple manipulation check:
-
-**Click on the Link Outcome:**
-
-The first outcome measure we can capture is whether or not the participant voluntarily clicks on the link included in the tweet.  Because the participants will never be prompted to click this link within the directions of the survey, their willingness to do so may help us to measure their level of engagement with the content.
-
-**Time Spent on the Tweet and Story Outcome:**
-
-We will also measure the amount of time that individuals spend reading the tweet and story.  Although the time spent on the tweet will not be very informative on its own, it may allow us to capture non-compliance.  The next button on the survey will not appear until ten seconds have passed; therefore, if we record the time, we will be able to tell if the respondent was uninterested in engaging in the article at all. This may also help us to identify those people who were assigned to the source which was opposed to their priors – someone who watches MSNBC daily may be less likely to engage with a story which was “written” by a FoxNews contributor.
-
-**Sharing Outcome:**
-
-Our fourth outcome measure will look at the likelihood that the participant would share this story, either with a friend or on social media, or if he/she would be likely to seek out more information regarding the topic of the tweet and story. This measure aligns with recent research (De Benedictis-Kessner et al. 2019) and may be used to capture differences in the propensity to share between those who prefer one source over the other and between those who could choose and those who were assigned a source.
-
-**Evaluation of the Article Outcome:**
-
-Our final outcome measure will be a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.  This is another measure which follows closely the work done by De Benedictis-Kessner et al. and should help us further determine the impact of the main treatment: whether the participants’ ability to choose his/her source had a significant difference on immigration attitudes compared to those who were assigned.
-
-**Manipulation Check:**
-
-In order to ensure that the tweet and vignette were actually read, we have included a brief manipulation check as well. Here, those who were in the treatment groups will read and respond to two specific questions about the article to ensure that they read and understood the material. This outcome measure is an important aspect of any experimental design – if the participants are not taking in the information found in our treatment, we cannot accurately evaluate their outcome responses whatsoever.
-
-## 2.5 Details of Study
-
-Sampling and Procedures, data collection -> Mturk
-
-### Intervention
-
-**Check list**
-
-- [ ] Technical components of the intervention (e.g. drug or technology).
-- [ ] Differences between the treatment and control arms
-- [ ] flow chart (optional)
+To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference-in-difference between both treatment effects. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. Furthermore, we can detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions). Furthermore, we will explore the average choice-specific treatment effect (ACTE) following @knox2019design. However, our power analysis below suggests that our sample size is too small to reliably detect treatment effects.
 
 
-### Randomization
+### Power analysis: basic 3-arm design (ATE w/o differentiating sources)
 
-**Check list**
-
-- [ ] Detailed description of the mechanism for randomizing, including how the process will be safeguarded from tampering
-- [ ] Individual vs. clustered randomization?
-- [ ] Stratification variables?
-
-### Power calculations
-
-**Check list**
-- [ ] Justification of effect size used in power calculations
-
-```{r}
-library(DeclareDesign)
-
-N <- 550
+```{r, cache = TRUE}
+N <- 600
 outcome_means <- c(0, .1, .3)
 sd_i <- 1
 
@@ -179,37 +165,32 @@ reveal_Y <- declare_reveal(
 estimator <- declare_estimator(
   handler = function(data) {
     estimates <- rbind.data.frame(
-      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "1"),
-      ate_Y_2_0 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "0", condition2 = "2"),
-      ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, condition1 = "1", condition2 = "2"))
+      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "0", condition2 = "1"),
+      ate_Y_2_0 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "0", condition2 = "2"),
+      ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "1", condition2 = "2"))
     names(estimates)[names(estimates) == "N"] <- "N_DIM"
-    estimates$estimator_label <- c("DIM (Z_1 - Z_0)", "DIM (Z_2 - Z_0)", "DID (Z_2 - Z_1)")
+    estimates$estimator_label <- c("DIM (Z_1 - Z_0)", "DIM (Z_2 - Z_0)",
+                                   "DID (Z_2 - Z_1)")
     estimates$estimand_label <- rownames(estimates)
     estimates$estimate <- estimates$coefficients
     estimates$term <- NULL
     return(estimates)
   })
 
-multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + estimand + estimator
-
-# single draw of simulated data
-head(draw_data(multi_arm_design))
-
-# display estimates for single draw
-draw_estimates(multi_arm_design)
+multi_arm_design <- population + potential_outcomes + 
+  assignment + reveal_Y + estimand + estimator
 
 # diagnose design based on 500 simulations
-# diagnosis <- diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
-#   select = c("power", "bias","mean_estimate")))
-# diagnosis
+diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+  select = c("power", "bias")))
 ```
 
-```{r}
-### conditional effects depending on media preference (ACTE following Knox)
-# Q: take into account participants who are indifferent?
-# Q: add control condition (no exposure at all)?
-# Q: S should not be randomly assigned?
+### Power analysis: conditional effects depending on media preference (ACTE following Knox) 
 
+```{r, chache = TRUE}
 Nforced <- round(N/3)
 Sfox_Afox <- .2 # note: S = preferred treatment, A = actual treatment
 Sfox_Amsnbc <- .0
@@ -244,8 +225,10 @@ reveal_Y <- declare_reveal(
 estimator <- declare_estimator(
   handler = function(data) {
     estimates <- rbind.data.frame(
-      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, condition1 = "2", condition2 = "1"),
-      acte_Y_msnbc = difference_in_means(formula = Y ~ Z, data = data, condition1 = "3", condition2 = "4"))
+      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, 
+                                       condition1 = "2", condition2 = "1"),
+      acte_Y_msnbc = difference_in_means(formula = Y ~ Z, data = data, 
+                                         condition1 = "3", condition2 = "4"))
     names(estimates)[names(estimates) == "N"] <- "N_DIM"
     estimates$estimator_label <- c("DIM (Z_1 - Z_2)", "DIM (Z_4 - Z_3)")
     estimates$estimand_label <- rownames(estimates)
@@ -254,18 +237,439 @@ estimator <- declare_estimator(
     return(estimates)
   })
 
-multi_arm_design <- population + potential_outcomes + assignment + reveal_Y + estimand + estimator
-
-# single draw of simulated data
-head(draw_data(multi_arm_design))
-
-# display estimates for isngle draw
-draw_estimates(multi_arm_design)
+multi_arm_design <- population + potential_outcomes + 
+  assignment + reveal_Y + estimand + estimator
 
 # diagnose design based on 500 simulations
-# diagnosis <- diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
-#   select = c("power", "bias","mean_estimate")))
-# diagnosis
+diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+  select = c("power", "bias")))
 ```
+
+
+# Full Questionnaire
+
+## Survey Flow Overview
+
+- Pre-treatment measures:
+    - Media usage
+    - Stereotype battery
+    - Political attitudes & participation
+- Experimental manipulation:
+    - Tweets
+    - Full story
+    - Attention checks & article evaluation
+- Post-treatment measures:
+    - Attitudes towards immigration
+    - Trust in news sources
+    - Sociodemographics
+
+## Pre-treatment measures
+
+### Block 1: Media usage
+
+First, we want to ask a few questions about your current media diet.
+
+**[smedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms?
+
+- YouTube
+- Facebook
+- Instagram
+- Twitter
+- Tumblr
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+**[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels (including online content)?
+
+- Fox News
+- MSNBC
+- CNN
+- NBC
+- CBS
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+**[print]** *(show same response options for each, randomize order)* And how often do you read about articles about _politics_ in the following newspapers (online or offline)?
+
+- New York Times
+- Washington Post
+- Wall Street Journal
+- USA Today
+- New York Post
+
+1. Several times a day
+2. About once a day
+3. 3 to 6 days a week
+4. 1 to 2 days a week
+5. Every few weeks
+6. Less often
+7. Never
+8. Don’t Know
+
+### Block 2: Stereotype battery
+
+Next are some questions about different groups in our society.
+
+**[st_job]** *(show same response options for each, randomize order)* Do you think that people in the following groups tend to be "intelligent" or "unintelligent"?
+
+- Farmers
+- Teachers
+- Lawyers
+- Politicians
+
+(1) Intelligent - (7) Unintelligent, (8) DK
+
+**[st_race]** *(show same response options for each, randomize order)* And do you think that people in the following groups are "hard-working" or "lazy"?
+
+- Whites
+- Blacks
+- Hispanic-Americans
+- Asian-Americans
+
+(1) Hard-working - (7) Lazy, (8) DK
+
+**[st_age]** *(show same response options for each)* And do you think that people in the following groups are "generous" or "selfish"?
+
+- Silent Generation (born 1945 and before)
+- Baby Boomers (born 1946-1964)
+- Generation X (born 1965-1976)
+- Millennials (born 1977-1995)
+
+(1) Generous - (7) Selfish, (8) DK
+
+### Block 3: Political attitudes & participation
+
+Next, we would like you to answer a few questions about your political viewpoints.
+
+**[polint]** How often do you pay attention to what's going on in government and politics?
+
+1. Always
+2. Most of the time
+3. Sometimes
+4. Hardly at all
+5. Never
+
+**[problem]** *(randomize order)* What do you think are the most important problems facing this country? Please rank the following issues from the most important to the least important.
+
+1. Economy
+2. Terrorism
+3. Immigration
+4. Health Care
+5. Environment
+
+**[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
+
+1. Very liberal
+2. Liberal
+3. Slightly liberal
+4. Moderate
+5. Slightly conservative
+6. Conservative
+7. Very conservative
+8. Not sure
+
+**[pid]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
+
+1. Republican
+2. Democrat
+3. Independent
+4. Other
+
+**[pid_lean]** *(if [pid] == other | independent)*
+Do you think of yourself as CLOSER to the Republican party or to the Democratic party?
+
+1. Republican party
+2. Democratic party
+3. Neither party
+
+**[pid_rep/pid_dem]** *(if [pid] == Republican | Democrat)*
+Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
+
+1. Strong
+2. Not very strong
+
+## Experimental manipulation
+
+### Instructions for participants
+
+- **If treatment condition = choice**
+    - In the following section, we are going to show you a random tweet drawn from the accounts of two large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
+    - **[choice]** _(randomize order)_ From which Twitter account would you like to view a random tweet?
+        
+        1. Fox News
+        2. MSNBC
+
+- **If treatment condition = assigned**
+    - In the following section, we are going to show you a random tweet drawn from the accounts of several large news organizations. Afterwards, we are going to ask you some questions about the content of the news story.
+    - **[assigned]** _(assignment to account invisible to participant)_
+        
+        1. Fox News
+        2. MSNBC
+
+### Tweets
+
+![Fox News](../material/tweets/fox_popular.png){width=50%}
+
+![MSNBC](../material/tweets/msnbc_popular.png){width=50%}
+
+### Introduction for full story
+
+Next, we will show you the content of the article linked in the previous tweet. **Please read the story carefully.** Keep in mind that we will ask you questions about the content of the article afterwards.
+
+_There will be a brief pause on the next screen so you can read the story._ At the end of the pause, an arrow will appear at the bottom of the screen. Once the arrow appears, you may move on to the next screen of the survey by clicking on the arrow.
+
+### Full Story: Immigrant-owned Businesses on the Rise
+
+William Hall | [Fox News/MSNBC]
+
+A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
+
+These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
+
+![Percent of Immigrant Entrepreneurs](../material/fig/immig_entrepreneurs.png){width=45%}
+
+Eduardo Rodriguez, a 62 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000--less than half of the national average--the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez.  He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico.
+
+After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. "People seem to really like what we are doing, and I'm grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice -- we're fulfilling a niche market that people really want to buy from."
+
+Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors.
+
+"Our community is very strong and hard-working -- resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself -- Little Village is full of people who came to this country to achieve the American Dream."
+
+The Rodriguez's story is just one of many. As more immigrants look to open their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide more fuel to an already strong economy.
+
+*William Hall is a Business Reporter for [Fox News/MSNBC].*
+
+### Attention checks & article evaluation
+
+Please answer the following questions about the tweet as well as the article you just read.
+
+**[source]** *(randomize order)*  Which Twitter account / news organization published the story?
+
+1. Fox News
+2. MSNBC
+3. New York Times
+4. Wall Street Journal
+5. Other
+6. Don't know
+
+**[about]** *(randomize order)* Broadly speaking, what was the news story about?
+
+1. Immigrant-owned businesses
+2. Stock market development
+3. Innovation in the automotive industry
+4. Young entrepreneurs in Silicon Valley
+5. Don't know
+
+**[actions]** Thinking about the news article you just read, how likely would you be to:
+
+- Discuss the story with a friend
+- Forward the story to a friend or colleague via email
+- Post a link to the story on a social networking site, such as Facebook or Twitter
+- Seek out additional information from another source on the topic featured in the story
+
+(1) Very likely - (4) Not likely, (7) Not sure
+
+**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
+
+- [fair] (1) Fair - (5) Unfair
+- [hostile] (1) Hostile - (5) Friendly
+- [bad] (1) Bad - (5) Good
+- [skewed] (1) Skewed - (5) balanced
+- [american] (1) American - (5) Un-American
+- [accurate] (1) Accurate - (5) Inaccurate
+
+## Post-treatment measures
+
+### Block 1: Attitudes towards immigration
+
+_(only show this message in the control condition)_ In this section, we want to ask you a few questions about immigration.
+
+**[employ]** Across the United States, how many workers -- immigrant and US-born -- do you think are employed by immigrant-owned businesses?
+
+1. Less than 500,000
+2. 500,000 - 1 million
+3. 1 million - 5 million
+4. 5 million - 10 million
+5. More than 10 million
+
+**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year?
+
+1. Less than $500 billion
+2. $500 billion - $1 trillion
+3. $1 trillion - $1.5 trillion
+4. $1.5 trillion - $2 trillion
+5. More than $2 trillion
+
+_(only show this message in the treatment conditions)_ In this section, we want to ask you a few questions about immigration in general.
+
+**[immig]** Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be...?
+
+1. Increased a lot
+2. Increased a little
+3. Left the same
+4. Decreased a little
+5. Decreased a lot
+
+_(randomize order of remaining questions)_
+
+**[taxes]** Most people who come to live in the U.S. work and pay taxes.  They also use health and social services.  On balance, do you think people who come here take out more than they put in or put in more than they take out?
+
+- 0 (Generally take out more) - 10 (Generally put in more)
+
+**[taxes_oe]** Please explain your answer to the previous question in a few short sentences.
+
+- *TEXTBOX*
+
+**[jobs]** On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
+
+- 0 (Take jobs away) - 10 (Create additional jobs)
+
+**[jobs_oe]** Please explain your answer to the previous question in a few short sentences.
+
+- *TEXTBOX*
+
+### Block 2: Trust in news sources
+
+Let's briefly return to the different media sources mentioned at the beginning of the survey.
+
+**[tv_trust]** *(show same response options for each, randomize order)* Overall, how often can you trust the following TV channels that their political news reporting is accurate?
+
+- Fox News
+- MSNBC
+- CNN
+- NBC
+- CBS
+
+1. Always
+2. Most of the time
+3. About half the time
+4. Sometimes
+5. Never
+6. Don’t Know
+
+**[print_trust]** *(show same response options for each, randomize order)* And how often can you trust the following newspapers that their political reporting is accurate?
+
+- New York Times
+- Washington Post
+- Wall Street Journal
+- USA Today
+- New York Post
+
+1. Always
+2. Most of the time
+3. About half the time
+4. Sometimes
+5. Never
+6. Don’t Know
+
+### Block 3: Sociodemographics
+
+This almost completes our survey, we only need some additional information about your background.
+
+**[age]** What is your age?
+
+- *TEXTBOX*
+
+**[gender]** Do you consider yourself Male, Female, or other?
+
+1. Male
+2. Female
+3. Other
+
+**[usborn]** Were you born in the United States?
+
+1. Yes
+2. No
+
+**[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
+
+- *TEXTBOX*
+
+**[zip]** What is your zip code?
+
+- *TEXTBOX* *(response not required)*
+
+**[zip_time]** *(only ask if zip code is entered)* And how long have you lived at your current zip code?
+
+1. Less than a year
+2. 1 to 3 years
+3. 3 to 5 years
+4. More than 5 years
+5. Don't Know
+
+**[race]** What racial or ethnic group best describes you?
+
+1. Asian/Pacific Islanders
+2. Black or African-American (non-Hispanic)
+3. Caucasian/White (non-Hispanic)
+4. Hispanic or Latino
+5. Middle eastern
+6. Native American or Aleut
+7. Other
+
+**[educ]** What is the highest level of education that you have completed?
+
+1. Less than a high school diploma
+2. Graduated high school or GED
+3. Some college but no college degree
+4. Graduated 2-year college
+5. Graduated 4-year college
+6. Completed post-graduate or professional school, with degree
+7. Don't know
+
+**[income]** Thinking back over the last year, what was your family's annual income?
+
+1. Less than $20,000
+2. $20,000 - $39,999
+3. $40,000 - $59,999
+4. $60,000 - $79,999
+5. $80,000 - $99,999
+6. $100,000 - $119,999
+7. $120,000 or more
+8. Prefer not to say
+
+**[marital]** Which of the following best describes your marital status?
+
+1. Single, never married
+2. Married
+3. Divorced
+4. Separated
+5. Widowed
+6. Living with partner
+
+**[church]** Not counting weddings and funerals, how often do you attend religious services?
+
+1. Never
+2. Less than once a year
+3. Once a year
+4. Several times a year
+5. Once a month
+6. Two to three times a month
+7. Nearly every week
+8. Every week
+9. More than once per week
+
+**[comments]** Thank you for answering our survey. Do you have any comments for us?
+
+- *TEXTBOX*
+
+**[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).
+
+
 
 # References

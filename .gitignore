@@ -1,4 +1,7 @@
-﻿# temp files
+﻿# cache file for prereg markdown document
+prereg/*_cache/
+
+# temp files
 .~*#
 .DS_Store
 
