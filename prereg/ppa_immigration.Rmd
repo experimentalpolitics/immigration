@@ -82,6 +82,7 @@ For the main outcome measures described above (i.e., immigration attitudes and p
 - **H1a** [control vs. forced exposure]: Those who receive information from an assigned source are more likely to update their beliefs than those who are in the control group.
 - **H1b** [control vs. free choice]: Those who receive information from a chosen sources are more likely to update beliefs than those in the control group.
 
+This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
 Furthermore, we hypothesize that the free choice condition in ultimately more effective than the forced exposure condition, which leads to the following hypothesis:
 
 - **H1c** [forced exposure vs. free choice]: Allowing people to choose their preferred information source makes corrective information more effective. Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
@@ -132,15 +133,6 @@ Both participants who receive information from FoxNews and MSNBC will update the
 
 
 
-
-
-
-
-
-
-
-
-Our second major variable of interest takes this analysis one step further. Instead of simply looking at the differences between the two sources, we look at the difference-in-differences between those who were allowed to choose their source and those who were assigned (H2). This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
 
 Previous research examining the relationship between corrective information and attitude change showed that correcting misinformation does not always lead to attitude change [@hopkins2019muted, @thompson2019might]. However, others find that media can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading].
 
