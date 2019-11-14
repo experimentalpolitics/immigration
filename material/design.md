@@ -293,7 +293,7 @@ _(only show this message in the control condition)_ In this section, we want to 
 4. 5 million - 10 million
 5. More than 10 million
 
-**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year?
+**[sales]** Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year?
 
 1. Less than $500 billion
 2. $500 billion - $1 trillion

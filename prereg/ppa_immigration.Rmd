@@ -25,7 +25,7 @@ library(DeclareDesign)
 
 # Summary
 
-This document describes the pre-analysis plan for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of immigration. In the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants will be asked to choose, or be assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
+This document describes the planned analyses for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. As part of the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants are asked to choose, or are assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
 
 # Research Design
 
@@ -41,35 +41,80 @@ This study will be conducted using a sample of 600 participants recruited via Am
 
 ## Overview
 
-Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition will select whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. Subsequently, participants are asked to read the article described in the tweet, which focuses on immigrant-owned businesses in the US. In the forced exposure condition, participants will not have an option to select which news organization (FoxNews or MSNBC) the tweet and article come from. Finally, if participants are randomly assigned to the control group, they move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes and behavior) to the post-treatment battery (questions on attitudes toward immigrant taxation and jobs, and trust in different media sources). As such, this group skips the treatment of either selecting a tweet and story or being asked to read it entirely. For more details on the design, see Figure 1 above as well as the full questionnaire including all treatment conditions at the end of this pre-analysis plan.
+Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC) but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 above as well as the full questionnaire including all treatment conditions at the end of this pre-analysis plan.
 
 ![Survey Flow](Lab-Graphic.jpg)
 
 ## Outcome measures
 
-We ask several questions measuring immigration policy attitudes as well as the perceived economic effect of immigration (see full questions below). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
+We consider several outcome measures to capture immigration attitudes and how the news story is received (see full questions below). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
 
-**Economic impact of immigration:** The first outcome of interest addresses the perceived economic impact of legal immigration. The news article covers information on the number of people in the US who are employed by immigrant-owned businesses as well as the total number of sales of immigrant-owned businesses.
+**Economic impact of immigration:** Our first outcome of interest addresses the perceived economic impact of legal immigration. The news article includes specific information on the number of people in the US who are employed by immigrant-owned businesses as well as the total value of sales of immigrant-owned businesses. Substantively, we want to examine whether the news article is able to correct common factual misperceptions on these issues.
 
-**Attitudes towards immigration:** The second outcome of interest focuses on people's attitudes towards legal immigration. One item asks participants whether the number of immigrants should be increased or decreased (this item will be analyzed separately). Two additional items capture whether respondents believe whether immigrants contribute more to society (by paying taxes and create jobs) than they cost.
+**Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. We include one question asking participants whether the number of immigrants should be increased or decreased (this item will be analyzed individually). Two additional questions capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs. Together, the items will allow us to assess whether the correction of misperceptions is associated with subsequent attitude change.
 
-**Trust in news sources:** Lastly, we include a battery of items measuring trust in different news sources.
+**Trust in news sources:** Lastly, we include a battery of items measuring trust in different news sources. Since the content of the news article is held constant between sources, we can examine how exposure to an atypical news story (in this case published by FoxNews) impacts people's perception of the source itself.
 
-In addition to these main comparisons, we evaluate four additional outcome measures and conduct a simple manipulation check. Note that these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
+In addition to these main variables, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
 
-**Click on the Link Outcome:** The first outcome measure we can capture is whether or not the participant voluntarily clicks on the link included in the tweet.  Because the participants will never be prompted to click this link within the directions of the survey, their willingness to do so may help us to measure their level of engagement with the content.
+**Engagement with tweet:** As described above, the tweet shown to participants consists of a link to a news article. While the link itself is not active, we can capture whether participants nevertheless try to click on it.  Since participants are never asked explicitly to click on any links, their willingness to do so indicates the degree to which they are interested in further engaging with the content voluntarily.
 
-**Time Spent on the Tweet and Story Outcome:** We will also measure the amount of time that individuals spend reading the tweet and story.  Although the time spent on the tweet will not be very informative on its own, it may allow us to capture non-compliance.  The next button on the survey will not appear until ten seconds have passed; therefore, if we record the time, we will be able to tell if the respondent was uninterested in engaging in the article at all. 
+**Response latencies:** In order to further assess the extent to which respondents are interested in the article and comply with the instructions to read it, we will also measure the amount of time that individuals spend viewing the tweet and reading the news story.
 
 <!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
 
-**Sharing Outcome:** Our fourth outcome measure will look at the likelihood that the participant would share this story, either with a friend or on social media, or if he/she would be likely to seek out more information regarding the topic of the tweet and story. This measure aligns with recent research [@benedictis2019persuading] and may be used to capture differences in the propensity to share between those who prefer one source over the other and between those who could choose and those who were assigned a source.
+**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or if they would be likely to seek out more information regarding the topic of the tweet and story [see @benedictis2019persuading for similar items].
 
-**Evaluation of the Article Outcome:** Our final outcome measure will be a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.  This measure should help us further determine the impact of the main treatment: whether the participants’ ability to choose his/her source had a significant difference on immigration attitudes compared to those who were assigned to it.
+**Evaluation of the article:** Our final outcome measure consists of a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.
 
-**Manipulation Check:** In order to ensure that the tweet and vignette were actually read, we have included a brief manipulation check. Here, those who were in the treatment groups will read and respond to two specific questions about the article to ensure that they read and understood the material.
+**Manipulation Check:** In order to assess whether the tweet and news article were actually read by participants, we include a brief manipulation check. Specifically, respondents are asked which news organization published the story and what topic was covered by it.
 
 ## Hypotheses
+
+H1: When free to choose what information they will expose themselves to, people will seek out information sources that are more likely to be consistent with their priors.
+
+For the main outcome measures (i.e., those that are also included in the control group), our analysis will consist of three comparisons:
+
+1. **control vs. assigned source:** Those who receive information from an assigned source are more likely to update their beliefs than those who are in the control group.
+2. **control vs. free choice:** Those who receive information from a chosen sources are more likely to update beliefs than those in the control group.
+3. **(control vs. assigned source) vs. (control vs. free choice):** [which is essentially equivalent to assigned vs. free choice]
+
+Allowing people to choose their preferred information source makes corrective information more effective:
+
+H2: Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
+
+In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information. However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Taber and Lodge 2006). Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
+
+The next set of comparisons focuses on the sources themselves rather than the delivery method. This part would exclude the free choice arm of the experiment: 
+control vs. msnbc
+Participants that were assigned msnbc will update their beliefs more than the control group. 
+control vs. fox
+Participants that were assigned fox will update their beliefs more than the control group.
+msnbc vs. fox
+Participants who were assigned their preferred media choice: 
+H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs.
+
+Both participants who receive information from FoxNews and MSNBC will update their beliefs to a greater degree than the control group; however, those participants who were assigned a source which is closer to their real media diet are more likely to update their beliefs – a FoxNews consumer is more likely to update his beliefs after reading a FoxNews tweet and report than if he read this same report from MSNBC.
+
+
+We have some additional outcome measures (e.g., time spent on the article, sharing, clicking on the tweet), which are not included in the control group. Because of this, we can only compare the differences between the assigned vs free choice participants: 
+
+H4: Those participants who have the ability to choose the source are more likely to click on the link included in the tweet without being prompted to do so.
+
+H5: Those participants who are given the opportunity to choose the tweet and article will spend more time reading both the tweet and article compared to those who were assigned a source.
+
+H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source.
+
+H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source.
+
+I think that this is adequately covered in H3?
+msnbc vs. fox (in the assigned source arm)
+If msnbc was a preferred media choice of the participant, then the corrective information will be more effective.
+If msnbc was not a preferred media choice of the participant, then the corrective information will be less effective.
+If fox was a preferred media choice of the participant, then the corrective information will be more effective.
+If fox was not a preferred media choice of the participant, then the corrective information will be less effective
+
+
 
 Our main outcome of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or were assigned to FoxNews versus MSNBC. In general, we expect that those who could choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to change their attitudes in the direction of the news article.
 
@@ -114,82 +159,6 @@ _H6: Those participants who are given the opportunity to choose the tweet and ar
 _H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source._
 
 
-
-1 – 
-
-For the main outcome measures (i.e., those that are also included in the control group), we want to compare:
-control vs. assigned source
-Those who receive information from an assigned source are more likely to update their beliefs than those who are in the control group.
-control vs. free choice
-Those who receive information from a chosen sources are more likely to update beliefs than those in the control group.
-(control vs. assigned source) vs. (control vs. free choice), [which is essentially equivalent to assigned vs. free choice]
-H1: When free to choose what information they will expose themselves to, people will seek out information sources that are more likely to be consistent with their priors.
-
-Allowing people to choose their preferred information source makes corrective information more effective:
-
-H2: Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
-
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information. However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Taber and Lodge 2006). Without substantial motivation to accurately process
-information, individuals may interpret new information through the prism of their extant attitudes.
-
-
-
-
-
-
-
-
-
-2 – 
-
-The next set of comparisons focuses on the sources themselves rather than the delivery method. This part would exclude the free choice arm of the experiment: 
-control vs. msnbc
-Participants that were assigned msnbc will update their beliefs more than the control group. 
-control vs. fox
-Participants that were assigned fox will update their beliefs more than the control group.
-msnbc vs. fox
-Participants who were assigned their preferred media choice: 
-H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs.
-
-Both participants who receive information from FoxNews and MSNBC will update their beliefs to a greater degree than the control group; however, those participants who were assigned a source which is closer to their real media diet are more likely to update their beliefs – a FoxNews consumer is more likely to update his beliefs after reading a FoxNews tweet and report than if he read this same report from MSNBC.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3 – 
-
-We have some additional outcome measures (e.g., time spent on the article, sharing, clicking on the tweet), which are not included in the control group. Because of this, we can only compare the differences between the assigned vs free choice participants: 
-
-H4: Those participants who have the ability to choose the source are more likely to click on the link included in the tweet without being prompted to do so.
-
-H5: Those participants who are given the opportunity to choose the tweet and article will spend more time reading both the tweet and article compared to those who were assigned a source.
-
-H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source.
-
-H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source.
-
-I think that this is adequately covered in H3?
-msnbc vs. fox (in the assigned source arm)
-If msnbc was a preferred media choice of the participant, then the corrective information will be more effective.
-If msnbc was not a preferred media choice of the participant, then the corrective information will be less effective.
-If fox was a preferred media choice of the participant, then the corrective information will be more effective.
-If fox was not a preferred media choice of the participant, then the corrective information will be less effective
 
 
 
@@ -586,7 +555,7 @@ _(only show this message in the control condition)_ In this section, we want to 
 4. 5 million - 10 million
 5. More than 10 million
 
-**[sales]** Taking your best guess, what was the total number of sales of immigrant-owned businesses in the last year?
+**[sales]** Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year?
 
 1. Less than $500 billion
 2. $500 billion - $1 trillion
