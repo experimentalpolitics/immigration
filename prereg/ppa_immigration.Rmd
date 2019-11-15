@@ -71,7 +71,11 @@ In addition to these main variables, we evaluate four additional outcomes and co
 
 ## Hypotheses
 
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information. However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information (Taber and Lodge 2006). Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
+<!-- QUESTION on wording assigned source instead of forced exposure?  -->
+
+Previous research examining the relationship between corrective information and attitude change showed that correcting misinformation does not always lead to attitude change [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: how people seek out information and how it is ultimately interpreted.
+
+In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information. However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information [@Taber2006]. Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
 
 ### Main analysis
 
@@ -87,23 +91,13 @@ Furthermore, we hypothesize that the free choice condition in ultimately more ef
 
 - **H1c** [forced exposure vs. free choice]: Allowing people to choose their preferred information source makes corrective information more effective. Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
 
-Note that the last comparison can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article)!
-
-
-H4: Those participants who have the ability to choose the source are more likely to click on the link included in the tweet without being prompted to do so.
-
-H5: Those participants who are given the opportunity to choose the tweet and article will spend more time reading both the tweet and article compared to those who were assigned a source.
-
-H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source.
-
-H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source.
-
-
-<!-- assigned source instead of forced exposure  -->
+Note that the last comparison can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article). For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and will ultimately lead to more positive evaluations.
 
 ### Analysis within free choice arm of the experiment
 
-Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to examine whether respondents choose information sources that are consistent with their ideological predisposition and usual media diet.
+Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to examine whether respondents choose information sources that are consistent with their ideological predisposition and usual media diet. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
+
+In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information.
 
 - **H2a:** When free to choose news organizations, conservatives (liberals) are more likely to pick FoxNews (MSNBC).
 - **H2b:** When free to choose news organizations, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
@@ -124,60 +118,9 @@ If msnbc was not a preferred media choice of the participant, then the correctiv
 If fox was a preferred media choice of the participant, then the corrective information will be more effective.
 If fox was not a preferred media choice of the participant, then the corrective information will be less effective
 
-
 Both participants who receive information from FoxNews and MSNBC will update their beliefs to a greater degree than the control group; however, those participants who were assigned a source which is closer to their real media diet are more likely to update their beliefs – a FoxNews consumer is more likely to update his beliefs after reading a FoxNews tweet and report than if he read this same report from MSNBC.
 
 <!-- QUESTION: how does the ACTE fit in here? -->
-
-### Additional analyses
-
-
-
-
-Previous research examining the relationship between corrective information and attitude change showed that correcting misinformation does not always lead to attitude change [@hopkins2019muted, @thompson2019might]. However, others find that media can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading].
-
-To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: how people seek out information and how it is ultimately interpreted.
-
-Selective exposure to information via different media sources may lead individuals to engage in a biased search process, seeking out information that supports their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
-
-_H1: When free to choose what information they will expose themselves to, people will seek out information sources that are more likely to be consistent with their prior._
-
-_H2: Allowing people to choose their preferred information source makes corrective information more effective._
-
-<!-- [Lit reviews on preferred info source and persuasion] -->
-
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information.
-
-However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information [@Taber2006]. Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
-
-_H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs._
-
-<!-- [Lit review on the effect of cues/heuristics on interpreting information] -->
-
-We expect that citizens are more likely to alter their attitudes when the source is perceived as sympathetic to ideological predispositions.
-
-In addition to these three main hypotheses, we also develop some additional hypotheses based on our secondary outcome measures:
-
-_H4: Those participants who receive the tweet and story from a 'friendly' source are more likely to click on the link including in the tweet without being prompted to do so._
-
-In our design, participants are not prompted to click the link which is included in the tweet; instead, to move forward, the participants must click the continue arrow found on the bottom of the survey.  If a participant were to click this link, we expect that this participant is more engaged with the subject matter, potentially because the source aligns with their priors.
-
-_H5: Those participants who are given the opportunity to choose the tweet and article will spend more time reading both the tweet and article compared to those who were assigned a source._
-
-<!--
-Could someone take a look at H5 - H7. I am having a difficult time differentiating how the effect of choice will impact these 3 above and beyond the impact of just choosing a news source which is similar to your priors
--->
-
-_H6: Those participants who are given the opportunity to choose the tweet and article will be more likely to say that they would share the information they learned on social media or with a friend when compared to those who were assigned a source._
-
-_H7: Those participants who are given the opportunity to choose the tweet and article will be more likely to assign positive attributes to the story when compared to those who were assigned a source._
-
-
-
-
-
-
-
 
 # Estimation strategy
 
