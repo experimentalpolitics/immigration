@@ -49,21 +49,21 @@ Our study builds on the Preference-Incorporating Choice and Assignment Design pr
 
 We consider several outcome measures to capture immigration attitudes and how the news story is received by participants (see full questions below). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
 
-**Economic impact of immigration:** Our first outcome of interest addresses the perceived economic impact of legal immigration. The news article includes specific information on the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Substantively, we want to examine under what conditions the news article is effective in correcting common factual misperceptions on these issues.
+**Economic impact of immigration:** Our first outcome of interest captures the perceived economic impact of legal immigration. The news article includes specific information on the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Substantively, we want to examine under what conditions the news article is effective in correcting common factual misperceptions on these issues (i.e., underestimating the size of immigrant-owned businesses).
 
 **Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. We include one question asking participants whether the number of immigrants should be increased or decreased (this item will be analyzed individually). Two additional questions capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs. Together, these items will allow us to assess whether the news article not only corrects factual misperceptions but additionally induces attitude change.
 
 **Trust in news sources:** As an additional check, we also include a battery of items measuring trust in different news sources including FoxNews and MSNBC. Since the content of the news article is held constant between both news organizations, we can examine how exposure to an atypical news story (in this case published by FoxNews) impacts people's perception of the source itself.
 
-In addition to these main variables, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
+In addition to these main variables, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the experimental design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
 
-**Engagement with tweet:** As described above, the tweet shown to participants consists of a link to a news article. While the link itself is not active and participants are never explicitly asked explicitly click on it, we can capture whether participants nevertheless try access the article. Whether they attempt to do so can be used as an unobstrusive measure of the degree to which participants are interested in further engaging with the content voluntarily.
+**Engagement with tweet:** As described above, the tweet shown to participants consists of a link to a news article. While the link itself is not active and participants are never explicitly asked to click on it, we can examine whether participants nevertheless try access the article. Whether they attempt to do so is used as an unobstrusive measure of the degree to which participants are interested in further engaging with the content voluntarily.
 
-**Response latencies:** In order to further assess the extent to which respondents are interested in the article and comply with the instructions to read it carefully, we will also measure the amount of time that individuals spend viewing the tweet and reading the news story.
+**Response latencies:** In order to further assess the extent to which respondents are interested in the article and comply with the instructions to read it carefully, we also measure the amount of time that individuals spend viewing the tweet and reading the news story.
 
 <!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
 
-**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or if they would be likely to seek out more information regarding the topic of the tweet and story [see @benedictis2019persuading for similar items].
+**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or if they would be likely to seek out more information regarding the topic of the tweet and story.
 
 **Evaluation of the article:** Our final outcome measure consists of a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.
 
@@ -73,21 +73,18 @@ In addition to these main variables, we evaluate four additional outcomes and co
 
 <!-- QUESTION on wording assigned source instead of forced exposure?  -->
 
-Previous research examining the relationship between corrective information and attitude change showed that correcting misinformation does not always lead to attitude change [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. To examine the differential effects of corrective information on attitude change, we need to look at two different processes of adopting new information: how people seek out information and how it is ultimately interpreted.
-
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information. However, how individuals treat facts and other types of information depends on their motivation and ability to interpret such information [@Taber2006]. Without substantial motivation to accurately process information, individuals may interpret new information through the prism of their extant attitudes.
+Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences its effectiveness. In general, we expect that those who could choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to change their attitudes in the direction of the news article.
+<!-- Specifically, we not only expect that people choose news sources that are likely to confirm their prior beliefs, but those allowed to choose their preferred source will be more likely to update their beliefs than those who have no discretion over which source to access.  -->
 
 ### Main analysis
 
-Our main outcome of interest is the difference between the pre- and post-treatment immigration attitudes for those participants who either chose or were assigned to FoxNews versus MSNBC. In general, we expect that those who could choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to change their attitudes in the direction of the news article.
-
 For the main outcome measures described above (i.e., immigration attitudes and perceived economic impact), our analysis will consist of two comparisons:
 
-- **H1a** [control vs. forced exposure]: Those who receive information from an assigned source are more likely to update their beliefs than those who are in the control group.
-- **H1b** [control vs. free choice]: Those who receive information from a chosen sources are more likely to update beliefs than those in the control group.
+- **H1a** [control vs. forced exposure]: Participants who are assigned to read a news article update their beliefs and attitudes in the direction of the article.
+- **H1b** [control vs. free choice]: Participants who are able to choose a news article update their beliefs and attitudes in the direction of the article.
 
-This measure takes into account the same pre- and post-treatment immigration attitude questions and determines how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
-Furthermore, we hypothesize that the free choice condition in ultimately more effective than the forced exposure condition, which leads to the following hypothesis:
+Next, we want to compare how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
+We hypothesize that the free choice condition in ultimately more effective than the forced exposure condition:
 
 - **H1c** [forced exposure vs. free choice]: Allowing people to choose their preferred information source makes corrective information more effective. Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
 
@@ -95,30 +92,19 @@ Note that the last comparison can also be evaluated using the additional outcome
 
 ### Analysis within free choice arm of the experiment
 
-Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to examine whether respondents choose information sources that are consistent with their ideological predisposition and usual media diet. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads our first set of hypotheses regarding endogenous information search and its effectiveness.
+Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to examine whether respondents choose information sources that are consistent with their ideological predisposition and usual media diet. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
 
-In allowing for an endogenous information search in our survey design, we can manipulate the information search process. Not only do we expect that people seek confirming information, but those allowed to seek information will be more likely to their update beliefs than those assigned to corrective information.
-
-- **H2a:** When free to choose news organizations, conservatives (liberals) are more likely to pick FoxNews (MSNBC).
-- **H2b:** When free to choose news organizations, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
+- **H2a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC).
+- **H2b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC).
+- **H2c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
 
 ### Analysis within forced exposure arm of the experiment
 
 Furthermore, we can focus on the forced exposure condition. The next set of comparisons focuses on the sources themselves rather than the delivery method. This part would exclude the free choice arm of the experiment:
 
-- **H3a** [control vs. msnbc]: Participants that were assigned msnbc will update their beliefs more than the control group. 
-- **H3a** [control vs. fox]: Participants that were assigned fox will update their beliefs more than the control group.
-- **H3a** [msnbc vs. fox]: Participants who were assigned their preferred media choice
+- **H3**: Participants who were assigned their preferred media choice will update their beliefs more than those who were assigned to a different news organization.
 
-H3: Those who receive information from ‘friendly’ sources are more likely to update beliefs.
-
-msnbc vs. fox (in the assigned source arm)
-If msnbc was a preferred media choice of the participant, then the corrective information will be more effective.
-If msnbc was not a preferred media choice of the participant, then the corrective information will be less effective.
-If fox was a preferred media choice of the participant, then the corrective information will be more effective.
-If fox was not a preferred media choice of the participant, then the corrective information will be less effective
-
-Both participants who receive information from FoxNews and MSNBC will update their beliefs to a greater degree than the control group; however, those participants who were assigned a source which is closer to their real media diet are more likely to update their beliefs – a FoxNews consumer is more likely to update his beliefs after reading a FoxNews tweet and report than if he read this same report from MSNBC.
+Additionally, we can estimaate the ACTE following Knox et al.
 
 <!-- QUESTION: how does the ACTE fit in here? -->
 
