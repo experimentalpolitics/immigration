@@ -9,7 +9,7 @@ author:
 - Shin Young Park
 date: \today
 abstract:
-  "Various important issues at the center of today's politics---such as climate change and immigration---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. While such corrections have been shown to be effective in reducing misperceptions, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode of corrective information moderates their effectiveness. In our experimental design, respondents are exposed to a news article about immigration reported by either Fox News or MSNBC. The main treatment consists of either assigning or allowing free-choice of the respective media source. In order to isolate the effect of delivery mode and messenger, the news content is held constant across news sources."
+  "Various important issues at the center of today's politics---such as climate change and immigration---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. While such corrections have been shown to be effective in reducing misperceptions, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode of corrective information moderate their effectiveness. In our experimental design, respondents are exposed to a news article about immigration reported by either Fox News or MSNBC. The main treatment consists of either assigning or allowing free choice of the respective media source. In order to isolate the effect of delivery mode and messenger, the news content is held constant across news sources."
 bibliography: '../../bibliography/Lab.bib'
 output: 
   pdf_document:
@@ -25,7 +25,7 @@ library(DeclareDesign)
 
 # Summary
 
-This document describes the planned analyses for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. As part of the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants are asked to choose, or are assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
+This document describes the planned analyses for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. As part of the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants are asked to freely choose, or are assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
 
 # Research Design
 
@@ -49,9 +49,9 @@ Our study builds on the Preference-Incorporating Choice and Assignment Design pr
 
 We consider several outcome measures to capture immigration attitudes and how the news story is received by participants (see full questions below). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
 
-**Economic impact of immigration:** Our first outcome of interest captures the perceived economic impact of legal immigration. The news article includes specific information on the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Substantively, we want to examine under what conditions the news article is effective in correcting common factual misperceptions on these issues (i.e., underestimating the size of immigrant-owned businesses).
+**Economic impact of immigration:** Our first outcome of interest captures the perceived economic impact of legal immigration. The news article includes specific information on the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Our goal is to examine when the news article is effective in correcting common factual misperceptions on these issues (i.e., underestimating the size of immigrant-owned businesses). Two additional questions capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs (these items will be analyzed individually). 
 
-**Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. We include one question asking participants whether the number of immigrants should be increased or decreased (this item will be analyzed individually). Two additional questions capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs. Together, these items will allow us to assess whether the news article not only corrects factual misperceptions but additionally induces attitude change.
+**Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. Specifically, we ask participants whether they think the number of immigrants in the US should be increased or decreased. This item allows us to assess whether the news article not only corrects factual misperceptions but additionally induces attitude change.
 
 **Trust in news sources:** As an additional check, we also include a battery of items measuring trust in different news sources including FoxNews and MSNBC. Since the content of the news article is held constant between both news organizations, we can examine how exposure to an atypical news story (in this case published by FoxNews) impacts people's perception of the source itself.
 
@@ -63,7 +63,7 @@ In addition to these main variables, we evaluate four additional outcomes and co
 
 <!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
 
-**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or if they would be likely to seek out more information regarding the topic of the tweet and story.
+**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or whether they would be likely to seek out more information regarding the topic of the tweet and story.
 
 **Evaluation of the article:** Our final outcome measure consists of a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.
 
@@ -73,22 +73,21 @@ In addition to these main variables, we evaluate four additional outcomes and co
 
 <!-- QUESTION on wording assigned source instead of forced exposure?  -->
 
-Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences its effectiveness. In general, we expect that those who could choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to change their attitudes in the direction of the news article.
+Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences its effectiveness. In general, we expect that those who could choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to evaluate the article positively and change their attitudes in the direction of the news article.
 <!-- Specifically, we not only expect that people choose news sources that are likely to confirm their prior beliefs, but those allowed to choose their preferred source will be more likely to update their beliefs than those who have no discretion over which source to access.  -->
 
 ### Main analysis
 
 For the main outcome measures described above (i.e., immigration attitudes and perceived economic impact), our analysis will consist of two comparisons:
 
-- **H1a** [control vs. forced exposure]: Participants who are assigned to read a news article update their beliefs and attitudes in the direction of the article.
-- **H1b** [control vs. free choice]: Participants who are able to choose a news article update their beliefs and attitudes in the direction of the article.
+- **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article published by the source.
+- **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article published by the source.
 
-Next, we want to compare how individuals update their beliefs on immigration when they are either given a choice or are assigned the source from which they receive the information.
-We hypothesize that the free choice condition in ultimately more effective than the forced exposure condition:
+Importantly, we want to examine whether allowing people to choose their preferred information source makes corrective information more effective. We therefore hypothesize that the free choice condition in ultimately more effective than the forced exposure condition:
 
-- **H1c** [forced exposure vs. free choice]: Allowing people to choose their preferred information source makes corrective information more effective. Those participants who are given the opportunity to choose the tweet and article will be more likely to update their beliefs than those who are assigned a source randomly.
+- **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article published by the source.
 
-Note that the last comparison can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article). For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and will ultimately lead to more positive evaluations.
+Note that the last comparison can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article), which are not included in the control group. For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and will ultimately lead to more positive evaluations. We will also examine conditional treatment effects based on people's political predispositions (measured using the pre-treatment stereotype battery: stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions).
 
 ### Analysis within free choice arm of the experiment
 
@@ -100,13 +99,11 @@ Beyond this main analysis comparing the free choice and forced exposure conditio
 
 ### Analysis within forced exposure arm of the experiment
 
-Furthermore, we can focus on the forced exposure condition. The next set of comparisons focuses on the sources themselves rather than the delivery method. This part would exclude the free choice arm of the experiment:
+Furthermore, we can focus on the forced exposure condition and examine conditional effects differentiating by news sources themselves (i.e., FoxNews vs. MSNBC). As part of the pre-treatment questionnaire, respondents are asked how often they watch political news on various TV channels including. Respondents should be more inclined to believe a report if it is published by a news organization they rely on more regularly.
 
 - **H3**: Participants who were assigned their preferred media choice will update their beliefs more than those who were assigned to a different news organization.
 
-Additionally, we can estimaate the ACTE following Knox et al.
-
-<!-- QUESTION: how does the ACTE fit in here? -->
+As a first step, analysis would exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design, which captures conditional average treatment effect for the sub-population of subjects who would choose a particular treatment option (i.e., the effect of the article among those who choose FoxNews or MSNBC).
 
 # Estimation strategy
 
@@ -120,7 +117,7 @@ Respondents who report "don't know" on the outcome measures (if applicable) or w
 
 ## Main analyses
 
-To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference-in-difference between both treatment effects. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. Furthermore, we can detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions). Furthermore, we will explore the average choice-specific treatment effect (ACTE) following @knox2019design. However, our power analysis below suggests that our sample size is too small to reliably detect these conditional treatment effects.
+To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference between both treatment conditions themselves. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. Furthermore, we can detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions). Furthermore, we will explore the average choice-specific treatment effect (ACTE) following @knox2019design. However, our power analysis below suggests that our sample size is too small to reliably detect these conditional treatment effects.
 
 
 ### Power analysis: basic 3-arm design (ATE w/o differentiating sources)
