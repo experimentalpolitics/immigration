@@ -1,5 +1,5 @@
 ---
-title: 'Sources of Misperception: Media Consumption and Economic Impact of Legal Immigration'
+title: 'Sources of Misperception: Media Choice and the Economic Impact of Legal Immigration'
 subtitle: 'Pre-Analysis Plan'
 author:
 - Patrick W. Kraft
@@ -17,6 +17,8 @@ output:
     number_sections: true
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{float}
+  \floatplacement{figure}{H}
 ---
 
 ```{r setup, include=FALSE, message = FALSE}
@@ -235,7 +237,6 @@ multi_arm_design <- population + potential_outcomes +
 diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
   select = c("power", "bias")))
 ```
-
 
 # Full Questionnaire
 
