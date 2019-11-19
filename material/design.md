@@ -213,7 +213,7 @@ _There will be a brief pause on the next screen so you can read the story._ At t
 
 William Hall | [Fox News/MSNBC]
 
-A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2017, up from 2016 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
+A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2019, up from 2018 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
 
 These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
 
