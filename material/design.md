@@ -36,7 +36,7 @@
 - *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
 - *Length:* <30 min
 - *Reward:* $2
-- *Requirements:* 90% approval rate, location US
+- *Requirements:* 90% approval rate, 100 HITs minimum, location US
 
 ## Pre-treatment measures
 
