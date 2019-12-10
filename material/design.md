@@ -33,7 +33,8 @@
 ## MTurk Details
 
 - *Title:* Media Usage and News Consumption
-- *Description:* Answer a short survey about your personal media diet and issues currently discussed in the news.
+- *Description:* Answer a short survey (less than 30 minutes) about your personal media diet and issues currently discussed in the news.
+- *Instructions:* We are conducting an academic survey about media usage and news consumption. We need to understand your opinion about different media outlets and current issues discussed in the news. Select the link below to complete the survey. Note that you are only eligible to participate if you are currently located in the United States and that we are going to confirm your location at the beginning of the survey. Completing the survey should take less than 30 minutes. At the end, you will receive a code to paste into the box below to receive credit for taking our survey.
 - *Length:* <30 min
 - *Reward:* $2
 - *Requirements:* 90% approval rate, 100 HITs minimum, location US
