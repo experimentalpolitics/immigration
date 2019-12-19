@@ -1,6 +1,9 @@
 ﻿# data files (NEVER PUSH RAW SURVEY DATA TO GITHUB, IT VIOLATES OUR IRB PROTOCOL!)
 .csv
 .zip
+.dta
+.rdata
+.rda
 
 # cache file for prereg markdown document
 prereg/*_cache/
