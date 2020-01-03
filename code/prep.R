@@ -28,11 +28,12 @@ num <- read_csv(here("data/Immigration_December 19, 2019_05.20.csv"), skip = 3,
 
 ### Clean/recode complete set of variables
 dat <- num %>% 
-  filter(!is.na(`Random ID`)) %>%
   transmute(
+    ranid = `Random ID`,
     id = row_number(),
     duration = `Duration (in seconds)`,
     date = RecordedDate,
+    condition = condition,
     smedia_yt = (7 - smedia_1)/6,  ## 0 = never, 1 = several times a day
     smedia_fb = (7 - smedia_2)/6,
     smedia_ig = (7 - smedia_3)/6,
@@ -66,17 +67,61 @@ dat <- num %>%
     problem_immigration = (problem_6 - 1)/4,
     problem_healthcare = (problem_7 - 1)/4,
     problem_environment = (problem_9 - 1)/4,
-    conservative = (ideol - 1)/6,  ## 0 = very liberal, 1 = very conservative
-    republican = (recode(pid, `1`=6, `2`=2, `3`=4, `4`=4) + 
-                    recode(pid_lean, `1`=1, `2`=-1, `3`=0, .missing=0) +
-                    recode(pid_rep, `1`=1, `2`=0, .missing=0) +
-                    recode(pid_dem, `1`=-1, `2`=0, .missing=0) - 1)/6,
-    fox = recode(choice, `1`=1, `2`=0, .missing=0)
-  )
+    ideol_con = (ideol - 1)/6,  ## 0 = very liberal, 1 = very conservative
+    pid_rep = (recode(pid, `1`=6, `2`=2, `3`=4, `4`=4) +  ## 0 = democrat, 1 = republican
+                 recode(pid_lean, `1`=1, `2`=-1, `3`=0, .missing=0) +
+                 recode(pid_rep, `1`=1, `2`=0, .missing=0) +
+                 recode(pid_dem, `1`=-1, `2`=0, .missing=0) - 1)/6,
+    tweet = factor(recode(choice, `1`=2, `2`=1, .missing=0) +
+                     recode(assigned, `fox`=2, `msnbc`=1, .missing=0),
+                   labels = c("control","msnbc","fox")),
+    tweet_click = as.numeric(`time_tweet_Click Count` > 0),
+    tweet_time = `time_tweet_Page Submit`,
+    story_time = `time_story_Page Submit`,
+    source = raw$source,
+    source_correct = ((source == "Fox News" & tweet == "fox") |
+                        (source == "MSNBC" & tweet == "msnbc")),
+    about = raw$about,
+    about_correct = (about == "Immigrant-owned businesses"),
+    att_check = (source_correct & about_correct),
+    actions_discuss = (4 - actions_1)/3,  ## 0 = not likely, 1 = very likely
+    actions_forward = (4 - actions_2)/3,
+    actions_post = (4 - actions_3)/3,
+    actions_seek = (4 - actions_4)/3,
+    wp_fair = (5 - word_pairs_1)/4,  ## 0 = unfair, 1 = fair
+    wp_hostile = (5 - word_pairs_2)/4,  ## 0 = friendly, 1 = hostile
+    wp_bad = (5 - word_pairs_3)/4,  ## 0 = good, 1 = bad
+    wp_skewed = (5 - word_pairs_4)/4,  ## 0 = balanced, 1 = skewed
+    wp_american = (5 - word_pairs_5)/4,  ## 0 = un-american, 1 = american
+    wp_accurate = (5 - word_pairs_6)/4,  ## 0 = inaccurate, 1 = accurate
+    employ = (employ - 1)/4,  ## 0 = less than 500,000, 1 = more than 10 million
+    employ_correct = (raw$employ == "5 million - 10 million"),
+    sales = (sales - 1)/4,  ## 0 = less than $500 billion, 1 = more than $2 trillion
+    sales_correct = (raw$sales == "$1 trillion - $1.5 trillion"),
+    immig_increased = (5 - immig)/4,  ## 0 = decreased a lot, 1 = increased a lot
+    taxes_pos = taxes_1/10,  ## 0 = take more out, 1 = put in more
+    taxes_oe = taxes_oe,
+    jobs_pos = jobs_1/10,  ## 0 = take jobs, 1 = create jobs
+    jobs_oe = jobs_oe,
+    tv_trust_fox = (5 - tv_trust_1)/4,  ## 0 = never, 1 = always
+    tv_trust_msnbc = (5 - tv_trust_2)/4,
+    tv_trust_cnn = (5 - tv_trust_3)/4,
+    tv_trust_nbc = (5 - tv_trust_4)/4,
+    tv_trust_cbs = (5 - tv_trust_5)/4,
+    print_trust_nyt = (5 - print_trust_1)/4,
+    print_trust_wapo = (5 - print_trust_2)/4,
+    print_trust_wsj = (5 - print_trust_3)/4,
+    print_trust_ust = (5 - print_trust_4)/4,
+    print_trust_nyp = (5 - print_trust_5)/4,
+    age = age
+  ) %>%
+  filter(!is.na(ranid)) %>%
+  select(-ranid)
 
 
 ### Check labelled vs. numeric data
-table(raw$choice, num$choice, useNA = "always")
+table(raw$gender, num$gender, useNA = "always")
+table(dat$employ, dat$employ_correct, useNA = "always")
 
 
 
