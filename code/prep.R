@@ -108,21 +108,35 @@ dat <- num %>%
     tv_trust_cnn = (5 - tv_trust_3)/4,
     tv_trust_nbc = (5 - tv_trust_4)/4,
     tv_trust_cbs = (5 - tv_trust_5)/4,
-    print_trust_nyt = (5 - print_trust_1)/4,
+    print_trust_nyt = (5 - print_trust_1)/4,  ## 0 = never, 1 = always
     print_trust_wapo = (5 - print_trust_2)/4,
     print_trust_wsj = (5 - print_trust_3)/4,
     print_trust_ust = (5 - print_trust_4)/4,
     print_trust_nyp = (5 - print_trust_5)/4,
-    age = age
-  ) %>%
+    age = age,
+    male = recode(gender, `1`=0, `2`=1, `3`=NA_real_),
+    usborn = 2 - usborn,
+    usborn_year = usborn_year,
+    zip = zip,
+    zip_time = (zip_time - 1)/3,  ## 0 = 1-3 years, 1 = more than 5 years
+    race = raw$race,
+    white = race == "Caucasian/White (non-Hispanic)",
+    educ = raw$educ,
+    college = num$educ > 4,
+    income = (income - 1)/6,  ## 0 = less than $20,000, 1 = $120,000 or more
+    marital = raw$marital,
+    church = (church - 1)/8,  ## 0 = never, 1 = more than once per week
+    comments = comments) %>%
   filter(!is.na(ranid)) %>%
   select(-ranid)
 
-
-### Check labelled vs. numeric data
-table(raw$gender, num$gender, useNA = "always")
+## Check labelled vs. numeric data
+table(raw$church, num$church, useNA = "always")
 table(dat$employ, dat$employ_correct, useNA = "always")
 
+
+### Save dataset
+write_csv(dat, here("data/immigration_20191219_clean.csv"))
 
 
 

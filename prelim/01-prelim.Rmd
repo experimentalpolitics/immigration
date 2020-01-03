@@ -1,0 +1,73 @@
+---
+title: "Sources of Misperception - Preliminary Analyses"
+author: "Patrick Kraft"
+date: "January 3, 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load data, basic sociodemographics
+
+```{r, message=FALSE}
+### Packages
+library(here)
+library(readr)
+library(tidyverse)
+
+### Load cleaned data
+dat <- read_csv(here("data/immigration_20191219_clean.csv"))
+```
+
+
+
+## Main analysis
+
+
+### H1a: control vs. forced exposure
+
+```{r}
+t.test(employ_correct~condition, data = dat[dat$condition != "assigned",])
+t.test(sales_correct~condition, data = dat[dat$condition != "assigned",])
+t.test(immig_increased~condition, data = dat[dat$condition != "assigned",])
+t.test(taxes_pos~condition, data = dat[dat$condition != "assigned",])
+t.test(jobs_pos~condition, data = dat[dat$condition != "assigned",])
+```
+
+
+### H1b: control vs. free choice
+
+```{r}
+t.test(employ_correct~condition, data = dat[dat$condition != "choice",])
+t.test(sales_correct~condition, data = dat[dat$condition != "choice",])
+t.test(immig_increased~condition, data = dat[dat$condition != "choice",])
+t.test(taxes_pos~condition, data = dat[dat$condition != "choice",])
+t.test(jobs_pos~condition, data = dat[dat$condition != "choice",])
+```
+
+
+### H1c: forced exposiure vs. free choice
+
+```{r}
+t.test(employ_correct~condition, data = dat[dat$condition != "control",])
+t.test(sales_correct~condition, data = dat[dat$condition != "control",])
+t.test(immig_increased~condition, data = dat[dat$condition != "control",])
+t.test(taxes_pos~condition, data = dat[dat$condition != "control",])
+t.test(jobs_pos~condition, data = dat[dat$condition != "control",])
+```
+
+Additional outcomes not measured in control condition
+
+```{r}
+t.test(tweet_click~condition, data = dat[dat$condition != "control",])
+t.test(tweet_time~condition, data = dat[dat$condition != "control",])
+t.test(story_time~condition, data = dat[dat$condition != "control",])
+t.test(actions_discuss~condition, data = dat[dat$condition != "control",])
+t.test(actions_forward~condition, data = dat[dat$condition != "control",])
+t.test(actions_post~condition, data = dat[dat$condition != "control",])
+t.test(actions_seek~condition, data = dat[dat$condition != "control",])
+```
+
+
