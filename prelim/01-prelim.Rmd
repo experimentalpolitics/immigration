@@ -17,6 +17,17 @@ library(here)
 library(readr)
 library(tidyverse)
 
+### Functions
+se <- function(x, na.rm = T){
+  sd(x, na.rm = na.rm)/sqrt(length(na.omit(x)))
+}
+cilo <- function(x, na.rm = T){
+  mean(x, na.rm = na.rm) - qnorm(.975) * se(x, na.rm)
+}
+cihi <- function(x, na.rm = T){
+  mean(x, na.rm = na.rm) + qnorm(.975) * se(x, na.rm)
+}
+
 ### Load cleaned data
 dat <- read_csv(here("data/immigration_20191219_clean.csv"))
 ```
@@ -26,48 +37,34 @@ dat <- read_csv(here("data/immigration_20191219_clean.csv"))
 ## Main analysis
 
 
-### H1a: control vs. forced exposure
+### H1a: control vs. forced exposure vs. free choice
 
 ```{r}
-t.test(employ_correct~condition, data = dat[dat$condition != "assigned",])
-t.test(sales_correct~condition, data = dat[dat$condition != "assigned",])
-t.test(immig_increased~condition, data = dat[dat$condition != "assigned",])
-t.test(taxes_pos~condition, data = dat[dat$condition != "assigned",])
-t.test(jobs_pos~condition, data = dat[dat$condition != "assigned",])
+dat %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos) %>% 
+  gather(variable, value, -condition) %>%
+  group_by(condition, variable) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T) %>%
+  ggplot(aes(x = mean, xmin = cilo, xmax = cihi, y = condition)) + 
+  theme_bw() + labs(y = "Experimental Condition", x = "Average Value") +
+  geom_point() + geom_errorbarh(height = 0) + facet_wrap(~variable)
 ```
 
 
-### H1b: control vs. free choice
+### Additional outcomes not measured in control condition
 
 ```{r}
-t.test(employ_correct~condition, data = dat[dat$condition != "choice",])
-t.test(sales_correct~condition, data = dat[dat$condition != "choice",])
-t.test(immig_increased~condition, data = dat[dat$condition != "choice",])
-t.test(taxes_pos~condition, data = dat[dat$condition != "choice",])
-t.test(jobs_pos~condition, data = dat[dat$condition != "choice",])
-```
-
-
-### H1c: forced exposiure vs. free choice
-
-```{r}
-t.test(employ_correct~condition, data = dat[dat$condition != "control",])
-t.test(sales_correct~condition, data = dat[dat$condition != "control",])
-t.test(immig_increased~condition, data = dat[dat$condition != "control",])
-t.test(taxes_pos~condition, data = dat[dat$condition != "control",])
-t.test(jobs_pos~condition, data = dat[dat$condition != "control",])
-```
-
-Additional outcomes not measured in control condition
-
-```{r}
-t.test(tweet_click~condition, data = dat[dat$condition != "control",])
-t.test(tweet_time~condition, data = dat[dat$condition != "control",])
-t.test(story_time~condition, data = dat[dat$condition != "control",])
-t.test(actions_discuss~condition, data = dat[dat$condition != "control",])
-t.test(actions_forward~condition, data = dat[dat$condition != "control",])
-t.test(actions_post~condition, data = dat[dat$condition != "control",])
-t.test(actions_seek~condition, data = dat[dat$condition != "control",])
+dat %>%
+  filter(condition != "control") %>%
+  select(condition, tweet_click, tweet_time, story_time, 
+         actions_discuss, actions_forward, actions_post, actions_seek) %>% 
+  gather(variable, value, -condition) %>%
+  group_by(condition, variable) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T) %>%
+  ggplot(aes(x = mean, xmin = cilo, xmax = cihi, y = condition)) + 
+  theme_bw() + labs(y = "Experimental Condition", x = "Average Value") +
+  geom_point() + geom_errorbarh(height = 0) + facet_wrap(~variable, scales = "free_x")
 ```
 
 
