@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Load data, basic sociodemographics
+# Load data, basic sociodemographics
 
 ```{r, message=FALSE}
 ### Packages
@@ -34,10 +34,10 @@ dat <- read_csv(here("data/immigration_20191219_clean.csv"))
 
 
 
-## Main analysis
+# Main analysis
 
 
-### H1a: control vs. forced exposure vs. free choice
+## H1a-H1c: control vs. forced exposure vs. free choice
 
 ```{r}
 dat %>%
@@ -67,4 +67,18 @@ dat %>%
   geom_point() + geom_errorbarh(height = 0) + facet_wrap(~variable, scales = "free_x")
 ```
 
+## H2a-H2c: Determinants of media choice
+
+```{r}
+dat %>%
+  filter(condition == "choice") %>%
+  mutate(prefer_fox = tv_fox - tv_msnbc,
+         choose_fox = as.numeric(tweet == "fox")) %>%
+  select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
+  gather(variable, value, -choose_fox) %>%
+  ggplot(aes(x = value, y = choose_fox)) +
+  geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") + 
+  facet_grid(~variable, scales = "free_x") +
+  theme_bw()
+```
 
