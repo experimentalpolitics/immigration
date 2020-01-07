@@ -82,3 +82,125 @@ dat %>%
   theme_bw()
 ```
 
+
+## H3a-H3c: Effects of corrective information conditional on preferred media choice
+
+
+### Conditional effect of being assigned to Fox News
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "msnbc") & (ideol_con != .5)) %>%
+  mutate(ideol_con = ideol_con>.5) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, ideol_con) %>% 
+  gather(variable, value, -condition, -ideol_con) %>%
+  group_by(condition, variable, ideol_con) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = ideol_con, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Conservative ideology (vs. liberal)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "msnbc") & (pid_rep != .5)) %>%
+  mutate(pid_rep = pid_rep>.5) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, pid_rep) %>% 
+  gather(variable, value, -condition, -pid_rep) %>%
+  group_by(condition, variable, pid_rep) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = pid_rep, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Republican PID (vs. Democrat)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "msnbc") & ((tv_fox - tv_msnbc)!=0)) %>%
+  mutate(prefer_fox = (tv_fox - tv_msnbc)>0) %>%
+  filter(!is.na(prefer_fox)) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, prefer_fox) %>% 
+  gather(variable, value, -condition, -prefer_fox) %>%
+  group_by(condition, variable, prefer_fox) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = prefer_fox, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Prefer Fox (vs. MSNBC)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+
+### Conditional effect of being assigned to MSNBC
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "fox") & (ideol_con != .5)) %>%
+  mutate(ideol_con = ideol_con>.5) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, ideol_con) %>% 
+  gather(variable, value, -condition, -ideol_con) %>%
+  group_by(condition, variable, ideol_con) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = ideol_con, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Conservative ideology (vs. liberal)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "fox") & (pid_rep != .5)) %>%
+  mutate(pid_rep = pid_rep>.5) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, pid_rep) %>% 
+  gather(variable, value, -condition, -pid_rep) %>%
+  group_by(condition, variable, pid_rep) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = pid_rep, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Republican PID (vs. Democrat)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition != "choice") & (tweet != "fox") & ((tv_fox - tv_msnbc)!=0)) %>%
+  mutate(prefer_fox = (tv_fox - tv_msnbc)>0) %>%
+  filter(!is.na(prefer_fox)) %>%
+  select(condition, employ, employ_correct, sales, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos, prefer_fox) %>% 
+  gather(variable, value, -condition, -prefer_fox) %>%
+  group_by(condition, variable, prefer_fox) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = prefer_fox, 
+                    shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Prefer Fox (vs. MSNBC)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable)
+```
+
+# Next steps:
+
+Estimate average choice-specific treatment effect (ACTE) following Knox et al. (2019) 
