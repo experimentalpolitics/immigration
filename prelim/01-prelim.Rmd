@@ -101,9 +101,9 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = ideol_con, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Conservative ideology (vs. liberal)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
-  facet_wrap(~variable)
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
+  facet_wrap(~variable, scales = "free_x")
 ```
 
 ```{r}
@@ -119,8 +119,8 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = pid_rep, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Republican PID (vs. Democrat)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
   facet_wrap(~variable)
 ```
 
@@ -138,8 +138,8 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = prefer_fox, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Prefer Fox (vs. MSNBC)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
   facet_wrap(~variable)
 ```
 
@@ -159,8 +159,8 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = ideol_con, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Conservative ideology (vs. liberal)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
   facet_wrap(~variable)
 ```
 
@@ -177,8 +177,8 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = pid_rep, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Republican PID (vs. Democrat)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
   facet_wrap(~variable)
 ```
 
@@ -196,9 +196,67 @@ plot_df <- dat %>%
 ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = prefer_fox, 
                     shape = condition, col = condition)) + 
   theme_bw() + labs(y = "Prefer Fox (vs. MSNBC)?", x = "Average Value") +
-  geom_point(position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) +
-  geom_errorbarh(height = 0, position = position_nudge(y = .01 - .02 * (plot_df$condition == "control"))) + 
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$condition == "control"))) + 
   facet_wrap(~variable)
+```
+
+
+## Exploratory analysis: predictors of engagement with article
+
+```{r}
+plot_df <- dat %>%
+  filter((condition == "assigned") & (ideol_con != .5)) %>%
+  mutate(ideol_con = ideol_con>.5) %>%
+  select(ideol_con, tweet, tweet_click, tweet_time, story_time, 
+         actions_discuss, actions_forward, actions_post, actions_seek) %>% 
+  gather(variable, value, -tweet, -ideol_con) %>%
+  group_by(tweet, variable, ideol_con) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = ideol_con, 
+                    shape = tweet, col = tweet)) + 
+  theme_bw() + labs(y = "Conservative ideology (vs. liberal)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) + 
+  facet_wrap(~variable, scales = "free_x")
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition == "assigned") & (pid_rep != .5)) %>%
+  mutate(pid_rep = pid_rep>.5) %>%
+  select(pid_rep, tweet, tweet_click, tweet_time, story_time, 
+         actions_discuss, actions_forward, actions_post, actions_seek) %>% 
+  gather(variable, value, -tweet, -pid_rep) %>%
+  group_by(tweet, variable, pid_rep) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = pid_rep, 
+                    shape = tweet, col = tweet)) + 
+  theme_bw() + labs(y = "Republican PID (vs. Democrat)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) + 
+  facet_wrap(~variable, scales = "free_x")
+```
+
+```{r}
+plot_df <- dat %>%
+  filter((condition == "assigned") & ((tv_fox - tv_msnbc)!=0)) %>%
+  mutate(prefer_fox = (tv_fox - tv_msnbc)>0) %>%
+  filter(!is.na(prefer_fox)) %>%
+  select(prefer_fox, tweet, tweet_click, tweet_time, story_time, 
+         actions_discuss, actions_forward, actions_post, actions_seek) %>%
+  gather(variable, value, -tweet, -prefer_fox) %>%
+  group_by(tweet, variable, prefer_fox) %>%
+  summarize_all(list(mean = ~mean, cilo = ~cilo, cihi = ~cihi), na.rm = T)
+
+ggplot(plot_df, aes(x = mean, xmin = cilo, xmax = cihi, y = prefer_fox, 
+                    shape = tweet, col = tweet)) + 
+  theme_bw() + labs(y = "Prefer Fox (vs. MSNBC)?", x = "Average Value") +
+  geom_point(position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) +
+  geom_errorbarh(height = 0, position = position_nudge(y = .05 - .1 * (plot_df$tweet == "fox"))) + 
+  facet_wrap(~variable, scales = "free_x")
 ```
 
 # Next steps:
