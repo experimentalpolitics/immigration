@@ -1,15 +1,27 @@
 ---
 title: "Reliable Sources? Correcting Misinformation in Polarized Media Environments"
 author:
-- name: Author 1
-  affiliation: University of Whatever
-  email: author1@example.edu
-- name: Author 2
-  affiliation: University of Wherever
-  email: author2@example2.edu
-date: January 3, 2020
+- name: Patrick W Kraft
+  affiliation: University of Wisconsin-Milwaukee
+  email: kraftp@uwm.edu
+- name: Nicholas R. Davis
+  affiliation: University of Wisconsin-Milwaukee
+  email: nrdavis@uwm.edu
+- name: Taraleigh Davis
+  affiliation: University of Wisconsin-Milwaukee
+  email: taraleig@uwm.edu
+- name: Amanda Heideman
+  affiliation: University of Wisconsin-Milwaukee
+  email: heidem24@uwm.edu
+- name: Jason T. Neumeyer
+  affiliation: University of Wisconsin-Milwaukee
+  email: neumeye6@uwm.edu
+- name: Shin Young Park
+  affiliation: University of Wisconsin-Milwaukee
+  email: parksy@uwm.edu
+date: January 28, 2020
 published: Working paper.
-git-repo: https://example.com
+git-repo: https://github.com/experimentalpolitics/immigration
 abstract: >-
   Various important issues at the center of today’s politics--such as immigration or climate change--are imbued with misinformation. A growing body of research therefore explores whether people’s misperceptions can be mitigated by providing corrective information. While such corrections have been shown to reduce factual misinformation, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article. Our results illustrate how people’s political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being further shared with others (e.g., through social media). The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
 reference-section-title: References

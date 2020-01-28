@@ -241,10 +241,15 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT tex_out/ReliableSources-manuscript.out
+INPUT tex_out/ReliableSources-manuscript.out
+INPUT tex_out/ReliableSources-manuscript.out
+INPUT tex_out/ReliableSources-manuscript.out
 OUTPUT tex_out/ReliableSources-manuscript.out
 OUTPUT tex_out/ReliableSources-manuscript.bcf
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT tex_out/ReliableSources-manuscript.aux
+INPUT tex_out/ReliableSources-manuscript.run.xml
 OUTPUT tex_out/ReliableSources-manuscript.run.xml
