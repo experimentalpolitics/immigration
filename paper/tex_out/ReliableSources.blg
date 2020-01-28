@@ -1,16 +1,16 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
-[0] Config.pm:305> INFO - Logfile is 'tex_out/ReliableSources.blg'
-[20] biber:313> INFO - === Tue Jan 28, 2020, 16:22:08
-[40] Biber.pm:371> INFO - Reading 'tex_out/ReliableSources.bcf'
-[114] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
-[126] Biber.pm:3981> INFO - Processing section 0
-[133] Biber.pm:4154> INFO - Looking for bibtex format file '../../bibliography/Lab.bib' for section 0
-[144] bibtex.pm:1468> INFO - LaTeX decoding ...
-[346] bibtex.pm:1294> INFO - Found BibTeX data source '../../bibliography/Lab.bib'
-[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
-[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[380] Biber.pm:3809> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
-[380] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[387] bbl.pm:617> INFO - Writing 'tex_out/ReliableSources.bbl' with encoding 'UTF-8'
-[390] bbl.pm:720> INFO - Output to tex_out/ReliableSources.bbl
+[1] Config.pm:305> INFO - Logfile is 'tex_out/ReliableSources.blg'
+[77] biber:313> INFO - === Tue Jan 28, 2020, 16:27:24
+[166] Biber.pm:371> INFO - Reading 'tex_out/ReliableSources.bcf'
+[541] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
+[582] Biber.pm:3981> INFO - Processing section 0
+[603] Biber.pm:4154> INFO - Looking for bibtex format file '../../bibliography/Lab.bib' for section 0
+[645] bibtex.pm:1468> INFO - LaTeX decoding ...
+[1432] bibtex.pm:1294> INFO - Found BibTeX data source '../../bibliography/Lab.bib'
+[1599] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[1599] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1599] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1599] Biber.pm:3809> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[1599] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1624] bbl.pm:617> INFO - Writing 'tex_out/ReliableSources.bbl' with encoding 'UTF-8'
+[1629] bbl.pm:720> INFO - Output to tex_out/ReliableSources.bbl

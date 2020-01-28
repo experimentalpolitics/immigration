@@ -13,8 +13,8 @@ git-repo: https://example.com
 abstract: >-
   Various important issues at the center of today’s politics--such as immigration or climate change--are imbued with misinformation. A growing body of research therefore explores whether people’s misperceptions can be mitigated by providing corrective information. While such corrections have been shown to reduce factual misinformation, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article. Our results illustrate how people’s political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being further shared with others (e.g., through social media). The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
 reference-section-title: References
-mainfont: Arial #Spectral
-sansfont: Arial #Open Sans
+mainfont: Spectral
+sansfont: Open Sans
 ---
 
 
@@ -23,11 +23,11 @@ sansfont: Arial #Open Sans
 
 ## Overview: Corrective information literature
 
-Correcting misinformation does not lead to attitude change (but there are mixed findings). 
+Correcting misinformation does not lead to attitude change (but there are mixed findings).
 
-While each of these studies contribute to our understanding of the effect of factual information on issue opinions, the findings are mixed. This inconsistency suggest the need for additional research. 
+While each of these studies contribute to our understanding of the effect of factual information on issue opinions, the findings are mixed. This inconsistency suggest the need for additional research.
 
-We seek to improve on previous studies in several ways…
+We seek to improve on previous studies in several ways...
 
 ### Hopkins et al. 2019
 
@@ -36,12 +36,11 @@ Overview:
 - seven original survey experiments (various US samples) that "randomly assign respondents to receive or not receive accurate information about the prevalence of immigrants before reporting attitudes about immigrants and immigration policy"
 - information corrects misperception (i.e., reduces estimated size of immigrant population) but only has little and inconsistent impact on attitudes about immigration
 - finding is not consistent with theories of power or intergroup threat (they argue it doesn't necessarily cast doubt on the theory itself, but rather suggests that there may be other cognitive mechanisms that explain why people perceive an out-group as threatening)
-- "Misperceptions about the size of minority groups may be a consequence, rather than a cause, of attitudes toward those groups." 
+- "Misperceptions about the size of minority groups may be a consequence, rather than a cause, of attitudes toward those groups."
 
 Comments / Questions:
 
 - good literature review, check some of their citations/discussion of previous results!
-
 
 ### Thompson 2019
 
@@ -62,7 +61,6 @@ Design:
 - 2(ratio manipulation)x2(Trump/Sanders)x2(Supporter/non-supporter)x2(pre/post fact check) between-within design
 - sample: 1,500 MTurk respondents
 
-
 Comments / Questions:
 
 - shows useful examples of how to present corrective information for future experimental designs
@@ -72,13 +70,13 @@ Comments / Questions:
 
 ## Theoretical Expectations
 
-### Motivated Reasoning 
-The findings of previous research are perhaps unsurprising. How individuals treat facts and other types of information depends on their incentives (motivation + ability). Reliance on cues/heuristics like ideological predispositions. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. *Lodge & Taber  Bush credibility. 
+### Motivated Reasoning
+The findings of previous research are perhaps unsurprising. How individuals treat facts and other types of information depends on their incentives (motivation + ability). Reliance on cues/heuristics like ideological predispositions. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. *Lodge & Taber  Bush credibility.
 
 A compelling explanation of this pattern is the tendency to engage in motivated reasoning. Humans = biased information seekers [@kunda1990case] and asymmetric updaters (Sunstein et al 2016). @Taber2006
 Lodge & Taber (2006, 2008)
 
-Dalton, Beck, and Huckfeldt (1998) found that perception of news is shaped as much by a person’s political views as by objective content. 
+Dalton, Beck, and Huckfeldt (1998) found that perception of news is shaped as much by a person’s political views as by objective content.
 
 Source Credibility 
 Additionally, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed (see discussion in Berinsky 2017). @berinsky2018telling
@@ -86,7 +84,7 @@ Additionally, in a time when partisanship colors how people perceive new informa
 Source credibility profoundly affects social interpretations of information (Lupia and McCubbins 1998). 
 Berinsky (2017): Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree. 
 
-Messenger overwhelms the message: Kuklinski and Hurley (1994) connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker. 
+Messenger overwhelms the message: Kuklinski and Hurley (1994) connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker.
 
 
 
