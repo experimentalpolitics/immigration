@@ -1,0 +1,281 @@
+---
+title: "First Pass"
+author: "Jason Neumeyer"
+date: "January 25, 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is the first pass I took at putting together some of the analyses which we talked about last week. The first step I took was to create a new variable called tv_prefer which was just the difference between the respondents MSNBC preference and FOX preference.  In doing so, this allowed me to determine whether the preferred MSNBC (number > 0) or FOX (number < 0) rather quickly.
+
+After this, I subset the data to include those who preferred MSNBC or FOX and were in the control, choice, and assigned conditions. This created the seperate subgroups from which our comparisons could be drawn.  To determine the levels of immigration support each group had, I took the mean of our three immigration questions (immig_increased, taxes_pos, jobs_pos) and scaled them from 0 to 1 with higher numbers indicating higher support for immigration based on these 3 questions. 
+
+I am still working on putting together the graph with the CIs which we discussed, but I do have all of the means and CIs calculated for these seperate groups (hopefully that was not a duplicate of Patrick's initial work!) and just a few basic graphs (without CIs yet) which show the change across these. 
+
+I think that the tibbles throughout are the most important piece and something we can discuss moving forward - the final tibble at the end includes the mean of each subgroup and the confidence intervals. 
+
+Looking forward to discussing this in more detail tomorrow and determining exactly how we want to visualize this! 
+
+## load packages - 
+
+```{r, warning=FALSE, message=FALSE}
+library(here)
+library(readr)
+library(tidyverse)
+library(ggplot2)
+library(expss)
+library(broom)
+library(purrr)
+```
+
+## set wd and load data - 
+
+```{r}
+setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+
+dat <- read.csv("immigration_20191219_clean.csv")
+
+## View(dat)
+```
+
+# preference variable -  
+
+```{r}
+tv_prefer <- dat$tv_msnbc - dat$tv_fox
+dat["tv_prefer"] <- tv_prefer
+
+## View(dat)
+```
+
+# H3 - effects of corrective information condition on preferred media choice 
+
+Here, I subset the data to include those individuals who were part of the control group and preferred either FOX or MSNBC and calculated their mean immigration levels based on the 3 immigration questions asked after they would have read the story (if they were not in control). I also calculated their CIs in the table below.
+
+# control - 
+
+```{r}
+preferMSNBC_Control <- subset(dat, tv_prefer > 0 & condition == "control")
+## View(preferMSNBC_Control)
+
+preferFOX_Control <- subset(dat, tv_prefer < 0 & condition == "control")
+## View(preferFOX_Control)
+
+mean_MSNBC_Control_ImmigrationLevel <- mean(preferMSNBC_Control$immig_increased) + mean(preferMSNBC_Control$taxes_pos) + mean(preferMSNBC_Control$jobs_pos)
+mean_MSNBC_Control_ImmigrationLevel <- mean_MSNBC_Control_ImmigrationLevel / 3
+
+mean_FOX_Control_ImmigrationLevel <- mean(preferFOX_Control$immig_increased) + mean(preferFOX_Control$taxes_pos) + mean(preferFOX_Control$jobs_pos)
+mean_FOX_Control_ImmigrationLevel <- mean_FOX_Control_ImmigrationLevel / 3
+
+## confidence interval - 
+
+MSNBC_Control_ImmigrationLevel <- ((preferMSNBC_Control$immig_increased) + (preferMSNBC_Control$taxes_pos) + (preferMSNBC_Control$jobs_pos)) / 3
+
+t1 <- t.test(MSNBC_Control_ImmigrationLevel)
+
+FOX_Control_ImmigrationLevel <- ((preferFOX_Control$immig_increased) + (preferFOX_Control$taxes_pos) + (preferFOX_Control$jobs_pos)) / 3
+
+t2 <- t.test(FOX_Control_ImmigrationLevel)
+
+## 1 = control and prefer MSNBC; 2 = control and prefer FOX
+
+table1 <- map_df(list(t1, t2), broom::tidy)
+table1[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
+```
+
+Here I subset the data for those who chose their news source. This was subset for those who (1) preferred MSNBC and chose MSNBC, (2)preferred MSNBC and chose FOX, (3) preferred FOX and chose FOX, and those who (4) preferred FOX and chose MSNBC. I calculated their mean immigration support levels (higher = more liberal) based on the 3 immigration questions asked after they read the story. I also calculated their CIs in the table below.
+
+# free choice - 
+
+```{r}
+# Prefer MSNBC & Chose MSNBC
+
+preferMSNBC_Choice_Same <- subset(dat, tv_prefer > 0 & condition == "choice" & source == "MSNBC")
+## View(preferMSNBC_Choice_Same)
+
+mean_MSNBC_Choice_Same_ImmigrationLevel <- mean(preferMSNBC_Choice_Same$immig_increased) + mean(preferMSNBC_Choice_Same$taxes_pos) + mean(preferMSNBC_Choice_Same$jobs_pos)
+mean_MSNBC_Choice_Same_ImmigrationLevel <- mean_MSNBC_Choice_Same_ImmigrationLevel / 3
+mean_MSNBC_Choice_Same_ImmigrationLevel
+
+## Confidence Interval
+
+MSNBC_Choice_Same_ImmigrationLevel <- ((preferMSNBC_Choice_Same$immig_increased) + (preferMSNBC_Choice_Same$taxes_pos) + (preferMSNBC_Choice_Same$jobs_pos)) / 3
+
+t3 <- t.test(MSNBC_Choice_Same_ImmigrationLevel)
+
+# Prefer MSNBC & Chose Fox
+
+preferMSNBC_Choice_Diff <- subset(dat, tv_prefer > 0 & condition == "choice" & source == "Fox News")
+## View(preferMSNBC_Choice_Diff)
+
+mean_MSNBC_Choice_Diff_ImmigrationLevel <- mean(preferMSNBC_Choice_Diff$immig_increased) + mean(preferMSNBC_Choice_Diff$taxes_pos) + mean(preferMSNBC_Choice_Diff$jobs_pos)
+mean_MSNBC_Choice_Diff_ImmigrationLevel <- mean_MSNBC_Choice_Diff_ImmigrationLevel / 3
+mean_MSNBC_Choice_Diff_ImmigrationLevel
+
+## Confidence Interval
+
+MSNBC_Choice_Diff_ImmigrationLevel <- ((preferMSNBC_Choice_Diff$immig_increased) + (preferMSNBC_Choice_Diff$taxes_pos) + (preferMSNBC_Choice_Diff$jobs_pos)) / 3
+
+t4 <- t.test(MSNBC_Choice_Diff_ImmigrationLevel)
+
+ # Prefer Fox & Chose Fox
+
+preferFOX_Choice_Same <- subset(dat, tv_prefer < 0 & condition == "choice" & source == "Fox News")
+## View(preferFOX_Choice_Same)
+
+mean_FOX_Choice_Same_ImmigrationLevel <- mean(preferFOX_Choice_Same$immig_increased) + mean(preferFOX_Choice_Same$taxes_pos) + mean(preferFOX_Choice_Same$jobs_pos)
+mean_FOX_Choice_Same_ImmigrationLevel <- mean_FOX_Choice_Same_ImmigrationLevel / 3
+mean_FOX_Choice_Same_ImmigrationLevel
+
+## Confidence Interval 
+
+FOX_Choice_Same_ImmigrationLevel <- ((preferFOX_Choice_Same$immig_increased) + (preferFOX_Choice_Same$taxes_pos) + (preferFOX_Choice_Same$jobs_pos)) /  3
+
+t5 <- t.test(FOX_Choice_Same_ImmigrationLevel)
+
+# Prefer Fox and Chose MSNBC 
+
+preferFOX_Choice_Diff <- subset(dat, tv_prefer < 0 & condition == "choice" & source == "MSNBC")
+## View(preferFOX_Choice_Diff)
+
+mean_FOX_Choice_Diff_ImmigrationLevel <- mean(preferFOX_Choice_Diff$immig_increased) + mean(preferFOX_Choice_Diff$taxes_pos) + mean(preferFOX_Choice_Diff$jobs_pos)
+mean_FOX_Choice_Diff_ImmigrationLevel <- mean_FOX_Choice_Diff_ImmigrationLevel / 3
+mean_FOX_Choice_Diff_ImmigrationLevel
+
+## Confidence Interval
+
+FOX_Choice_Diff_ImmigrationLevel <- ((preferFOX_Choice_Diff$immig_increased) + (preferFOX_Choice_Diff$taxes_pos) + (preferFOX_Choice_Diff$jobs_pos)) / 3
+
+t6 <- t.test(FOX_Choice_Diff_ImmigrationLevel)
+
+## 1 = control and prefer MSNBC; 2 = control and prefer FOX 3 = prefer MSNBC, chose MSNBC; 
+
+## 4 = prefer MSNBC, chose FOX; 5 = prefer FOX, choose FOX; 6 = prefer FOX, choose MSNBC
+
+table2 <- map_df(list(t1, t2, t3, t4, t5, t6), broom::tidy)
+table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
+```
+
+## plot control vs. free choice
+
+Ultimately, I am hoping to take the first two, the third/fourth, and the final two points, and graph them on the same x axis with CIs found above in the way we outlined in our meeting last week. 
+
+For Control vs Free Choice, this would show us the difference between the control group vs choice (same as priors) and conrtol group vs choice (different than priors) by source preference.
+
+```{r}
+choice_list <- c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_MSNBC_Choice_Same_ImmigrationLevel, mean_MSNBC_Choice_Diff_ImmigrationLevel, mean_FOX_Choice_Same_ImmigrationLevel, mean_FOX_Choice_Diff_ImmigrationLevel)
+names(choice_list) <- c("MSNBC Control", "FOX Control", "MSNBC Choice Same", "MSNBC Choice Diff", "FOX Choice Same", "Fox Choice Diff")
+## choice_list
+
+plot(choice_list, xaxt = "n", main = "Control vs Free Choice", xlab = "", ylab = "Mean Level of Immigration Liberalism", type="b", ylim = c(0, 1), cex.lab = 0.75)
+axis(1, at = c(1, 2, 3, 4, 5, 6), labels = c("MSNBC Control", "FOX Control", "MSNBC Choice Same", "MSNBC Choice Diff", "FOX Choice Same", "FOX Choice Diff"), cex.axis = 0.5)
+```
+
+# assigned - 
+
+Here I subset the data for those who were assigned their news source. This was subset for those who (1) preferred MSNBC and were assigned MSNBC, (2)preferred MSNBC and were assigned FOX, (3) preferred FOX and were assigned FOX, and those who (4) preferred FOX and were assigned MSNBC. I calculated their mean immigration support levels (higher = more liberal) based on the 3 immigration questions asked after they read the story. I also calculated their CIs in the table below.
+
+```{r}
+## Prefer MSNBC, Assinged MSNBC
+
+preferMSNBC_assignedMSNBC <- subset(dat, tv_prefer > 0 & condition == "assigned" & source == "MSNBC")
+## View(preferMSNBC_assignedMSNBC)
+
+mean_preferMSNBC_assignedMSNBC_ImmigrationLevel <- mean(preferMSNBC_assignedMSNBC$immig_increased) + mean(preferMSNBC_assignedMSNBC$taxes_pos) + mean(preferMSNBC_assignedMSNBC$jobs_pos)
+mean_preferMSNBC_assignedMSNBC_ImmigrationLevel <- mean_preferMSNBC_assignedMSNBC_ImmigrationLevel / 3
+mean_preferMSNBC_assignedMSNBC_ImmigrationLevel
+
+## Confidence interval - 
+
+preferMSNBC_assignedMSNBC_ImmigrationLevel <- ((preferMSNBC_assignedMSNBC$immig_increased) + (preferMSNBC_assignedMSNBC$taxes_pos) + (preferMSNBC_assignedMSNBC$jobs_pos)) / 3
+
+t7 <- t.test(preferMSNBC_assignedMSNBC_ImmigrationLevel)
+
+## Prefer MSNBC, Assigned FOX
+
+preferMSNBC_assignedFOX <- subset(dat, tv_prefer > 0 & condition == "assigned" & source == "Fox News")
+## View(preferMSNBC_assignedFOX)
+
+mean_preferMSNBC_assignedFOX_ImmigrationLevel <- mean(preferMSNBC_assignedFOX$immig_increased) + mean(preferMSNBC_assignedFOX$taxes_pos) + mean(preferMSNBC_assignedFOX$jobs_pos)
+mean_preferMSNBC_assignedFOX_ImmigrationLevel <- mean_preferMSNBC_assignedFOX_ImmigrationLevel / 3
+mean_preferMSNBC_assignedFOX_ImmigrationLevel
+
+## Confidence Intervals - 
+
+preferMSNBC_assignedFOX_ImmigrationLevel <- ((preferMSNBC_assignedFOX$immig_increased) + (preferMSNBC_assignedFOX$taxes_pos) + (preferMSNBC_assignedFOX$jobs_pos)) / 3
+
+t8 <- t.test(preferMSNBC_assignedFOX_ImmigrationLevel)
+
+## Prefer Fox, Assigned FOX
+
+preferFOX_assignedFOX <- subset(dat, tv_prefer < 0 & condition == "assigned" & source == "Fox News")
+## View(preferFOX_assignedFOX)
+
+mean_preferFOX_assignedFOX_ImmigrationLevel <- mean(preferFOX_assignedFOX$immig_increased) + mean(preferFOX_assignedFOX$taxes_pos) + mean(preferFOX_assignedFOX$jobs_pos)
+mean_preferFOX_assignedFOX_ImmigrationLevel <- mean_preferFOX_assignedFOX_ImmigrationLevel / 3
+mean_preferFOX_assignedFOX_ImmigrationLevel
+
+## Confidence Intervals - 
+
+preferFOX_assignedFOX_ImmigrationLevel <- ((preferFOX_assignedFOX$immig_increased) + (preferFOX_assignedFOX$taxes_pos) + (preferFOX_assignedFOX$jobs_pos)) / 3
+
+t9 <- t.test(preferFOX_assignedFOX_ImmigrationLevel)
+
+## Prefer FOX, Assigned MSNBC
+
+preferFOX_assignedMSNBC <- subset(dat, tv_prefer < 0 & condition == "assigned" & source == "MSNBC")
+## View(preferFOX_assignedMSNBC)
+
+mean_preferFOX_assignedMSNBC_ImmigrationLevel <- mean(preferFOX_assignedMSNBC$immig_increased) + mean(preferFOX_assignedMSNBC$taxes_pos) + mean(preferFOX_assignedMSNBC$jobs_pos)
+mean_preferFOX_assignedMSNBC_ImmigrationLevel <- mean_preferFOX_assignedMSNBC_ImmigrationLevel / 3
+mean_preferFOX_assignedMSNBC_ImmigrationLevel
+
+## Confidence Intervals - 
+
+preferFOX_assignedMSNBC_ImmigrationLevel <- ((preferFOX_assignedMSNBC$immig_increased) + (preferFOX_assignedMSNBC$taxes_pos) + (preferFOX_assignedMSNBC$jobs_pos)) / 3
+
+t10 <- t.test(preferFOX_assignedMSNBC_ImmigrationLevel)
+
+## 1 = control and prefer MSNBC; 2 = control and prefer FOX 3 = prefer MSNBC, assigned MSNBC; 
+
+## 4 = prefer MSNBC, assigned FOX; 5 = prefer FOX, assigned FOX; 6 = prefer FOX, assigned MSNBC 
+
+table3 <- map_df(list(t1, t2, t7, t8, t9, t10), broom::tidy)
+table3[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
+```
+
+# combine and plot - 
+
+Ultimately, I am hoping to take the first two, the third/fourth, and the final two points, and graph them on the same x axis with CIs. 
+
+For the Control vs Assigned, this would show us the difference between control group vs assigned (same as priors) and control group vs assigned (different than priors).  Also, I would like to color code them and change the shapes, potentially in ggplot, to make this easier to decipher.
+
+```{r}
+assigned_list <- c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_preferMSNBC_assignedMSNBC_ImmigrationLevel, mean_preferMSNBC_assignedFOX_ImmigrationLevel, mean_preferFOX_assignedFOX_ImmigrationLevel, mean_preferFOX_assignedMSNBC_ImmigrationLevel)
+names(assigned_list) <- c("MSNBC Control", "FOX Control", "MSNBC Assign Same", "MSNBC Assign Diff", "FOX Assign Same", "Fox Assign Diff")
+##assigned_list
+
+plot(assigned_list, xaxt = "n", main = "Control vs Assigned", xlab = "", ylab = "Mean Level of Immigration Liberalism", type="b", ylim = c(0, 1), cex.lab = 0.75)
+axis(1, at = c(1, 2, 3, 4, 5, 6), labels = c("MSNBC Control", "FOX Control", "MSNBC Assign Same", "MSNBC Assign Diff", "FOX Assign Same", "FOX Assign Diff"), cex.axis = 0.5)
+```
+
+## Tibbles Combined - 
+
+```{r}
+## 1 = control and prefer MSNBC; 2 = control and prefer FOX
+
+## 3 = prefer MSNBC, chose MSNBC; 4 = prefer MSNBC, chose FOX; 5 = prefer FOX, choose FOX; 
+
+## 6 = prefer FOX, choose MSNBC; 7 = prefer MSNBC, assigned MSNBC; 8 = prefer MSNBC, assigned FOX; 
+
+## 9 = prefer FOX, assigned FOX; 10 = prefer FOX, assigned MSNBC
+
+table4 <- map_df(list(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10), broom::tidy)
+table4[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
+```
+
+I believe that the only non-overlap are those who prefer MSNBC and chose MSNBC when compared with the same preference control group, but please double check - it is getting late for me! 
+
+Also, I am not 100% sure on running this t.tests if they should be one sample t-tests or if I should be comparing them across each other.  Amanda and I thought this through a bit, but did not really come to a consensus - we should talk more about this.
