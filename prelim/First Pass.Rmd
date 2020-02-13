@@ -226,7 +226,8 @@ Choice <- ggplot(data, aes(x, y, group = Preference)) +
   scale_size_manual(values=c(4,4,4)) +
   theme_gray(base_size = 14) + 
   theme(axis.text.x = element_text(angle = 45, size = 8, hjust = 1))+
-  facet_wrap(~Preference, ncol = 3, scales = "free_x")
+  facet_wrap(~Preference, ncol = 3, scales = "free_x") +
+  ylim(c(0:1))
 
 Choice
 ```
@@ -356,7 +357,8 @@ Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
   scale_size_manual(values=c(4,4,4)) +
   theme_gray(base_size = 14) + 
   theme(axis.text.x = element_text(angle = 45, size = 8, hjust = 1)) +
-  facet_wrap(~Preference2, ncol = 3, scales = "free_x")
+  facet_wrap(~Preference2, ncol = 3, scales = "free_x") +
+  ylim(c(0:1))
 
 Assigned
 ```
