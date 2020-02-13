@@ -23,8 +23,6 @@ NEW NEW STUFF!
 
 I was able to seperate the three panels by preference in our graphs below - I also noticed that I had made a mistake in the CIs when I initially sent this last week. That error has been fixed, so these basic descriptive graphs should be good to go!
 
-We may want to remove 
-
 ## load packages - 
 
 ```{r, warning=FALSE, message=FALSE}
@@ -206,7 +204,7 @@ table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 
 ## plot control vs. free choice
 
-Control vs Free Choice - I intially plotted them together on the same line (3 controls in one column; 4 choice in another and 2 no preference), but it was impossible to read. Maybe there is a different way to do that, but this should give us a decent first look!
+Control vs Free Choice - Updated plot with accurate CIs and seperate panels
 
 ```{r}
 data <- data.frame(x = c("Control", "Control", "Control", "Chose MSNBC", "Chose FOX", "Chose FOX", "Chose MSNBC", "Chose MSNBC", "Chose FOX"),
