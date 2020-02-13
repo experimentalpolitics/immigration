@@ -19,6 +19,12 @@ I added in the neither category to the three groups (control, assigned, choice) 
 
 Talk to you all soon!
 
+NEW NEW STUFF!
+
+I was able to seperate the three panels by preference in our graphs below - I also noticed that I had made a mistake in the CIs when I initially sent this last week. That error has been fixed, so these basic descriptive graphs should be good to go!
+
+We may want to remove 
+
 ## load packages - 
 
 ```{r, warning=FALSE, message=FALSE}
@@ -203,12 +209,12 @@ table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 Control vs Free Choice - I intially plotted them together on the same line (3 controls in one column; 4 choice in another and 2 no preference), but it was impossible to read. Maybe there is a different way to do that, but this should give us a decent first look!
 
 ```{r}
-data <- data.frame(x = c("Control, Prefer M", "Control, Prefer F", "Control, Prefer N", "Free Choice Same, Prefer M", "Free Choice Same, Prefer F", "Free Choice Diff, Prefer M", "Free Choice Diff, Prefer F", "No Preference, Chose MSNBC", "No Preference, Chose FOX"),
+data <- data.frame(x = c("Control", "Control", "Control", "Chose MSNBC", "Chose FOX", "Chose FOX", "Chose MSNBC", "Chose MSNBC", "Chose FOX"),
                    y    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_MSNBC_Choice_Same_ImmigrationLevel, mean_FOX_Choice_Same_ImmigrationLevel, mean_MSNBC_Choice_Diff_ImmigrationLevel, mean_FOX_Choice_Diff_ImmigrationLevel, mean_preferneither_ChoseMSNBC_ImmigrationLevel, mean_preferneither_ChoseFOX_ImmigrationLevel),
-                   CHI       = c(0.052, 0.069, 0.047, 0.108, 0.07, 0.223, 0.067, 0.092, 0.09),
-                   CLO = c(0.052, 0.069, 0.047, 0.108, 0.07, 0.223, 0.067, 0.092, 0.09),
-                   Preference = c("Prefer M", "Prefer F", "Prefer N", "Prefer M", "Prefer F", "Prefer M", "Prefer F", "Prefer N", "Prefer N"),
-                   Random_Group = c("Control", "Control", "Control", "Choice", "Choice", "Choice", "Choice", "Choice", "Choice"))
+                   CHI       = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
+                   CLO = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
+                   Preference = c("Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer MSNBC", "Prefer FOX", "Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer Neither"),
+                   Group = c("Control", "Control", "Control", "Choice", "Choice", "Choice", "Choice", "Choice", "Choice"))
 
 Choice <- ggplot(data, aes(x, y, group = Preference)) +
   geom_point() +
@@ -217,11 +223,13 @@ Choice <- ggplot(data, aes(x, y, group = Preference)) +
        y = "LIBERAL IMMIGRATION LEVEL",
        title = "FREE CHOICE") +
   theme_classic() + 
-  geom_point(aes(color=Preference, shape=Random_Group, size = Random_Group)) + 
+  geom_point(aes(color =Preference, shape=Group, size = Group)) + 
   scale_shape_manual(values=c(15, 17, 16)) +
   scale_size_manual(values=c(4,4,4)) +
   theme_gray(base_size = 14) + 
-  theme(axis.text.x = element_text(angle = 45, size = 8)) + scale_x_discrete(limits = data$x)
+  theme(axis.text.x = element_text(angle = 45, size = 8, hjust = 1))+
+  facet_wrap(~Preference, ncol = 3, scales = "free_x")
+
 Choice
 ```
 
@@ -328,15 +336,15 @@ table3[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 
 # combine and plot - 
 
-Control vs Assigned - I intially plotted them together on the same line (3 controls in one column; 4 assigned in another and 2 no preference), but it was impossible to read. Maybe there is a different way to do that, but this should give us a decent first look!
+Control vs Assigned - Updated plot with accurate CIs and seperate panels
 
 ```{r}
-data2 <- data.frame(x2 = c("Control, Prefer M", "Control, Prefer F", "Control, Prefer N", "Assigned Same, Prefer M", "Assigned Same, Prefer F", "Assigned Diff, Prefer M", "Assigned Diff, Prefer F", "No Preference, Assigned MSNBC", "No Preference, Assigned FOX"),
+data2 <- data.frame(x2 = c("Control", "Control", "Control", "Assigned MSNBC", "Assigned FOX", "Assigned FOX", "Assigned MSNBC", "Assigned MSNBC", "Assigned FOX"),
                     y2    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_preferMSNBC_assignedMSNBC_ImmigrationLevel, mean_preferFOX_assignedFOX_ImmigrationLevel, mean_preferMSNBC_assignedFOX_ImmigrationLevel, mean_preferFOX_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedFOX_ImmigrationLevel),
-                    CHI_2      = c(0.052, 0.069, 0.047, 0.067, 0.084, 0.092, 0.114, 0.085, 0.066),
-                    CLO_2 = c(0.052, 0.069, 0.047, 0.067, 0.084, 0.092, 0.114, 0.085, 0.066),
-                    Preference2 = c("Prefer M", "Prefer F", "Prefer N", "Prefer M", "Prefer F", "Prefer M", "Prefer F", "Prefer N", "Prefer N"),
-                    Random_Group_2 = c("Control", "Control", "Control", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned"))
+                    CHI_2      = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
+                    CLO_2 = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
+                    Preference2 = c("Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer MSNBC", "Prefer FOX", "Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer Neither"),
+                    Group = c("Control", "Control", "Control", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned"))
 
 Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
   geom_point() +
@@ -345,11 +353,12 @@ Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
        y = "LIBERAL IMMIGRATION LEVEL",
        title = "ASSIGNED") +
   theme_classic() + 
-  geom_point(aes(color=Preference2, shape=Random_Group_2, size = Random_Group_2)) + 
+  geom_point(aes(color=Preference2, shape=Group, size = Group)) + 
   scale_shape_manual(values=c(15, 17, 16)) +
   scale_size_manual(values=c(4,4,4)) +
   theme_gray(base_size = 14) + 
-  theme(axis.text.x = element_text(angle = 45, size = 8)) +
-  scale_x_discrete(limits = data2$x2)
+  theme(axis.text.x = element_text(angle = 45, size = 8, hjust = 1)) +
+  facet_wrap(~Preference2, ncol = 3, scales = "free_x")
+
 Assigned
 ```
