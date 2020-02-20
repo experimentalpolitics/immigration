@@ -33,6 +33,7 @@ library(ggplot2)
 library(expss)
 library(broom)
 library(purrr)
+library(stargazer)
 ```
 
 ## set wd and load data - 
@@ -340,7 +341,7 @@ Control vs Assigned - Updated plot with accurate CIs and seperate panels
 ```{r}
 data2 <- data.frame(x2 = c("Control", "Control", "Control", "Assigned MSNBC", "Assigned FOX", "Assigned FOX", "Assigned MSNBC", "Assigned MSNBC", "Assigned FOX"),
                     y2    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_preferMSNBC_assignedMSNBC_ImmigrationLevel, mean_preferFOX_assignedFOX_ImmigrationLevel, mean_preferMSNBC_assignedFOX_ImmigrationLevel, mean_preferFOX_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedFOX_ImmigrationLevel),
-                    CHI_2      = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
+                    CHI_2 = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
                     CLO_2 = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
                     Preference2 = c("Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer MSNBC", "Prefer FOX", "Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer Neither"),
                     Group = c("Control", "Control", "Control", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned", "Assigned"))
@@ -361,4 +362,26 @@ Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
   ylim(c(0:1))
 
 Assigned
+```
+
+# OLS Analysis
+
+```{r}
+libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition)
+libimm_data$condition <- as.factor(libimm_data$condition)
+
+libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
+libimm_data <- cbind(libimm_data, libimm)
+libimm_data$libimm <- as.numeric(libimm_data$libimm)
+
+
+libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
+
+## View(libimm_data)
+
+test1 <- lm(libimm ~ condition, data = libimm_data)
+```
+
+```{r, results='asis'}
+stargazer(test1, header = F)
 ```
