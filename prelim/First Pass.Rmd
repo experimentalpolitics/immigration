@@ -210,7 +210,7 @@ Control vs Free Choice - Updated plot with accurate CIs and seperate panels
 ```{r}
 data <- data.frame(x = c("Control", "Control", "Control", "Chose MSNBC", "Chose FOX", "Chose FOX", "Chose MSNBC", "Chose MSNBC", "Chose FOX"),
                    y    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_MSNBC_Choice_Same_ImmigrationLevel, mean_FOX_Choice_Same_ImmigrationLevel, mean_MSNBC_Choice_Diff_ImmigrationLevel, mean_FOX_Choice_Diff_ImmigrationLevel, mean_preferneither_ChoseMSNBC_ImmigrationLevel, mean_preferneither_ChoseFOX_ImmigrationLevel),
-                   CHI       = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
+                   CHI = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
                    CLO = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
                    Preference = c("Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer MSNBC", "Prefer FOX", "Prefer MSNBC", "Prefer FOX", "Prefer Neither", "Prefer Neither"),
                    Group = c("Control", "Control", "Control", "Choice", "Choice", "Choice", "Choice", "Choice", "Choice"))
