@@ -299,7 +299,7 @@ Choice <- ggplot(data, aes(x, y, group = Preference)) +
 Choice
 ```
 
-![](First-Pass_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](First-Pass_files/figure-gfm/choice_plot-1.png)<!-- -->
 
 # assigned -
 
@@ -474,7 +474,7 @@ Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
 Assigned
 ```
 
-![](First-Pass_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](First-Pass_files/figure-gfm/assigned_plot-1.png)<!-- -->
 
 # OLS Analysis
 
