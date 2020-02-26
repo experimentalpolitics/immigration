@@ -6,6 +6,7 @@ output:  github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = "")
+setwd("~/Dropbox/github-local/experimentalpolitics/immigration/prelim")
 ```
 
 This is the first pass I took at putting together some of the analyses which we talked about last week. The first step I took was to create a new variable called tv_prefer which was just the difference between the respondents MSNBC preference and FOX preference.  In doing so, this allowed me to determine whether the preferred MSNBC (number > 0) or FOX (number < 0) rather quickly.
@@ -24,7 +25,7 @@ I was able to seperate the three panels by preference in our graphs below - I al
 
 ## load packages - 
 
-```{r, warning=FALSE, message=FALSE}
+```{r libs_load, warning=FALSE, message=FALSE}
 # library(here) # note this is not being used effectively
 library(readr)
 library(tidyverse)
@@ -37,7 +38,7 @@ library(stargazer)
 
 ## set wd and load data - 
 
-```{r}
+```{r load_data}
 # setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
 # dat <- read.csv("immigration_20191219_clean.csv")
@@ -48,7 +49,7 @@ dat <- read.csv("~/Dropbox/political.science/Collaboration/Lab/immigration/data/
 
 # preference variable -  
 
-```{r}
+```{r view_dat}
 tv_prefer <- dat$tv_msnbc - dat$tv_fox
 dat["tv_prefer"] <- tv_prefer
 
@@ -63,7 +64,7 @@ Added those in the neither category!
 
 # control - 
 
-```{r}
+```{r control_setup}
 preferMSNBC_Control <- subset(dat, tv_prefer > 0 & condition == "control")
 ## View(preferMSNBC_Control)
 
@@ -107,7 +108,7 @@ Added those in the neither category!
 
 # free choice - 
 
-```{r}
+```{r choice_setup}
 # Prefer MSNBC & Chose MSNBC
 
 preferMSNBC_Choice_Same <- subset(dat, tv_prefer > 0 & condition == "choice" & source == "MSNBC")
@@ -207,7 +208,7 @@ table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 
 Control vs Free Choice - Updated plot with accurate CIs and seperate panels
 
-```{r}
+```{r choice_plot}
 data <- data.frame(x = c("Control", "Control", "Control", "Chose MSNBC", "Chose FOX", "Chose FOX", "Chose MSNBC", "Chose MSNBC", "Chose FOX"),
                    y    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_MSNBC_Choice_Same_ImmigrationLevel, mean_FOX_Choice_Same_ImmigrationLevel, mean_MSNBC_Choice_Diff_ImmigrationLevel, mean_FOX_Choice_Diff_ImmigrationLevel, mean_preferneither_ChoseMSNBC_ImmigrationLevel, mean_preferneither_ChoseFOX_ImmigrationLevel),
                    CHI = c(0.052, 0.07, 0.06, 0.047, 0.07, 0.108, 0.223, 0.059, 0.09),
@@ -239,7 +240,7 @@ Here I subset the data for those who were assigned their news source. This was s
 
 Added those in the neither category!
 
-```{r}
+```{r assigned_setup}
 ## Prefer MSNBC, Assinged MSNBC
 
 preferMSNBC_assignedMSNBC <- subset(dat, tv_prefer > 0 & condition == "assigned" & source == "MSNBC")
@@ -338,7 +339,7 @@ table3[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 
 Control vs Assigned - Updated plot with accurate CIs and seperate panels
 
-```{r}
+```{r assigned_plot}
 data2 <- data.frame(x2 = c("Control", "Control", "Control", "Assigned MSNBC", "Assigned FOX", "Assigned FOX", "Assigned MSNBC", "Assigned MSNBC", "Assigned FOX"),
                     y2    = c(mean_MSNBC_Control_ImmigrationLevel, mean_FOX_Control_ImmigrationLevel, mean_prefer_neither_ImmigrationLevel, mean_preferMSNBC_assignedMSNBC_ImmigrationLevel, mean_preferFOX_assignedFOX_ImmigrationLevel, mean_preferMSNBC_assignedFOX_ImmigrationLevel, mean_preferFOX_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedMSNBC_ImmigrationLevel, mean_preferneither_assignedFOX_ImmigrationLevel),
                     CHI_2 = c(0.052, 0.07, 0.06, 0.067, 0.084, 0.091, 0.114, 0.085, 0.066),
@@ -366,7 +367,7 @@ Assigned
 
 # OLS Analysis
 
-```{r}
+```{r test1_setup}
 libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition)
 libimm_data$condition <- as.factor(libimm_data$condition)
 
@@ -382,6 +383,6 @@ libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
 test1 <- lm(libimm ~ condition, data = libimm_data)
 ```
 
-```{r}
+```{r test1_table}
 stargazer(test1, type = "text")
 ```
