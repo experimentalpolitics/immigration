@@ -6,7 +6,7 @@ output:  github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = "")
-setwd("~/Dropbox/github-local/experimentalpolitics/immigration/prelim")
+#setwd("~/Dropbox/github-local/experimentalpolitics/immigration/prelim")
 ```
 
 This is the first pass I took at putting together some of the analyses which we talked about last week. The first step I took was to create a new variable called tv_prefer which was just the difference between the respondents MSNBC preference and FOX preference.  In doing so, this allowed me to determine whether the preferred MSNBC (number > 0) or FOX (number < 0) rather quickly.
@@ -38,15 +38,16 @@ library(expss)
 library(broom)
 library(purrr)
 library(stargazer)
+library(lmtest)
 ```
 
 ## set wd and load data - 
 
 ```{r load_data}
-#setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
 #dat <- read.csv("immigration_20191219_clean.csv")
-dat <- read.csv("~/Dropbox/political.science/Collaboration/Lab/immigration/data/immigration_20191219_clean.csv")
+dat <- read_csv("immigration_20191219_clean.csv")
 
 ## View(dat)
 ```

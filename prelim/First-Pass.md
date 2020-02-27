@@ -37,6 +37,13 @@ below - I also noticed that I had made a mistake in the CIs when I
 initially sent this last week. That error has been fixed, so these basic
 descriptive graphs should be good to go\!
 
+NEW NEW NEW STUFF (2/27)\!
+
+I finished the analysis for H1a-c as discussed last week by adding in
+sales\_correct and employ\_correct. I also included the coeftest of the
+coefficients below and cleaned up the document a bit to make it a little
+easier to follow (hopefully).
+
 ## load packages -
 
 ``` r
@@ -48,20 +55,50 @@ library(expss)
 library(broom)
 library(purrr)
 library(stargazer)
+library(lmtest)
 ```
 
 ## set wd and load data -
 
 ``` r
-# setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
-# dat <- read.csv("immigration_20191219_clean.csv")
-dat <- read.csv("~/Dropbox/political.science/Collaboration/Lab/immigration/data/immigration_20191219_clean.csv")
+#dat <- read.csv("immigration_20191219_clean.csv")
+dat <- read_csv("immigration_20191219_clean.csv")
+```
 
+    Parsed with column specification:
+    cols(
+      .default = col_double(),
+      date = col_datetime(format = ""),
+      condition = col_character(),
+      tweet = col_character(),
+      source = col_character(),
+      source_correct = col_logical(),
+      about = col_character(),
+      about_correct = col_logical(),
+      att_check = col_logical(),
+      employ_correct = col_logical(),
+      sales_correct = col_logical(),
+      taxes_oe = col_character(),
+      jobs_oe = col_character(),
+      race = col_character(),
+      white = col_logical(),
+      educ = col_character(),
+      college = col_logical(),
+      marital = col_character(),
+      comments = col_character()
+    )
+
+    See spec(...) for full column specifications.
+
+``` r
 ## View(dat)
 ```
 
-# preference variable -
+# Overview of Data and Graphs
+
+## preference variable -
 
 ``` r
 tv_prefer <- dat$tv_msnbc - dat$tv_fox
@@ -70,17 +107,16 @@ dat["tv_prefer"] <- tv_prefer
 ## View(dat)
 ```
 
-# H3 - effects of corrective information condition on preferred media choice
-
 Here, I subset the data to include those individuals who were part of
 the control group and preferred either FOX or MSNBC and calculated their
 mean immigration levels based on the 3 immigration questions asked after
 they would have read the story (if they were not in control). I also
-calculated their CIs in the table belo.
+calculated their CIs in the table below.
 
-Added those in the neither category\!
+Added those in the neither
+category\!
 
-# control -
+## control -
 
 ``` r
 preferMSNBC_Control <- subset(dat, tv_prefer > 0 & condition == "control")
@@ -268,7 +304,7 @@ table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
     5    0.651     22.2  1.73e-24    0.592     0.710
     6    0.488     11.0  1.31e-12    0.398     0.578
 
-## plot control vs. free choice
+## Plot
 
 Control vs Free Choice - Updated plot with accurate CIs and seperate
 panels
@@ -301,7 +337,7 @@ Choice
 
 ![](First-Pass_files/figure-gfm/choice_plot-1.png)<!-- -->
 
-# assigned -
+## assigned -
 
 Here I subset the data for those who were assigned their news source.
 This was subset for those who (1) preferred MSNBC and were assigned
@@ -444,9 +480,10 @@ table3[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
     7    0.582     14.0  1.93e-15    0.497     0.666
     8    0.639     19.7  7.92e-20    0.573     0.705
 
-# combine and plot -
+## Plot
 
-Control vs Assigned - Updated plot with accurate CIs and seperate panels
+Control vs Assigned - Updated plot with accurate CIs and seperate
+panels
 
 ``` r
 data2 <- data.frame(x2 = c("Control", "Control", "Control", "Assigned MSNBC", "Assigned FOX", "Assigned FOX", "Assigned MSNBC", "Assigned MSNBC", "Assigned FOX"),
@@ -476,10 +513,12 @@ Assigned
 
 ![](First-Pass_files/figure-gfm/assigned_plot-1.png)<!-- -->
 
-# OLS Analysis
+# Hypothesis Testing
+
+## H1a-c
 
 ``` r
-libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition)
+libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
 libimm_data$condition <- as.factor(libimm_data$condition)
 
 libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
@@ -491,11 +530,55 @@ libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
 
 ## View(libimm_data)
 
-test1 <- lm(libimm ~ condition, data = libimm_data)
+test_h1 <- lm(libimm ~ condition + sales_correct + employ_correct, data = libimm_data)
+summary(test_h1)
+```
+
+``` 
+
+Call:
+lm(formula = libimm ~ condition + sales_correct + employ_correct, 
+    data = libimm_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.62891 -0.13195  0.02551  0.18983  0.49084 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        0.509164   0.018180  28.007  < 2e-16 ***
+conditionassigned  0.072453   0.025266   2.868  0.00428 ** 
+conditionchoice    0.045245   0.025185   1.796  0.07292 .  
+sales_correctTRUE  0.045219   0.021542   2.099  0.03623 *  
+employ_correctTRUE 0.002078   0.022971   0.090  0.92796    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2409 on 595 degrees of freedom
+Multiple R-squared:  0.02784,   Adjusted R-squared:  0.02131 
+F-statistic:  4.26 on 4 and 595 DF,  p-value: 0.002087
 ```
 
 ``` r
-stargazer(test1, type = "text")
+coeftest(test_h1)
+```
+
+``` 
+
+t test of coefficients:
+
+                    Estimate Std. Error t value  Pr(>|t|)    
+(Intercept)        0.5091644  0.0181801 28.0067 < 2.2e-16 ***
+conditionassigned  0.0724533  0.0252664  2.8676  0.004283 ** 
+conditionchoice    0.0452449  0.0251851  1.7965  0.072923 .  
+sales_correctTRUE  0.0452195  0.0215424  2.0991  0.036230 *  
+employ_correctTRUE 0.0020777  0.0229707  0.0904  0.927961    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+``` r
+stargazer(test_h1, type = "text")
 ```
 
 ``` 
@@ -505,21 +588,27 @@ stargazer(test1, type = "text")
                     ---------------------------
                               libimm           
 -----------------------------------------------
-conditionassigned            0.082***          
-                              (0.024)          
+conditionassigned            0.072***          
+                              (0.025)          
                                                
-conditionchoice               0.057**          
-                              (0.024)          
+conditionchoice               0.045*           
+                              (0.025)          
                                                
-Constant                     0.522***          
-                              (0.017)          
+sales_correct                 0.045**          
+                              (0.022)          
+                                               
+employ_correct                 0.002           
+                              (0.023)          
+                                               
+Constant                     0.509***          
+                              (0.018)          
                                                
 -----------------------------------------------
 Observations                    600            
-R2                             0.020           
-Adjusted R2                    0.016           
-Residual Std. Error      0.241 (df = 597)      
-F Statistic           5.966*** (df = 2; 597)   
+R2                             0.028           
+Adjusted R2                    0.021           
+Residual Std. Error      0.241 (df = 595)      
+F Statistic           4.260*** (df = 4; 595)   
 ===============================================
 Note:               *p<0.1; **p<0.05; ***p<0.01
 ```
