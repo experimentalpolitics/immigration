@@ -6,7 +6,7 @@ output:  github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = "")
-setwd("~/Dropbox/github-local/experimentalpolitics/immigration/prelim")
+#setwd("~/Dropbox/github-local/experimentalpolitics/immigration/prelim")
 ```
 
 This is the first pass I took at putting together some of the analyses which we talked about last week. The first step I took was to create a new variable called tv_prefer which was just the difference between the respondents MSNBC preference and FOX preference.  In doing so, this allowed me to determine whether the preferred MSNBC (number > 0) or FOX (number < 0) rather quickly.
@@ -23,6 +23,10 @@ NEW NEW STUFF!
 
 I was able to seperate the three panels by preference in our graphs below - I also noticed that I had made a mistake in the CIs when I initially sent this last week. That error has been fixed, so these basic descriptive graphs should be good to go!
 
+NEW NEW NEW STUFF (2/27)!
+
+I finished the analysis for H1a-c as discussed last week by adding in sales_correct and employ_correct. I also included the coeftest of the coefficients below and cleaned up the document a bit to make it a little easier to follow (hopefully).
+
 ## load packages - 
 
 ```{r libs_load, warning=FALSE, message=FALSE}
@@ -34,20 +38,23 @@ library(expss)
 library(broom)
 library(purrr)
 library(stargazer)
+library(lmtest)
 ```
 
 ## set wd and load data - 
 
 ```{r load_data}
-# setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
-# dat <- read.csv("immigration_20191219_clean.csv")
-dat <- read.csv("~/Dropbox/political.science/Collaboration/Lab/immigration/data/immigration_20191219_clean.csv")
+#dat <- read.csv("immigration_20191219_clean.csv")
+dat <- read_csv("immigration_20191219_clean.csv")
 
 ## View(dat)
 ```
 
-# preference variable -  
+# Overview of Data and Graphs
+
+## preference variable -  
 
 ```{r view_dat}
 tv_prefer <- dat$tv_msnbc - dat$tv_fox
@@ -56,13 +63,11 @@ dat["tv_prefer"] <- tv_prefer
 ## View(dat)
 ```
 
-# H3 - effects of corrective information condition on preferred media choice 
-
-Here, I subset the data to include those individuals who were part of the control group and preferred either FOX or MSNBC and calculated their mean immigration levels based on the 3 immigration questions asked after they would have read the story (if they were not in control). I also calculated their CIs in the table belo.
+Here, I subset the data to include those individuals who were part of the control group and preferred either FOX or MSNBC and calculated their mean immigration levels based on the 3 immigration questions asked after they would have read the story (if they were not in control). I also calculated their CIs in the table below.
 
 Added those in the neither category!
 
-# control - 
+## control - 
 
 ```{r control_setup}
 preferMSNBC_Control <- subset(dat, tv_prefer > 0 & condition == "control")
@@ -204,7 +209,7 @@ table2[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 
 ```
 
-## plot control vs. free choice
+## Plot
 
 Control vs Free Choice - Updated plot with accurate CIs and seperate panels
 
@@ -234,7 +239,7 @@ Choice <- ggplot(data, aes(x, y, group = Preference)) +
 Choice
 ```
 
-# assigned - 
+## assigned - 
 
 Here I subset the data for those who were assigned their news source. This was subset for those who (1) preferred MSNBC and were assigned MSNBC, (2)preferred MSNBC and were assigned FOX, (3) preferred FOX and were assigned FOX, and those who (4) preferred FOX and were assigned MSNBC. I calculated their mean immigration support levels (higher = more liberal) based on the 3 immigration questions asked after they read the story. I also calculated their CIs in the table below.
 
@@ -335,7 +340,7 @@ table3 <- map_df(list(t1, t2, t6, t7, t8, t9, td, te), broom::tidy)
 table3[c("estimate", "statistic", "p.value", "conf.low", "conf.high")]
 ```
 
-# combine and plot - 
+## Plot
 
 Control vs Assigned - Updated plot with accurate CIs and seperate panels
 
@@ -365,10 +370,12 @@ Assigned <- ggplot(data2, aes(x2, y2, group = Preference2)) +
 Assigned
 ```
 
-# OLS Analysis
+# Hypothesis Testing
+
+## H1a-c
 
 ```{r test1_setup}
-libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition)
+libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
 libimm_data$condition <- as.factor(libimm_data$condition)
 
 libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
@@ -380,9 +387,12 @@ libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
 
 ## View(libimm_data)
 
-test1 <- lm(libimm ~ condition, data = libimm_data)
+test_h1 <- lm(libimm ~ condition + sales_correct + employ_correct, data = libimm_data)
+summary(test_h1)
+
+coeftest(test_h1)
 ```
 
 ```{r test1_table}
-stargazer(test1, type = "text")
+stargazer(test_h1, type = "text")
 ```
