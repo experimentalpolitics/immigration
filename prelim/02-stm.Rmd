@@ -1,0 +1,102 @@
+---
+title: "Reliable Sources - Analyzing Open-Ended Responses"
+author: "Patrick Kraft"
+date: \today
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load data
+
+```{r, message=FALSE}
+### Packages
+library(here)
+library(readr)
+library(tidyverse)
+library(stm)
+
+### Load cleaned data, combine oe responses, omit empty responses
+df <- read_csv(here("data/immigration_20191219_clean.csv")) %>%
+  mutate(college = as.numeric(educ %in% c("Completed post-graduate or professional school, with degree",
+                               "Graduated 2-year college","Graduated 4-year college")),
+         college_pid = college * pid_rep,
+         oe = paste(taxes_oe, jobs_oe),
+         assigned = as.numeric(condition == "assigned"),
+         choice = as.numeric(condition == "choice")) %>% # combine both items
+  filter(!is.na(age) & !is.na(college) & !is.na(pid_rep))
+```
+
+
+# Estimate Structural Topic Model
+
+```{r, cache=TRUE, message=FALSE, echo=TRUE, results='hide'}
+### fit structural topic model
+
+## process for stm
+processed <- textProcessor(df$oe, metadata = df[,c("age", "college", "pid_rep", "college_pid",
+                                                   "assigned", "choice")])
+out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
+
+## stm fit with 49 topics
+stm_fit <- stm(out$documents, out$vocab, prevalence = as.matrix(out$meta), 
+               K = 0, init.type = "Spectral", seed=12345)
+```
+
+
+# Topic overview
+
+```{r, fig.width=12, fig.height=10}
+summary(stm_fit)
+
+par(mar=c(4.2,0.5,2.5,0.5))
+plot(stm_fit
+     , main=paste0("k = ",stm_fit$settings$dim$K,")",collapse = "")
+     , n=5, labeltype = "frex", text.cex = 1)
+```
+
+
+# Sample topics
+
+```{r}
+par(mar=c(0.5,0.5,2.5,0.5))
+plot(stm_fit, "labels", topics=c(50,27,25,29), 
+     labeltype = "frex",
+     main="Sample Topics (MTurk)")
+```
+
+
+# Topic Differences between control and treatment conditions
+
+```{r, fig.height=5, fig.width=12}
+## estimate topic prevalence effects
+prep <- estimateEffect(~ age + college + pid_rep + college_pid + assigned + choice
+                           , stm_fit, meta = out$meta, uncertainty = "Global")
+
+## select topics with largest treatment differences
+tmp_assigned <- tibble(estimate = sapply(summary(prep)[[3]], function(x) x["assigned","Estimate"])
+              , topics = prep$topics) %>% arrange(estimate)
+topics_assigned <- c(head(tmp_assigned$topics), tail(tmp_assigned$topics))
+
+tmp_choice <- tibble(estimate = sapply(summary(prep)[[3]], function(x) x["choice","Estimate"])
+                  , topics = prep$topics) %>% arrange(estimate)
+topics_choice <- c(head(tmp_choice$topics), tail(tmp_choice$topics))
+
+## plot topic differences
+par(mfrow=c(1,2), mar=c(2.2,0.5,2.2,0.5))
+plot.estimateEffect(prep, covariate = "assigned", topics = topics_assigned, model = stm_fit
+                    , xlim = c(-.1,.05), method = "difference", cov.value1 = 1, cov.value2 = 0
+                    , labeltype = "frex", n=5, verbose.labels = F, width=50
+                    , main = "Treatment Effect on Topic Proportions (assigned vs. rest)")
+plot.estimateEffect(prep, covariate = "choice", topics = topics_choice, model = stm_fit
+                    , xlim = c(-.1,.05), method = "difference", cov.value1 = 1, cov.value2 = 0
+                    , labeltype = "frex", n=5, verbose.labels = F, width=50
+                    , main = "Treatment Effect on Topic Proportions (free choice vs. rest)")
+```
+
+
+# Next steps
+
+- sentiment analysis?
