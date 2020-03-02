@@ -4,10 +4,10 @@
 *.dta
 *.rdata
 *.rda
-#*.RData
-#*.rdb
-#*.rdx
-#*_cache/
+*.RData
+*.rdb
+*.rdx
+*_cache/
 
 # cache file for prereg markdown document
 prereg/*_cache/
