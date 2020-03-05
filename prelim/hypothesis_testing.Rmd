@@ -1,0 +1,120 @@
+---
+title: "Hypothesis Testing"
+author: "Jason Neumeyer"
+date: "March 4, 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load Data and Packages - 
+
+```{r, warning=FALSE, message=FALSE}
+## Packages
+
+##install.packages("here")
+library(here)
+##install.packages("readr")
+library(readr)
+library(tidyverse)
+library(ggplot2)
+##install.packages("expss")
+library(expss)
+##install.packages("broom")
+library(broom)
+##install.packages("purrr")
+library(purrr)
+##install.packages("stargazer")
+library(stargazer)
+library(lmtest)
+
+setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+
+dat <- read_csv("immigration_20191219_clean.csv")
+
+## View(dat)
+```
+
+
+## Preference Variable - 
+
+```{r}
+tv_prefer <- dat$tv_msnbc - dat$tv_fox
+dat["tv_prefer"] <- tv_prefer
+```
+
+# Hypothesis Testing - 
+
+## H1a-c
+
+```{r}
+libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
+libimm_data$condition <- as.factor(libimm_data$condition)
+
+libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
+libimm_data <- cbind(libimm_data, libimm)
+libimm_data$libimm <- as.numeric(libimm_data$libimm)
+
+
+libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
+
+##View(libimm_data)
+h1 <- lm(libimm ~ condition + sales_correct + employ_correct, data = libimm_data)
+```
+
+```{r}
+stargazer(h1, type = "text")
+```
+
+```{r}
+coeftest(h1)
+```
+
+## H2a-c
+
+```{r}
+## Choose Fox
+
+labels_FOX <- c(ideol_con = "Conservative", pid_rep = "Republican", prefer_fox = "Prefer Fox")
+
+choose_fox <- dat %>%
+  filter(condition == "choice") %>%
+  mutate(prefer_fox = tv_fox - tv_msnbc,
+         choose_fox = as.numeric(tweet == "fox")) %>%
+  select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
+  gather(variable, value, -choose_fox) %>%
+  ggplot(aes(x=value, y = choose_fox)) +
+  geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") +
+  facet_grid(~variable, scales = "free_x", labeller = labeller(variable = labels_FOX)) +
+  theme_bw() + labs(y = "Choose FoxNews", x = "")
+
+## Choose MSNBC
+
+ideol_lib <- 1 - dat$ideol_con
+dat["ideol_lib"] <- ideol_lib
+
+pid_dem <- 1 - dat$pid_rep
+dat["pid_dem"] <- pid_dem
+
+labels_MSNBC <- c(ideol_lib = "Liberal", pid_dem = "Democrat", prefer_msnbc = "Prefer MSNBC")
+
+choose_msnbc <- dat %>%
+  filter(condition == "choice") %>%
+  mutate(prefer_msnbc = tv_msnbc - tv_fox,
+         choose_msnbc = as.numeric(tweet == "msnbc")) %>%
+  select(choose_msnbc, ideol_lib, pid_dem, prefer_msnbc) %>%
+  gather(variable, value, -choose_msnbc) %>%
+  ggplot(aes(x=value, y = choose_msnbc)) +
+  geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") + 
+  facet_grid(~variable, scales = "free_x", labeller = labeller(variable = labels_MSNBC)) + 
+  theme_bw() + labs(y = "Choose MSNBC", x = "") 
+
+choose_fox
+choose_msnbc
+```
+
+## H3a-c
+
+
