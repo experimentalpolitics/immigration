@@ -29,6 +29,7 @@ library(purrr)
 ##install.packages("stargazer")
 library(stargazer)
 library(lmtest)
+library(MASS)
 
 setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
@@ -50,7 +51,7 @@ dat["tv_prefer"] <- tv_prefer
 ## H1a-c
 
 ```{r}
-libimm_data <- dat %>% select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
+libimm_data <- dat %>% dplyr::select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
 libimm_data$condition <- as.factor(libimm_data$condition)
 
 libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
@@ -61,15 +62,18 @@ libimm_data$libimm <- as.numeric(libimm_data$libimm)
 libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
 
 ##View(libimm_data)
-h1 <- lm(libimm ~ condition + sales_correct + employ_correct, data = libimm_data)
+h1a <- lm(libimm ~ condition, data = libimm_data)
+summary(h1a)
+
+h1b <- lm(sales_correct ~ condition, data = libimm_data)
+summary(h1b)
+
+h1c <- lm(employ_correct ~ condition, data = libimm_data)
+summary(h1c)
 ```
 
-```{r}
-stargazer(h1, type = "text")
-```
-
-```{r}
-coeftest(h1)
+```{r, results="asis"}
+stargazer(h1a, h1b, h1c)
 ```
 
 ## H2a-c
@@ -83,7 +87,7 @@ choose_fox <- dat %>%
   filter(condition == "choice") %>%
   mutate(prefer_fox = tv_fox - tv_msnbc,
          choose_fox = as.numeric(tweet == "fox")) %>%
-  select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
+  dplyr::select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
   gather(variable, value, -choose_fox) %>%
   ggplot(aes(x=value, y = choose_fox)) +
   geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") +
@@ -104,7 +108,7 @@ choose_msnbc <- dat %>%
   filter(condition == "choice") %>%
   mutate(prefer_msnbc = tv_msnbc - tv_fox,
          choose_msnbc = as.numeric(tweet == "msnbc")) %>%
-  select(choose_msnbc, ideol_lib, pid_dem, prefer_msnbc) %>%
+  dplyr::select(choose_msnbc, ideol_lib, pid_dem, prefer_msnbc) %>%
   gather(variable, value, -choose_msnbc) %>%
   ggplot(aes(x=value, y = choose_msnbc)) +
   geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") + 
@@ -113,8 +117,29 @@ choose_msnbc <- dat %>%
 
 choose_fox
 choose_msnbc
+
+## demographic model for choose FoxNews
+
+choose_fox = as.numeric(dat$tweet == "fox")
+prefer_fox <- dat$tv_msnbc - dat$tv_fox
+
+test <- lm(choose_fox ~ prefer_fox + college + white + age, data = dat)
+summary(test)
+
+test2 <- lm(choose_fox ~ ideol_con + college + white + age, data = dat)
+summary(test2)
+
+test3 <- lm(choose_fox ~ pid_rep + college + white + age, data = dat)
+summary(test3)
+
+testall <- lm(choose_fox ~ ideol_con + pid_rep + prefer_fox + college + white + age, data = dat)
+summary(testall)
+
 ```
 
+```{r, results='asis'}
+stargazer(test, test2, test3, testall, single.row = T, column.sep.width = "0pt")
+```
 ## H3a-c
 
 
