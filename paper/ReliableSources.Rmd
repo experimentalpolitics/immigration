@@ -48,6 +48,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - discuss @gaines2007same, @hopkins2019muted
 
+- Correct information can change factual beliefs/perceptions but not necessarily related attitudes [@hopkins2019muted]
+
+- Factual beliefs become relevant for political judgments only when people interpret them. That is, even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending, for example, their partisanship. Thus, rather than factual beliefs, interpretations of belief drive opinions [@gaines2007same]: 
+Factual belief -> interpretation -> opinion
+
+- other related works:
+Existing view on how factual beliefs form attitudes: A substantial body of research indicates that factual belief/knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes. (Zaller 1992; Stimson 2004) 
+
+Evaluative Motivation (Federico 2007) suggests that the critical process relates to the need to use factual beliefs for evaluative purposes. In this vein, the use of ideology actually consists of two different processes: 
+1. factual belief provides individuals an understanding of the left-right continuum, enabling them to meaningfully identify themselves with an ideological position 
+2. Resulting ideological predispositions can then be used for evaluative judgeemnt about a broader set of political issue.
+
+
 ## The role of media choice, source credibility, and selective exposure
 
 - @dalton1998partisan found that perception of news is shaped as much by a person's political views as by objective content.
