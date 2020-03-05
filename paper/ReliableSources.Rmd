@@ -48,19 +48,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - discuss @gaines2007same, @hopkins2019muted
 
-- Correct information can change factual beliefs/perceptions but not necessarily related attitudes [@hopkins2019muted]
-
-- Factual beliefs become relevant for political judgments only when people interpret them. That is, even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending, for example, their partisanship. Thus, rather than factual beliefs, interpretations of belief drive opinions [@gaines2007same]: 
-Factual belief -> interpretation -> opinion
-
-- other related works:
-Existing view on how factual beliefs form attitudes: A substantial body of research indicates that factual belief/knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes. (Zaller 1992; Stimson 2004) 
-
-Evaluative Motivation (Federico 2007) suggests that the critical process relates to the need to use factual beliefs for evaluative purposes. In this vein, the use of ideology actually consists of two different processes: 
-1. factual belief provides individuals an understanding of the left-right continuum, enabling them to meaningfully identify themselves with an ideological position 
-2. Resulting ideological predispositions can then be used for evaluative judgeemnt about a broader set of political issue.
-
-
 ## The role of media choice, source credibility, and selective exposure
 
 - @dalton1998partisan found that perception of news is shaped as much by a person's political views as by objective content.
@@ -107,6 +94,7 @@ For the main outcome measures described above (i.e., immigration attitudes and p
 
 - **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article .
 - **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
+
 
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source than if they are assiged to one. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition:
 
