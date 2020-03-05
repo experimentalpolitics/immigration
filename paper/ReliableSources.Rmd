@@ -63,10 +63,16 @@ Evaluative Motivation (Federico 2007) suggests that the critical process relates
 
 ## The role of media choice, source credibility, and selective exposure
 
-- @dalton1998partisan found that perception of news is shaped as much by a person's political views as by objective content.
-- Source credibility: Additionally, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed [see @berinsky2018telling]. Source credibility profoundly affects social interpretations of information [@lupia1998democratic]. 
-- @berinsky2017rumors: Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree. 
-- Messenger overwhelms the message: @kuklinski1994hearing connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker.
+Mass media is by far the most regular used information source.  Dalton, Beck, and Huckfeldt (1998) found that perception of news is shaped as much by a person's political views as by objective content. Even if an individual perceives their news source as unbiased, they will perceive their daily news source to report biased information. They found that regardless of the paper's actual stance it was viewed as skewed toward the opposite political beliefs of the reader. Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs (Little 2019).
+
+Sources that are deemed credible are more influential than sources with low credibility. Credibility includes both expertise and trustworthiness and studies have found that source credibility impacts whether individuals will correct misinformation (Guillory and Geraci 2013). One would assume that non-partisan authorities would be a trusted source of information. However, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed (see Berinsky 2018). Neutral sources such as the AMA and the AARP lack authority at time because they are overridden by politicized ones. It is rare for Republicans and Democrats to find a independent source therefore many sources of information lack credibly. This partisan lens extends to how individuals process fake news. Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree. Berinsky (2017):
+
+The idea of source credibility extends to the individual political actor. Kuklinski and Hurley (1994) connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker. In this way the messenger overwhelms the message.
+
+Source credibility profoundly affects social interpretations of information
+(Lupia and McCubbins 1998). [PICKING UP THIS BOOK FROM THE LIBRARY TODAY]
+
+
 
 
 
