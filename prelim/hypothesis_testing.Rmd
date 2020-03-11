@@ -30,6 +30,7 @@ library(purrr)
 library(stargazer)
 library(lmtest)
 library(MASS)
+library(car)
 
 setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
@@ -74,6 +75,21 @@ summary(h1c)
 
 ```{r, results="asis"}
 stargazer(h1a, h1b, h1c)
+```
+
+```{r}
+lh1 <- linearHypothesis(h1a, c("conditionassigned = conditionchoice"))
+
+lh2 <- linearHypothesis(h1b, c("conditionassigned = conditionchoice"))
+
+lh3 <- linearHypothesis(h1c, c("conditionassigned = conditionchoice"))
+```
+
+```{r, results= "asis"}
+stargazer(lh1, title = "Liberal Immigration Level")
+stargazer(lh2, title = "Sales Correct")
+stargazer(lh3, title = "Employ Correct")
+
 ```
 
 ## H2a-c
@@ -131,15 +147,14 @@ summary(test2)
 
 test3 <- lm(choose_fox ~ pid_rep + college + white + age, data = dat)
 summary(test3)
-
-testall <- lm(choose_fox ~ ideol_con + pid_rep + prefer_fox + college + white + age, data = dat)
-summary(testall)
-
 ```
 
 ```{r, results='asis'}
-stargazer(test, test2, test3, testall, single.row = T, column.sep.width = "0pt")
+stargazer(test, test2, test3, single.row = T, column.sep.width = "0pt")
 ```
+
 ## H3a-c
+
+l(model name, c(""))
 
 
