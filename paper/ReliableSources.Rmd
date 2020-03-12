@@ -149,7 +149,15 @@ Beyond this main analysis comparing the free choice and forced exposure conditio
 - **H2b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
 - **H2c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
 
+First and foremost, these comparisons exclude the forced exposure arm of the experiment and only examine those individuals who were randomly assigned to the free choice group. To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondent's self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to pretty strong results:
 
+jitter FOX table from hypothesis testing
+
+In each of the three panes above, moving from left to right increases your placement in that category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical access across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
+
+However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether these other factors might also play a role in selecting FoxNews:
+
+Table 5 from linear hypothesis 
 
 ## Source credibility is more important than the ability to choose
 
