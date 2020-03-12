@@ -74,7 +74,7 @@ summary(h1c)
 ```
 
 ```{r, results="asis"}
-stargazer(h1a, h1b, h1c)
+stargazer(h1a, h1b, h1c, header = FALSE)
 ```
 
 ```{r}
@@ -86,9 +86,9 @@ lh3 <- linearHypothesis(h1c, c("conditionassigned = conditionchoice"))
 ```
 
 ```{r, results= "asis"}
-stargazer(lh1, title = "Liberal Immigration Level")
-stargazer(lh2, title = "Sales Correct")
-stargazer(lh3, title = "Employ Correct")
+stargazer(lh1, header = FALSE, title = "Liberal Immigration Level")
+stargazer(lh2, header = FALSE, title = "Sales Correct")
+stargazer(lh3, header = FALSE, title = "Employ Correct")
 
 ```
 
@@ -150,7 +150,7 @@ summary(test3)
 ```
 
 ```{r, results='asis'}
-stargazer(test, test2, test3, single.row = T, column.sep.width = "0pt")
+stargazer(test, test2, test3, header = FALSE, single.row = T, column.sep.width = "0pt")
 ```
 
 ## H3a-c
