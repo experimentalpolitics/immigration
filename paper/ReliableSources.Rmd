@@ -108,14 +108,32 @@ At first glance, there does not seem to be much in the way of difference across 
 
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
+## Who wants to watch Fox News anyway?
+
+First and foremost, it is necessary to determine the respondents' underlying reasons for selecting a news source. In other words, what drives a respondent to choose the FoxNews tweet and article over MSNBC? This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
+
+- **H1a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H1b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H1c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
+
+To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondents' self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to rather strong results:
+
+jitter FOX table from hypothesis testing
+
+In each of the three panes above, moving from left to right increases your placement in said category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical axis across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
+
+However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether some other factors might also play a role in selecting one source over the other:
+
+Table 5 from linear hypothesis 
+
+The results across all of the models suggest that these three main independent variables - preference for FoxNews, being ideologically conservative, and self-identifying as a Republican - are the only statistically signficant variables, even when including important demographic indicators like education level, race, and age. Although this is not groundbreaking, it does lend more credence to the notion that individuals are actively seeking out news sources which they expect to be confirming of their positions as a partisian ideologue. Due to this bias in the information search process from the beginning, one might expect that if individuals are given the opportunity to choose a media outlet, they would be more likely to update their beliefs on certain social policies when compared to individuals who are randomly assigned a news source. However, as Hypothesis 2 outlines below, this relationship is not as simple as one might expect.
 
 ## Corrective information and media choice
 
-For the main outcome measures described above (i.e., immigration attitudes and perceived economic impact), our analysis begins with two basic comparisons between each treatment group and the control group:
+For the main outcome measures in our experimental design (i.e., immigration attitudes and perceived economic impact), our analysis begins with two basic comparisons between each treatment group and the control group:
 
-- **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article .
-- **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
-
+- **H2a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article .
+- **H2b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
 
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
@@ -125,7 +143,7 @@ The results here seem to support hypothesis 1a and 1b. Across the three measures
 
 Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source than if they are assiged to one. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition:
 
-- **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
+- **H2c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
 
 In order to determine if there are any statistically significant differences between the impacts of the two treatment groups, we run three seperate linear hypothesis tests comparing the results from the forced exposure and free choice groups to each other:
 
@@ -137,27 +155,11 @@ Table 4 from Hypothesis Testing
 
 In each of the three models, liberal immigration levels, sales correct, and employ correct, there is not any statistically significant difference between those who were in the forced exposure group versus those who were given the opportunity to choose. Although this is somewhat disappointing, it is not fully unexpected: the power necessary to find these potential differences was not likely to be had from our sample; however, by finding support for H1a and H1b, we have taken a crucial first step toward answering some of the questions which surround updating one's beliefs. Ultimtaely, with a larger sample, we are still optimistic that the ability to choose one's media source plays a key role in how/if a respondent will update his/her beliefs.
 
-Note that this last comparison (*H1c*) can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article), which are not included in the control group. For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and therefore lead to more positive evaluations. Here, we also plan to explore conditional treatment effects based on pre-treatment measures of people's political predispositions (stereotypes towards immigrants, whether immigration is seen as a major issue, ideology, partisanship) and we will further examine whether the differences in *H1c* are conditional on participants being exposed to a news source that is congruent with their usual media diet. Any difference between the forced exposure and free choice condition could theoretically be driven either by the fact that participants in the free choice condition tend to select news organizations they are more sympathetic towards, or by the fact alone that they are able to choose a source (i.e., the selection process itself makes the information more effective). 
+Unsure about these next two paragraphs - maybe we could run through this?
+
+Note that this last comparison (*H1c*) can also be evaluated using other additional outcome measures which have been collected (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article), and were not included in the control group. For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and therefore lead to more positive evaluations. Here, we also plan to explore conditional treatment effects based on pre-treatment measures of people's political predispositions (stereotypes towards immigrants, whether immigration is seen as a major issue, ideology, partisanship) and we will further examine whether the differences in *H1c* are conditional on participants being exposed to a news source that is congruent with their usual media diet. Any difference between the forced exposure and free choice condition could theoretically be driven either by the fact that participants in the free choice condition tend to select news organizations they are more sympathetic towards, or by the fact alone that they are able to choose a source (i.e., the selection process itself makes the information more effective). 
 
 In order to distinguish both possibilities, we will conduct an additional test where we isolate the effect of forced exposure vs. free choice while holding the underlying news organization constant. Specifically, we are planning to compare both conditions within groups of individuals who were exposed to a congruent as compared to an incongruent source (either by choice or by random assignment). Additional analyses outlined below will allow us to further assess how endogeneous media exposure impacts the effectiveness of corrective information.
-
-## Who wants to watch Fox News anyway?
-
-Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to confirm whether respondents indeed choose information sources that are consistent with their ideological predisposition and usual media diet. This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
-
-- **H2a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
-- **H2b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
-- **H2c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
-
-First and foremost, these comparisons exclude the forced exposure arm of the experiment and only examine those individuals who were randomly assigned to the free choice group. To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondent's self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to pretty strong results:
-
-jitter FOX table from hypothesis testing
-
-In each of the three panes above, moving from left to right increases your placement in that category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical access across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
-
-However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether these other factors might also play a role in selecting FoxNews:
-
-Table 5 from linear hypothesis 
 
 ## Source credibility is more important than the ability to choose
 
