@@ -49,7 +49,7 @@ dat["tv_prefer"] <- tv_prefer
 
 # Hypothesis Testing - 
 
-## H1a-c
+## H2a-c
 
 ```{r}
 libimm_data <- dat %>% dplyr::select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
@@ -92,7 +92,7 @@ stargazer(lh3, header = FALSE, title = "Employ Correct")
 
 ```
 
-## H2a-c
+## H1a-c
 
 ```{r}
 ## Choose Fox

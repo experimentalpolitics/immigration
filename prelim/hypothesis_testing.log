@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.24)  25 MAR 2020 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.24)  25 MAR 2020 12:40
 entering extended mode
 **./hypothesis_testing.tex
 (hypothesis_testing.tex
@@ -798,7 +798,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 613.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 613.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 613.
 Package rerunfilecheck Info: File `hypothesis_testing.out' has not changed.
-(rerunfilecheck)             Checksum: 28742ACDCE5DAB6A1A216494EA732158;734.
+(rerunfilecheck)             Checksum: 5D34B82EE3B6485AEFC0375029873A52;734.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -830,7 +830,7 @@ iKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Owner/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Owner/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Owner/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
-Output written on hypothesis_testing.pdf (9 pages, 318595 bytes).
+Output written on hypothesis_testing.pdf (9 pages, 318796 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
