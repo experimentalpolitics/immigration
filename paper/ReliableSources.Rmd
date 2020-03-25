@@ -98,9 +98,9 @@ Prior to the discussion on our specific hpyothesis testing below, an overview of
 
 
 
-![Survey Flow](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
+![Free Choice Differences](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
 
-![Survey Flow](../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png)
+![Assigned Differences](../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png)
 
 The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions.
 
