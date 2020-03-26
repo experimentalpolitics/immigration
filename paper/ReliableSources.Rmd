@@ -46,19 +46,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Differentiating factual beliefs, interpretations, and opinions
 
-- discuss @gaines2007same, @hopkins2019muted
 
-- Correct information can change factual beliefs/perceptions but not necessarily related attitudes [@hopkins2019muted]
+People form different interpretations from the same facts. This seems to have increased recently. The facts, or objective information, surrounding climate change, impeachment, and COVID-19 were interpreted differently. As people interpreted these facts opinions were form that informed attitudes. Attitudes are set of emotions, beliefs, behaviors towards an object, person or event. How a person interprets the facts of COVID-19 interpreted their behavior in light of the event.
 
-- Factual beliefs become relevant for political judgments only when people interpret them. That is, even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending, for example, their partisanship. Thus, rather than factual beliefs, interpretations of belief drive opinions [@gaines2007same]: 
-Factual belief -> interpretation -> opinion
+Factual beliefs become relevant for political judgments only when people interpret them.
+That is, even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending, for example, their partisanship. Thus, rather than factual beliefs, interpretations of belief drive opinions [@gaines2007same]
+An opportunity to rationalize existing opinions/attitudes. Rationalizations include evaluations such as the number casualties is modest loss, or number of immigrations is high or low. Another rationalizations is explanations. An example of this is the explanation that there are no WMD because they never existed. [More relevant example for our study?] Lastly inferences such as spending on war means domestic needs are ignored. Is another rationalization that would lead to questions such as an immigration tradeoff or redistribution.
+Interpretations afford leeway to align factual beliefs with undeniable reality and continue to justify partisan preferences. As events unfold, onslaught of evidence-ex. Figures recited on daily news-can trump partisan motivation with respect to factual beliefs. Motivation colors judgement, but people are also motivated to be rational [@kunda1990case].
 
-- other related works:
-Existing view on how factual beliefs form attitudes: A substantial body of research indicates that factual belief/knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes. (Zaller 1992; Stimson 2004) 
+A substantial body of research indicates that factual belief and knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes. (Zaller 1992; Stimson 2004)
+Evaluative Motivation (Federico 2007) suggests that the critical process relates to the need to use factual beliefs for evaluative purposes. In this vein, the use of ideology actually consists of two different processes: first, factual belief provides individuals an understanding of the left-right continuum, enabling them to meaningfully identify themselves with an ideological position Secondly, resulting ideological predispositions can then be used for evaluative judgment about a broader set of political issue.
 
-Evaluative Motivation (Federico 2007) suggests that the critical process relates to the need to use factual beliefs for evaluative purposes. In this vein, the use of ideology actually consists of two different processes: 
-1. factual belief provides individuals an understanding of the left-right continuum, enabling them to meaningfully identify themselves with an ideological position 
-2. Resulting ideological predispositions can then be used for evaluative judgeemnt about a broader set of political issue.
+Can correct information change attitudes? Correct information can change factual beliefs or perceptions but not necessarily related attitudes [@hopkins2019muted] Do facts influence attitudes? Jury is out, but probably not (i.e. Hopkins et al 2019). Whether people update and what it means to update is up for debate. 
+
+Why don't people update their related attitudes? One explanation is that they first have to be interpreted either by individuals themselves or by letting others do it for them [@gaines2007same]. "People cannot turn to a manual to determine if an additional 50 troop casual-ties during the past month represents a big, moderate, or small loss."
+
+
+
 
 
 ## The role of media choice, source credibility, and selective exposure
