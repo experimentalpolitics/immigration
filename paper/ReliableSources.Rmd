@@ -2,17 +2,20 @@
 title: "Reliable Sources?"
 subtitle: "Correcting Misinformation in Polarized Media Environments"
 author:
-- Patrick W. Kraft
-- Nicholas R. Davis
-- Taraleigh Davis
-- Amanda Heideman
-- Jason T. Neumeyer
-- Shin Young Park
-date: \today
+  - Patrick W. Kraft
+  - Nicholas R. Davis
+  - Taraleigh Davis
+  - Amanda Heideman
+  - Jason T. Neumeyer
+  - Shin Young Park
+date: |
+  | University of Wisconsin-Milwaukee 
+  |
+  | \today
 abstract: >-
   Various important issues at the center of today's politics--such as immigration or climate change--are imbued with misinformation. A growing body of research therefore explores whether people's misperceptions can be mitigated by providing corrective information. While such corrections have been shown to reduce factual misinformation, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article. Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being further shared with others (e.g., through social media). The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
 reference-section-title: References
-##bibliography: '../../bibliography/Lab.bib'
+bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
 geometry: margin=1in
 linestretch: 1.5
@@ -34,9 +37,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-- Misinformation is a growing problem, start with motivating example that connects to immigration attitudes
-- broad overview of findings: corrective information can change misperceptions but usually no (or weak) effects on underlying attitudes [@hopkins2019muted]
-- one important factor that has been examined in the past focuses on source credibility. However, what has been understudied in this process is the opportunity to choose information sources (rather than simply being exposed to them). This is particularly relevant in the context of our changing media environment where people have much more discretion over their information diet...
+Citizens in western democracies display wide-ranging and systematic misperceptions about immigrants in their home countries. For example, people's average estimate of the number of immigrants is usually higher than the true value---as is the perceived proportion of immigrants who are dependent on social welfare [e.g., @alesina2019immigration]. Given this expansive spread of misinformation, various studies examined how corrective information may affect people's underlying attitudes towards immigration, albeit with limited success. The underlying issue appears to be that even though corrective information may change factual misperceptions, it usually has no (or only weak) effects on underlying attitudes [@hopkins2019muted]. One explanation for this finding could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere rationalization for people's underlying views towards immigrant populations. However, people update their beliefs in other areas etc... (CITES)
+
+This paper explores an alternative explanation for the apparent inability of corrective information to shift attitudes. 
+
+- role of source credibility
+- delivery mode: process by which people receive information.
+
+<!-- For example, one important factor that has been examined in the past focuses on source credibility. However, what has been understudied in this process is the opportunity to choose information sources (rather than simply being exposed to them). This is particularly relevant in the context of our changing media environment where people have much more discretion over their information diet... -->
+
+- *Additional relevance*: People have much more control over their information diets, they can access a multitude of sources on the internet, but there is only insufficient understand as to how these changes in delivery mode affect the potential of misinformation corrections.
 
 # Theory
 
@@ -87,7 +97,7 @@ Source credibility profoundly affects social interpretations of information
 <!-- Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?  -->
 
 
-# Our study
+# Results
 
 Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. In general, we expect that those who were able to choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to evaluate the article positively and change their attitudes in the direction of the news article.
 
@@ -111,26 +121,6 @@ The two graphs above show the mean liberal immigration level across preference g
 At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph, there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
-
-## Who wants to watch Fox News anyway?
-
-First and foremost, it is necessary to determine the respondents' underlying reasons for selecting a news source. In other words, what drives a respondent to choose the FoxNews tweet and article over MSNBC? This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
-
-- **H1a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
-- **H1b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
-- **H1c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
-
-To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondents' self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to rather strong results:
-
-jitter FOX table from hypothesis testing
-
-In each of the three panes above, moving from left to right increases your placement in said category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical axis across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
-
-However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether some other factors might also play a role in selecting one source over the other:
-
-Table 5 from linear hypothesis 
-
-The results across all of the models suggest that these three main independent variables - preference for FoxNews, being ideologically conservative, and self-identifying as a Republican - are the only statistically signficant variables, even when including important demographic indicators like education level, race, and age. Although this is not groundbreaking, it does lend more credence to the notion that individuals are actively seeking out news sources which they expect to be confirming of their positions as a partisian ideologue. Due to this bias in the information search process from the beginning, one might expect that if individuals are given the opportunity to choose a media outlet, they would be more likely to update their beliefs on certain social policies when compared to individuals who are randomly assigned a news source. However, as Hypothesis 2 outlines below, this relationship is not as simple as one might expect.
 
 ## Corrective information and media choice
 
