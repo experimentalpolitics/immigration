@@ -590,7 +590,23 @@ Knox)}\label{power-analysis-conditional-effects-depending-on-media-preference-ac
 \StringTok{    }\NormalTok{Smsnbc\_Amsnbc }\OperatorTok{*}\StringTok{ }\NormalTok{(Z }\OperatorTok{==}\StringTok{ "4"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\NormalTok{u,}
   \DataTypeTok{conditions =} \KeywordTok{c}\NormalTok{(}\StringTok{"1"}\NormalTok{, }\StringTok{"2"}\NormalTok{, }\StringTok{"3"}\NormalTok{,}\StringTok{"4"}\NormalTok{),}
   \DataTypeTok{assignment\_variables =}\NormalTok{ Z)}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+## Warning: Assigning non-quosure objects to quosure lists is deprecated as of rlang 0.3.0.
+## Please coerce to a bare list beforehand with `as.list()`
+## This warning is displayed once per session.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: `quo_expr()` is deprecated as of rlang 0.2.0.
+## Please use `quo_squash()` instead.
+## This warning is displayed once per session.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{estimand <{-}}\StringTok{ }\KeywordTok{declare\_estimands}\NormalTok{(}
   \DataTypeTok{acte\_Y\_fox =} \KeywordTok{mean}\NormalTok{(Y\_Z\_}\DecValTok{1} \OperatorTok{{-}}\StringTok{ }\NormalTok{Y\_Z\_}\DecValTok{2}\NormalTok{),}
   \DataTypeTok{acte\_Y\_msnbc =} \KeywordTok{mean}\NormalTok{(Y\_Z\_}\DecValTok{4} \OperatorTok{{-}}\StringTok{ }\NormalTok{Y\_Z\_}\DecValTok{3}\NormalTok{))}
@@ -626,6 +642,18 @@ Knox)}\label{power-analysis-conditional-effects-depending-on-media-preference-ac
   \DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"power"}\NormalTok{, }\StringTok{"bias"}\NormalTok{)))}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Warning: `is_lang()` is deprecated as of rlang 0.2.0.
+## Please use `is_call()` instead.
+## This warning is displayed once per session.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: `lang_name()` is deprecated as of rlang 0.2.0.
+## Please use `call_name()` instead.
+## This warning is displayed once per session.
+\end{verbatim}
 
 \begin{verbatim}
 ## 

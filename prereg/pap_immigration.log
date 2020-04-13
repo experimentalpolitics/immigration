@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  14 FEB 2020 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  9 APR 2020 10:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1018,55 +1018,64 @@ sand estimates with bootstrapped standard errors in parentheses (100 replicates
 ).[] 
  []
 
-[6] [7]
-Overfull \hbox (275.74281pt too wide) in paragraph at lines 639--639
+[6]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 600--600
+[]\T1/lmtt/m/n/10 ## Warning: Assigning non-quosure objects to quosure lists is
+ deprecated as of rlang 0.3.0.[] 
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 600
+.
+(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [7]
+Overfull \hbox (275.74281pt too wide) in paragraph at lines 667--667
 []\T1/lmtt/m/n/10 ## Research design diagnosis based on 500 simulations. Diagno
 sand estimates with bootstrapped standard errors in parentheses (100 replicates
 ).[] 
  []
 
 [8] [9] [10]
-<../material/tweets/fox_popular.png, id=157, 590.205pt x 271.0125pt>
+<../material/tweets/fox_popular.png, id=145, 590.205pt x 271.0125pt>
 File: ../material/tweets/fox_popular.png Graphic file (type png)
 <use ../material/tweets/fox_popular.png>
 Package pdftex.def Info: ../material/tweets/fox_popular.png  used on input line
- 1061.
+ 1089.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
-<../material/tweets/msnbc_popular.png, id=159, 590.205pt x 271.0125pt>
+[11]
+<../material/tweets/msnbc_popular.png, id=176, 590.205pt x 271.0125pt>
 File: ../material/tweets/msnbc_popular.png Graphic file (type png)
 <use ../material/tweets/msnbc_popular.png>
 Package pdftex.def Info: ../material/tweets/msnbc_popular.png  used on input li
-ne 1067.
+ne 1095.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1080 story.}
-               At the end of the pause, an arrow will appear at the bottom ofpd
-fTeX warning (ext4): destination with the same identifier (name{figure.3}) has 
-been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1080 story.}
-               At the end of the pause, an arrow will appear at the bottom of <
-../material/tweets/fox_popular.png> <../material/tweets/msnbc_popular.png>]
-<../material/fig/immig_entrepreneurs.png, id=181, 632.3625pt x 281.05pt>
+<../material/fig/immig_entrepreneurs.png, id=177, 632.3625pt x 281.05pt>
 File: ../material/fig/immig_entrepreneurs.png Graphic file (type png)
 <use ../material/fig/immig_entrepreneurs.png>
 Package pdftex.def Info: ../material/fig/immig_entrepreneurs.png  used on input
- line 1101.
+ line 1129.
 (pdftex.def)             Requested size: 211.382pt x 93.94756pt.
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1146 \textbf{{[}source{]}}
-                             \emph{(randomize order)} Which Twitter account / <
-../material/fig/immig_entrepreneurs.png (PNG copy)>] [13] [14] [15]
+l.1132 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1132 
+        <../material/tweets/fox_popular.png> <../material/tweets/msnbc_popular.
+png>] [13pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1220   F
+          orward the story to a friend or colleague via email <../material/fig/
+immig_entrepreneurs.png (PNG copy)>] [14] [15] [16]
 
 ! LaTeX Error: Environment cslreferences undefined.
 
@@ -1074,14 +1083,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1625 \begin{cslreferences}
+l.1653 \begin{cslreferences}
                              
 Here is how much of TeX's memory you used:
- 13159 strings out of 492982
- 190011 string characters out of 6134895
- 297507 words of memory out of 5000000
- 16228 multiletter control sequences out of 15000+600000
- 55004 words of font info for 105 fonts, out of 8000000 for 9000
+ 13213 strings out of 492982
+ 190752 string characters out of 6134895
+ 297503 words of memory out of 5000000
+ 16261 multiletter control sequences out of 15000+600000
+ 55309 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,6n,38p,289b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 
