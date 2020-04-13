@@ -1,0 +1,58 @@
+---
+title: "Reliable Sources?"
+subtitle: |
+  | Correcting Misinformation in Polarized Media Environments
+  |
+  | \small Supplementary Material
+author:
+  - Patrick W. Kraft
+  - Nicholas R. Davis
+  - Taraleigh Davis
+  - Amanda Heideman
+  - Jason T. Neumeyer
+  - Shin Young Park
+date: |
+  | University of Wisconsin-Milwaukee 
+  |
+  | \today
+reference-section-title: References
+bibliography: '../../bibliography/Lab.bib'
+fontsize: 12pt
+geometry: margin=1in
+linestretch: 1.5
+output: 
+  pdf_document:
+    number_sections: true
+    template: null
+header-includes:
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{float}
+  \floatplacement{figure}{H}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\clearpage
+
+# Who wants to watch Fox News anyway?
+
+First and foremost, it is necessary to determine the respondents' underlying reasons for selecting a news source. In other words, what drives a respondent to choose the FoxNews tweet and article over MSNBC? This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
+
+- **H1a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H1b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H1c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
+
+To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondents' self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to rather strong results:
+
+jitter FOX table from hypothesis testing
+
+In each of the three panes above, moving from left to right increases your placement in said category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical axis across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
+
+However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether some other factors might also play a role in selecting one source over the other:
+
+Table 5 from linear hypothesis 
+
+The results across all of the models suggest that these three main independent variables - preference for FoxNews, being ideologically conservative, and self-identifying as a Republican - are the only statistically signficant variables, even when including important demographic indicators like education level, race, and age. Although this is not groundbreaking, it does lend more credence to the notion that individuals are actively seeking out news sources which they expect to be confirming of their positions as a partisian ideologue. Due to this bias in the information search process from the beginning, one might expect that if individuals are given the opportunity to choose a media outlet, they would be more likely to update their beliefs on certain social policies when compared to individuals who are randomly assigned a news source. However, as Hypothesis 2 outlines below, this relationship is not as simple as one might expect.
+
