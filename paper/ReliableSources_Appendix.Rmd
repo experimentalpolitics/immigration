@@ -16,7 +16,7 @@ date: |
   |
   | \today
 reference-section-title: References
-bibliography: '../../bibliography/Lab.bib'
+#bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
 geometry: margin=1in
 linestretch: 1.5
@@ -34,6 +34,34 @@ header-includes:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Packages
+
+##install.packages("here")
+library(here)
+##install.packages("readr")
+library(readr)
+library(tidyverse)
+library(ggplot2)
+##install.packages("expss")
+library(expss)
+##install.packages("broom")
+library(broom)
+##install.packages("purrr")
+library(purrr)
+##install.packages("stargazer")
+library(stargazer)
+library(lmtest)
+library(MASS)
+library(car)
+
+setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+
+dat <- read_csv("immigration_20191219_clean.csv")
+
+## View(dat)
+```
+
 \clearpage
 
 # Who wants to watch Fox News anyway?
@@ -46,13 +74,42 @@ First and foremost, it is necessary to determine the respondents' underlying rea
 
 To differentiate across these three hypotheses, we asked pre-treatment questions regarding respondents' self-placed ideology, party identification, and media diet. Taking these three into account seperately, and subsequently analyzing the impact on media choice in our experiment, led to rather strong results:
 
-jitter FOX table from hypothesis testing
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+labels_FOX <- c(ideol_con = "Conservative", pid_rep = "Republican", prefer_fox = "Prefer Fox")
+
+choose_fox <- dat %>%
+  filter(condition == "choice") %>%
+  mutate(prefer_fox = tv_fox - tv_msnbc,
+         choose_fox = as.numeric(tweet == "fox")) %>%
+  dplyr::select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
+  gather(variable, value, -choose_fox) %>%
+  ggplot(aes(x=value, y = choose_fox)) +
+  geom_jitter(alpha = .1, height = .1) + geom_smooth(method = "lm") +
+  facet_grid(~variable, scales = "free_x", labeller = labeller(variable = labels_FOX)) +
+  theme_bw() + labs(y = "Choose FoxNews", x = "")
+
+choose_fox
+```
 
 In each of the three panes above, moving from left to right increases your placement in said category, meaning the respondent is more conservative, more Republican, and prefers FoxNews at a higher rate to MSNBC. The vertical axis across all three is the liklihood that the individual would select FoxNews in our free choice arm of the experiment. The relationships here are strongly positive, providing some legitimacy to the notions of a biased search process outlined above. 
 
 However, these are not the only potential factors which may impact one's liklihood to select FoxNews when given the choice. Using other demographic variables from the pre-treatment battery, we analyze whether some other factors might also play a role in selecting one source over the other:
 
-Table 5 from linear hypothesis 
+```{r, echo = FALSE, include=FALSE}
+choose_fox = as.numeric(dat$tweet == "fox")
+prefer_fox <- dat$tv_fox - dat$tv_msnbc
 
-The results across all of the models suggest that these three main independent variables - preference for FoxNews, being ideologically conservative, and self-identifying as a Republican - are the only statistically signficant variables, even when including important demographic indicators like education level, race, and age. Although this is not groundbreaking, it does lend more credence to the notion that individuals are actively seeking out news sources which they expect to be confirming of their positions as a partisian ideologue. Due to this bias in the information search process from the beginning, one might expect that if individuals are given the opportunity to choose a media outlet, they would be more likely to update their beliefs on certain social policies when compared to individuals who are randomly assigned a news source. However, as Hypothesis 2 outlines below, this relationship is not as simple as one might expect.
+test <- lm(choose_fox ~ prefer_fox + college + white + age, data = dat)
+
+test2 <- lm(choose_fox ~ ideol_con + college + white + age, data = dat)
+
+test3 <- lm(choose_fox ~ pid_rep + college + white + age, data = dat)
+```
+
+```{r, results='asis', echo=FALSE}
+stargazer(test, test2, test3, header = FALSE, column.sep.width = "1pt", single.row = TRUE, table.placement = "H", title = "Choosing FoxNews", dep.var.labels = "Choose FoxNews", covariate.labels = c("Prefer FoxNews", "Conservative Ideology", "Republican", "College Educated", "White", "Age"))
+
+```
+
+The results across all of the models suggest that these three main independent variables - preference for FoxNews, being ideologically conservative, and self-identifying as a Republican - are the only statistically signficant variables, even when including important demographic indicators like education level, race, and age. Although this is not groundbreaking, it does lend more credence to the notion that individuals are actively seeking out news sources which they expect to be confirming of their positions as a partisian ideologue. Due to this bias in the information search process from the beginning, one might expect that if individuals are given the opportunity to choose a media outlet, they would be more likely to update their beliefs on certain social policies when compared to individuals who are randomly assigned a news source. However, as the other analyses in our paper suggest, this relationship is not as simple as one might expect.
 
