@@ -32,7 +32,7 @@ library(lmtest)
 library(MASS)
 library(car)
 
-setwd("C:/Users/Owner/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
 dat <- read_csv("immigration_20191219_clean.csv")
 
@@ -74,7 +74,7 @@ summary(h1c)
 ```
 
 ```{r, results="asis"}
-stargazer(h1a, h1b, h1c, header = FALSE)
+stargazer(h1a, h1b, h1c, dep.var.labels = c("Liberal Immigration Level", "Accurate Sale Numbers", "Accurate Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), title = "Control vs. Free Choice vs. Assigned", header = FALSE)
 ```
 
 ```{r}

@@ -15,7 +15,7 @@ date: |
 abstract: >-
   Various important issues at the center of today's politics--such as immigration or climate change--are imbued with misinformation. A growing body of research therefore explores whether people's misperceptions can be mitigated by providing corrective information. While such corrections have been shown to reduce factual misinformation, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article. Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being further shared with others (e.g., through social media). The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
 reference-section-title: References
-bibliography: '../../bibliography/Lab.bib'
+#bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
 geometry: margin=1in
 linestretch: 1.5
@@ -31,6 +31,28 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+## Packages
+
+##install.packages("here")
+library(here)
+##install.packages("readr")
+library(readr)
+library(tidyverse)
+library(ggplot2)
+##install.packages("expss")
+library(expss)
+##install.packages("broom")
+library(broom)
+##install.packages("purrr")
+library(purrr)
+##install.packages("stargazer")
+library(stargazer)
+library(lmtest)
+library(MASS)
+library(car)
 ```
 
 \clearpage
@@ -105,13 +127,17 @@ Previous research examining the effectiveness of corrective information showed t
 
 ## Research design
 
+```{r, include=FALSE}
+setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+
+dat <- read_csv("immigration_20191219_clean.csv")
+```
+
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
 
-Prior to the discussion on our specific hpyothesis testing below, an overview of the differences across the three groups (control, assigned, and choice) and individual media preferences, is necessary. This general landscape of the sample will provide a solid foundation from which our more distinct tests below arise. 
-
-
+Prior to the discussion on our specific hypothesis testing below, an overview of the differences across the three groups (control, assigned, and choice) and individual media preferences, is necessary. This general landscape of the sample will provide a solid foundation from which our more distinct tests below arise. 
 
 ![Free Choice Differences](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
 
@@ -119,7 +145,7 @@ Prior to the discussion on our specific hpyothesis testing below, an overview of
 
 The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions.
 
-At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph, there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
+At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
@@ -127,28 +153,59 @@ At first glance, there does not seem to be much in the way of difference across 
 
 For the main outcome measures in our experimental design (i.e., immigration attitudes and perceived economic impact), our analysis begins with two basic comparisons between each treatment group and the control group:
 
-- **H2a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article .
-- **H2b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
+- **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article.
+- **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
 
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
-Table 1 from Hypothesis Testing
+```{r, include=FALSE}
+libimm_data <- dat %>% dplyr::select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
+libimm_data$condition <- as.factor(libimm_data$condition)
 
-The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), sales correct, and employment correct, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas. 
+libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
+libimm_data <- cbind(libimm_data, libimm)
+libimm_data$libimm <- as.numeric(libimm_data$libimm)
 
-Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source than if they are assiged to one. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition:
 
-- **H2c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
+libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
+
+h1a <- lm(libimm ~ condition, data = libimm_data)
+
+h1b <- lm(sales_correct ~ condition, data = libimm_data)
+
+h1c <- lm(employ_correct ~ condition, data = libimm_data)
+
+```
+
+```{r, results='asis', echo=FALSE}
+stargazer(h1a, h1b, h1c, dep.var.labels = c("Liberal Immigration Level", "Sale Numbers", "Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), column.sep.width = "0pt", title = "Control vs. Free Choice vs. Assigned", table.placement = "H",  header = FALSE)
+```
+
+The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), accurately selecting immigrant-owned business sale numbers, and accurately selecting the number of individuals employed by immigrant-owned businesses, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas. 
+
+Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition:
+
+- **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
 
 In order to determine if there are any statistically significant differences between the impacts of the two treatment groups, we run three seperate linear hypothesis tests comparing the results from the forced exposure and free choice groups to each other:
 
-Table 2 from Hypothesis Testing
 
-Table 3 from Hypothesis Testing
+```{r, include=FALSE}
+lh1 <- linearHypothesis(h1a, c("conditionassigned = conditionchoice"))
 
-Table 4 from Hypothesis Testing
+lh2 <- linearHypothesis(h1b, c("conditionassigned = conditionchoice"))
 
-In each of the three models, liberal immigration levels, sales correct, and employ correct, there is not any statistically significant difference between those who were in the forced exposure group versus those who were given the opportunity to choose. Although this is somewhat disappointing, it is not fully unexpected: the power necessary to find these potential differences was not likely to be had from our sample; however, by finding support for H1a and H1b, we have taken a crucial first step toward answering some of the questions which surround updating one's beliefs. Ultimtaely, with a larger sample, we are still optimistic that the ability to choose one's media source plays a key role in how/if a respondent will update his/her beliefs.
+lh3 <- linearHypothesis(h1c, c("conditionassigned = conditionchoice"))
+```
+
+```{r, echo = FALSE, results= "asis"}
+stargazer(lh1, header = FALSE, title = "Liberal Immigration Level", table.placement = "H")
+stargazer(lh2, header = FALSE, title = "Sale Numbers", table.placement = "H")
+stargazer(lh3, header = FALSE, title = "Employment Numbers", table.placement = "H")
+
+```
+
+In each of the three models, liberal immigration levels, sales numbers, and employment numbers, there is not any statistically significant difference between those who were in the forced exposure group versus those who were given the opportunity to choose. Although this is somewhat disappointing, it is not fully unexpected: the power necessary to find these potential differences was not likely to be had from our sample; however, by finding support for H1a and H1b, we have taken a crucial first step toward answering some of the questions which surround updating one's beliefs. Ultimtaely, with a larger sample, we are still optimistic that the ability to choose one's media source plays a key role in how/if a respondent will update his/her beliefs.
 
 Unsure about these next two paragraphs - maybe we could run through this?
 
