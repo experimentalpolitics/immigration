@@ -15,7 +15,7 @@ date: |
 abstract: >-
   Various important issues at the center of today's politics--such as immigration or climate change--are imbued with misinformation. A growing body of research therefore explores whether people's misperceptions can be mitigated by providing corrective information. While such corrections have been shown to reduce factual misinformation, they appear to have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article. Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being further shared with others (e.g., through social media). The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
 reference-section-title: References
-#bibliography: '../../bibliography/Lab.bib'
+bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
 geometry: margin=1in
 linestretch: 1.5
@@ -61,9 +61,9 @@ library(car)
 
 Citizens in western democracies display wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. Given this expansive spread of misinformation, various studies examined how corrective information may affect people's underlying attitudes towards immigration, albeit with limited success. Although corrective information may alleviate factual misperceptions, it rarely affects people's underlying attitudes [see for example @hopkins2019muted].
 
-One possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. However, there are limits to these type of motivated reasoning---as people have been shown to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent research demonstrated the persuasiveness of canvassing interventions in changing peoples attitudes on immigration [@kalla2020reducing].
+One possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. However, there are limits to these types of motivated reasoning---as people have been shown to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent research demonstrated the persuasiveness of canvassing interventions in changing peoples attitudes on immigration [@kalla2020reducing].
 
-In this paper, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite the existence of a large literature on the importance of source cues [e.g., @goren2009source; @ladd2010role, CITES], prior studies on misinformation corrections rarely consider the potential role of source credibility. Furthermore, most experimental designs simply assign a random informational treatment to a subset of their sample, which does not allow us to estimate a key quantity of interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [see also @benedictis2019persuading; @knox2019design].
+In this paper, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role, CITES], prior studies on misinformation corrections rarely consider the potential role of source credibility. Furthermore, most experimental designs simply assign a random informational treatment to a subset of their sample, which does not allow us to estimate a key quantity of interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [see also @benedictis2019persuading; @knox2019design].
 
 <!-- For example, one important factor that has been examined in the past focuses on source credibility. However, what has been understudied in this process is the opportunity to choose information sources (rather than simply being exposed to them). This is particularly relevant in the context of our changing media environment where people have much more discretion over their information diet... -->
 
@@ -128,9 +128,9 @@ Previous research examining the effectiveness of corrective information showed t
 ## Research design
 
 ```{r, include=FALSE}
-setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+##setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
 
-dat <- read_csv("immigration_20191219_clean.csv")
+dat <- read_csv("../data/immigration_20191219_clean.csv")
 ```
 
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
@@ -217,14 +217,14 @@ In order to distinguish both possibilities, we will conduct an additional test w
 
 Lastly, we plan to examine whether there are systematic differences in the effectiveness of corrective information by news sources themselves (i.e., FoxNews vs. MSNBC). The pre-treatment section of the questionnaire includes items on respondents' usual media diet and political predispositions. Respondents should be more inclined to update their attitudes and beliefs if the article is published by a news organization that is usually consistent with their priors:
 
-- **H3a:** Conservatives (liberals) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
-- **H3b:** Republicans (Democrats) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
-- **H3c**: Participants who were randomly assigned to a news organization that is part of their regular media diet update their beliefs more than those who were assigned to a different news organization.
+- **H2a:** Conservatives (liberals) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
+- **H2b:** Republicans (Democrats) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
+- **H2c**: Participants who were randomly assigned to a news organization that is part of their regular media diet update their beliefs more than those who were assigned to a different news organization.
 
-As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H3c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
+As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H2c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
 
 
-# Future Directions
+<!-- # Future Directions -->
 
 # Conclusion
 
