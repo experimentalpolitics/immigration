@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  23 APR 2020 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  7 MAY 2020 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,65 +975,65 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 152.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 153.
 [2
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 194
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 195
 .
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3] [4] [5] [6]
-<../prereg/Lab-Graphic.jpg, id=49, 6343.7pt x 1678.27pt>
+<../prereg/Lab-Graphic.jpg, id=48, 6343.7pt x 1678.27pt>
 File: ../prereg/Lab-Graphic.jpg Graphic file (type jpg)
 <use ../prereg/Lab-Graphic.jpg>
-Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 356.
+Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 357.
 (pdftex.def)             Requested size: 469.75557pt x 124.2771pt.
-<../prelim/First-Pass_files/figure-gfm/choice_plot-1.png, id=50, 505.89pt x 361
-.35pt>
-File: ../prelim/First-Pass_files/figure-gfm/choice_plot-1.png Graphic file (typ
-e png)
-<use ../prelim/First-Pass_files/figure-gfm/choice_plot-1.png>
-Package pdftex.def Info: ../prelim/First-Pass_files/figure-gfm/choice_plot-1.pn
-g  used on input line 368.
-(pdftex.def)             Requested size: 469.76265pt x 335.54477pt.
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.371 
+l.366 
        <../prereg/Lab-Graphic.jpg>]
+<../prelim/First-Pass_files/figure-gfm/choice_plot-1.png, id=56, 505.89pt x 361
+.35pt>
+File: ../prelim/First-Pass_files/figure-gfm/choice_plot-1.png Graphic file (typ
+e png)
+<use ../prelim/First-Pass_files/figure-gfm/choice_plot-1.png>
+Package pdftex.def Info: ../prelim/First-Pass_files/figure-gfm/choice_plot-1.pn
+g  used on input line 369.
+(pdftex.def)             Requested size: 469.76265pt x 335.54477pt.
 <../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png, id=57, 505.89pt x 3
 61.35pt>
 File: ../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png Graphic file (t
 ype png)
 <use ../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png>
 Package pdftex.def Info: ../prelim/First-Pass_files/figure-gfm/assigned_plot-1.
-png  used on input line 374.
+png  used on input line 375.
 (pdftex.def)             Requested size: 469.76265pt x 335.54477pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.377 
+l.378 
        <../prelim/First-Pass_files/figure-gfm/choice_plot-1.png>] [9pdfTeX warn
 ing (ext4): destination with the same identifier (name{figure.3}) has been alre
 ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.402 
+l.403 
        <../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 435.
+(Font)              <12> on input line 436.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 435.
+(Font)              <8> on input line 436.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 435.
+(Font)              <6> on input line 436.
 
-Overfull \hbox (24.54434pt too wide) in paragraph at lines 435--462
+Overfull \hbox (24.54434pt too wide) in paragraph at lines 436--463
  [][] 
  []
 
@@ -1042,45 +1042,45 @@ Overfull \hbox (24.54434pt too wide) in paragraph at lines 435--462
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.478 
+l.479 
       ] [12pdfTeX warning (ext4): destination with the same identifier (name{ta
 ble.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.535 
+l.536 
       ] [13pdfTeX warning (ext4): destination with the same identifier (name{ta
 ble.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.566 U
+l.567 U
        nsure about these next two paragraphs - maybe we could run throughpdfTeX
  warning (ext4): destination with the same identifier (name{table.4}) has been 
 already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.566 U
+l.567 U
        nsure about these next two paragraphs - maybe we could run through] [14]
 [15] [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 753.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 767.
 [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 753.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 767.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 753.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 753.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 767.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 767.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 753.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 767.
  ) 
 Here is how much of TeX's memory you used:
- 13488 strings out of 492982
- 193376 string characters out of 6134895
+ 13495 strings out of 492982
+ 193483 string characters out of 6134895
  293888 words of memory out of 5000000
  16657 multiletter control sequences out of 15000+600000
- 64862 words of font info for 124 fonts, out of 8000000 for 9000
+ 65079 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,10n,38p,909b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
@@ -1092,10 +1092,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy8.pfb>
-Output written on ReliableSources.pdf (17 pages, 800487 bytes).
+Output written on ReliableSources.pdf (17 pages, 800825 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 71 named destinations out of 1000 (max. 500000)
  14440 words of extra memory for PDF output out of 17280 (max. 10000000)
 
