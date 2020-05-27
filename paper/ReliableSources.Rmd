@@ -13,7 +13,7 @@ date: |
   |
   | \today
 abstract: >-
-  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus--are imbued with misinformation. A growing body of research therefore explores the provision of corrective information as a viable mitigation strategy. While interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article and intentions to share it (e.g., through social media). Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being disseminated further. The implications of our results for the development of more effective strategies to disseminate corrective information are discussed. 
+  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus--are imbued with misinformation. A growing body of research therefore explores the provision of corrective information as a viable mitigation strategy. While interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article and intentions to share it (e.g., through social media). Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being disseminated further. As such, the findings help inform the development of more effective strategies to disseminate corrective information. 
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -29,26 +29,12 @@ header-includes:
   \floatplacement{figure}{H}
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE}
 ## Packages
-
-##install.packages("here")
-library(here)
-##install.packages("readr")
-library(readr)
 library(tidyverse)
 library(ggplot2)
-##install.packages("expss")
-library(expss)
-##install.packages("broom")
-library(broom)
-##install.packages("purrr")
-library(purrr)
-##install.packages("stargazer")
 library(stargazer)
 library(lmtest)
 library(MASS)
@@ -62,31 +48,26 @@ library(car)
 
 Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. Given this extensive spread of misinformation, various studies examined how corrective information may affect people's underlying attitudes towards immigration, albeit with limited success. Although corrective information may alleviate factual misperceptions, it rarely affects people's underlying attitudes [see for example @hopkins2019muted].
 
-One possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. However, such motivated reasoning is not without limits---as people have been shown to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent research demonstrates the persuasiveness of canvassing interventions in changing peoples attitudes on immigration [@kalla2020reducing].
+A possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. However, the extent to which people engage such motivated reasoning is not without limits---as people have been shown to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent research on immigration attitudes demonstrate the persuasiveness of canvassing interventions [@kalla2020reducing].
 
-In this paper, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility. Furthermore, most experimental designs simply assign a random informational treatment to a subset of their sample, which does not allow us to estimate a key quantity of interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [see also @benedictis2019persuading; @knox2019design].
+Why do researchers frequently fail to find evidence of attitude change after providing respondents with corrective information? We argue that experimental designs do not account for a crucial mechanism that characterizes how people interact with their media environment: people's discretion over information sources. Specifically, most studies employ simple random assignment of informational treatment to a subset of their sample, which does not allow us to estimate a key quantity of interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [see also @benedictis2019persuading; @knox2019design].
+
+
+<!-- Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility. -->
 
 <!-- For example, one important factor that has been examined in the past focuses on source credibility. However, what has been understudied in this process is the opportunity to choose information sources (rather than simply being exposed to them). This is particularly relevant in the context of our changing media environment where people have much more discretion over their information diet... -->
 
 We address these shortcomings of previous research by implementing an experimental design that varies both, the source of misinformation corrections as well as its delivery mode (i.e., the process through which people access the information). Specifically, we conduct an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. Depending on the experimental condition, participants are either able to freely choose--or are assigned to--an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
 
-A better understanding of the role of source credibility and delivery mode is crucial in our rapidly changing media environment where people have unprecedented control over their information diets. While people can access an ever-growing set of news outlets of varying quality, we only have a limited understanding as to how these systemic changes in information channels moderate the effectiveness of corrective information itself. Past research mostly focused on the effect of different _types_ of misinformation corrections. This study contributes to the literature by shifting the focus to the question of _how_ and _from where_ corrective information reaches people. Our results suggest that source credibility is more important than the delivery mode.
+Taking into account endogenous information search in studies of misinformation corrections is crucial in our rapidly changing media environment where people have unprecedented control over their information diets. While people can access an ever-growing set of news outlets of varying quality, we only have a limited understanding as to how these systemic changes in information channels moderate the effectiveness of corrective information itself. Past research mostly focused on the effect of different _types_ of misinformation corrections. This study contributes to the literature by shifting the focus to the question of _how_ and _from where_ corrective information reaches people. Our results suggest that source credibility is more important than the delivery mode.
+
 
 # Why misinformation corrections (often) fail
 
+From a the perspective of a rational actor who engages in Bayesian updating, providing people with new information should change people's related attitudes. Numerous studies, however, have shown that changing people's minds is far from easy, especially when it comes to deeply held beliefs that are connected to their identity. How people respond to new facts and evidence or other types of information depends on their motivation to arrive at an accurate conclusion as well as people's assessment of the information source as credible and relevant. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. In short, humans are biased information seekers [@kunda1990case; @Taber2006] and asymmetric updaters [@sunstein2016people]. In order to understand when and how misinformation corrections fail, it is important to start with a clear conceptualization of the underlying mechanism involving opinion change.
 
-
-- Motivated reasoning review: How individuals treat facts and other types of information depends on their incentives (motivation + ability). Reliance on cues/heuristics like ideological predispositions. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. Humans = biased information seekers [@kunda1990case, @Taber2006] and asymmetric updaters [@sunstein2016people].
-
-- 2 possible explanations for differential effects:
-
-1. attitudes are harder to change, dependent on multiple considerations, often relate to identity
-2. reverse causation
 
 ## Differentiating factual beliefs, interpretations, and opinions
-
-<!-- - model of persuasion: source cues, etc. -->
-
 
 People form different interpretations from the same facts. This seems to have increased recently. The facts, or objective information, surrounding climate change, impeachment, and COVID-19 are interpreted differently. As people interpreted these facts opinions were formed that informed attitudes. Attitudes are a set of emotions, beliefs, behaviors towards an object, person or event. How a person interprets the facts of COVID-19 interpreted their behavior as the event unfolded.
 
@@ -137,6 +118,7 @@ Previous research examining the effectiveness of corrective information showed t
 
 ```{r, include=FALSE}
 ##setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
+library(tidyverse)
 
 dat <- read_csv("../data/immigration_20191219_clean.csv")
 ```
@@ -146,16 +128,6 @@ Our study builds on the Preference-Incorporating Choice and Assignment Design pr
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
 
 Prior to the discussion on our specific hypothesis testing below, an overview of the differences across the three groups (control, assigned, and choice) and individual media preferences, is necessary. This general landscape of the sample will provide a solid foundation from which our more distinct tests below arise. 
-
-![Free Choice Differences](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
-
-![Assigned Differences](../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png)
-
-The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions.
-
-At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
-
-<!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
 ## Corrective information and media choice
 
@@ -230,6 +202,17 @@ Lastly, we plan to examine whether there are systematic differences in the effec
 - **H2c**: Participants who were randomly assigned to a news organization that is part of their regular media diet update their beliefs more than those who were assigned to a different news organization.
 
 As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H2c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
+
+![Free Choice Differences](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
+
+![Assigned Differences](../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png)
+
+The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions.
+
+At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
+
+<!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
+
 
 
 <!-- # Future Directions -->
