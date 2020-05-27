@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  27 MAY 2020 19:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  27 MAY 2020 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,16 +1000,16 @@ File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Warning: File `ReliableSources_files/figure-latex/Hypotheses 1a-c-1.pdf' 
 not found on input line 392.
 
-<ReliableSources_files/figure-latex/Hypotheses 1a-c-1.pdf, id=54, 457.71pt x 31
-3.17pt>
+<ReliableSources_files/figure-latex/Hypotheses 1a-c-1.pdf, id=54, 453.695pt x 3
+16.18124pt>
 File: ReliableSources_files/figure-latex/Hypotheses 1a-c-1.pdf Graphic file (ty
 pe pdf)
 <use ReliableSources_files/figure-latex/Hypotheses 1a-c-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/Hypotheses 1a-c-1.p
 df  used on input line 392.
-(pdftex.def)             Requested size: 457.72285pt x 313.17877pt.
+(pdftex.def)             Requested size: 453.6939pt x 316.18047pt.
 
-Overfull \hbox (38.9658pt too wide) in paragraph at lines 392--393
+Overfull \hbox (34.93684pt too wide) in paragraph at lines 392--393
 []\T1/lmss/m/n/12 (-20) 1a-c-1.pdf [] 
  []
 
@@ -1119,7 +1119,7 @@ b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ReliableSources.pdf (20 pages, 837289 bytes).
+Output written on ReliableSources.pdf (20 pages, 837261 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

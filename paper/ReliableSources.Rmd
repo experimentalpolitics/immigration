@@ -160,7 +160,7 @@ df %>%
                                  .ordered = TRUE)) %>%
   ggplot(aes(y = mean, ymin = cilo, ymax = cihi, x = outcome,
              shape = condition, col = condition)) + 
-  theme_bw() + labs(y = "Outcome", x = "Average Value") +
+  theme_bw() + labs(x = "Outcome", y = "Average Value") +
   facet_wrap(~group, scales = "free_y", ncol = 1) +
   geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
   geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
