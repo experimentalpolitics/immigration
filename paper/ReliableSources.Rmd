@@ -29,15 +29,30 @@ header-includes:
   \floatplacement{figure}{H}
 ---
 
-```{r setup, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
-## Packages
+## Load packages
 library(tidyverse)
 library(ggplot2)
 library(stargazer)
 library(lmtest)
 library(car)
+
+### Custom functions
+se <- function(x, na.rm = T){
+  sd(x, na.rm = na.rm)/sqrt(length(na.omit(x)))
+}
+cilo <- function(x, na.rm = T){
+  mean(x, na.rm = na.rm) - qnorm(.975) * se(x, na.rm)
+}
+cihi <- function(x, na.rm = T){
+  mean(x, na.rm = na.rm) + qnorm(.975) * se(x, na.rm)
+}
+
+## Load data
+df <- read_csv("../data/immigration_20191219_clean.csv") %>%
+  mutate(condition = factor(condition, levels = c("control", "assigned", "choice")))
 ```
 
 \clearpage
@@ -107,13 +122,6 @@ Previous research examining the effectiveness of corrective information showed t
 
 ## Research design
 
-```{r, include=FALSE}
-##setwd("C:/Users/jason/Desktop/UW-Milwaukee Graduate Year 2/Lab Meeting/Data")
-library(tidyverse)
-
-dat <- read_csv("../data/immigration_20191219_clean.csv")
-```
-
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
@@ -129,26 +137,54 @@ For the main outcome measures in our experimental design (i.e., immigration atti
 
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
-```{r, include=FALSE}
-libimm_data <- dat %>% dplyr::select(immig_increased, taxes_pos, jobs_pos, condition, sales_correct, employ_correct)
-libimm_data$condition <- as.factor(libimm_data$condition)
+```{r Hypotheses 1a-c}
+df %>%
+  select(condition, employ_correct, sales_correct, 
+         immig_increased, taxes_pos, jobs_pos) %>% 
+  gather(variable, value, -condition) %>%
+  group_by(condition, variable) %>%
+  summarize_all(list(mean = mean, cilo = cilo, cihi = cihi), na.rm = T) %>%
+  mutate(group = recode_factor(variable, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(variable, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE)) %>%
+  ggplot(aes(y = mean, ymin = cilo, ymax = cihi, x = outcome,
+             shape = condition, col = condition)) + 
+  theme_bw() + labs(y = "Outcome", x = "Average Value") +
+  facet_wrap(~group, scales = "free_y", ncol = 1) +
+  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
+  coord_flip()
+```
 
-libimm <- rowMeans(subset(libimm_data, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
-libimm_data <- cbind(libimm_data, libimm)
-libimm_data$libimm <- as.numeric(libimm_data$libimm)
 
 
-libimm_data$condition <- relevel(libimm_data$condition, ref = "control")
+```{r OLS model}
+df$libimm <- rowMeans(subset(df, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
 
-h1a <- lm(libimm ~ condition, data = libimm_data)
+lm(libimm ~ condition + age + male + usborn + white + college + income + marital + church, data = df) %>% summary()
 
-h1b <- lm(sales_correct ~ condition, data = libimm_data)
+lm(libimm ~ condition, data = df) %>% summary()
 
-h1c <- lm(employ_correct ~ condition, data = libimm_data)
+h1a <- lm(libimm ~ condition, data = df)
+
+h1b <- lm(sales_correct ~ condition, data = df)
+
+h1c <- lm(employ_correct ~ condition, data = df)
 
 ```
 
-```{r, results='asis', echo=FALSE}
+```{r, results='asis'}
 stargazer(h1a, h1b, h1c, dep.var.labels = c("Liberal Immigration Level", "Sale Numbers", "Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), column.sep.width = "0pt", title = "Control vs. Free Choice vs. Assigned", table.placement = "H",  header = FALSE)
 ```
 
@@ -161,7 +197,7 @@ Of course, our main interest is to assess whether corrective information is more
 In order to determine if there are any statistically significant differences between the impacts of the two treatment groups, we run three seperate linear hypothesis tests comparing the results from the forced exposure and free choice groups to each other:
 
 
-```{r, include=FALSE}
+```{r}
 lh1 <- linearHypothesis(h1a, c("conditionassigned = conditionchoice"))
 
 lh2 <- linearHypothesis(h1b, c("conditionassigned = conditionchoice"))
@@ -169,7 +205,7 @@ lh2 <- linearHypothesis(h1b, c("conditionassigned = conditionchoice"))
 lh3 <- linearHypothesis(h1c, c("conditionassigned = conditionchoice"))
 ```
 
-```{r, echo = FALSE, results= "asis"}
+```{r, results= "asis"}
 stargazer(lh1, header = FALSE, title = "Liberal Immigration Level", table.placement = "H")
 stargazer(lh2, header = FALSE, title = "Sale Numbers", table.placement = "H")
 stargazer(lh3, header = FALSE, title = "Employment Numbers", table.placement = "H")
