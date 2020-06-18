@@ -34,6 +34,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 ## Load packages
 library(tidyverse)
+library(broom)
 library(ggplot2)
 library(stargazer)
 library(lmtest)
@@ -52,7 +53,8 @@ cihi <- function(x, na.rm = T){
 
 ## Load data
 df <- read_csv("../data/immigration_20191219_clean.csv") %>%
-  mutate(condition = factor(condition, levels = c("control", "assigned", "choice")))
+  mutate(condition = factor(condition, levels = c("control", "assigned", "choice")),
+         lazy_diff = lazy_whites - lazy_hispanics)
 ```
 
 \clearpage
@@ -137,55 +139,65 @@ For the main outcome measures in our experimental design (i.e., immigration atti
 
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
+
 ```{r Hypotheses 1a-c}
-df %>%
-  select(condition, employ_correct, sales_correct, 
-         immig_increased, taxes_pos, jobs_pos) %>% 
-  gather(variable, value, -condition) %>%
-  group_by(condition, variable) %>%
-  summarize_all(list(mean = mean, cilo = cilo, cihi = cihi), na.rm = T) %>%
-  mutate(group = recode_factor(variable, 
+m1 <- list(employ_correct = lm(employ_correct ~ condition
+                               + lazy_hispanics + problem_immigration
+                               + age + male + usborn + white + college
+                               , data = df),
+           sales_correct = lm(sales_correct ~ condition
+                              + lazy_hispanics + problem_immigration
+                              + age + male + usborn + white + college
+                              , data = df),
+           jobs_pos = lm(jobs_pos ~ condition
+                         + lazy_hispanics + problem_immigration
+                         + age + male + usborn + white + college
+                         , data = df),
+           taxes_pos = lm(taxes_pos ~ condition
+                          + lazy_hispanics + problem_immigration
+                          + age + male + usborn + white + college
+                          , data = df),
+           immig_increased = lm(immig_increased ~ condition
+                                + lazy_hispanics + problem_immigration
+                                + age + male + usborn + white + college
+                                , data = df)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+
+m1 %>%
+  map_dfr(tidy, .id = "dv") %>%
+  bind_cols(map_dfr(m1, confint_tidy)) %>%
+  filter(term %in% c("conditionassigned", "conditionchoice")) %>%
+  mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
                                `sales_correct` = "Belief",
                                `jobs_pos` = "Interpretation",
                                `taxes_pos` = "Interpretation",
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
-         outcome = recode_factor(variable, 
+         outcome = recode_factor(dv, 
                                  `employ_correct` = "Employment correct",
                                  `sales_correct` = "Sales correct",
                                  `jobs_pos` = "Immigrants create jobs",
                                  `taxes_pos` = "Immigrants pay taxes",
                                  `immig_increased` = "Immigration should be increased",
-                                 .ordered = TRUE)) %>%
-  ggplot(aes(y = mean, ymin = cilo, ymax = cihi, x = outcome,
-             shape = condition, col = condition)) + 
-  theme_bw() + labs(x = "Outcome", y = "Average Value") +
-  facet_wrap(~group, scales = "free_y", ncol = 1) +
+                                 .ordered = TRUE),
+         Condition = recode_factor(term,
+                                   `conditionassigned` = "Assigned",
+                                   `conditionchoice` = "Choice")) %>%
+  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+             shape = Condition, col = Condition)) + 
+  geom_hline(yintercept = 0, col = "grey") +
   geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
   geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
+  theme_bw(base_size = 9) + labs(x = NULL, y = "Coefficient") +
+  facet_wrap(~group, scales = "free_y", ncol = 1) +
+  scale_colour_brewer(palette = "Set1") +
   coord_flip()
 ```
 
 
-
-```{r OLS model}
-df$libimm <- rowMeans(subset(df, select = c(immig_increased, taxes_pos, jobs_pos)), na.rm = TRUE)
-
-lm(libimm ~ condition + age + male + usborn + white + college + income + marital + church, data = df) %>% summary()
-
-lm(libimm ~ condition, data = df) %>% summary()
-
-h1a <- lm(libimm ~ condition, data = df)
-
-h1b <- lm(sales_correct ~ condition, data = df)
-
-h1c <- lm(employ_correct ~ condition, data = df)
-
-```
-
-```{r, results='asis'}
-stargazer(h1a, h1b, h1c, dep.var.labels = c("Liberal Immigration Level", "Sale Numbers", "Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), column.sep.width = "0pt", title = "Control vs. Free Choice vs. Assigned", table.placement = "H",  header = FALSE)
+```{r table, results='asis'}
+stargazer(m1, dep.var.labels = c("Liberal Immigration Level", "Sale Numbers", "Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), column.sep.width = "0pt", title = "Control vs. Free Choice vs. Assigned", table.placement = "H",  header = FALSE)
 ```
 
 The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), accurately selecting immigrant-owned business sale numbers, and accurately selecting the number of individuals employed by immigrant-owned businesses, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas. 
