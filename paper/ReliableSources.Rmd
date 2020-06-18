@@ -35,6 +35,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 ## Load packages
 library(tidyverse)
 library(broom)
+library(sandwich)
 library(ggplot2)
 library(stargazer)
 library(lmtest)
@@ -140,7 +141,7 @@ For the main outcome measures in our experimental design (i.e., immigration atti
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
 
-```{r Hypotheses 1a-c}
+```{r Hypotheses, fig.height=3.5, fig.width=6}
 m1 <- list(employ_correct = lm(employ_correct ~ condition
                                + lazy_hispanics + problem_immigration
                                + age + male + usborn + white + college
@@ -160,12 +161,14 @@ m1 <- list(employ_correct = lm(employ_correct ~ condition
            immig_increased = lm(immig_increased ~ condition
                                 + lazy_hispanics + problem_immigration
                                 + age + male + usborn + white + college
-                                , data = df)) %>%
+                                , data = df))
+
+m1robust <- m1 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
-m1 %>%
+m1robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m1, confint_tidy)) %>%
+  bind_cols(map_dfr(m1robust, confint_tidy)) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -195,9 +198,20 @@ m1 %>%
   coord_flip()
 ```
 
-
 ```{r table, results='asis'}
-stargazer(m1, dep.var.labels = c("Liberal Immigration Level", "Sale Numbers", "Employment Numbers"), covariate.labels = c("Assigned Condition", "Free Choice Condition", "Constant"), column.sep.width = "0pt", title = "Control vs. Free Choice vs. Assigned", table.placement = "H",  header = FALSE)
+stargazer(m1, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales", "Jobs",
+                             "Taxes", "Immigration"), 
+          covariate.labels = c("Assigned", "Choice", "Racial Prejudice", "Immigration Problem", 
+                               "Age", "Male", "Born in US", "White", "College", "Constant"),
+          column.labels = c("Belief", "Interpretation", "Opinion"),
+          column.separate = c(2,2,1),
+          column.sep.width = "0pt", 
+          title = "Main Treatment Effects", 
+          table.placement = "h",
+          header = FALSE,
+          keep.stat = c("n", "rsq"))
 ```
 
 The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), accurately selecting immigrant-owned business sale numbers, and accurately selecting the number of individuals employed by immigrant-owned businesses, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas. 
@@ -207,22 +221,6 @@ Of course, our main interest is to assess whether corrective information is more
 - **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
 
 In order to determine if there are any statistically significant differences between the impacts of the two treatment groups, we run three seperate linear hypothesis tests comparing the results from the forced exposure and free choice groups to each other:
-
-
-```{r}
-lh1 <- linearHypothesis(h1a, c("conditionassigned = conditionchoice"))
-
-lh2 <- linearHypothesis(h1b, c("conditionassigned = conditionchoice"))
-
-lh3 <- linearHypothesis(h1c, c("conditionassigned = conditionchoice"))
-```
-
-```{r, results= "asis"}
-stargazer(lh1, header = FALSE, title = "Liberal Immigration Level", table.placement = "H")
-stargazer(lh2, header = FALSE, title = "Sale Numbers", table.placement = "H")
-stargazer(lh3, header = FALSE, title = "Employment Numbers", table.placement = "H")
-
-```
 
 In each of the three models, liberal immigration levels, sales numbers, and employment numbers, there is not any statistically significant difference between those who were in the forced exposure group versus those who were given the opportunity to choose. Although this is somewhat disappointing, it is not fully unexpected: the power necessary to find these potential differences was not likely to be had from our sample; however, by finding support for H1a and H1b, we have taken a crucial first step toward answering some of the questions which surround updating one's beliefs. Ultimtaely, with a larger sample, we are still optimistic that the ability to choose one's media source plays a key role in how/if a respondent will update his/her beliefs.
 
