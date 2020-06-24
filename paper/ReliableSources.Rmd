@@ -248,11 +248,104 @@ The two graphs above show the mean liberal immigration level across preference g
 
 At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
+```{r}
+df_choice <- df %>%
+  filter(condition != "choice") %>% # exclude free choice arm of experiment
+  mutate(exposure = 
+           as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="msnbc"))
+                      |((tv_fox-tv_msnbc<0) & (tweet=="fox")))
+         + 2*as.numeric(((tv_fox-tv_msnbc==0) & (tweet=="msnbc"))
+                        |((tv_fox-tv_msnbc==0) & (tweet=="fox")))
+         + 3*as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="fox"))
+                        |((tv_fox-tv_msnbc<0) & (tweet=="msnbc"))),
+         exposure = factor(exposure, labels = c("control","inconsistent","neutral","consistent")))
+
+m2 <- list(employ_correct = lm(employ_correct ~ exposure
+                               + lazy_hispanics + problem_immigration
+                               + age + male + usborn + white + college
+                               , data = df_choice),
+           sales_correct = lm(sales_correct ~ exposure
+                              + lazy_hispanics + problem_immigration
+                              + age + male + usborn + white + college
+                              , data = df_choice),
+           jobs_pos = lm(jobs_pos ~ exposure
+                         + lazy_hispanics + problem_immigration
+                         + age + male + usborn + white + college
+                         , data = df_choice),
+           taxes_pos = lm(taxes_pos ~ exposure
+                          + lazy_hispanics + problem_immigration
+                          + age + male + usborn + white + college
+                          , data = df_choice),
+           immig_increased = lm(immig_increased ~ exposure
+                                + lazy_hispanics + problem_immigration
+                                + age + male + usborn + white + college
+                                , data = df_choice))
+
+m2robust <- m2 %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+
+m2robust %>%
+  map_dfr(tidy, .id = "dv") %>%
+  bind_cols(map_dfr(m2robust, confint_tidy)) %>%
+  filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
+  mutate(group = recode_factor(dv, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(dv, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE),
+         Exposure = recode_factor(term,
+                                  `exposureinconsistent` = "Inonsistent",
+                                  `exposureneutral` = "Neutral",
+                                  `exposureconsistent` = "Consistent")) %>%
+  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+             shape = Exposure, col = Exposure)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
+  theme_bw(base_size = 9) + labs(x = NULL, y = "Coefficient") +
+  facet_wrap(~group, scales = "free_y", ncol = 1) +
+  scale_colour_brewer(palette = "Set1") +
+  coord_flip()
+```
+
+```{r table2, results='asis'}
+stargazer(m2, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales", "Jobs",
+                             "Taxes", "Immigration"), 
+          covariate.labels = c("Inconsistent", "Neutral", "Consistent", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Age", "Male", "Born in US", "White", "College", "Constant"),
+          column.labels = c("Belief", "Interpretation", "Opinion"),
+          column.separate = c(2,2,1),
+          column.sep.width = "0pt", 
+          title = "Main Treatment Effects", 
+          table.placement = "h",
+          header = FALSE,
+          keep.stat = c("n", "rsq"))
+```
+
+```{r}
+
+```
+
+
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
 
 
 <!-- # Future Directions -->
+
+<!-- QUESTION: WILLINGNESS TO SHARE AS ADDITIONAL OUTCOME? -->
 
 # Conclusion
 

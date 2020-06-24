@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  18 JUN 2020 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  24 JUN 2020 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -806,7 +806,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count116
-) (./ReliableSources.aux)
+) (./ReliableSources.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `ReliableSources.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -1033,26 +1037,47 @@ eady used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.598 
-       <../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png>] [13] [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 718.
+       <../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png>]
+<ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf, id=92, 455.7025pt x 
+315.1775pt>
+File: ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (ty
+pe pdf)
+<use ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/unnamed-chunk-1-1.p
+df  used on input line 599.
+(pdftex.def)             Requested size: 455.70831pt x 315.18153pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf>] [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 772.
 [15] [16pdfTeX warning (ext4): destination with the same identifier (name{table
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.718 \end{document}
+l.772 \end{document}
+                    ] [17pdfTeX warning (ext4): destination with the same ident
+ifier (name{table.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.772 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 718.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 772.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 718.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 718.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 718.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 772.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 772.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 772.
  ) 
 Here is how much of TeX's memory you used:
- 13478 strings out of 492982
- 193567 string characters out of 6134895
- 301597 words of memory out of 5000000
- 16658 multiletter control sequences out of 15000+600000
+ 13485 strings out of 492982
+ 193869 string characters out of 6134895
+ 311636 words of memory out of 5000000
+ 16662 multiletter control sequences out of 15000+600000
  64368 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,10n,38p,909b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1065,10 +1090,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on ReliableSources.pdf (16 pages, 807898 bytes).
+Output written on ReliableSources.pdf (17 pages, 815453 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 63 named destinations out of 1000 (max. 500000)
- 14437 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 14442 words of extra memory for PDF output out of 17280 (max. 10000000)
 
