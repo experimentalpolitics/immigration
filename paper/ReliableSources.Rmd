@@ -198,21 +198,7 @@ m1robust %>%
   coord_flip()
 ```
 
-```{r table, results='asis'}
-stargazer(m1, 
-          dep.var.caption = "",
-          dep.var.labels = c("Employment", "Sales", "Jobs",
-                             "Taxes", "Immigration"), 
-          covariate.labels = c("Assigned", "Choice", "Racial Prejudice", "Immigration Problem", 
-                               "Age", "Male", "Born in US", "White", "College", "Constant"),
-          column.labels = c("Belief", "Interpretation", "Opinion"),
-          column.separate = c(2,2,1),
-          column.sep.width = "0pt", 
-          title = "Main Treatment Effects", 
-          table.placement = "h",
-          header = FALSE,
-          keep.stat = c("n", "rsq"))
-```
+
 
 The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), accurately selecting immigrant-owned business sale numbers, and accurately selecting the number of individuals employed by immigrant-owned businesses, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas. 
 
@@ -313,22 +299,7 @@ m2robust %>%
   coord_flip()
 ```
 
-```{r table2, results='asis'}
-stargazer(m2, 
-          dep.var.caption = "",
-          dep.var.labels = c("Employment", "Sales", "Jobs",
-                             "Taxes", "Immigration"), 
-          covariate.labels = c("Inconsistent", "Neutral", "Consistent", 
-                               "Racial Prejudice", "Immigration Problem", 
-                               "Age", "Male", "Born in US", "White", "College", "Constant"),
-          column.labels = c("Belief", "Interpretation", "Opinion"),
-          column.separate = c(2,2,1),
-          column.sep.width = "0pt", 
-          title = "Main Treatment Effects", 
-          table.placement = "h",
-          header = FALSE,
-          keep.stat = c("n", "rsq"))
-```
+
 
 ```{r}
 df_assigned <- df %>%
@@ -398,5 +369,40 @@ ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
 <!-- QUESTION: WILLINGNESS TO SHARE AS ADDITIONAL OUTCOME? -->
 
 # Conclusion
+
+# Appendix: Full Model Results
+
+```{r table, results='asis'}
+stargazer(m1, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales", "Jobs",
+                             "Taxes", "Immigration"), 
+          covariate.labels = c("Assigned", "Choice", "Racial Prejudice", "Immigration Problem", 
+                               "Age", "Male", "Born in US", "White", "College", "Constant"),
+          column.labels = c("Belief", "Interpretation", "Opinion"),
+          column.separate = c(2,2,1),
+          column.sep.width = "0pt", 
+          title = "Main Treatment Effects", 
+          table.placement = "h",
+          header = FALSE,
+          keep.stat = c("n", "rsq"))
+```
+
+```{r table2, results='asis'}
+stargazer(m2, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales", "Jobs",
+                             "Taxes", "Immigration"), 
+          covariate.labels = c("Inconsistent", "Neutral", "Consistent", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Age", "Male", "Born in US", "White", "College", "Constant"),
+          column.labels = c("Belief", "Interpretation", "Opinion"),
+          column.separate = c(2,2,1),
+          column.sep.width = "0pt", 
+          title = "Main Treatment Effects", 
+          table.placement = "h",
+          header = FALSE,
+          keep.stat = c("n", "rsq"))
+```
 
 # References
