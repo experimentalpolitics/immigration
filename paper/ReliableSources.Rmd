@@ -240,16 +240,12 @@ Lastly, we plan to examine whether there are systematic differences in the effec
 
 As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H2c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
 
-![Free Choice Differences](../prelim/First-Pass_files/figure-gfm/choice_plot-1.png)
-
-![Assigned Differences](../prelim/First-Pass_files/figure-gfm/assigned_plot-1.png)
-
 The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions.
 
 At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
 ```{r}
-df_choice <- df %>%
+df_nochoice <- df %>%
   filter(condition != "choice") %>% # exclude free choice arm of experiment
   mutate(exposure = 
            as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="msnbc"))
@@ -263,23 +259,23 @@ df_choice <- df %>%
 m2 <- list(employ_correct = lm(employ_correct ~ exposure
                                + lazy_hispanics + problem_immigration
                                + age + male + usborn + white + college
-                               , data = df_choice),
+                               , data = df_nochoice),
            sales_correct = lm(sales_correct ~ exposure
                               + lazy_hispanics + problem_immigration
                               + age + male + usborn + white + college
-                              , data = df_choice),
+                              , data = df_nochoice),
            jobs_pos = lm(jobs_pos ~ exposure
                          + lazy_hispanics + problem_immigration
                          + age + male + usborn + white + college
-                         , data = df_choice),
+                         , data = df_nochoice),
            taxes_pos = lm(taxes_pos ~ exposure
                           + lazy_hispanics + problem_immigration
                           + age + male + usborn + white + college
-                          , data = df_choice),
+                          , data = df_nochoice),
            immig_increased = lm(immig_increased ~ exposure
                                 + lazy_hispanics + problem_immigration
                                 + age + male + usborn + white + college
-                                , data = df_choice))
+                                , data = df_nochoice))
 
 m2robust <- m2 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
@@ -335,6 +331,60 @@ stargazer(m2,
 ```
 
 ```{r}
+df_assigned <- df %>%
+  filter(condition == "assigned") %>%
+  mutate(prefer = 
+           as.numeric(tv_fox-tv_msnbc<0)
+         + 2*as.numeric(tv_fox-tv_msnbc==0)
+         + 3*as.numeric(tv_fox-tv_msnbc>0),
+         prefer = factor(prefer, labels = c("msnbc","neutral","fox"))) %>%
+  split(.$prefer)
+
+extractDiff <- function(formula, data){
+  tmp <- t.test(as.formula(formula), data=data)
+  tibble(comparison = tmp$data.name,
+         diff = diff(rev(tmp$estimate)),
+         cilo = tmp$conf.int[1],
+         cihi = tmp$conf.int[2])
+}
+
+m3 <- bind_rows(
+  map_dfr(df_assigned, ~extractDiff(employ_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE))
+
+ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+             shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
+  theme_bw(base_size = 9) + labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC") +
+  facet_wrap(~group, scales = "free_y", ncol = 1) +
+  scale_colour_brewer(palette = "Set1") +
+  coord_flip()
 
 ```
 
