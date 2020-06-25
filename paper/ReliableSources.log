@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  25 JUN 2020 12:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  25 JUN 2020 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -978,6 +978,13 @@ File: ../prereg/Lab-Graphic.jpg Graphic file (type jpg)
 <use ../prereg/Lab-Graphic.jpg>
 Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 353.
 (pdftex.def)             Requested size: 469.75557pt x 124.2771pt.
+<ReliableSources_files/figure-latex/m1-1.pdf, id=47, 494.84875pt x 137.51375pt>
+
+File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m1-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
+nput line 365.
+(pdftex.def)             Requested size: 469.75632pt x 130.54079pt.
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
@@ -985,125 +992,112 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.371 
        <../prereg/Lab-Graphic.jpg>]
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 375
-.
-(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-<ReliableSources_files/figure-latex/m1-1.pdf, id=54, 494.84875pt x 137.51375pt>
+<ReliableSources_files/figure-latex/m2-1.pdf, id=54, 494.84875pt x 137.51375pt>
 
-File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m1-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 394.
+File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m2-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
+nput line 374.
 (pdftex.def)             Requested size: 469.75632pt x 130.54079pt.
+<ReliableSources_files/figure-latex/m3-1.pdf, id=55, 496.85625pt x 137.51375pt>
+
+File: ReliableSources_files/figure-latex/m3-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m3-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m3-1.pdf  used on i
+nput line 383.
+(pdftex.def)             Requested size: 469.75908pt x 130.01413pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.412 
-       <./ReliableSources_files/figure-latex/m1-1.pdf>] [9] [10]
-<ReliableSources_files/figure-latex/m2-1.pdf, id=79, 494.84875pt x 137.51375pt>
+l.387 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3}) has been already used, duplicate ignored
 
-File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m2-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 544.
-(pdftex.def)             Requested size: 469.75632pt x 130.54079pt.
-[11]
-<ReliableSources_files/figure-latex/m3-1.pdf, id=84, 496.85625pt x 137.51375pt>
-
-File: ReliableSources_files/figure-latex/m3-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m3-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m3-1.pdf  used on i
-nput line 550.
-(pdftex.def)             Requested size: 469.75908pt x 130.01413pt.
-<ReliableSources_files/figure-latex/m4-1.pdf, id=85, 496.85625pt x 185.69376pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.387 
+       <./ReliableSources_files/figure-latex/m1-1.pdf> <./ReliableSources_files
+/figure-latex/m2-1.pdf>]
+<ReliableSources_files/figure-latex/m4-1.pdf, id=76, 496.85625pt x 185.69376pt>
 
 File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m4-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 556.
+nput line 390.
 (pdftex.def)             Requested size: 469.75908pt x 175.56653pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 570.
+(Font)              <12> on input line 405.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 570.
+(Font)              <8> on input line 405.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 570.
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.614 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.614 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.614 \end{table}
-                  <./ReliableSources_files/figure-latex/m2-1.pdf> <./ReliableSo
-urces_files/figure-latex/m3-1.pdf> <./ReliableSources_files/figure-latex/m4-1.p
-df>]
+(Font)              <6> on input line 405.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 784.
-[15] [16pdfTeX warning (ext4): destination with the same identifier (name{table
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.514 \leavevmode
+                 \hypertarget{ref-berinsky2017rumors}{}%pdfTeX warning (ext4): 
+destination with the same identifier (name{figure.5}) has been already used, du
+plicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.514 \leavevmode
+                 \hypertarget{ref-berinsky2017rumors}{}% <./ReliableSources_fil
+es/figure-latex/m3-1.pdf> <./ReliableSources_files/figure-latex/m4-1.pdf>] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
+[11] [12pdfTeX warning (ext4): destination with the same identifier (name{table
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.784 \end{document}
-                    ] [17pdfTeX warning (ext4): destination with the same ident
+l.619 \end{document}
+                    ] [13pdfTeX warning (ext4): destination with the same ident
 ifier (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.784 \end{document}
+l.619 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 784.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 784.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 784.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 619.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 619.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 784.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
  ) 
 Here is how much of TeX's memory you used:
- 13497 strings out of 492982
- 193815 string characters out of 6134895
- 312710 words of memory out of 5000000
- 16668 multiletter control sequences out of 15000+600000
- 64570 words of font info for 122 fonts, out of 8000000 for 9000
+ 13449 strings out of 492982
+ 192848 string characters out of 6134895
+ 311601 words of memory out of 5000000
+ 16638 multiletter control sequences out of 15000+600000
+ 61074 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,10n,38p,909b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on ReliableSources.pdf (17 pages, 811368 bytes).
+hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm
+/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy8.pfb>
+Output written on ReliableSources.pdf (13 pages, 801893 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 14450 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 14434 words of extra memory for PDF output out of 17280 (max. 10000000)
 
