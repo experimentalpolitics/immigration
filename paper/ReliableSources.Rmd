@@ -23,6 +23,7 @@ output:
   pdf_document:
     number_sections: true
     template: null
+    fig_caption: yes
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
   \usepackage{float}
@@ -141,7 +142,7 @@ For the main outcome measures in our experimental design (i.e., immigration atti
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
 
-```{r m1, fig.height=4.5, fig.width=4.5}
+```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}M1"}
 m1 <- list(employ_correct = lm(employ_correct ~ condition
                                + lazy_hispanics + problem_immigration
                                + age + male + usborn + white + college
@@ -192,10 +193,11 @@ m1robust %>%
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(position=position_dodge(width=-0.4)) +
   geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
-  theme_bw(base_size = 8) + labs(x = NULL, y = "Coefficient") +
-  facet_wrap(~group, scales = "free_y", ncol = 1) +
-  scale_colour_brewer(palette = "Set1") +
-  coord_flip()
+  theme_bw(base_size = 8) + 
+  labs(x = NULL, y = "Coefficient") +
+  #theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  facet_wrap(~group, scales = "free_x", ncol = 3) +
+  scale_colour_brewer(palette = "Set1")
 ```
 
 
@@ -230,7 +232,7 @@ The two graphs above show the mean liberal immigration level across preference g
 
 At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
-```{r m2, fig.height=4.5, fig.width=4.5}
+```{r m2, fig.height=2, fig.width=7, fig.cap="\\label{fig:m2}M2"}
 df_nochoice <- df %>%
   filter(condition != "choice") %>% # exclude free choice arm of experiment
   mutate(exposure = 
@@ -294,23 +296,20 @@ m2robust %>%
   geom_point(position=position_dodge(width=-0.4)) +
   geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
   theme_bw(base_size = 8) + labs(x = NULL, y = "Coefficient") +
-  facet_wrap(~group, scales = "free_y", ncol = 1) +
-  scale_colour_brewer(palette = "Set1") +
-  coord_flip()
+  facet_wrap(~group, scales = "free_x", ncol = 3) +
+  scale_colour_brewer(palette = "Set1")
 ```
 
 
 
-```{r m3, fig.height=4.5, fig.width=7}
+```{r m3, fig.height=2, fig.width=7, fig.cap="\\label{fig:m3}M3"}
 df_assigned <- df %>%
   filter(condition == "assigned") %>%
   mutate(prefer = 
            as.numeric(tv_fox-tv_msnbc<0)
          + 2*as.numeric(tv_fox-tv_msnbc==0)
          + 3*as.numeric(tv_fox-tv_msnbc>0),
-         prefer = factor(prefer, labels = c("msnbc","neutral","fox")),
-         eval = wp_fair + wp_american + wp_accurate - wp_hostile - wp_bad - wp_skewed,
-         share = actions_discuss + actions_forward + actions_post) %>%
+         prefer = factor(prefer, labels = c("msnbc","neutral","fox"))) %>%
   split(.$prefer)
 
 extractDiff <- function(formula, data){
@@ -326,7 +325,42 @@ m3 <- bind_rows(
   map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE))
+
+ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+             shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(position=position_dodge(width=-0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
+  theme_bw(base_size = 8) + labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC") +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
+  scale_colour_brewer(palette = "Set1")
+```
+
+
+```{r m4, fig.height=2.7, fig.width=7, fig.cap="\\label{fig:m4}M4"}
+m4 <- bind_rows(
   map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(wp_skewed~tweet, .), .id = "prefer"),
@@ -345,54 +379,40 @@ m3 <- bind_rows(
                                     .ordered = TRUE),
          comparison = gsub(" by tweet", "", comparison),
          group = recode_factor(comparison, 
-                               `employ_correct` = "Belief",
-                               `sales_correct` = "Belief",
-                               `wp_american` = "Article evaluation",
-                               `wp_hostile` = "Article evaluation",
-                               `wp_bad` = "Article evaluation",
-                               `wp_skewed` = "Article evaluation",
-                               `wp_fair` = "Article evaluation",
                                `wp_accurate` = "Article evaluation",
-                               `jobs_pos` = "Interpretation",
-                               `taxes_pos` = "Interpretation",
-                               `actions_post` = "Subsequent engagement",
-                               `actions_forward` = "Subsequent engagement",
-                               `actions_discuss` = "Subsequent engagement",
+                               `wp_fair` = "Article evaluation",
+                               `wp_skewed` = "Article evaluation",
+                               `wp_bad` = "Article evaluation",
+                               `wp_hostile` = "Article evaluation",
+                               `wp_american` = "Article evaluation",
                                `actions_seek` = "Subsequent engagement",
-                               `immig_increased` = "Opinion",
+                               `actions_discuss` = "Subsequent engagement",
+                               `actions_forward` = "Subsequent engagement",
+                               `actions_post` = "Subsequent engagement",
                                .ordered = TRUE),
          outcome = recode_factor(comparison, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
-                                 `wp_american` = "American",
-                                 `wp_hostile` = "Hostile",
-                                 `wp_bad` = "Bad",
-                                 `wp_skewed` = "Skewed",
-                                 `wp_fair` = "Fair",
                                  `wp_accurate` = "Accurate",
-                                 `actions_post` = "Post on social media",
-                                 `actions_forward` = "Forward via email",
-                                 `actions_discuss` = "Discuss with friends",
+                                 `wp_fair` = "Fair",
+                                 `wp_skewed` = "Skewed",
+                                 `wp_bad` = "Bad",
+                                 `wp_hostile` = "Hostile",
+                                 `wp_american` = "American",
                                  `actions_seek` = "Seek more infos",
+                                 `actions_discuss` = "Discuss with friends",
+                                 `actions_forward` = "Forward via email",
+                                 `actions_post` = "Post on social media",
                                  .ordered = TRUE))
 
-ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+ggplot(m4, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
              shape = Preference, col = Preference)) + 
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(position=position_dodge(width=-0.4)) +
   geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
   theme_bw(base_size = 8) + labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC") +
-  facet_wrap(~group, scales = "free_y", nrow=3) +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
   scale_colour_brewer(palette = "Set1") +
-  coord_flip() +
-  theme(legend.position = c(1,0),
-        legend.justification = c(1,0))
-
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-
 
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
