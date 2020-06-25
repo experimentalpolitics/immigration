@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  24 JUN 2020 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  25 JUN 2020 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -990,40 +990,35 @@ LaTeX Font Info:    Try loading font information for TS1+lmss on input line 375
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<ReliableSources_files/figure-latex/Hypotheses-1.pdf, id=54, 419.5675pt x 242.9
-075pt>
-File: ReliableSources_files/figure-latex/Hypotheses-1.pdf Graphic file (type pd
-f)
-<use ReliableSources_files/figure-latex/Hypotheses-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/Hypotheses-1.pdf  u
-sed on input line 392.
-(pdftex.def)             Requested size: 419.56647pt x 242.90689pt.
-[8 <./ReliableSources_files/figure-latex/Hypotheses-1.pdf>] [9] [10]
-<ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf, id=78, 455.7025pt x 
-315.1775pt>
-File: ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (ty
-pe pdf)
-<use ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/unnamed-chunk-1-1.p
-df  used on input line 538.
-(pdftex.def)             Requested size: 455.70831pt x 315.18153pt.
+<ReliableSources_files/figure-latex/m1-1.pdf, id=54, 313.17pt x 316.18124pt>
+File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m1-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
+nput line 392.
+(pdftex.def)             Requested size: 313.17877pt x 316.19011pt.
+[8 <./ReliableSources_files/figure-latex/m1-1.pdf>] [9] [10]
+<ReliableSources_files/figure-latex/m2-1.pdf, id=78, 313.17pt x 316.18124pt>
+File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m2-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
+nput line 538.
+(pdftex.def)             Requested size: 313.17877pt x 316.19011pt.
 [11]
-<ReliableSources_files/figure-latex/unnamed-chunk-2-1.pdf, id=83, 455.7025pt x 
-317.185pt>
-File: ReliableSources_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (ty
-pe pdf)
-<use ReliableSources_files/figure-latex/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/unnamed-chunk-2-1.p
-df  used on input line 540.
-(pdftex.def)             Requested size: 455.70831pt x 317.18904pt.
+<ReliableSources_files/figure-latex/m3-1.pdf, id=83, 498.86375pt x 318.18875pt>
+
+File: ReliableSources_files/figure-latex/m3-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m3-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m3-1.pdf  used on i
+nput line 540.
+(pdftex.def)             Requested size: 469.76932pt x 299.63152pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 552.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 552.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 552.
-[12 <./ReliableSources_files/figure-latex/unnamed-chunk-1-1.pdf> <./ReliableSou
-rces_files/figure-latex/unnamed-chunk-2-1.pdf>]
+[12 <./ReliableSources_files/figure-latex/m2-1.pdf> <./ReliableSources_files/fi
+gure-latex/m3-1.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1055,11 +1050,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 766.
  ) 
 Here is how much of TeX's memory you used:
- 13480 strings out of 492982
- 193648 string characters out of 6134895
- 312610 words of memory out of 5000000
+ 13484 strings out of 492982
+ 193528 string characters out of 6134895
+ 312598 words of memory out of 5000000
  16660 multiletter control sequences out of 15000+600000
- 64368 words of font info for 120 fonts, out of 8000000 for 9000
+ 64570 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,10n,38p,909b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
@@ -1071,7 +1066,7 @@ b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on ReliableSources.pdf (17 pages, 804569 bytes).
+Output written on ReliableSources.pdf (17 pages, 807037 bytes).
 PDF statistics:
  249 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

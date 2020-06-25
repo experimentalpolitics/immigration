@@ -13,7 +13,7 @@ date: |
   |
   | \today
 abstract: >-
-  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus--are imbued with misinformation. A growing body of research therefore explores the provision of corrective information as a viable mitigation strategy. While interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research area by examining how variations in the source and delivery mode moderate the effectiveness of corrective information. In our pre-registered survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Conditional on the delivery mode and news organization, we explore whether the article is effective in correcting factual misperceptions and how it impacts general attitudes towards immigration. Furthermore, we examine differences in the overall engagement with the news article and intentions to share it (e.g., through social media). Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being disseminated further. As such, the findings help inform the development of more effective strategies to disseminate corrective information. 
+  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus pandemic--are imbued with misinformation. A growing body of research therefore explores the effectiveness of providing corrective information as a viable mitigation strategy. While such interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research by examining how the effectiveness of corrective information is moderated by media choice. In our survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. We show that the article's effectiveness in correcting factual misperceptions and how it impacts subsequent attitudes towards immigration is conditional on how people gained access to the information. Furthermore, we examine differences in the overall engagement with the news article and intentions to share it (e.g., through social media). Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being disseminated further. As such, the findings help inform the development of more effective strategies to disseminate corrective information. 
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -141,7 +141,7 @@ For the main outcome measures in our experimental design (i.e., immigration atti
 In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes:
 
 
-```{r Hypotheses, fig.height=3.5, fig.width=6}
+```{r m1, fig.height=4.5, fig.width=4.5}
 m1 <- list(employ_correct = lm(employ_correct ~ condition
                                + lazy_hispanics + problem_immigration
                                + age + male + usborn + white + college
@@ -190,9 +190,9 @@ m1robust %>%
   ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
              shape = Condition, col = Condition)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
-  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
-  theme_bw(base_size = 9) + labs(x = NULL, y = "Coefficient") +
+  geom_point(position=position_dodge(width=-0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
+  theme_bw(base_size = 8) + labs(x = NULL, y = "Coefficient") +
   facet_wrap(~group, scales = "free_y", ncol = 1) +
   scale_colour_brewer(palette = "Set1") +
   coord_flip()
@@ -230,7 +230,7 @@ The two graphs above show the mean liberal immigration level across preference g
 
 At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story.
 
-```{r}
+```{r m2, fig.height=4.5, fig.width=4.5}
 df_nochoice <- df %>%
   filter(condition != "choice") %>% # exclude free choice arm of experiment
   mutate(exposure = 
@@ -291,9 +291,9 @@ m2robust %>%
   ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
              shape = Exposure, col = Exposure)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
-  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
-  theme_bw(base_size = 9) + labs(x = NULL, y = "Coefficient") +
+  geom_point(position=position_dodge(width=-0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
+  theme_bw(base_size = 8) + labs(x = NULL, y = "Coefficient") +
   facet_wrap(~group, scales = "free_y", ncol = 1) +
   scale_colour_brewer(palette = "Set1") +
   coord_flip()
@@ -301,14 +301,16 @@ m2robust %>%
 
 
 
-```{r}
+```{r m3, fig.height=4.5, fig.width=7}
 df_assigned <- df %>%
   filter(condition == "assigned") %>%
   mutate(prefer = 
            as.numeric(tv_fox-tv_msnbc<0)
          + 2*as.numeric(tv_fox-tv_msnbc==0)
          + 3*as.numeric(tv_fox-tv_msnbc>0),
-         prefer = factor(prefer, labels = c("msnbc","neutral","fox"))) %>%
+         prefer = factor(prefer, labels = c("msnbc","neutral","fox")),
+         eval = wp_fair + wp_american + wp_accurate - wp_hostile - wp_bad - wp_skewed,
+         share = actions_discuss + actions_forward + actions_post) %>%
   split(.$prefer)
 
 extractDiff <- function(formula, data){
@@ -324,7 +326,17 @@ m3 <- bind_rows(
   map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
+  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_skewed~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_bad~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_hostile~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_american~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_seek~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_discuss~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_forward~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_post~tweet, .), .id = "prefer")
 ) %>% 
   mutate(Preference = recode_factor(prefer,
                                     `fox` = "Fox",
@@ -335,8 +347,18 @@ m3 <- bind_rows(
          group = recode_factor(comparison, 
                                `employ_correct` = "Belief",
                                `sales_correct` = "Belief",
+                               `wp_american` = "Article evaluation",
+                               `wp_hostile` = "Article evaluation",
+                               `wp_bad` = "Article evaluation",
+                               `wp_skewed` = "Article evaluation",
+                               `wp_fair` = "Article evaluation",
+                               `wp_accurate` = "Article evaluation",
                                `jobs_pos` = "Interpretation",
                                `taxes_pos` = "Interpretation",
+                               `actions_post` = "Subsequent engagement",
+                               `actions_forward` = "Subsequent engagement",
+                               `actions_discuss` = "Subsequent engagement",
+                               `actions_seek` = "Subsequent engagement",
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(comparison, 
@@ -345,17 +367,29 @@ m3 <- bind_rows(
                                  `jobs_pos` = "Immigrants create jobs",
                                  `taxes_pos` = "Immigrants pay taxes",
                                  `immig_increased` = "Immigration should be increased",
+                                 `wp_american` = "American",
+                                 `wp_hostile` = "Hostile",
+                                 `wp_bad` = "Bad",
+                                 `wp_skewed` = "Skewed",
+                                 `wp_fair` = "Fair",
+                                 `wp_accurate` = "Accurate",
+                                 `actions_post` = "Post on social media",
+                                 `actions_forward` = "Forward via email",
+                                 `actions_discuss` = "Discuss with friends",
+                                 `actions_seek` = "Seek more infos",
                                  .ordered = TRUE))
 
 ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
              shape = Preference, col = Preference)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(size = 1.5, position=position_dodge(width=-0.3)) +
-  geom_errorbar(width=0, position=position_dodge(width=-0.3)) +
-  theme_bw(base_size = 9) + labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC") +
-  facet_wrap(~group, scales = "free_y", ncol = 1) +
+  geom_point(position=position_dodge(width=-0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=-0.4)) +
+  theme_bw(base_size = 8) + labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC") +
+  facet_wrap(~group, scales = "free_y", nrow=3) +
   scale_colour_brewer(palette = "Set1") +
-  coord_flip()
+  coord_flip() +
+  theme(legend.position = c(1,0),
+        legend.justification = c(1,0))
 
 ```
 
