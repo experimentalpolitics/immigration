@@ -275,6 +275,20 @@ p4 <- bind_rows(
 #rm(df, df_assigned, df_nochoice, extractDiff, m1, m2)
 ```
 
+## Experimental design
+
+![Survey Flow](../prereg/Lab-Graphic.jpg){width=1000px}
+
+## Information treatment
+
+- In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
+
+<div class="columns-2">
+  ![](../material/tweets/fox_popular.png){width=95%}
+  ![](../material/tweets/msnbc_popular.png){width=95%}
+</div>
+
+
 ## Model 1
 
 ```{r}
@@ -306,7 +320,7 @@ p2
 p3 + theme(panel.border = element_rect(fill="white"))
 ```
 
-## Model 2
+## Model 3
 
 ```{r}
 p3
