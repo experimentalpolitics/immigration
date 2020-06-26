@@ -292,7 +292,7 @@ m2robust %>%
                                  `immig_increased` = "Immigration should be increased",
                                  .ordered = TRUE),
          Exposure = recode_factor(term,
-                                  `exposureinconsistent` = "Inonsistent",
+                                  `exposureinconsistent` = "Inconsistent",
                                   `exposureneutral` = "Neutral",
                                   `exposureconsistent` = "Consistent")) %>%
   ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
@@ -408,7 +408,7 @@ m4 <- bind_rows(
                                  `wp_good` = "Good",
                                  `wp_friendly` = "Friendly",
                                  `wp_american` = "American",
-                                 `actions_seek` = "Seek more infos",
+                                 `actions_seek` = "Seek more info",
                                  `actions_discuss` = "Discuss with friends",
                                  `actions_forward` = "Forward via email",
                                  `actions_post` = "Post on social media",
