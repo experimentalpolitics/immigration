@@ -1,0 +1,323 @@
+---
+title: "Reliable Sources?"
+subtitle: "Correcting Misinformation in Polarized Media Environments"
+author: "Patrick W. Kraft, Nicholas R. Davis, Taraleigh Davis, Amanda Heideman, Jason T. Neumeyer, Shin Young Park --- University of Wisconsin-Milwaukee"
+date: "ISPP 2020 Virtual Meeting, June 15th"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    #incremental: true
+    #smaller: true
+    transition: faster
+    logo: UWM_vertical.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10.5)
+
+## Load packages
+library(tidyverse)
+library(broom)
+library(sandwich)
+library(ggplot2)
+library(lmtest)
+library(car)
+```
+
+```{r models, cache = TRUE}
+## Load data
+df <- read_csv("../data/immigration_20191219_clean.csv") %>%
+  mutate(condition = factor(condition, levels = c("control", "assigned", "choice")),
+         lazy_diff = lazy_whites - lazy_hispanics)
+
+## model 1
+m1 <- list(employ_correct = lm(employ_correct ~ condition
+                               + lazy_hispanics + problem_immigration
+                               + age + male + usborn + white + college
+                               , data = df),
+           sales_correct = lm(sales_correct ~ condition
+                              + lazy_hispanics + problem_immigration
+                              + age + male + usborn + white + college
+                              , data = df),
+           jobs_pos = lm(jobs_pos ~ condition
+                         + lazy_hispanics + problem_immigration
+                         + age + male + usborn + white + college
+                         , data = df),
+           taxes_pos = lm(taxes_pos ~ condition
+                          + lazy_hispanics + problem_immigration
+                          + age + male + usborn + white + college
+                          , data = df),
+           immig_increased = lm(immig_increased ~ condition
+                                + lazy_hispanics + problem_immigration
+                                + age + male + usborn + white + college
+                                , data = df)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+
+p1 <- m1 %>%
+  map_dfr(tidy, .id = "dv") %>%
+  bind_cols(map_dfr(m1, confint_tidy)) %>%
+  filter(term %in% c("conditionassigned", "conditionchoice")) %>%
+  mutate(group = recode_factor(dv, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(dv, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE),
+         Condition = recode_factor(term,
+                                   `conditionassigned` = "Forced\nExposure",
+                                   `conditionchoice` = "Free\nChoice")) %>%
+  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+             shape = Condition, col = Condition)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(position=position_dodge(width=0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  theme_light() + 
+  labs(x = NULL, y = "Coefficient", 
+       col = "Experimental\nCondition",
+       shape = "Experimental\nCondition") +
+  facet_wrap(~group, scales = "free_x", ncol = 3) +
+  scale_colour_brewer(palette = "Set1")
+
+## model 2
+df_nochoice <- df %>%
+  filter(condition != "choice") %>%
+  mutate(exposure = 
+           as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="msnbc"))
+                      |((tv_fox-tv_msnbc<0) & (tweet=="fox")))
+         + 2*as.numeric(((tv_fox-tv_msnbc==0) & (tweet=="msnbc"))
+                        |((tv_fox-tv_msnbc==0) & (tweet=="fox")))
+         + 3*as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="fox"))
+                        |((tv_fox-tv_msnbc<0) & (tweet=="msnbc"))),
+         exposure = factor(exposure, labels = c("control","inconsistent","neutral","consistent")))
+
+m2 <- list(employ_correct = lm(employ_correct ~ exposure
+                               + lazy_hispanics + problem_immigration
+                               + age + male + usborn + white + college
+                               , data = df_nochoice),
+           sales_correct = lm(sales_correct ~ exposure
+                              + lazy_hispanics + problem_immigration
+                              + age + male + usborn + white + college
+                              , data = df_nochoice),
+           jobs_pos = lm(jobs_pos ~ exposure
+                         + lazy_hispanics + problem_immigration
+                         + age + male + usborn + white + college
+                         , data = df_nochoice),
+           taxes_pos = lm(taxes_pos ~ exposure
+                          + lazy_hispanics + problem_immigration
+                          + age + male + usborn + white + college
+                          , data = df_nochoice),
+           immig_increased = lm(immig_increased ~ exposure
+                                + lazy_hispanics + problem_immigration
+                                + age + male + usborn + white + college
+                                , data = df_nochoice)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+
+p2 <- m2 %>%
+  map_dfr(tidy, .id = "dv") %>%
+  bind_cols(map_dfr(m2, confint_tidy)) %>%
+  filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
+  mutate(group = recode_factor(dv, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(dv, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE),
+         Exposure = recode_factor(term,
+                                  `exposureinconsistent` = "Inonsistent",
+                                  `exposureneutral` = "Neutral",
+                                  `exposureconsistent` = "Consistent")) %>%
+  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+             shape = Exposure, col = Exposure)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(position=position_dodge(width=0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  theme_light() + 
+  labs(x = NULL, y = "Coefficient", 
+       col = "Forced\nExposure",
+       shape = "Forced\nExposure") +
+  facet_wrap(~group, scales = "free_x", ncol = 3) +
+  scale_colour_brewer(palette = "Set1")
+
+## model 3
+df_assigned <- df %>%
+  filter(condition == "assigned") %>%
+  mutate(prefer = 
+           as.numeric(tv_fox-tv_msnbc<0)
+         + 2*as.numeric(tv_fox-tv_msnbc==0)
+         + 3*as.numeric(tv_fox-tv_msnbc>0),
+         prefer = factor(prefer, labels = c("msnbc","neutral","fox"))) %>%
+  split(.$prefer)
+
+extractDiff <- function(formula, data){
+  tmp <- t.test(as.formula(formula), data=data)
+  tibble(comparison = tmp$data.name,
+         diff = diff(rev(tmp$estimate)),
+         cilo = tmp$conf.int[1],
+         cihi = tmp$conf.int[2])
+}
+
+p3 <- bind_rows(
+  map_dfr(df_assigned, ~extractDiff(employ_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE)) %>%
+  ggplot(aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+             shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(position=position_dodge(width=0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  theme_light() + 
+  labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
+       col = "Media\nPreference",
+       shape = "Media\nPreference") +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
+  scale_colour_brewer(palette = "Set1")
+
+## model 4
+p4 <- bind_rows(
+  map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_skewed~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_bad~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_hostile~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_american~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_seek~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_discuss~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_forward~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_post~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `wp_accurate` = "Article evaluation",
+                               `wp_fair` = "Article evaluation",
+                               `wp_skewed` = "Article evaluation",
+                               `wp_bad` = "Article evaluation",
+                               `wp_hostile` = "Article evaluation",
+                               `wp_american` = "Article evaluation",
+                               `actions_seek` = "Subsequent engagement",
+                               `actions_discuss` = "Subsequent engagement",
+                               `actions_forward` = "Subsequent engagement",
+                               `actions_post` = "Subsequent engagement",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `wp_accurate` = "Accurate",
+                                 `wp_fair` = "Fair",
+                                 `wp_skewed` = "Skewed",
+                                 `wp_bad` = "Bad",
+                                 `wp_hostile` = "Hostile",
+                                 `wp_american` = "American",
+                                 `actions_seek` = "Seek more infos",
+                                 `actions_discuss` = "Discuss with friends",
+                                 `actions_forward` = "Forward via email",
+                                 `actions_post` = "Post on social media",
+                                 .ordered = TRUE)) %>%
+  ggplot(aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+             shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(position=position_dodge(width=0.4)) +
+  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  theme_light() + 
+  labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
+       col = "Media\nPreference",
+       shape = "Media\nPreference") +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
+  scale_colour_brewer(palette = "Set1") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+## remove objects that are not used
+rm(df, df_assigned, df_nochoice, extractDiff, m1, m2)
+```
+
+## Model 1
+
+```{r}
+p1 + theme(panel.border = element_rect(fill="white"))
+```
+
+## Model 1
+
+```{r}
+p1
+```
+
+
+## Model 2
+
+```{r}
+p2 + theme(panel.border = element_rect(fill="white"))
+```
+
+## Model 2
+
+```{r}
+p2
+```
+
+## Model 3
+
+```{r}
+p3 + theme(panel.border = element_rect(fill="white"))
+```
+
+## Model 2
+
+```{r}
+p3
+```
+
+
+## Model 4
+
+```{r, fig.height=}
+p4 + theme(panel.border = element_rect(fill="white"))
+```
+
+## Model 4
+
+```{r}
+p4
+```
