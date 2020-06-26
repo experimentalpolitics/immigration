@@ -56,7 +56,10 @@ cihi <- function(x, na.rm = T){
 ## Load data
 df <- read_csv("../data/immigration_20191219_clean.csv") %>%
   mutate(condition = factor(condition, levels = c("control", "assigned", "choice")),
-         lazy_diff = lazy_whites - lazy_hispanics)
+         lazy_diff = lazy_whites - lazy_hispanics,
+         wp_balanced = 1-wp_skewed,
+         wp_good = 1-wp_bad,
+         wp_friendly = 1-wp_hostile)
 ```
 
 \clearpage
@@ -198,7 +201,7 @@ m1robust %>%
        col = "Experimental\nCondition",
        shape = "Experimental\nCondition") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
-  scale_colour_brewer(palette = "Set1")
+  scale_colour_manual(values = c("darkred","darkblue"))
 ```
 
 
@@ -302,7 +305,7 @@ m2robust %>%
        col = "Forced\nExposure",
        shape = "Forced\nExposure") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
-  scale_colour_brewer(palette = "Set1")
+  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
 ```
 
 
@@ -363,7 +366,7 @@ ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
        col = "Media\nPreference",
        shape = "Media\nPreference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
-  scale_colour_brewer(palette = "Set1")
+  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
 ```
 
 
@@ -371,9 +374,9 @@ ggplot(m3, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
 m4 <- bind_rows(
   map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(wp_skewed~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(wp_bad~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(wp_hostile~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_balanced~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_good~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_friendly~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(wp_american~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(actions_seek~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(actions_discuss~tweet, .), .id = "prefer"),
@@ -387,11 +390,11 @@ m4 <- bind_rows(
                                     .ordered = TRUE),
          comparison = gsub(" by tweet", "", comparison),
          group = recode_factor(comparison, 
+                               `wp_balanced` = "Article evaluation",
                                `wp_accurate` = "Article evaluation",
                                `wp_fair` = "Article evaluation",
-                               `wp_skewed` = "Article evaluation",
-                               `wp_bad` = "Article evaluation",
-                               `wp_hostile` = "Article evaluation",
+                               `wp_good` = "Article evaluation",
+                               `wp_friendly` = "Article evaluation",
                                `wp_american` = "Article evaluation",
                                `actions_seek` = "Subsequent engagement",
                                `actions_discuss` = "Subsequent engagement",
@@ -399,11 +402,11 @@ m4 <- bind_rows(
                                `actions_post` = "Subsequent engagement",
                                .ordered = TRUE),
          outcome = recode_factor(comparison, 
+                                 `wp_balanced` = "Balanced",
                                  `wp_accurate` = "Accurate",
                                  `wp_fair` = "Fair",
-                                 `wp_skewed` = "Skewed",
-                                 `wp_bad` = "Bad",
-                                 `wp_hostile` = "Hostile",
+                                 `wp_good` = "Good",
+                                 `wp_friendly` = "Friendly",
                                  `wp_american` = "American",
                                  `actions_seek` = "Seek more infos",
                                  `actions_discuss` = "Discuss with friends",
@@ -421,7 +424,7 @@ ggplot(m4, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
        col = "Media\nPreference",
        shape = "Media\nPreference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
-  scale_colour_brewer(palette = "Set1") +
+  scale_colour_manual(values = c("darkred","darkgreen","darkblue")) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
