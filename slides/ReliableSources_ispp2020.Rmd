@@ -13,6 +13,7 @@ output:
     css: xaringan-themer.css
     lib_dir: libs
     nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
       highlightStyle: github
       countIncrementalSlides: false
       highlightLines: true
@@ -21,7 +22,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
-                      fig.width = 15, fig.height = 6)
+                      fig.width = 16, fig.height = 6)
 
 library(tidyverse)
 library(broom)
@@ -40,7 +41,7 @@ style_mono_accent(
   code_font_google     = google_font("Fira Mono"),
   text_font_size       = "25px",
   code_font_size       = "15px",
-  footnote_font_size   = "18px"
+  footnote_font_size   = "12px"
   )
 ```
 
@@ -95,8 +96,8 @@ p1 <- m1 %>%
                                  `immig_increased` = "Immigration should be increased",
                                  .ordered = TRUE),
          Condition = recode_factor(term,
-                                   `conditionassigned` = "Forced\nExposure",
-                                   `conditionchoice` = "Free\nChoice")) %>%
+                                   `conditionassigned` = "Forced exposure",
+                                   `conditionchoice` = "Free choice")) %>%
   ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
              shape = Condition, col = Condition)) + 
   geom_hline(yintercept = 0, col = "grey") +
@@ -104,8 +105,8 @@ p1 <- m1 %>%
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 12) + 
   labs(x = NULL, y = "Coefficient", 
-       col = "Experimental\nCondition",
-       shape = "Experimental\nCondition") +
+       col = "Experimental condition",
+       shape = "Experimental condition") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
   scale_colour_manual(values = c("darkred","darkblue"))
 
@@ -172,8 +173,8 @@ p2 <- m2 %>%
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 12) + 
   labs(x = NULL, y = "Coefficient", 
-       col = "Forced\nExposure",
-       shape = "Forced\nExposure") +
+       col = "Forced exposure",
+       shape = "Forced exposure") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
   scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
 
@@ -229,8 +230,8 @@ p3 <- bind_rows(
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 12) + 
   labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
-       col = "Media\nPreference",
-       shape = "Media\nPreference") +
+       col = "Media preference",
+       shape = "Media preference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
   scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
 
@@ -284,8 +285,8 @@ p4 <- bind_rows(
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 12) + 
   labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
-       col = "Media\nPreference",
-       shape = "Media\nPreference") +
+       col = "Media preference",
+       shape = "Media preference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
   scale_colour_manual(values = c("darkred","darkgreen","darkblue")) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -294,15 +295,69 @@ p4 <- bind_rows(
 #rm(df, df_assigned, df_nochoice, extractDiff, m1, m2)
 ```
 
-## Experimental design
+
+## Why do misinformation corrections (often) fail?
+
+---
+
+
+## Models of Complete and Incomplete Updating
+
+.footnote[
+Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. "Same facts, different interpretations: Partisan motivation and opinion on Iraq." *Journal of Politics* 69: 957-974 
+]
+
+--
+
+- **Complete Updating:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+
+--
+   
+- **Fact Avoidance:** 
+    > reality || beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Meaning Avoidance:** 
+    > reality $\rightarrow$ beliefs || interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Opinion Avoidance:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations || opinions
+
+---
+
+
+## Who reads fact-checks anyway?
+
+---
+
+
+
+
+
+## A Prefernce-Incorporating Choice and Assignment (PICA) Design
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
 
+
+.footnote[
+Knox, D.; Yamamoto, T.; Baum, M. A. & Berinsky, A. J. 2019. "Design, identification, and sensitivity analysis for patient preference trials." *Journal of the American Statistical Association.*
+
+De Benedictis-Kessner, J.; Baum, M. A.; Berinsky, A. J. & Yamamoto, T. 2019. "Persuading the Enemy: Estimating the Persuasive Effects of Partisan Media with the Preference-Incorporating Choice and Assignment Design." *American Political Science Review* 113: 902-916.
+
+Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and Media Content Impact Political Knowledge." *Political Communication*.
+]
 ---
+
 
 ## Information treatment
 
 - In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
+
+--
 
 .pull-left[
 <img src="../material/tweets/fox_popular.png">
@@ -311,68 +366,116 @@ p4 <- bind_rows(
 .pull-right[
 <img src="../material/tweets/msnbc_popular.png">
 ]
+---
+
+## Measuring Belief, Interpretation, and Opinion
+
+- **Belief:**
+  - Across the United States, how many workers – immigrant and US-born – do you think are employed by immigrant-owned businesses?
+
+--
+
+- **Interpretation:**
+  - On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
+
+--
+
+- **Opinion:**
+  - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]?
 
 ---
 
 
-## Model 1
+## Forced exposure vs. free choice
 
 ```{r}
 p1 + theme(panel.border = element_rect(fill="white"))
 ```
-
 ---
 
-## Model 1
+
+## Forced exposure vs. free choice
 
 ```{r}
 p1
 ```
 
+.footnote[
+Coefficients are based on linear regression models controlling for pre-treatment covariates.
+]
 ---
 
-## Model 2
+
+## The role of media preferences
 
 ```{r}
 p2 + theme(panel.border = element_rect(fill="white"))
 ```
-
 ---
 
-## Model 2
+
+## The role of media preferences
 
 ```{r}
 p2
 ```
 
+.footnote[
+Coefficients are based on linear regression models controlling for pre-treatment covariates.
+]
 ---
 
-## Model 3
+
+## Fox vs. MSNBC: Attitude change
 
 ```{r}
 p3 + theme(panel.border = element_rect(fill="white"))
 ```
-
 ---
 
-## Model 3
+
+## Fox vs. MSNBC: Attitude change
 
 ```{r}
 p3
 ```
-
+.footnote[
+Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences.
+]
 ---
 
-## Model 4
+
+## Fox vs. MSNBC: Evaluation & engagement
 
 ```{r, fig.height=6.5}
 p4 + theme(panel.border = element_rect(fill="white"))
 ```
-
 ---
 
-## Model 4
+
+## Fox vs. MSNBC: Evaluation & engagement
 
 ```{r, fig.height=6.5}
 p4
 ```
+.footnote[
+Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences.
+]
+---
+
+
+## Conclusion and future directions
+
+---
+
+## Thank you for your attention
+
+**Questions, comments?**
+
+<a href="http://twitter.com/patrickwkraft">`r icon::fa("twitter")`&nbsp; @patrickwkraft</a><br>
+<a href="https://github.com/pwkraft">`r icon::fa("github")`&nbsp; @pwkraft</a><br>
+<a href="https://pwkraft.github.io"><i class="fa fa-link fa-fw"></i>&nbsp; https://pwkraft.github.io</a><br>
+<a href="https://experimentalpolitics.github.io"><i class="fa fa-book fa-fw"></i>&nbsp; https://experimentalpolitics.github.io</a><br>
+<a href="mailto:kraftp@uwm.edu"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; kraftp@uwm.edu</a>
+
+---
