@@ -1,28 +1,47 @@
 ---
 title: "Reliable Sources?"
 subtitle: "Correcting Misinformation in Polarized Media Environments"
-author: "Patrick W. Kraft, Nicholas R. Davis, Taraleigh Davis, Amanda Heideman, Jason T. Neumeyer, Shin Young Park --- University of Wisconsin-Milwaukee"
-date: "ISPP 2020 Virtual Meeting, June 15th"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    #incremental: true
-    #smaller: true
-    transition: faster
-    logo: UWM_vertical.png
+author: | 
+  | 
+  | Patrick W. Kraft, Nicholas R. Davis, Taraleigh Davis, 
+  | Amanda Heideman, Jason T. Neumeyer, Shin Young Park
+  | 
+  | University of Wisconsin-Milwaukee
+date: "ISPP 2020 Virtual Meeting, July 15th"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      highlightLines: true
+      ratio: "16:9"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
-                      fig.width = 10.5)
+                      fig.width = 15, fig.height = 6)
 
-## Load packages
 library(tidyverse)
 library(broom)
 library(sandwich)
 library(ggplot2)
 library(lmtest)
 library(car)
+```
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color           = "#002b36",
+  header_font_google   = google_font("Montserrat"),
+  text_font_google     = google_font("Montserrat", "300", "300i"),
+  code_font_google     = google_font("Fira Mono"),
+  text_font_size       = "25px",
+  code_font_size       = "15px",
+  footnote_font_size   = "18px"
+  )
 ```
 
 ```{r models, cache = TRUE}
@@ -83,7 +102,7 @@ p1 <- m1 %>%
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(size = 3,position=position_dodge(width=0.4)) +
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
-  theme_light() + 
+  theme_light(base_size = 12) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Experimental\nCondition",
        shape = "Experimental\nCondition") +
@@ -151,7 +170,7 @@ p2 <- m2 %>%
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(size = 3,position=position_dodge(width=0.4)) +
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
-  theme_light() + 
+  theme_light(base_size = 12) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Forced\nExposure",
        shape = "Forced\nExposure") +
@@ -208,7 +227,7 @@ p3 <- bind_rows(
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(size = 3,position=position_dodge(width=0.4)) +
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
-  theme_light() + 
+  theme_light(base_size = 12) + 
   labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
        col = "Media\nPreference",
        shape = "Media\nPreference") +
@@ -263,7 +282,7 @@ p4 <- bind_rows(
   geom_hline(yintercept = 0, col = "grey") +
   geom_point(size = 3,position=position_dodge(width=0.4)) +
   geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
-  theme_light() + 
+  theme_light(base_size = 12) + 
   labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
        col = "Media\nPreference",
        shape = "Media\nPreference") +
@@ -277,16 +296,23 @@ p4 <- bind_rows(
 
 ## Experimental design
 
-![Survey Flow](../prereg/Lab-Graphic.jpg){width=1000px}
+![Survey Flow](../prereg/Lab-Graphic.jpg)
+
+---
 
 ## Information treatment
 
 - In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
 
-<div class="columns-2">
-  ![](../material/tweets/fox_popular.png){width=95%}
-  ![](../material/tweets/msnbc_popular.png){width=95%}
-</div>
+.pull-left[
+<img src="../material/tweets/fox_popular.png">
+]
+
+.pull-right[
+<img src="../material/tweets/msnbc_popular.png">
+]
+
+---
 
 
 ## Model 1
@@ -295,12 +321,15 @@ p4 <- bind_rows(
 p1 + theme(panel.border = element_rect(fill="white"))
 ```
 
+---
+
 ## Model 1
 
 ```{r}
 p1
 ```
 
+---
 
 ## Model 2
 
@@ -308,11 +337,15 @@ p1
 p2 + theme(panel.border = element_rect(fill="white"))
 ```
 
+---
+
 ## Model 2
 
 ```{r}
 p2
 ```
+
+---
 
 ## Model 3
 
@@ -320,21 +353,26 @@ p2
 p3 + theme(panel.border = element_rect(fill="white"))
 ```
 
+---
+
 ## Model 3
 
 ```{r}
 p3
 ```
 
+---
 
 ## Model 4
 
-```{r, fig.height=5}
+```{r, fig.height=6.5}
 p4 + theme(panel.border = element_rect(fill="white"))
 ```
 
+---
+
 ## Model 4
 
-```{r, fig.height=5}
+```{r, fig.height=6.5}
 p4
 ```
