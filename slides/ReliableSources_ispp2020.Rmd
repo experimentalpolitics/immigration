@@ -298,6 +298,9 @@ p4 <- bind_rows(
 
 ## Why misinformation corrections (often) fail
 
+<!-- IMPORTANT SIDE NOTE: MISINFORMATION CORRECTIONS != FACT-CHECKS, although both are related -->
+<!-- EXAMPLES: CLIMATE CHANGE, VACCINES, COVID, IMMIGRATION -->
+
 .footnote[
 1. Hopkins, D. J.; Sides, J. & Citrin, J. 2019. "The muted consequences of correct information about immigration." *The Journal of Politics* 81: 315-320.
 
@@ -306,22 +309,20 @@ p4 <- bind_rows(
 
 --
 
-1. Misinformation corrections may change factual beliefs, but they have limited effects on underlying attitudes.
+1. Correcting erroneous factual beliefs does not necessarily imply change in related attitudes.
 
 --
 
-2. People who are most likely to be exposed to misinformation corrections are least likely to need them.
+2. People who are more likely to access misinformation corrections are least likely to need them.
 
 --
 
-- **Our goal:** Examine the effect of misinformation corrections on factual beliefs, interpretations, and attitudes, while taking into account endogenous information search.
+- **Our goal:** Examine the effect of misinformation corrections on *factual beliefs and related attitudes*, while accounting for *endogenous information search*.
 
 ---
 
 
 ## A Prefernce-Incorporating Choice and Assignment (PICA) Design
-
-![Survey Flow](../prereg/Lab-Graphic.jpg)
 
 .footnote[
 Knox, D.; Yamamoto, T.; Baum, M. A. & Berinsky, A. J. 2019. "Design, identification, and sensitivity analysis for patient preference trials." *Journal of the American Statistical Association.*
@@ -330,6 +331,10 @@ De Benedictis-Kessner, J.; Baum, M. A.; Berinsky, A. J. & Yamamoto, T. 2019. "Pe
 
 Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and Media Content Impact Political Knowledge." *Political Communication*.
 ]
+
+--
+
+![Survey Flow](../prereg/Lab-Graphic.jpg)
 ---
 
 
@@ -377,11 +382,6 @@ Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. 
 ---
 
 
-## Hypotheses
-
----
-
-
 ## Measuring Belief, Interpretation, and Opinion
 
 - **Belief:**
@@ -396,6 +396,34 @@ Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. 
 
 - **Opinion:**
     - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]?
+
+---
+
+
+## Hypotheses
+
+- **H1:** Misinformation corrections have stronger effects on people's *factual* beliefs than their related *interpretations* or *opinions*.
+<!-- Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
+
+--
+
+- **H2:** Misinformation corrections have stronger effects on people's beliefs, interpretations, and opinions if participants are given the *opportunity to choose a news organization*.*
+<!-- Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access -->
+
+--
+
+- **H3:** Misinformation corrections have stronger effects on people's beliefs, interpretations, and opinions if participants are exposed to a news organization that is *consistent with their media preferences*.* 
+<!-- Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
+
+--
+
+.footnote[
+*This difference is more pronounced for interpretations and opinions.
+]
+
+--
+
+- **H4:** Participants who are exposed to a news organization that is *consistent with their media preferences* are more likely to *evaluate* the article positively and *share* it with others. 
 
 ---
 
@@ -437,27 +465,26 @@ p2
 .footnote[
 Coefficients are based on linear regression models controlling for pre-treatment covariates.
 ]
+
+<!-- --- -->
+<!-- ## Fox vs. MSNBC: Attitude change -->
+
+<!-- ```{r} -->
+<!-- p3 + theme(panel.border = element_rect(fill="white")) -->
+<!-- ``` -->
+<!-- --- -->
+
+
+<!-- ## Fox vs. MSNBC: Attitude change -->
+
+<!-- ```{r} -->
+<!-- p3 -->
+<!-- ``` -->
+<!-- .footnote[ -->
+<!-- Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences. -->
+<!-- ] -->
+
 ---
-
-
-## Fox vs. MSNBC: Attitude change
-
-```{r}
-p3 + theme(panel.border = element_rect(fill="white"))
-```
----
-
-
-## Fox vs. MSNBC: Attitude change
-
-```{r}
-p3
-```
-.footnote[
-Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences.
-]
----
-
 
 ## Fox vs. MSNBC: Evaluation & engagement
 
@@ -482,7 +509,7 @@ Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment m
 
 ---
 
-## Thanks for viewing!
+## Thanks for watching!
 
 ### Questions, comments?
 
