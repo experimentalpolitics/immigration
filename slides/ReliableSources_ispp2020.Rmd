@@ -298,44 +298,25 @@ p4 <- bind_rows(
 
 ## Why misinformation corrections (often) fail
 
----
-
-
-## Models of Complete and Incomplete Updating
-
 .footnote[
-Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. "Same facts, different interpretations: Partisan motivation and opinion on Iraq." *Journal of Politics* 69: 957-974 
+1. Hopkins, D. J.; Sides, J. & Citrin, J. 2019. "The muted consequences of correct information about immigration." *The Journal of Politics* 81: 315-320.
+
+2. Guess, A. M.; Nyhan, B. & Reifler, J. 2020. "Exposure to untrustworthy websites in the 2016 US election." *Nature Human Behaviour* 
 ]
 
 --
 
-- **Complete Updating:** 
-    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+1. Misinformation corrections may change factual beliefs, but they have limited effects on underlying attitudes.
 
 --
-   
-- **Fact Avoidance:** 
-    > reality || beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
- 
+
+2. People who are most likely to be exposed to misinformation corrections are least likely to need them.
+
 --
 
-- **Meaning Avoidance:** 
-    > reality $\rightarrow$ beliefs || interpretations $\rightarrow$ opinions
- 
---
-
-- **Opinion Avoidance:** 
-    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations || opinions
+- **Our goal:** Examine the effect of misinformation corrections on factual beliefs, interpretations, and attitudes, while taking into account endogenous information search.
 
 ---
-
-
-## Who reads fact-checks anyway?
-
----
-
-
-
 
 
 ## A Prefernce-Incorporating Choice and Assignment (PICA) Design
@@ -365,6 +346,34 @@ Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and 
 .pull-right[
 <img src="../material/tweets/msnbc_popular.png">
 ]
+---
+
+## Models of Complete and Incomplete Updating
+
+.footnote[
+Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. "Same facts, different interpretations: Partisan motivation and opinion on Iraq." *Journal of Politics* 69: 957-974.
+]
+
+--
+
+- **Complete Updating:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+
+--
+   
+- **Fact Avoidance:** 
+    > reality || beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Meaning Avoidance:** 
+    > reality $\rightarrow$ beliefs || interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Opinion Avoidance:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations || opinions
+
 ---
 
 
