@@ -15,9 +15,10 @@ output:
     nature:
       beforeInit: "https://platform.twitter.com/widgets.js"
       highlightStyle: github
-      countIncrementalSlides: false
+      countIncrementalSlides: true
       highlightLines: true
       ratio: "16:9"
+      slideNumberFormat: Kraft - Reliable Sources?
 ---
 
 ```{r setup, include=FALSE}
@@ -45,34 +46,40 @@ style_mono_accent(
   )
 ```
 
-```{r models, cache = TRUE}
+```{r data, cache = TRUE}
 ## Load data
 df <- read_csv("../data/immigration_20191219_clean.csv") %>%
   mutate(condition = factor(condition, levels = c("control", "assigned", "choice")),
-         lazy_diff = lazy_whites - lazy_hispanics,
          wp_balanced = 1-wp_skewed,
          wp_good = 1-wp_bad,
-         wp_friendly = 1-wp_hostile)
+         wp_friendly = 1-wp_hostile,
+         prefer = (tv_fox-tv_msnbc==0) + 2*(tv_fox-tv_msnbc>0),
+         prefer = factor(prefer, labels = c("msnbc","neutral","fox")),
+         exposure = ((prefer=="fox" & tweet=="msnbc")|(prefer=="msnbc" & tweet=="fox")) + 
+           2*(prefer=="neutral" & tweet!="control") + 3*(prefer==tweet),
+         exposure = factor(exposure, labels = c("control","inconsistent","neutral","consistent")))
+```
 
-## model 1
+```{r model-1, cache = TRUE}
+## model 1: forced exposure vs. free choice
 m1 <- list(employ_correct = lm(employ_correct ~ condition
-                               + lazy_hispanics + problem_immigration
+                               + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                                + age + male + usborn + white + college
                                , data = df),
            sales_correct = lm(sales_correct ~ condition
-                              + lazy_hispanics + problem_immigration
+                              + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                               + age + male + usborn + white + college
                               , data = df),
            jobs_pos = lm(jobs_pos ~ condition
-                         + lazy_hispanics + problem_immigration
+                         + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                          + age + male + usborn + white + college
                          , data = df),
            taxes_pos = lm(taxes_pos ~ condition
-                          + lazy_hispanics + problem_immigration
+                          + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                           + age + male + usborn + white + college
                           , data = df),
            immig_increased = lm(immig_increased ~ condition
-                                + lazy_hispanics + problem_immigration
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                                 + age + male + usborn + white + college
                                 , data = df)) %>%
   map(~coeftest(., vcov. = vcovHC(.)))
@@ -109,37 +116,31 @@ p1 <- m1 %>%
        shape = "Experimental condition") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
   scale_colour_manual(values = c("darkred","darkblue"))
+```
 
-## model 2
+```{r model-2, cache = TRUE}
+## model 2: inconsistent vs. consistent forced exposure
 df_nochoice <- df %>%
-  filter(condition != "choice") %>%
-  mutate(exposure = 
-           as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="msnbc"))
-                      |((tv_fox-tv_msnbc<0) & (tweet=="fox")))
-         + 2*as.numeric(((tv_fox-tv_msnbc==0) & (tweet=="msnbc"))
-                        |((tv_fox-tv_msnbc==0) & (tweet=="fox")))
-         + 3*as.numeric(((tv_fox-tv_msnbc>0) & (tweet=="fox"))
-                        |((tv_fox-tv_msnbc<0) & (tweet=="msnbc"))),
-         exposure = factor(exposure, labels = c("control","inconsistent","neutral","consistent")))
+  filter(condition != "choice")
 
 m2 <- list(employ_correct = lm(employ_correct ~ exposure
-                               + lazy_hispanics + problem_immigration
+                               + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                                + age + male + usborn + white + college
                                , data = df_nochoice),
            sales_correct = lm(sales_correct ~ exposure
-                              + lazy_hispanics + problem_immigration
+                              + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                               + age + male + usborn + white + college
                               , data = df_nochoice),
            jobs_pos = lm(jobs_pos ~ exposure
-                         + lazy_hispanics + problem_immigration
+                         + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                          + age + male + usborn + white + college
                          , data = df_nochoice),
            taxes_pos = lm(taxes_pos ~ exposure
-                          + lazy_hispanics + problem_immigration
+                          + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                           + age + male + usborn + white + college
                           , data = df_nochoice),
            immig_increased = lm(immig_increased ~ exposure
-                                + lazy_hispanics + problem_immigration
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                                 + age + male + usborn + white + college
                                 , data = df_nochoice)) %>%
   map(~coeftest(., vcov. = vcovHC(.)))
@@ -177,15 +178,74 @@ p2 <- m2 %>%
        shape = "Forced exposure") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
   scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
+```
 
-## model 3
+```{r model-3, cache = TRUE}
+## model 3: forced exposure vs. free choice while holding consistency constant
+df_noforce <- df %>%
+  filter(condition != "force")
+
+m3 <- list(employ_correct = lm(employ_correct ~ exposure
+                               + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                               + age + male + usborn + white + college
+                               , data = df_noforce),
+           sales_correct = lm(sales_correct ~ exposure
+                              + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                              + age + male + usborn + white + college
+                              , data = df_noforce),
+           jobs_pos = lm(jobs_pos ~ exposure
+                         + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                         + age + male + usborn + white + college
+                         , data = df_noforce),
+           taxes_pos = lm(taxes_pos ~ exposure
+                          + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                          + age + male + usborn + white + college
+                          , data = df_noforce),
+           immig_increased = lm(immig_increased ~ exposure
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df_noforce)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+
+p3 <- m3 %>%
+  map_dfr(tidy, .id = "dv") %>%
+  bind_cols(map_dfr(m3, confint_tidy)) %>%
+  filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
+  mutate(group = recode_factor(dv, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(dv, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE),
+         Exposure = recode_factor(term,
+                                  `exposureinconsistent` = "Inconsistent",
+                                  `exposureneutral` = "Neutral",
+                                  `exposureconsistent` = "Consistent")) %>%
+  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+             shape = Exposure, col = Exposure)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(size = 3,position=position_dodge(width=0.4)) +
+  geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
+  theme_light(base_size = 12) + 
+  labs(x = NULL, y = "Coefficient", 
+       col = "Free choice",
+       shape = "Free choice") +
+  facet_wrap(~group, scales = "free_x", ncol = 3) +
+  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
+```
+
+```{r model-4, cache = TRUE}
+## model 4
 df_assigned <- df %>%
   filter(condition == "assigned") %>%
-  mutate(prefer = 
-           as.numeric(tv_fox-tv_msnbc<0)
-         + 2*as.numeric(tv_fox-tv_msnbc==0)
-         + 3*as.numeric(tv_fox-tv_msnbc>0),
-         prefer = factor(prefer, labels = c("msnbc","neutral","fox"))) %>%
   split(.$prefer)
 
 extractDiff <- function(formula, data){
@@ -196,46 +256,6 @@ extractDiff <- function(formula, data){
          cihi = tmp$conf.int[2])
 }
 
-p3 <- bind_rows(
-  map_dfr(df_assigned, ~extractDiff(employ_correct~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
-  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
-) %>% 
-  mutate(Preference = recode_factor(prefer,
-                                    `fox` = "Fox",
-                                    `neutral` = "Neither",
-                                    `msnbc` = "MSNBC",
-                                    .ordered = TRUE),
-         comparison = gsub(" by tweet", "", comparison),
-         group = recode_factor(comparison, 
-                               `employ_correct` = "Belief",
-                               `sales_correct` = "Belief",
-                               `jobs_pos` = "Interpretation",
-                               `taxes_pos` = "Interpretation",
-                               `immig_increased` = "Opinion",
-                               .ordered = TRUE),
-         outcome = recode_factor(comparison, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
-                                 .ordered = TRUE)) %>%
-  ggplot(aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
-             shape = Preference, col = Preference)) + 
-  geom_hline(yintercept = 0, col = "grey") +
-  geom_point(size = 3,position=position_dodge(width=0.4)) +
-  geom_errorbar(size = 1.2, width=0, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 12) + 
-  labs(x = NULL, y = "Treatment effect of reading Fox rather than MSNBC",
-       col = "Media preference",
-       shape = "Media preference") +
-  facet_wrap(~group, scales = "free_x", ncol=3) +
-  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
-
-## model 4
 p4 <- bind_rows(
   map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
   map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
@@ -295,29 +315,107 @@ p4 <- bind_rows(
 #rm(df, df_assigned, df_nochoice, extractDiff, m1, m2)
 ```
 
-
 ## Why misinformation corrections (often) fail
 
 <!-- IMPORTANT SIDE NOTE: MISINFORMATION CORRECTIONS != FACT-CHECKS, although both are related -->
 <!-- EXAMPLES: CLIMATE CHANGE, VACCINES, COVID, IMMIGRATION -->
 
 .footnote[
-1. Hopkins, D. J.; Sides, J. & Citrin, J. 2019. "The muted consequences of correct information about immigration." *The Journal of Politics* 81: 315-320.
+\*Guess, A. M.; Nyhan, B. & Reifler, J. 2020. "Exposure to untrustworthy websites in the 2016 US election." *Nature Human Behaviour* 
 
-2. Guess, A. M.; Nyhan, B. & Reifler, J. 2020. "Exposure to untrustworthy websites in the 2016 US election." *Nature Human Behaviour* 
+\*\*Hopkins, D. J.; Sides, J. & Citrin, J. 2019. "The muted consequences of correct information about immigration." *The Journal of Politics* 81: 315-320.
 ]
 
 --
 
-1. Correcting erroneous factual beliefs does not necessarily imply change in related attitudes.
+<br>
+1. Corrective information is unlikely to reach those who need it most.*
 
 --
 
-2. People who are more likely to access misinformation corrections are least likely to need them.
+2. Correcting factual beliefs does not necessarily imply opinion change.**
 
 --
 
-- **Our goal:** Examine the effect of misinformation corrections on *factual beliefs and related attitudes*, while accounting for *endogenous information search*.
+<br><br>
+**Our goal:** Examine the effect of misinformation corrections while...
+
+--
+
+- ...taking into account **endogenous** exposure
+
+--
+
+- ...differentiating between  factual **beliefs** and subsequent **opinions**
+
+---
+
+
+## Models of Complete and Incomplete Updating*
+
+.footnote[
+\*Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. "Same facts, different interpretations: Partisan motivation and opinion on Iraq." *Journal of Politics* 69: 957-974.
+]
+
+--
+
+- **Complete Updating:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+
+--
+   
+- **Fact Avoidance:** 
+    > reality **||** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Meaning Avoidance:** 
+    > reality $\rightarrow$ beliefs **||** interpretations $\rightarrow$ opinions
+ 
+--
+
+- **Opinion Avoidance:** 
+    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations **||** opinions
+
+---
+
+
+<!-- ## Hypotheses -->
+
+### H1: Misinformation corrections have stronger effects...
+
+--
+
+a) ...on people's factual **beliefs** than their related **interpretations** or **opinions**.
+<!-- Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
+
+--
+
+b) ...if the information source is **consistent** with people's media preferences.*
+<!-- Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
+
+--
+
+c) ...if people are able to **choose** their information source.*
+<!-- Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access -->
+
+--
+
+.footnote[
+*These differences are more pronounced for opinions and interpretations than for beliefs.
+]
+
+--
+
+<br>
+
+### H2: People who are exposed to preferred sources...
+
+a) ...are more likely to *evaluate* corrective information positively
+
+--
+
+b) ...are more likely to *share* corrective information with others. 
 
 ---
 
@@ -353,34 +451,6 @@ Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and 
 ]
 ---
 
-## Models of Complete and Incomplete Updating
-
-.footnote[
-Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. "Same facts, different interpretations: Partisan motivation and opinion on Iraq." *Journal of Politics* 69: 957-974.
-]
-
---
-
-- **Complete Updating:** 
-    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
-
---
-   
-- **Fact Avoidance:** 
-    > reality || beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
- 
---
-
-- **Meaning Avoidance:** 
-    > reality $\rightarrow$ beliefs || interpretations $\rightarrow$ opinions
- 
---
-
-- **Opinion Avoidance:** 
-    > reality $\rightarrow$ beliefs $\rightarrow$ interpretations || opinions
-
----
-
 
 ## Measuring Belief, Interpretation, and Opinion
 
@@ -396,34 +466,6 @@ Gaines, B. J.; Kuklinski, J. H.; Quirk, P. J.; Peyton, B. & Verkuilen, J. 2007. 
 
 - **Opinion:**
     - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]?
-
----
-
-
-## Hypotheses
-
-- **H1:** Misinformation corrections have stronger effects on people's *factual* beliefs than their related *interpretations* or *opinions*.
-<!-- Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
-
---
-
-- **H2:** Misinformation corrections have stronger effects on people's beliefs, interpretations, and opinions if participants are given the *opportunity to choose a news organization*.*
-<!-- Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access -->
-
---
-
-- **H3:** Misinformation corrections have stronger effects on people's beliefs, interpretations, and opinions if participants are exposed to a news organization that is *consistent with their media preferences*.* 
-<!-- Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
-
---
-
-.footnote[
-*This difference is more pronounced for interpretations and opinions.
-]
-
---
-
-- **H4:** Participants who are exposed to a news organization that is *consistent with their media preferences* are more likely to *evaluate* the article positively and *share* it with others. 
 
 ---
 
@@ -448,7 +490,7 @@ Coefficients are based on linear regression models controlling for pre-treatment
 ---
 
 
-## The role of media preferences
+## Inconsistent vs. consistent forced exposure
 
 ```{r}
 p2 + theme(panel.border = element_rect(fill="white"))
@@ -456,7 +498,7 @@ p2 + theme(panel.border = element_rect(fill="white"))
 ---
 
 
-## The role of media preferences
+## Inconsistent vs. consistent forced exposure
 
 ```{r}
 p2

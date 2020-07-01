@@ -428,6 +428,51 @@ ggplot(m4, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+```{r}
+m5 <- list(wp_balanced = lm(wp_balanced ~ condition
+                               + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                               + age + male + usborn + white + college
+                               , data = df),
+           wp_accurate = lm(wp_accurate ~ condition
+                              + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                              + age + male + usborn + white + college
+                              , data = df),
+           wp_fair = lm(wp_fair ~ condition
+                         + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                         + age + male + usborn + white + college
+                         , data = df),
+           wp_good = lm(wp_good ~ condition
+                          + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                          + age + male + usborn + white + college
+                          , data = df),
+           wp_friendly = lm(wp_friendly ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df),
+           wp_american = lm(wp_american ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df),
+           actions_seek = lm(actions_seek ~ condition
+                         + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                         + age + male + usborn + white + college
+                         , data = df),
+           actions_discuss = lm(actions_discuss ~ condition
+                          + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                          + age + male + usborn + white + college
+                          , data = df),
+           actions_forward = lm(actions_forward ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df),
+           actions_post = lm(actions_post ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+```
+
+
 <!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
 
