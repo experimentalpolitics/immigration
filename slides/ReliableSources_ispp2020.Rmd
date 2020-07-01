@@ -518,15 +518,16 @@ Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment m
 ]
 
 .pull-right[
+<a href="https://github.com/experimentalpolitics/immigration"><i class="fa fa-code fa-fw"></i>&nbsp; Project repository on Github</a><br>
 <br>
-<a href="http://twitter.com/patrickwkraft">`r icon::fa("twitter")`&nbsp; @patrickwkraft</a><br>
-<br>
-<a href="https://github.com/pwkraft">`r icon::fa("github")`&nbsp; @pwkraft</a><br>
+<a href="https://experimentalpolitics.github.io"><i class="fa fa-users fa-fw"></i>&nbsp; https://experimentalpolitics.github.io</a><br>
 <br>
 <a href="https://pwkraft.github.io"><i class="fa fa-link fa-fw"></i>&nbsp; https://pwkraft.github.io</a><br>
 <br>
-<a href="https://experimentalpolitics.github.io"><i class="fa fa-book fa-fw"></i>&nbsp; https://experimentalpolitics.github.io</a><br>
+<a href="https://github.com/pwkraft">`r icon::fa("github")`&nbsp; @pwkraft</a><br>
 <br>
-<a href="mailto:kraftp@uwm.edu"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; kraftp@uwm.edu</a>
+<a href="http://twitter.com/patrickwkraft">`r icon::fa("twitter")`&nbsp; @patrickwkraft</a><br>
+<br>
+<a href="mailto:kraftp@uwm.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; kraftp@uwm.edu</a>
 ]
 
