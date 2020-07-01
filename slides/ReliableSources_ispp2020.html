@@ -30,6 +30,24 @@ University of Wisconsin-Milwaukee</div>
 
 
 
+
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+@media print {
+  .has-continuation {
+    display: block;
+  }
+}
+&lt;/style&gt;
+
+
 ## Why misinformation corrections (often) fail
 
 &lt;!-- IMPORTANT SIDE NOTE: MISINFORMATION CORRECTIONS != FACT-CHECKS, although both are related --&gt;
@@ -57,7 +75,7 @@ University of Wisconsin-Milwaukee</div>
 
 --
 
-- ...taking into account **endogenous** exposure
+- ...taking into account **endogenous** media exposure
 
 --
 
@@ -95,26 +113,24 @@ University of Wisconsin-Milwaukee</div>
 ---
 
 
-&lt;!-- ## Hypotheses --&gt;
+## Hypotheses
 
-### H1: Misinformation corrections have stronger effects...
+### Misinformation corrections have stronger effects...
 
 --
 
-a) ...on people's factual **beliefs** than their related **interpretations** or **opinions**.
+1. ...on people's factual **beliefs** than their related **interpretations** or **opinions**.
 &lt;!-- Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. --&gt;
 
 --
 
-b) ...if people are able to **choose** their information source.*
+2. ...if the information source is **consistent** with people's media preferences.*
+&lt;!-- Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer --&gt;
+
+--
+
+3. ...if people are able to **choose** their information source.*
 &lt;!-- Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access --&gt;
-
---
-
-c) ...if the information source is **consistent** with people's media preferences.*
-&lt;!-- Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer --&gt;
-
---
 
 .footnote[
 *These differences are more pronounced for opinions and interpretations than for beliefs.
@@ -124,18 +140,15 @@ c) ...if the information source is **consistent** with people's media preference
 
 &lt;br&gt;
 
-### H2: People who are exposed to preferred sources...
+**Empirical Questions:**
 
-a) ...are more likely to *evaluate* corrective information positively
-
---
-
-b) ...are more likely to *share* corrective information with others. 
+- Does the ability to **choose** always imply **consistent** exposure?
+- If choice `\(\neq\)` consistency, how do their effects differ?
 
 ---
 
 
-## A Prefernce-Incorporating Choice and Assignment (PICA) Design
+### A Preference-Incorporating Choice and Assignment Design
 
 .footnote[
 Knox, D.; Yamamoto, T.; Baum, M. A. &amp; Berinsky, A. J. 2019. "Design, identification, and sensitivity analysis for patient preference trials." *Journal of the American Statistical Association.*
@@ -148,6 +161,9 @@ Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and 
 --
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
+
+- MTurk Sample, N = 600
+
 ---
 
 
@@ -185,72 +201,91 @@ Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and 
 ---
 
 
-## Forced exposure vs. free choice
-
-![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
----
-
-
-## Forced exposure vs. free choice
+## Main treatment effects
 
 ![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 
-.footnote[
-Coefficients are based on linear regression models controlling for pre-treatment covariates.
-]
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
 ---
 
 
-## The role of media preferences
+## Main treatment effects
 
 ![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
 ---
 
 
-## The role of media preferences
+## Consistency in forced exposure condition
 
 ![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 
-.footnote[
-Coefficients are based on linear regression models controlling for pre-treatment covariates.
-]
-
-&lt;!-- --- --&gt;
-&lt;!-- ## Fox vs. MSNBC: Attitude change --&gt;
-
-&lt;!-- ```{r} --&gt;
-&lt;!-- p3 + theme(panel.border = element_rect(fill="white")) --&gt;
-&lt;!-- ``` --&gt;
-&lt;!-- --- --&gt;
-
-
-&lt;!-- ## Fox vs. MSNBC: Attitude change --&gt;
-
-&lt;!-- ```{r} --&gt;
-&lt;!-- p3 --&gt;
-&lt;!-- ``` --&gt;
-&lt;!-- .footnote[ --&gt;
-&lt;!-- Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences. --&gt;
-&lt;!-- ] --&gt;
-
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
 ---
 
-## Fox vs. MSNBC: Evaluation &amp; engagement
+
+## Consistency in forced exposure condition
 
 ![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
 ---
 
 
-## Fox vs. MSNBC: Evaluation &amp; engagement
+## Consistency in free choice condition
 
 ![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
-.footnote[
-Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment media preferences.
-]
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
 ---
 
 
-## Conclusion and future directions
+## Consistency in free choice condition
+
+![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
+---
+
+
+### Voluntary vs. involuntary exposure to inconsistent sources
+
+![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
+---
+
+
+### Voluntary vs. involuntary exposure to inconsistent sources
+
+![](ReliableSources_ispp2020_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+.footnote[OLS coefficients with 95% confidence intervals using robust standard errors; each model controls for pre-treatment immigration attitudes, ideology, pid, and sociodemographics.]
+---
+
+
+## Conclusion 
+
+- Correcting factual **beliefs** is easy, changing **opinions** is hard.
+
+--
+
+- Being exposed to **consistent** sources `\(\neq\)` ability to **choose** sources.
+
+--
+
+- Encouraging people to **voluntarily access alternative sources** may be more effective to combat misinformation than providing **fact-checks** alone.
+
+--
+
+## Future directions
+
+- Preregistered replication, increased sample size.
+
+- Different issue/policy areas (e.g., climate change, police reform, ...).
+
+- ...
 
 ---
 
@@ -282,10 +317,10 @@ Average Choice-specific Treatment Effects (ACTEs) conditional on pre-treatment m
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
-"countIncrementalSlides": true,
+"countIncrementalSlides": false,
 "highlightLines": true,
 "ratio": "16:9",
-"slideNumberFormat": "Kraft - Reliable Sources?"
+"slideNumberFormat": "Kraft - Reliable Sources? - %current% / %total%"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
