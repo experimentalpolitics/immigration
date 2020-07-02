@@ -24,11 +24,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
                       fig.width = 16, fig.height = 6)
+# devtools::install_github("ropenscilabs/icon")
 
 library(tidyverse)
 library(broom)
 library(sandwich)
-library(ggplot2)
 library(lmtest)
 library(car)
 
@@ -383,7 +383,7 @@ p5 <- bind_rows(
 
 ## Why misinformation corrections (often) fail
 
-<!-- IMPORTANT SIDE NOTE: MISINFORMATION CORRECTIONS != FACT-CHECKS, although both are related -->
+<!-- IMPORTANT NOTE: MISINFORMATION CORRECTIONS != FACT-CHECKS, although both are related -->
 <!-- EXAMPLES: CLIMATE CHANGE, VACCINES, COVID, IMMIGRATION -->
 
 .footnote[
@@ -513,6 +513,7 @@ Leeper, T. J. 2020. "Raising the Floor or Closing the Gap? How Media Choice and 
 .pull-right[
 <img src="../material/tweets/msnbc_popular.png">
 ]
+
 ---
 
 
@@ -541,16 +542,20 @@ p1 + theme(panel.border = element_rect(fill="white"))
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
 ## Main treatment effects
 
 ```{r}
+
 p1
+
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -561,6 +566,7 @@ p2 + theme(panel.border = element_rect(fill="white"))
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -571,6 +577,7 @@ p2
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -581,6 +588,7 @@ p3 + theme(panel.border = element_rect(fill="white"))
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -591,6 +599,7 @@ p3
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -601,6 +610,7 @@ p4 + theme(panel.border = element_rect(fill="white"))
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -611,6 +621,7 @@ p4
 ```
 
 .footnote[`r paste(msg)`]
+
 ---
 
 
@@ -637,6 +648,7 @@ p4
 - ...
 
 ---
+
 
 ## Thanks for watching!
 
