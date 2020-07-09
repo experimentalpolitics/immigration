@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  26 JUN 2020 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  9 JUL 2020 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ReliableSources.tex
-(./ReliableSources.tex
+**ReliableSources_Appendix.tex
+(./ReliableSources_Appendix.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -801,45 +801,46 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box28
 \@float@everytoks=\toks26
 \@floatcapt=\box29
-)
-\cslhangindent=\skip48
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count116
-) (./ReliableSources.aux
+) (./ReliableSources_Appendix.aux
+
+LaTeX Warning: Label `' multiply defined.
+
 
 LaTeX Warning: Label `' multiply defined.
 
 )
-\openout1 = `ReliableSources.aux'.
+\openout1 = `ReliableSources_Appendix.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 82.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 86.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 82.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 86.
+LaTeX Info: Redefining \microtypecontext on input line 82.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -882,7 +883,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 86.
+Package hyperref Info: Link coloring OFF on input line 82.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -890,9 +891,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count123
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -927,40 +928,40 @@ LaTeX Info: Redefining \nameref on input line 86.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 88.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 84.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 88.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 84.
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 88.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 84.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 88.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 84.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 88.
+(Font)              <14.4> on input line 84.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 88.
+(Font)              <10> on input line 84.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 88.
-LaTeX Font Info:    Try loading font information for U+msa on input line 88.
+(Font)              <7> on input line 84.
+LaTeX Font Info:    Try loading font information for U+msa on input line 84.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 88.
+LaTeX Font Info:    Try loading font information for U+msb on input line 84.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -968,136 +969,127 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<ReliableSources_Appendix_files/figure-latex/m3-1.pdf, id=12, 496.85625pt x 138
+.5175pt>
+File: ReliableSources_Appendix_files/figure-latex/m3-1.pdf Graphic file (type p
+df)
+<use ReliableSources_Appendix_files/figure-latex/m3-1.pdf>
+Package pdftex.def Info: ReliableSources_Appendix_files/figure-latex/m3-1.pdf  
+used on input line 93.
+(pdftex.def)             Requested size: 469.75908pt x 130.96312pt.
+<ReliableSources_Appendix_files/figure-latex/m4-1.pdf, id=13, 496.85625pt x 186
+.6975pt>
+File: ReliableSources_Appendix_files/figure-latex/m4-1.pdf Graphic file (type p
+df)
+<use ReliableSources_Appendix_files/figure-latex/m4-1.pdf>
+Package pdftex.def Info: ReliableSources_Appendix_files/figure-latex/m4-1.pdf  
+used on input line 100.
+(pdftex.def)             Requested size: 469.75908pt x 176.51552pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 111.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 152.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 159.
+
+LaTeX Warning: Float too large for page by 17.80238pt on input line 161.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Float too large for page by 61.30234pt on input line 219.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [2
 
-] [3] [4] [5] [6]
-<../prereg/Lab-Graphic.jpg, id=46, 6343.7pt x 1678.27pt>
-File: ../prereg/Lab-Graphic.jpg Graphic file (type jpg)
-<use ../prereg/Lab-Graphic.jpg>
-Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 353.
-(pdftex.def)             Requested size: 469.75557pt x 124.2771pt.
-<ReliableSources_files/figure-latex/m1-1.pdf, id=47, 494.84875pt x 137.51375pt>
-
-File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m1-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 365.
-(pdftex.def)             Requested size: 469.75632pt x 130.54079pt.
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.371 
-       <../prereg/Lab-Graphic.jpg>]
-<ReliableSources_files/figure-latex/m2-1.pdf, id=54, 494.84875pt x 137.51375pt>
-
-File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m2-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 374.
-(pdftex.def)             Requested size: 469.75632pt x 130.54079pt.
-<ReliableSources_files/figure-latex/m3-1.pdf, id=55, 496.85625pt x 137.51375pt>
-
-File: ReliableSources_files/figure-latex/m3-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m3-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m3-1.pdf  used on i
-nput line 383.
-(pdftex.def)             Requested size: 469.75908pt x 130.01413pt.
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.387 
+l.234 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3}) has been already used, duplicate ignored
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.387 
-       <./ReliableSources_files/figure-latex/m1-1.pdf> <./ReliableSources_files
-/figure-latex/m2-1.pdf>]
-<ReliableSources_files/figure-latex/m4-1.pdf, id=76, 496.85625pt x 185.69376pt>
+l.234 
+       <./ReliableSources_Appendix_files/figure-latex/m3-1.pdf> <./ReliableSour
+ces_Appendix_files/figure-latex/m4-1.pdf>]
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 238
+.
+(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<ReliableSources_Appendix_files/figure-latex/unnamed-chunk-1-1.pdf, id=41, 463.
+7325pt x 300.12125pt>
+File: ReliableSources_Appendix_files/figure-latex/unnamed-chunk-1-1.pdf Graphic
+ file (type pdf)
+<use ReliableSources_Appendix_files/figure-latex/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: ReliableSources_Appendix_files/figure-latex/unnamed-ch
+unk-1-1.pdf  used on input line 255.
+(pdftex.def)             Requested size: 463.73842pt x 300.12509pt.
+[3 <./ReliableSources_Appendix_files/figure-latex/unnamed-chunk-1-1.pdf>]
+Overfull \hbox (17.99908pt too wide) in paragraph at lines 274--299
+ [][] 
+ []
 
-File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m4-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 390.
-(pdftex.def)             Requested size: 469.75908pt x 175.56653pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 405.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 405.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 405.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.514 \leavevmode
-                 \hypertarget{ref-berinsky2017rumors}{}%pdfTeX warning (ext4): 
-destination with the same identifier (name{figure.5}) has been already used, du
-plicate ignored
+[4] [5pdfTeX warning (ext4): destination with the same identifier (name{table.3
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.514 \leavevmode
-                 \hypertarget{ref-berinsky2017rumors}{}% <./ReliableSources_fil
-es/figure-latex/m3-1.pdf> <./ReliableSources_files/figure-latex/m4-1.pdf>] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
-[11] [12pdfTeX warning (ext4): destination with the same identifier (name{table
-.1}) has been already used, duplicate ignored
+l.315 
+      ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
+[6] [7pdfTeX warning (ext4): destination with the same identifier (name{table.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{document}
-                    ] [13pdfTeX warning (ext4): destination with the same ident
-ifier (name{table.2}) has been already used, duplicate ignored
+l.316 \end{document}
+                    ] [8pdfTeX warning (ext4): destination with the same identi
+fier (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{document}
+l.316 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
-(./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 619.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 619.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 316.
+(./ReliableSources_Appendix.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 316.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 316.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 316.
  ) 
 Here is how much of TeX's memory you used:
- 13449 strings out of 492982
- 192848 string characters out of 6134895
- 311601 words of memory out of 5000000
- 16638 multiletter control sequences out of 15000+600000
- 61074 words of font info for 117 fonts, out of 8000000 for 9000
+ 13334 strings out of 492982
+ 191365 string characters out of 6134895
+ 315944 words of memory out of 5000000
+ 16636 multiletter control sequences out of 15000+600000
+ 54405 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,10n,38p,909b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,10n,38p,918b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy8.pfb>
-Output written on ReliableSources.pdf (13 pages, 801878 bytes).
+hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on ReliableSources_Appendix.pdf (8 pages, 198930 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 61 named destinations out of 1000 (max. 500000)
- 14434 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 14376 words of extra memory for PDF output out of 14400 (max. 10000000)
 
