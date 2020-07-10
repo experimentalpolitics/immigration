@@ -78,6 +78,12 @@ Can correct information change attitudes? Correct information can change factual
 Why don't people update their related attitudes? One explanation is that they first have to be interpreted either by individuals themselves or by letting others do it for them [@gaines2007same]. "People cannot turn to a manual to determine if an additional 50 troop casual-ties during the past month represents a big, moderate, or small loss."
 
 
+
+- **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+- **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+- **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
+- **Opinion Avoidance:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
+
 ## The role of media choice, source credibility, and selective exposure
 
 Mass media is by far the most regular used information source. @dalton1998partisan found that perception of news is shaped as much by a person's political views as by objective content. Even if an individual perceives their news source as unbiased, they will perceive their daily news source to report biased information. They found that regardless of the paper's actual stance it was viewed as skewed toward the opposite political beliefs of the reader. Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs [@little2019distortion].
@@ -99,82 +105,72 @@ Source credibility profoundly affects social interpretations of information
 <!-- Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility. -->
 
 
-# Results
+## Hypotheses
+
+1. Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
+2. Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
+3. Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
+
+<!-- H1: Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
+<!-- H2: Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
+<!-- H3: Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access -->
+
+**Empirical Questions:**
+
+- Does the ability to **choose** always imply **consistent** exposure?
+- If choice $\neq$ consistency, how do their effects differ?
+
+
+# Research Design
 
 Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted; @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. In general, we expect that those who were able to choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to evaluate the article positively and change their attitudes in the direction of the news article.
 
-
-## Research design
+## Overview
 
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
+## Information Treatment
 
-Prior to the discussion on our specific hypothesis testing below, an overview of the differences across the three groups (control, assigned, and choice) and individual media preferences, is necessary. This general landscape of the sample will provide a solid foundation from which our more distinct tests below arise. 
+- In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
+
+```{r, tweets, fig.show="hold", out.width="50%", fig.cap="Test"}
+knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
+```
+
+## Measuring Belief, Interpretation, and Opinion
+
+- **Belief:**
+    - Across the United States, how many workers – immigrant and US-born – do you think are employed by immigrant-owned businesses?
+- **Interpretation:**
+    - On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
+- **Opinion:**
+    - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]?
+
+
+# Results 
 
 <!-- ## Corrective information and media choice -->
 
-<!-- For the main outcome measures in our experimental design (i.e., immigration attitudes and perceived economic impact), our analysis begins with two basic comparisons between each treatment group and the control group: -->
-
-<!-- - **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article. -->
-<!-- - **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article. -->
-
-<!-- In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. To test this outcome, we ran a simple regression model to determine if being randomly assigned to one of the two treatment groups did in fact have these expected outcomes: -->
-
+\clearpage
 
 ```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice condition. Coefficients are based on linear regression models controlling for pre-treatment covariates. Full model results included in the appendix."}
 p1
 ```
 
-
-
-<!-- The results here seem to support hypothesis 1a and 1b. Across the three measures, liberal immigration level (measured in the same way as above), accurately selecting immigrant-owned business sale numbers, and accurately selecting the number of individuals employed by immigrant-owned businesses, are all positive and statistically significant. In other words, those individuals who were given the treatment, whether that was the forced exposure or free choice group, were: (1) generally more liberal in their post-treatment assessment of immigration; (2) more accurtely able to describe the number of sales generated in the US economy by immigrant-owned businesses; (3) more accurately able to describe the number of people employed by immigrant-owned businesses. These results are promising insofar that they indicate that the treatment was successful, albeit mild, in these three main areas.  -->
-
-<!-- Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition: -->
-
-<!-- - **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization. -->
-
-<!-- In order to determine if there are any statistically significant differences between the impacts of the two treatment groups, we run three seperate linear hypothesis tests comparing the results from the forced exposure and free choice groups to each other: -->
-
-<!-- In each of the three models, liberal immigration levels, sales numbers, and employment numbers, there is not any statistically significant difference between those who were in the forced exposure group versus those who were given the opportunity to choose. Although this is somewhat disappointing, it is not fully unexpected: the power necessary to find these potential differences was not likely to be had from our sample; however, by finding support for H1a and H1b, we have taken a crucial first step toward answering some of the questions which surround updating one's beliefs. Ultimtaely, with a larger sample, we are still optimistic that the ability to choose one's media source plays a key role in how/if a respondent will update his/her beliefs. -->
-
-<!-- Unsure about these next two paragraphs - maybe we could run through this? -->
-
-<!-- Note that this last comparison (*H1c*) can also be evaluated using other additional outcome measures which have been collected (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article), and were not included in the control group. For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and therefore lead to more positive evaluations. Here, we also plan to explore conditional treatment effects based on pre-treatment measures of people's political predispositions (stereotypes towards immigrants, whether immigration is seen as a major issue, ideology, partisanship) and we will further examine whether the differences in *H1c* are conditional on participants being exposed to a news source that is congruent with their usual media diet. Any difference between the forced exposure and free choice condition could theoretically be driven either by the fact that participants in the free choice condition tend to select news organizations they are more sympathetic towards, or by the fact alone that they are able to choose a source (i.e., the selection process itself makes the information more effective).  -->
-
-<!-- In order to distinguish both possibilities, we will conduct an additional test where we isolate the effect of forced exposure vs. free choice while holding the underlying news organization constant. Specifically, we are planning to compare both conditions within groups of individuals who were exposed to a congruent as compared to an incongruent source (either by choice or by random assignment). Additional analyses outlined below will allow us to further assess how endogeneous media exposure impacts the effectiveness of corrective information. -->
-
-<!-- ## Source credibility is more important than the ability to choose -->
-
-<!-- Lastly, we plan to examine whether there are systematic differences in the effectiveness of corrective information by news sources themselves (i.e., FoxNews vs. MSNBC). The pre-treatment section of the questionnaire includes items on respondents' usual media diet and political predispositions. Respondents should be more inclined to update their attitudes and beliefs if the article is published by a news organization that is usually consistent with their priors: -->
-
-<!-- - **H2a:** Conservatives (liberals) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC). -->
-<!-- - **H2b:** Republicans (Democrats) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC). -->
-<!-- - **H2c**: Participants who were randomly assigned to a news organization that is part of their regular media diet update their beliefs more than those who were assigned to a different news organization. -->
-
-<!-- As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H2c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily). -->
-
-<!-- The two graphs above show the mean liberal immigration level across preference groups for those who were either assigned a tweet and subsequent story or were given the choice on media source. The liberal immigration level was calculated as the mean of three post-treatment questions regarding whether the immigration level should be increased or decreased, whether immigrants take or pay more in taxes, and whether immigrants take jobs or create jobs. For those randomly assigned to the treatment arm, they received these questions directly after reading the immigration related tweet and article; the control group answered these questions after they concluded the pre-treatment battery regarding personal preferences on a variety of questions. -->
-
-<!-- At first glance, there does not seem to be much in the way of difference across these groups; however, within the free choice graph (Figure 2), there does show the potential for statistical significance between those who chose MSNBC and prefer MSNBC to those who prefer MSNBC and chose FoxNews or were in the control condition. Additionally, for those with a preference toward neither MSNBC or FoxNews, the same group (choose MSNBC) does not have overlapping significance intervals, indicating again, the potential for a significant difference. Given these early results, further analysis is needed to test the actual impact of free choice and assignment in media source, as well as the overarching impact of pre-treatment media preference, regarding the corrective information given within the treatment tweet and story. -->
-
-
-```{r m2, fig.height=2, fig.width=7, fig.cap="\\label{fig:m2}Treatment effects within forced exposure condition, conditional on media preference. Coefficients are based on linear regression models controlling for pre-treatment covariates. Full model results included in the appendix."}
+```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects conditional on media preference. Coefficients are based on linear regression models controlling for pre-treatment covariates. Full model results included in the appendix."}
 p2
 ```
 
 
+```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Voluntary vs. involuntary exposure to inconsistent sources"}
+p4
+```
 
 
-<!-- We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix. -->
 
+# Discussion and Conclusion
 
-
-<!-- # Future Directions -->
-
-<!-- QUESTION: WILLINGNESS TO SHARE AS ADDITIONAL OUTCOME? -->
-
-# Conclusion
-
+<!-- future directions -->
 
 # References

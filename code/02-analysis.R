@@ -48,7 +48,7 @@ m1robust <- m1 %>%
   
 p1 <- m1robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m1, confint_tidy)) %>%
+  bind_cols(map_dfr(m1robust, confint_tidy)) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -109,9 +109,9 @@ m2 <- list(employ_correct = lm(employ_correct ~ exposure
 m2robust <- m2 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
-p2 <- m2robust %>%
+m2df <- m2robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m2, confint_tidy)) %>%
+  bind_cols(map_dfr(m2robust, confint_tidy)) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -130,19 +130,8 @@ p2 <- m2robust %>%
          Exposure = recode_factor(term,
                                   `exposureinconsistent` = "Inconsistent",
                                   `exposureneutral` = "Neutral",
-                                  `exposureconsistent` = "Consistent")) %>%
-  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
-             shape = Exposure, col = Exposure)) + 
-  geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 8) + 
-  labs(x = NULL, y = "Coefficient", 
-       col = "Forced\nexposure",
-       shape = "Forced\nexposure") +
-  facet_wrap(~group, scales = "free_x", ncol = 3) +
-  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
-
+                                  `exposureconsistent` = "Consistent"),
+         condition = "Forced exposure")
 
 ## ----model-3, cache = TRUE------------------------------------------------------------------------------
 ## model 3: forced exposure vs. free choice while holding consistency constant
@@ -173,9 +162,9 @@ m3 <- list(employ_correct = lm(employ_correct ~ exposure
 m3robust <- m3 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
-p3 <- m3robust %>%
+m3df <- m3robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m3, confint_tidy)) %>%
+  bind_cols(map_dfr(m3robust, confint_tidy)) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -194,7 +183,10 @@ p3 <- m3robust %>%
          Exposure = recode_factor(term,
                                   `exposureinconsistent` = "Inconsistent",
                                   `exposureneutral` = "Neutral",
-                                  `exposureconsistent` = "Consistent")) %>%
+                                  `exposureconsistent` = "Consistent"),
+         condition = "Free choice")
+
+p2 <- bind_rows(m2df, m3df) %>%
   ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
              shape = Exposure, col = Exposure)) + 
   geom_hline(yintercept = 0, col = "grey") +
@@ -202,9 +194,9 @@ p3 <- m3robust %>%
   geom_errorbar(width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Coefficient", 
-       col = "Free\nchoice",
-       shape = "Free\nchoice") +
-  facet_wrap(~group, scales = "free_x", ncol = 3) +
+       col = "Media\nexposure",
+       shape = "Media\nexposure") +
+  facet_grid(condition~group, scales = "free_x") +
   scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
 
 
@@ -239,7 +231,7 @@ m4robust <- m4 %>%
 
 p4 <- m4robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m4, confint_tidy)) %>%
+  bind_cols(map_dfr(m4robust, confint_tidy)) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
