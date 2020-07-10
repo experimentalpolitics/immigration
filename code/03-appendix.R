@@ -173,5 +173,18 @@ m7 <- list(wp_balanced = lm(wp_balanced ~ condition
            actions_post = lm(actions_post ~ condition
                              + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                              + age + male + usborn + white + college
-                             , data = df)) %>%
+                             , data = df),
+           tweet_click = lm(tweet_click ~ condition
+                             + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                             + age + male + usborn + white + college
+                             , data = df),
+           tweet_time = lm(log(tweet_time) ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           story_time = lm(log(story_time) ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df)) %>%
   map(~coeftest(., vcov. = vcovHC(.)))
+

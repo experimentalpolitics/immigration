@@ -9,11 +9,14 @@ author:
   - Jason T. Neumeyer
   - Shin Young Park
 date: |
+  |
   | University of Wisconsin-Milwaukee 
   |
   | \today
+  |
+  |
 abstract: >-
-  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus pandemic--are imbued with misinformation. A growing body of research therefore explores the effectiveness of providing corrective information as a viable mitigation strategy. While such interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research by examining how the effectiveness of corrective information is moderated by media choice. In our survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. We show that the article's effectiveness in correcting factual misperceptions and how it impacts subsequent attitudes towards immigration is conditional on how people gained access to the information. Furthermore, we examine differences in the overall engagement with the news article and intentions to share it (e.g., through social media). Our results illustrate how people's political predispositions and media preferences moderate the effectiveness of corrective information and the likelihood of it being disseminated further. As such, the findings help inform the development of more effective strategies to disseminate corrective information. 
+  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus pandemic--are imbued with misinformation. A growing body of research therefore explores the effectiveness of providing corrective information as a viable mitigation strategy. While such interventions have been shown to reduce people's factual misperceptions, however, they have little to no effect on underlying attitudes. Our study contributes to this active research by examining how the effectiveness of corrective information is moderated by media choice. In our survey experiment, participants are exposed to a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. We show that the article's effectiveness in correcting factual misperceptions and how it impacts subsequent attitudes towards immigration is conditional on how people gained access to the information. Our results illustrate how people's media preferences moderate the effectiveness of corrective information: While correcting factual beliefs is easy, changing opinions is hard and much more source-dependent. Encouraging people to voluntarily access alternative sources may be more effective to combat misinformation than providing fact-checks alone.
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -21,7 +24,7 @@ geometry: margin=1in
 linestretch: 1.5
 output: 
   pdf_document:
-    number_sections: true
+    number_sections: false
     template: null
     fig_caption: yes
 header-includes:
@@ -32,15 +35,14 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+```
 
+```{r code}
 ## Load packages, data, analyses
 source("../code/02-analysis.R")
 ```
 
 \clearpage
-
-
-# Introduction
 
 Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. Given this extensive spread of misinformation, various studies examined how corrective information may affect people's underlying attitudes towards immigration, albeit with limited success. Although corrective information may alleviate factual misperceptions, it rarely affects people's underlying attitudes [see for example @hopkins2019muted].
 
