@@ -59,7 +59,7 @@ Taking into account endogenous information search in studies of misinformation c
 
 # Why misinformation corrections (often) fail
 
-In principle, providing people with new information should have the potential to change their attitudes related to the underlying issue. Numerous studies, however, have shown that changing people's minds is far from easy, especially when it comes to deeply held beliefs that are connected to people's identity. How individuals respond to a new set of facts and evidence depends on their motivation to arrive at an accurate conclusion as well as people's assessment of the information source as credible and relevant. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. In short, humans are biased information seekers [@kunda1990case; @Taber2006] and asymmetric updaters [@sunstein2016people]. Nevertheless, given the right conditions, people have been shown to update their beliefs in light of new evidence [@redlawsk2010affective]. In order to understand when misinformation corrections can be effective and why they might fail, it is important to start with a clear conceptualization of the underlying mechanism involving opinion change.
+In principle, providing people with new information should have the potential to change their attitudes related to the underlying issue. Yet, numerous studies have shown that changing people's minds is far from easy---especially when it comes to deeply held beliefs that are connected to people's identity. How individuals respond to a new set of facts and evidence depends on their motivation to arrive at an accurate conclusion as well as people's assessment of the information source as credible and relevant. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. In short, humans are biased information seekers [@kunda1990case; @Taber2006] and asymmetric updaters [@sunstein2016people]. Nevertheless, given the right conditions, people have been shown to update their beliefs in light of new evidence [@redlawsk2010affective]. In order to understand when misinformation corrections can be effective and why they might fail, it is important to start with a clear conceptualization of the underlying mechanism involving opinion change.
 
 
 ## Differentiating factual beliefs, interpretations, and opinions
@@ -130,6 +130,7 @@ Previous research examining the effectiveness of corrective information showed t
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
 
 ![Survey Flow](../prereg/Lab-Graphic.jpg)
+
 ## Information Treatment
 
 - In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
@@ -140,12 +141,13 @@ knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/twe
 
 ## Measuring Belief, Interpretation, and Opinion
 
-- **Belief:**
-    - Across the United States, how many workers – immigrant and US-born – do you think are employed by immigrant-owned businesses?
-- **Interpretation:**
-    - On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
-- **Opinion:**
-    - Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]?
+
+| Belief | Interpretation | Opinion |    
+|--------|----------------|---------|
+| Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses? | On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs? | Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased] |
+| Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year? | Most people who come to live in the U.S. work and pay taxes. They also use health and social services. On balance, do you think people who come here take out more than they put in or put in more than they take out? | |
+
+
 
 
 # Results 
@@ -154,16 +156,23 @@ knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/twe
 
 \clearpage
 
-```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice condition. Coefficients are based on linear regression models controlling for pre-treatment covariates. Full model results included in the appendix."}
+## Free Choice Enables Opinion Change
+
+<!-- People Change their Minds if They are Allowed to Choose their Information Source  -->
+
+```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
 p1
 ```
 
-```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects conditional on media preference. Coefficients are based on linear regression models controlling for pre-treatment covariates. Full model results included in the appendix."}
+## Opinion Change is Driven by Voluntary Exposure to Inconsistent Sources
+
+```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
 p2
 ```
 
+<!-- ## Voluntary and Involuntary Exposure to Inconsistent Sources -->
 
-```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Voluntary vs. involuntary exposure to inconsistent sources"}
+```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Difference in treatment effects of forced exposure and free choice manipulation conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
 p4
 ```
 

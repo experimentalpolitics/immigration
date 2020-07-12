@@ -91,6 +91,8 @@ stargazer(m2,
 
 # Who wants to watch Fox News anyway?
 
+<!-- add summary of voluntary consistent/inconsisten exposure -->
+
 First and foremost, it is necessary to determine the respondents' underlying reasons for selecting a news source. In other words, what drives a respondent to choose the FoxNews tweet and article over MSNBC? This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
 
 - **H1a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
