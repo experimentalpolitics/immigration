@@ -59,6 +59,9 @@ Taking into account endogenous information search in studies of misinformation c
 
 # Why misinformation corrections (often) fail
 
+To the extent that people rely on inaccurate factual beliefs to form their opinions, misinformation can have severe consequences for democratic representation as it creates collective preferences that may systematically diverge from a more informed public [@kuklinski2000misinformation]. Focusing on aggregate opinion, increasing information levels has been shown to changing preferences [e.g., ]
+
+
 In principle, providing people with new information should have the potential to change their attitudes related to the underlying issue. Yet, numerous studies have shown that changing people's minds is far from easy---especially when it comes to deeply held beliefs that are connected to people's identity. How individuals respond to a new set of facts and evidence depends on their motivation to arrive at an accurate conclusion as well as people's assessment of the information source as credible and relevant. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. In short, humans are biased information seekers [@kunda1990case; @Taber2006] and asymmetric updaters [@sunstein2016people]. Nevertheless, given the right conditions, people have been shown to update their beliefs in light of new evidence [@redlawsk2010affective]. In order to understand when misinformation corrections can be effective and why they might fail, it is important to start with a clear conceptualization of the underlying mechanism involving opinion change.
 
 
@@ -67,7 +70,7 @@ In principle, providing people with new information should have the potential to
 People form different interpretations from the same facts. This seems to have increased recently. The facts, or objective information, surrounding climate change, impeachment, and COVID-19 are interpreted differently. As people interpreted these facts opinions were formed that informed attitudes. Attitudes are a set of emotions, beliefs, behaviors towards an object, person or event. How a person interprets the facts of COVID-19 interpreted their behavior as the event unfolded.
 
 Factual beliefs become relevant for political judgments only when people interpret them.
-Even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending on characteristics such as their partisanship. Many times interpretations, rather than factual beliefs drive opinions [@gaines2007same]. Interpretations give opportunity to rationalize existing opinions and attitudes. Rationalizations include evaluations such as the number casualties is modest loss, or number of immigrations is high or low. Another form of rationalizations are explanations. An example of this is the explanation that there were no weapons of mass destruction found in Iraq because they never existed. Lastly, inferences such as spending on war can mean domestic needs are ignored. Another rationalization could lead to questions such as an immigration tradeoff or redistribution.
+Even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending on characteristics such as their partisanship. Many times interpretations, rather than factual beliefs drive opinions [@gaines2007same]. Interpretations give opportunity to rationalize existing opinions and attitudes. Rationalizations include evaluations such as the number casualties is modest loss, or number of immigrants is high or low. Another form of rationalizations are explanations. An example of this is the explanation that there were no weapons of mass destruction found in Iraq because they never existed. Lastly, inferences such as spending on war can mean domestic needs are ignored. Another rationalization could lead to questions such as an immigration tradeoff or redistribution.
 Interpretations afford leeway to align factual beliefs with undeniable reality and continue to justify partisan preferences. As events unfold, onslaught of evidence-ex. Figures recited on daily news-can trump partisan motivation with respect to factual beliefs. Motivation colors judgement, but people are also motivated to be rational [@kunda1990case].
 
 A substantial body of research indicates that factual belief and knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes [@zaller1992nature; @stimson2015tides]. 
@@ -142,10 +145,23 @@ knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/twe
 ## Measuring Belief, Interpretation, and Opinion
 
 
-| Belief | Interpretation | Opinion |    
-|--------|----------------|---------|
-| Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses? | On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs? | Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased] |
-| Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year? | Most people who come to live in the U.S. work and pay taxes. They also use health and social services. On balance, do you think people who come here take out more than they put in or put in more than they take out? | |
+```{r}
+tribble(
+  ~Belief, ~Interpretation, ~Opinion,
+  "Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses?",
+  "On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?",
+  "Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]", "", "", "",
+  "Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year?",
+  "Most people who come to live in the U.S. work and pay taxes. They also use health and social services. On balance, do you think people who come here take out more than they put in or put in more than they take out?",
+  ""
+) %>%
+  knitr::kable("latex", 
+               caption = "This is the table caption",
+               booktabs = TRUE) %>%
+  kableExtra::column_spec(1, width = "4cm") %>%
+  kableExtra::column_spec(2, width = "6cm") %>%
+  kableExtra::column_spec(3, width = "5cm")
+```
 
 
 
