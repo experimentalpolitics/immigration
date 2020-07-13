@@ -44,7 +44,6 @@ source("../code/02-analysis.R")
 
 \clearpage
 
-# Introduction
 
 Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. Given this extensive spread of misinformation, various studies examined how corrective information may affect people's underlying attitudes towards immigration, albeit with limited success. Although corrective information may alleviate factual misperceptions, it rarely affects people's underlying attitudes [see for example @hopkins2019muted].
 
@@ -54,38 +53,40 @@ Why do researchers frequently fail to find evidence of attitude change after pro
 
 We address these shortcomings of previous research by implementing an experimental design that varies both, the source of misinformation corrections as well as the process through which people access the information. Specifically, we conduct an online survey experiment on the effectiveness of corrective information about immigration. Depending on the experimental condition, participants are either able to freely choose--or are assigned to--an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. Crucially, our design allows us to differentiate how the information treatment impacts factual beliefs, how they are interpreted, as well as broader attitudes towards immigration. The results indicate that while the correction of factual misperceptions is does not depend on media choice, subsequent attitude change is conditional on people's willingness to seek out alternative sources.
 
-Taking into account endogenous information search in studies of misinformation corrections is crucial in our rapidly changing media environment where people have unprecedented control over their information diets. While people can access an ever-growing set of news outlets of varying quality, we only have a limited understanding how these systemic changes in information channels moderate the effectiveness of corrective information itself. Past research mostly focused on the effect of different _types_ of misinformation corrections. This study contributes to the literature by shifting the focus to the question of _how_ and _from where_ corrective information reaches people.
+Taking into account endogenous information search in studies of misinformation corrections is crucial in our rapidly changing media environment where people have unprecedented control over their information diets [see also @iyengar2009red]. While people can access an ever-growing set of news outlets of varying quality, we only have a limited understanding how these systemic changes in information channels moderate the effectiveness of corrective information itself. Past research mostly focused on the effect of different _types_ of misinformation corrections. This study contributes to the literature by shifting the focus to the question of _how_ and _from where_ corrective information reaches people.
 
 
 # Why misinformation corrections (often) fail
 
-To the extent that people rely on inaccurate factual beliefs to form their opinions, misinformation can have severe consequences for democratic representation as it creates collective preferences that may systematically diverge from a more informed public [@kuklinski2000misinformation]. Focusing on aggregate opinion, increasing information levels has been shown to changing preferences [e.g., ]
+To the extent that people rely on inaccurate factual beliefs to form their opinions, misinformation can severely impede democratic representation by inducing collective preferences that systematically diverge from a more informed public [@kuklinski2000misinformation]. For instance, earlier studies focusing on aggregate opinion estimated that increasing individual information levels results in altered preferences of the electorate [e.g., @bartels1996uninformed; @althaus1998information]. Experimental studies examining change in individual attitudes, however, only found scant evidence for information treatments impacting peoples underlying opinions [see @flynn2017nature for an overview].
 
+Focusing on misinformation in the context of immigration, @hopkins2019muted conducted multiple survey experiments informing participants about the size of the foreign-born population in the US---a statistic that is systematically overestimated by people in the absence of corrective information. In other words, many Americans are systematically misinformed, and this misinformation is associated with attitudes towards minority groups. Across seven separate survey experiments, the authors find that "accurate information does little to affect attitudes toward immigration, even though it does reduce the perceived size of the foreign-born population. [...] Misperceptions about the size of minority groups may be a consequence, rather than a cause, of attitudes toward those groups" [@hopkins2019muted, 315]. The authors therefore suggest that attitudes towards immigration resist change because they are grounded in more fundamental predispositions that are independent of the factual premise [see also @hainmueller2014public]. 
 
-In principle, providing people with new information should have the potential to change their attitudes related to the underlying issue. Yet, numerous studies have shown that changing people's minds is far from easy---especially when it comes to deeply held beliefs that are connected to people's identity. How individuals respond to a new set of facts and evidence depends on their motivation to arrive at an accurate conclusion as well as people's assessment of the information source as credible and relevant. Absent substantial motivation to accurately process information, individuals interpret new information in light of their extant attitudes. A compelling explanation of this pattern is the tendency to engage in motivated reasoning. In short, humans are biased information seekers [@kunda1990case; @Taber2006] and asymmetric updaters [@sunstein2016people]. Nevertheless, given the right conditions, people have been shown to update their beliefs in light of new evidence [@redlawsk2010affective]. In order to understand when misinformation corrections can be effective and why they might fail, it is important to start with a clear conceptualization of the underlying mechanism involving opinion change.
+In sum, changing people's minds by providing corrective information is far from easy---especially when it comes to deeply held beliefs that are connected to people's identities [@nyhan2019taking]. However, this does not imply that new facts are bound to have no attitudinal consequences whatsoever. Although people engage in motivated reasoning and resist counter-attitudinal evidence [@Taber2006], there is some evidence that they are not completely immune to it [@redlawsk2010affective]. Before turning our discussion to a potential mechanism that may facilitate such attitude change, we need to begin by developing a clear conceptualization of different types of updating that may result from exposure to corrective information.
 
 
 ## Differentiating factual beliefs, interpretations, and opinions
 
-People form different interpretations from the same facts. This seems to have increased recently. The facts, or objective information, surrounding climate change, impeachment, and COVID-19 are interpreted differently. As people interpreted these facts opinions were formed that informed attitudes. Attitudes are a set of emotions, beliefs, behaviors towards an object, person or event. How a person interprets the facts of COVID-19 interpreted their behavior as the event unfolded.
-
-Factual beliefs become relevant for political judgments only when people interpret them.
-Even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending on characteristics such as their partisanship. Many times interpretations, rather than factual beliefs drive opinions [@gaines2007same]. Interpretations give opportunity to rationalize existing opinions and attitudes. Rationalizations include evaluations such as the number casualties is modest loss, or number of immigrants is high or low. Another form of rationalizations are explanations. An example of this is the explanation that there were no weapons of mass destruction found in Iraq because they never existed. Lastly, inferences such as spending on war can mean domestic needs are ignored. Another rationalization could lead to questions such as an immigration tradeoff or redistribution.
-Interpretations afford leeway to align factual beliefs with undeniable reality and continue to justify partisan preferences. As events unfold, onslaught of evidence-ex. Figures recited on daily news-can trump partisan motivation with respect to factual beliefs. Motivation colors judgement, but people are also motivated to be rational [@kunda1990case].
-
-A substantial body of research indicates that factual belief and knowledge is reliably associated with ideologically constrained attitude. The underlying assumption is that individuals will develop ideologically organize their attitudes toward specific political issue if they have acquired enough information for forming the conceptual content of the left-right continuum. Therefore, a person who possesses more well-developed political schemas, or well-organized pieces of political information is more likely has clear issue stances/attitudes [@zaller1992nature; @stimson2015tides]. 
-Evaluative Motivation [@federico2007expertise] suggests that the critical process relates to the need to use factual beliefs for evaluative purposes. In this vein, the use of ideology actually consists of two different processes: first, factual belief provides individuals an understanding of the left-right continuum, enabling them to meaningfully identify themselves with an ideological position Secondly, resulting ideological predispositions can then be used for evaluative judgment about a broader set of political issue.
-
-Can correct information change attitudes? Correct information can change factual beliefs or perceptions but not necessarily related attitudes [@hopkins2019muted]. Do facts influence attitudes? Jury is out, but probably not [e.g., @hopkins2019muted]. Whether people update and what it means to update is up for debate. 
-
-Why don't people update their related attitudes? One explanation is that they first have to be interpreted either by individuals themselves or by letting others do it for them [@gaines2007same]. "People cannot turn to a manual to determine if an additional 50 troop casual-ties during the past month represents a big, moderate, or small loss."
+First, we define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore be either true or false. Using the study by @hopkins2019muted as an illustrative example, the statement "12 out of every 100 people living in the United States are immigrants who were born outside of the U.S." describes a factual belief that is objectively verifiable and--importantly--completely void of evaluative components. As mentioned above, it turns out that people are systematically misinformed about the size of the foreign-born population in the sense that they consistently overestimate this statistics. Corrective information in this example simply consists of providing the accurate value of this statistic and @hopkins2019muted show that such an intervention is effective in reducing (factual) misperceptions.
 
 
 
-- **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
-- **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
-- **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
-- **Opinion Avoidance:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
+Corrective information targets the misinformation itself!
+
+Even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending on characteristics such as their partisanship. Many times interpretations, rather than factual beliefs drive opinions [@gaines2007same]. 
+
+Interpretations afford leeway to align factual beliefs with undeniable reality and continue to justify partisan preferences.
+
+Why don't people update their related attitudes? One explanation is that they first have to be interpreted either by individuals themselves or by letting others do it for them [@gaines2007same].
+
+1. **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+2. **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
+3. **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
+4. **Opinion Avoidance:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
+
+Changing beliefs is the most trivial aspect. What is more interesting, and ultimatelz more important when thinking about the issue of democratic representation is whether these changes in beliefs ultimately result in changing interpretations and/or opinions. Unfortunately, the we know very little about the underlying mechanisms that drive these aspects.
+
+News reports contain interpretations, and these interpretations are more dependent on source credibility.
 
 ## The role of media choice, source credibility, and selective exposure
 
@@ -111,8 +112,8 @@ Source credibility profoundly affects social interpretations of information
 ## Hypotheses
 
 1. Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
-2. Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
-3. Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
+2. Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
+3. Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
 
 <!-- H1: Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
 <!-- H2: Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
