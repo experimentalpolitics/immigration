@@ -67,26 +67,25 @@ In sum, changing people's minds by providing corrective information is far from 
 
 ## Differentiating factual beliefs, interpretations, and opinions
 
-First, we define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore be either true or false. Using the study by @hopkins2019muted as an illustrative example, the statement "12 out of every 100 people living in the United States are immigrants who were born outside of the U.S." describes a factual belief that is objectively verifiable and--importantly--completely void of evaluative components. As mentioned above, it turns out that people are systematically misinformed about the size of the foreign-born population in the sense that they consistently overestimate this statistics. Corrective information in this example simply consists of providing the accurate value of this statistic and @hopkins2019muted show that such an intervention is effective in reducing (factual) misperceptions.
+Building on a framework developed in @gaines2007same, we define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore be either true or false. For example, the statement "Immigrant-owned businesses employed almost 8 million American workers in 2019" describes a factual belief that is objectively verifiable and--importantly--completely void of evaluative components. As we will further discuss below, it turns out that people are systematically misinformed about the number of workers employed by immigrant-owned businesses in the sense that they consistently underestimate this statistic. Corrective information in this example would simply consist of an accurate estimate, which, given previous evidence using similar designs [e.g., @hopkins2019muted], should be fairly effective in reducing (factual) misperceptions.
 
+Incorrect factual beliefs only impede democratic representation to the extent that they affect peoples preferences [@kuklinski2000misinformation]. As such, it seems insufficient to consider the effect of misinformation corrections on factual beliefs alone. Rather, we need to examine how they influence subsequent evaluations. We define the step of adding immediate evaluative components to factual beliefs as *interpretations*. Continuing our previous example, a possible interpretation could be the following statement: "Immigrants improve the U.S. economy by creating additional jobs." This statement is still grounded in knowable facts such as the number of people employed by immigrant-owned businesses, but it contains evaluative components that are driven by implicit premises about potential economic "downsides" of immigration. Holding everything else constant, corrective information about the actual number of workers employed by immigrant-owned businesses should lead to a more positive assessment of the economic benefits of immigration. However, there is substantial leeway for people to interpret the same facts differently depending on their predispositions [e.g., @gaines2007same].
 
+Lastly, we define *opinions* as evaluative judgments that are formed about the state of the world, but that are not necessarily based on verifiable facts. An example for an opinion in our context would be the statement "The number of immigrants from foreign countries should be increased." Of course, this statement might be informed by objective facts about the economic impact of immigrant-owned business, but it certainly does not have to be. As such, corrective information can only be expected to have limited effects on opinions as these are largely driven by more fundamental predispositions.
 
-Corrective information targets the misinformation itself!
-
-Even though people update their factual beliefs as conditions change, individuals can interpret the same factual beliefs differently depending on characteristics such as their partisanship. Many times interpretations, rather than factual beliefs drive opinions [@gaines2007same]. 
-
-Interpretations afford leeway to align factual beliefs with undeniable reality and continue to justify partisan preferences.
-
-Why don't people update their related attitudes? One explanation is that they first have to be interpreted either by individuals themselves or by letting others do it for them [@gaines2007same].
+How does this conceptualization of beliefs, interpretations, and opinions help us understand potential impact of corrective information? @gaines2007same uses this framework to differentiate four different types of updating as a response to a changing state of the world:
 
 1. **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 2. **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 3. **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
 4. **Opinion Avoidance:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
 
-Changing beliefs is the most trivial aspect. What is more interesting, and ultimatelz more important when thinking about the issue of democratic representation is whether these changes in beliefs ultimately result in changing interpretations and/or opinions. Unfortunately, the we know very little about the underlying mechanisms that drive these aspects.
+Under complete updating, new factual information directly shapes beliefs about the state of the world, which in turn affects relevant interpretations, and ultimately results in opinion change. Consequently, incomplete updating despite new information could be due to a lack of belief updating (fact avoidance), rigid interpretations (meaning avoidance), or opinions driven by predispositions alone (opinion avoidance). Within this framework and considering the arguments outlined above, we can state the first hypothesis regarding the effectiveness of misinformation as follows:
 
-News reports contain interpretations, and these interpretations are more dependent on source credibility.
+> *Hypothesis 1:* Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
+
+In other words, while complete fact avoidance is relatively rare when people encounter corrective information, meaning avoidance and (especially) opinion avoidance is more common. Unfortunately, since few studies on misinformation corrections rely on an explicit distinction between these types of incomplete updating, surprisingly little is known about the determinants that make one type more likely than another. In the following section, we are going to argue that the source of corrective information is a crucial moderator in this context.
+
 
 ## The role of media choice, source credibility, and selective exposure
 
@@ -108,16 +107,16 @@ Source credibility profoundly affects social interpretations of information
 
 <!-- Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility. -->
 
+News reports contain interpretations, and these interpretations are more dependent on source credibility.
 
-## Hypotheses
 
-1. Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
-2. Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
-3. Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
+> *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
 
-<!-- H1: Fact avoidance is rare, but meaning avoidance and opinion avoidance is more common. -->
-<!-- H2: Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer -->
-<!-- H3: Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access -->
+Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
+
+> *Hypothesis 3:* Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
+
+Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer
 
 **Empirical Questions:**
 
