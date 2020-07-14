@@ -49,7 +49,7 @@ Citizens in western democracies hold wide-ranging and systematic misperceptions 
 
 A possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. However, the extent to which people engage such motivated reasoning is not without limits---as people have been shown to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent research on immigration attitudes demonstrate the persuasiveness of certain interventions such as canvassing [@kalla2020reducing].
 
-Why do researchers frequently fail to find evidence of attitude change after providing respondents with corrective information? We argue that most experimental designs in this area are inconclusive because they omit a crucial mechanism: people's discretion over whether to engage with a given information source or not. Specifically, studies usually employ simple random assignment of informational treatments without considering people's selective exposure. Unfortunately, such a set-up does not allow us to estimate the quantity of interest that is ultimately of key interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [see also @benedictis2019persuading; @knox2019design].
+Why do researchers frequently fail to find evidence of attitude change after providing respondents with corrective information? We argue that most experimental designs in this area are inconclusive because they omit a crucial mechanism: people's discretion over whether to engage with a given information source or not. Specifically, studies usually employ simple random assignment of informational treatments without considering people's selective exposure. Unfortunately, such a set-up does not allow us to estimate the quantity of interest that is ultimately of key interest: the effect of misinformation corrections among *people who would have chosen to access the information in the first place* [@benedictis2019persuading; @knox2019design].
 
 We address these shortcomings of previous research by implementing an experimental design that varies both, the source of misinformation corrections as well as the process through which people access the information. Specifically, we conduct an online survey experiment on the effectiveness of corrective information about immigration. Depending on the experimental condition, participants are either able to freely choose--or are assigned to--an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. Crucially, our design allows us to differentiate how the information treatment impacts factual beliefs, how they are interpreted, as well as broader attitudes towards immigration. The results indicate that while the correction of factual misperceptions is does not depend on media choice, subsequent attitude change is conditional on people's willingness to seek out alternative sources.
 
@@ -108,26 +108,37 @@ A skeptical reader might argue that *Hypothesis 2* and *Hypothesis 3* are essent
 
 # Research Design
 
-Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted; @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. In general, we expect that those who were able to choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to evaluate the article positively and change their attitudes in the direction of the news article.
+The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access.
 
-## Overview
+<!-- Add discussion of specific advantages of this design -->
 
-Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC), but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. By holding the content constant, our design has the additional advantage of more clearly differenting the effects of the choice vs assigned group by ensuring that the differences are not a result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire, including all treatment conditions, in our pre-registered analysis on EGAP.
+Figure \ref{fig:flow} displays an overview of the experimental design. Participants are first asked to answer a set of pre-treatment questions regarding their media preferences and their attitudes towards immigration. Subsequently, they are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. 
 
-![Survey Flow](../prereg/Lab-Graphic.jpg)
+```{r, flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix for further details such as question wording and information treatments."}
+knitr::include_graphics("../prereg/Lab-Graphic.jpg")
+```
 
-## Information Treatment
+Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC:
 
-- In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
+> In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
 
-```{r, tweets, fig.show="hold", out.width="50%", fig.cap="Test"}
+Participants in the forced exposure condition read almost the same message, the only difference being that it omitted the bold sentence telling them that they can choose from which twitter account the random tweet will be drawn. Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the following tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. It is important to note that both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant.
+
+```{r, tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (FoxNews or MSNBC)."}
 knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
 ```
 
-## Measuring Belief, Interpretation, and Opinion
+After viewing one of the tweets, participants are asked to read the corresponding article. As before, the content of the news article is held constant across sources in either condition.[^1] Compared to previous implementations of the PICA framework where the content was not held constant across sources [@benedictis2019persuading; @knox2019design], our design allows us to directly compare the effects of free choice and forced exposure by ensuring that differences between treatment groups are not the result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery to the post-treatment outcome measures.
 
+[^1]: See Appendix for full article.
 
-```{r}
+In our analysis, we consider five different outcome measures that correspond to beliefs, interpretations, and opinions related to the economic impact of legal immigration in the U.S. The full question overview is displayed in Table \ref{tab:outcomes}. Two items targeting factual *beliefs* directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Both questions offer five response options (one of which is accurate) and the correct information is mentioned in the tweet as well as the news article.
+
+In order to measure *interpretations* consistent with the theoretical conceptualization discussed above, we asked respondents two additional questions about whether they believe that immigrants add to the economy by creating additional jobs and whether they contribute more by paying taxes than they take out by using health and social services. Responses for both items are measured on an 11-point scale.
+
+Lastly, we measure *opinions* by asking for the participants' general preference regarding the number of immigrants from foreign countries who are permitted to come to the U.S. Responses for this item are measured on a 5-point scale ranging from "increased a lot" to "decreased a lot."
+
+```{r outcomes}
 tribble(
   ~Belief, ~Interpretation, ~Opinion,
   "Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses?",
@@ -138,17 +149,16 @@ tribble(
   ""
 ) %>%
   knitr::kable("latex", 
-               caption = "This is the table caption",
+               caption = "\\label{tab:outcomes}Overview of outcome variables measuring beliefs, interpretation, and opinions related to the economic impact of legal immigration in the U.S.",
                booktabs = TRUE) %>%
   kableExtra::column_spec(1, width = "4cm") %>%
   kableExtra::column_spec(2, width = "6cm") %>%
   kableExtra::column_spec(3, width = "5cm")
 ```
 
-
-
-
 # Results 
+
+Compared to previous studies, the outcome measures described above allow for a much more fine-grained differentiation of different types of (incomplete) updating as a response to misinformation corrections. Now, we are going to examine the role of media preferences and the ability to choose information sources in this context.
 
 <!-- ## Corrective information and media choice -->
 
@@ -173,7 +183,6 @@ p2
 ```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Difference in treatment effects of forced exposure and free choice manipulation conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
 p4
 ```
-
 
 
 # Discussion and Conclusion
