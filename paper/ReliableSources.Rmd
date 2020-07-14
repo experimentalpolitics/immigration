@@ -69,7 +69,7 @@ In sum, changing people's minds by providing corrective information is far from 
 
 Building on a framework developed in @gaines2007same, we define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore be either true or false. For example, the statement "Immigrant-owned businesses employed almost 8 million American workers in 2019" describes a factual belief that is objectively verifiable and--importantly--completely void of evaluative components. As we will further discuss below, it turns out that people are systematically misinformed about the number of workers employed by immigrant-owned businesses in the sense that they consistently underestimate this statistic. Corrective information in this example would simply consist of an accurate estimate, which, given previous evidence using similar designs [e.g., @hopkins2019muted], should be fairly effective in reducing (factual) misperceptions.
 
-Incorrect factual beliefs only impede democratic representation to the extent that they affect peoples preferences [@kuklinski2000misinformation]. As such, it seems insufficient to consider the effect of misinformation corrections on factual beliefs alone. Rather, we need to examine how they influence subsequent evaluations. We define the step of adding immediate evaluative components to factual beliefs as *interpretations*. Continuing our previous example, a possible interpretation could be the following statement: "Immigrants improve the U.S. economy by creating additional jobs." This statement is still grounded in knowable facts such as the number of people employed by immigrant-owned businesses, but it contains evaluative components that are driven by implicit premises about potential economic "downsides" of immigration. Holding everything else constant, corrective information about the actual number of workers employed by immigrant-owned businesses should lead to a more positive assessment of the economic benefits of immigration. However, there is substantial leeway for people to interpret the same facts differently depending on their predispositions [e.g., @gaines2007same].
+Incorrect factual beliefs only impede democratic representation to the extent that they affect peoples preferences [@kuklinski2000misinformation]. As such, it seems insufficient to consider the effect of misinformation corrections on factual beliefs alone. Rather, we need to examine how they influence subsequent evaluations. We define the step of adding immediate evaluative components to factual beliefs as *interpretations*. Continuing our previous example, a possible interpretation could be the following statement: "Immigrants improve the U.S. economy by creating additional jobs." This statement is still grounded in knowable facts such as the number of people employed by immigrant-owned businesses, but it contains evaluative components that are driven by implicit premises about potential economic "downsides" of immigration. Holding everything else constant, corrective information about the actual number of workers employed by immigrant-owned businesses should lead to a more positive assessment of the economic benefits of immigration. However, there is substantial leeway for people to interpret the same facts differently depending on their political predispositions [e.g., @gaines2007same].
 
 Lastly, we define *opinions* as evaluative judgments that are formed about the state of the world, but that are not necessarily based on verifiable facts. An example for an opinion in our context would be the statement "The number of immigrants from foreign countries should be increased." Of course, this statement might be informed by objective facts about the economic impact of immigrant-owned business, but it certainly does not have to be. As such, corrective information can only be expected to have limited effects on opinions as these are largely driven by more fundamental predispositions.
 
@@ -80,45 +80,43 @@ How does this conceptualization of beliefs, interpretations, and opinions help u
 3. **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
 4. **Opinion Avoidance:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
 
-Under complete updating, new factual information directly shapes beliefs about the state of the world, which in turn affects relevant interpretations, and ultimately results in opinion change. Consequently, incomplete updating despite new information could be due to a lack of belief updating (fact avoidance), rigid interpretations (meaning avoidance), or opinions driven by predispositions alone (opinion avoidance). Within this framework and considering the arguments outlined above, we can state the first hypothesis regarding the effectiveness of misinformation as follows:
+Under complete updating, new factual information directly shapes beliefs about the state of the world, which in turn affects relevant interpretations, and ultimately results in opinion change. Consequently, incomplete updating despite new information could be due to a lack of belief updating (fact avoidance), interpretations that resist altered beliefs (meaning avoidance), or opinions driven by predispositions alone (opinion avoidance). Within this framework and considering the arguments outlined above, we can state the first hypothesis regarding the effectiveness of misinformation as follows:
 
 > *Hypothesis 1:* Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
 
 In other words, while complete fact avoidance is relatively rare when people encounter corrective information, meaning avoidance and (especially) opinion avoidance is more common. Unfortunately, since few studies on misinformation corrections rely on an explicit distinction between these types of incomplete updating, surprisingly little is known about the determinants that make one type more likely than another. In the following section, we are going to argue that the source of corrective information is a crucial moderator in this context.
 
 
-## The role of media choice, source credibility, and selective exposure
+## The role of source credibility and selective exposure
 
-Mass media is by far the most regular used information source. @dalton1998partisan found that perception of news is shaped as much by a person's political views as by objective content. Even if an individual perceives their news source as unbiased, they will perceive their daily news source to report biased information. They found that regardless of the paper's actual stance it was viewed as skewed toward the opposite political beliefs of the reader. Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs [@little2019distortion].
+Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility.
+
+
+1. Media environment is biased
+2. Source credibility differs by source
+3. News reports contain interpretations, and these interpretations are more dependent on source credibility.
+
+
+- @dalton1998partisan: perception of news is shaped by a person's political views
+- @little2019distortion: Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs
+- @kuklinski1994hearing: The idea of source credibility extends to the individual political actor; connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker. In this way the messenger overwhelms the message
+- @lupia1998democratic: Source credibility profoundly affects social interpretations of information
 
 Sources that are deemed credible are more influential than sources with low credibility. Credibility includes both expertise and trustworthiness and studies have found that source credibility impacts whether individuals will correct misinformation [@guillory2013correcting]. One would assume that non-partisan authorities would be a trusted source of information. However, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed [see @berinsky2018telling]. Neutral sources such as the AMA and the AARP lack authority at time because they are overridden by politicized ones. It is rare for Republicans and Democrats to find a independent source therefore many sources of information lack credibly. This partisan lens extends to how individuals process fake news. Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree [@berinsky2017rumors].
-
-The idea of source credibility extends to the individual political actor. @kuklinski1994hearing connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker. In this way the messenger overwhelms the message.
-
-Source credibility profoundly affects social interpretations of information
-[@lupia1998democratic].
-<!-- [I don't have access to this book, need to check to see if anyone has notes] -->
-
-<!-- Two lines of potential reasoning (discussed in 5/1/19 meeting): The first is a methodological argument. From this perspective, we can argue that including the endogenous search manipulation is cleaner from a design perspective. This way, we have the comparison between randomly allocating and letting you choose vs. giving friendly or not friendly source. This is important because giving someone a friendly vs. unfriendly source cue depends on how good your measurement is (whether a or b is friendly). We can make an argument that we can get at that measurement and get a prediction but it’s based on an assumption. In reality, there might be diffs in how people select or reveal what they trust. As soon as these potential errors are taken into account, it is compelling to make an arg that its cleaner than trying to find out what’s friendly or unfriendly and then assigning. Ultimately it’s a pure design question. -->
-
-<!-- But is it theoretically something different? Is choosing substantively diff than mech of friendly vs unfriendly source. Is it about control over choosing itself? Big mech is whether you trust info source or not. If it’s the same, need to rethink whether our contribution to the literature is going beyond what the source cue lit has done.  -->
-
-<!-- Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?  -->
-
-<!-- Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility. -->
-
-News reports contain interpretations, and these interpretations are more dependent on source credibility.
-
-
-> *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
-
-Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
 
 > *Hypothesis 3:* Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
 
 Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer
 
-**Empirical Questions:**
+But is this only about source cues? There has been an additional methodological argument in the literature. From this perspective, we can argue that including the endogenous search manipulation is cleaner from a design perspective. This way, we have the comparison between randomly allocating and letting you choose vs. giving friendly or not friendly source. This is important because giving someone a friendly vs. unfriendly source cue depends on how good your measurement is (whether a or b is friendly). We can make an argument that we can get at that measurement and get a prediction but it’s based on an assumption. In reality, there might be diffs in how people select or reveal what they trust. As soon as these potential errors are taken into account, it is compelling to make an arg that its cleaner than trying to find out what’s friendly or unfriendly and then assigning. Ultimately it’s a pure design question.
+
+Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?
+
+> *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
+
+Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
+
+But is it theoretically something different? This is ultimately an empirical question! Is choosing substantively diff than mech of friendly vs unfriendly source. Is it about control over choosing itself? Big mech is whether you trust info source or not. If it’s the same, need to rethink whether our contribution to the literature is going beyond what the source cue lit has done.
 
 - Does the ability to **choose** always imply **consistent** exposure?
 - If choice $\neq$ consistency, how do their effects differ?
@@ -196,6 +194,6 @@ p4
 
 # Discussion and Conclusion
 
-<!-- future directions -->
+<!-- discuss future directions -->
 
 # References
