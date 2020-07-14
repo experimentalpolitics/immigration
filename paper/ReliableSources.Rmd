@@ -87,15 +87,31 @@ Under complete updating, new factual information directly shapes beliefs about t
 In other words, while complete fact avoidance is relatively rare when people encounter corrective information, meaning avoidance and (especially) opinion avoidance is more common. Unfortunately, since few studies on misinformation corrections rely on an explicit distinction between these types of incomplete updating, surprisingly little is known about the determinants that make one type more likely than another. In the following section, we are going to argue that the source of corrective information is a crucial moderator in this context.
 
 
-## The role of source credibility and selective exposure
+## The role of selective exposure and source credibility
 
-Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes. Specifically, despite a large exisiting body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility.
+Despite the fact that there is a burgeoing body of interdisciplinary research on misinformation, most experimental studies examining the effectiveness of corrective interventions rely on designs that simply assign different informational treatments to groups of participants. While such a design certainly has advantages in the sense that..., it ignores a crucial mechanism: whether or not certain respondents would have chosen to access the respective information in the first place.
 
+Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes.
+
+Media environment is much more diverse than it used to be, we need to take into account the role of selective exposure.
+
+- @leeper2020raising
+- @benedictis2019persuading
+
+There has been an additional methodological argument in the literature. Including endogenous search manipulation is necessary to have the comparison between randomly allocating and letting you choose vs. giving friendly or not friendly source.
+
+Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?
+
+> *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
+
+Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
+
+
+Notwithstanding the large existing body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility.
 
 1. Media environment is biased
 2. Source credibility differs by source
 3. News reports contain interpretations, and these interpretations are more dependent on source credibility.
-
 
 - @dalton1998partisan: perception of news is shaped by a person's political views
 - @little2019distortion: Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs
@@ -107,14 +123,6 @@ Sources that are deemed credible are more influential than sources with low cred
 > *Hypothesis 3:* Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
 
 Classic source cue argument: Meaning avoidance and opinion avoidance is less common if people are exposed to news organizations they prefer
-
-But is this only about source cues? There has been an additional methodological argument in the literature. From this perspective, we can argue that including the endogenous search manipulation is cleaner from a design perspective. This way, we have the comparison between randomly allocating and letting you choose vs. giving friendly or not friendly source. This is important because giving someone a friendly vs. unfriendly source cue depends on how good your measurement is (whether a or b is friendly). We can make an argument that we can get at that measurement and get a prediction but it’s based on an assumption. In reality, there might be diffs in how people select or reveal what they trust. As soon as these potential errors are taken into account, it is compelling to make an arg that its cleaner than trying to find out what’s friendly or unfriendly and then assigning. Ultimately it’s a pure design question.
-
-Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?
-
-> *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
-
-Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
 
 But is it theoretically something different? This is ultimately an empirical question! Is choosing substantively diff than mech of friendly vs unfriendly source. Is it about control over choosing itself? Big mech is whether you trust info source or not. If it’s the same, need to rethink whether our contribution to the literature is going beyond what the source cue lit has done.
 
