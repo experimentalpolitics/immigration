@@ -108,7 +108,7 @@ A skeptical reader might argue that *Hypothesis 2* and *Hypothesis 3* are essent
 
 # Research Design
 
-The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access.
+The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. This study was conducted using a sample of 600 participants recruited via Amazon’s Mechanical Turk.
 
 <!-- Add discussion of specific advantages of this design -->
 
