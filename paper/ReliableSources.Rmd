@@ -89,36 +89,25 @@ In other words, while complete fact avoidance is relatively rare when people enc
 
 ## The role of selective exposure and source credibility
 
-Despite the fact that there is a burgeoing body of interdisciplinary research on misinformation, most experimental studies examining the effectiveness of corrective interventions rely on designs that simply assign different informational treatments to groups of participants. While such a design certainly has advantages in the sense that..., it ignores a crucial mechanism: whether or not certain respondents would have chosen to access the respective information in the first place.
+Despite the fact that there is burgeoning interdisciplinary research on misinformation corrections, most experimental studies in this area rely on relatively simple designs that randomly assign different types of informational treatments to participants. While such designs have certain advantages such as straightforward causal identification, they essentially ignore a crucial aspect of our media environment: people's discretion over their individual media diet and the information they decide to access. There are notable examples of research in related areas that directly address selective exposure as part of their experimental designs---such as recent work on media hostility [@arceneaux2012polarized], persuasion [@benedictis2019persuading], and political knowledge [@leeper2020raising]. To our knowledge, however, no experimental study on misinformation corrections to date takes similar steps to account for endogenous media choice. This is surprising since individual media environments are becoming increasingly diverse and polarized [see @stroud2017selective for an overview], which makes it relatively easy for people to avoid counter-attitudinal corrective information [@guess2020exposure]. As such, prior studies do not allow us to estimate a key quantity of interest: the effect of misinformation corrections among people who would have chosen to access the information in the first place [@benedictis2019persuading].
 
-Here, we explore an alternative explanation for the lack of evidence that corrective information shifts people's attitudes.
+Considering our differentiation between beliefs, interpretations, and opinions, we argue that selective exposure is a key mechanism that influences whether misinformation corrections ultimately result in complete updating, opinion avoidance, meaning avoidance, or even fact avoidance. 
 
-Media environment is much more diverse than it used to be, we need to take into account the role of selective exposure.
-
-- @leeper2020raising
-- @benedictis2019persuading
-
-There has been an additional methodological argument in the literature. Including endogenous search manipulation is necessary to have the comparison between randomly allocating and letting you choose vs. giving friendly or not friendly source.
-
-Ultimately, this manipulation allows us to study how people react to information—most give random info and look at effects. Big diff in info environment is that you choose info you’re exposed to—think about contribution in terms of looking at whether information choice changes effect of information you’re given. Fake news literature? Assumption that as soon they are given info by anyone they are suspicious of it?
+News reports contain interpretations, and these interpretations are more dependent on source credibility.
 
 > *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for opinions and interpretations than for beliefs.
 
 Meaning avoidance and opinion avoidance is less common if people have discretion over what information to access
 
 
-Notwithstanding the large existing body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility.
-
-1. Media environment is biased
-2. Source credibility differs by source
-3. News reports contain interpretations, and these interpretations are more dependent on source credibility.
-
+- Source credibility differs by source: Notwithstanding the large existing body of literature on the importance of source cues [e.g., @goren2009source; @ladd2010role], prior studies on misinformation corrections rarely consider the potential role of source credibility.
 - @dalton1998partisan: perception of news is shaped by a person's political views
 - @little2019distortion: Individuals with strong partisan beliefs are more skeptical that "neutral" media reports with accuracy and believe the media as biased against their beliefs
 - @kuklinski1994hearing: The idea of source credibility extends to the individual political actor; connected the use of ideological heuristics and source cues. They argued that by focusing their attention on the individual political actor, citizens make quick judgments of the information presented to them based largely on the reputation of the speaker. Experimental subjects presented with a message evaluated that message based largely on their opinion of the speaker. In this way the messenger overwhelms the message
 - @lupia1998democratic: Source credibility profoundly affects social interpretations of information
+- Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree [@berinsky2017rumors].
 
-Sources that are deemed credible are more influential than sources with low credibility. Credibility includes both expertise and trustworthiness and studies have found that source credibility impacts whether individuals will correct misinformation [@guillory2013correcting]. One would assume that non-partisan authorities would be a trusted source of information. However, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed [see @berinsky2018telling]. Neutral sources such as the AMA and the AARP lack authority at time because they are overridden by politicized ones. It is rare for Republicans and Democrats to find a independent source therefore many sources of information lack credibly. This partisan lens extends to how individuals process fake news. Error correction of fake news is mostly likely to be effective when coming from a co-partisan w/ whom one might expect to agree [@berinsky2017rumors].
+Sources that are deemed credible are more influential than sources with low credibility. Credibility includes both expertise and trustworthiness and studies have found that source credibility impacts whether individuals will correct misinformation [@guillory2013correcting]. One would assume that non-partisan authorities would be a trusted source of information. However, in a time when partisanship colors how people perceive new information, even neutral sources might be less credible than is often presumed [see @berinsky2018telling]. 
 
 > *Hypothesis 3:* Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for opinions and interpretations than for beliefs.
 
