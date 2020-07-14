@@ -108,13 +108,13 @@ A skeptical reader might argue that *Hypothesis 2* and *Hypothesis 3* are essent
 
 # Research Design
 
-The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. This study was conducted using a sample of 600 participants recruited via Amazon’s Mechanical Turk.
+The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. This study was conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk.
 
 <!-- Add discussion of specific advantages of this design -->
 
 Figure \ref{fig:flow} displays an overview of the experimental design. Participants are first asked to answer a set of pre-treatment questions regarding their media preferences and their attitudes towards immigration. Subsequently, they are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. 
 
-```{r, flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix for further details such as question wording and information treatments."}
+```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix for further details such as question wording and information treatments."}
 knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 ```
 
@@ -124,7 +124,7 @@ Participants in the free choice condition are asked to choose whether they want 
 
 Participants in the forced exposure condition read almost the same message, the only difference being that it omitted the bold sentence telling them that they can choose from which twitter account the random tweet will be drawn. Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the following tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. It is important to note that both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant.
 
-```{r, tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (FoxNews or MSNBC)."}
+```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (FoxNews or MSNBC)."}
 knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
 ```
 
@@ -158,34 +158,40 @@ tribble(
 
 # Results 
 
-Compared to previous studies, the outcome measures described above allow for a much more fine-grained differentiation of different types of (incomplete) updating as a response to misinformation corrections. Now, we are going to examine the role of media preferences and the ability to choose information sources in this context.
+Compared to previous studies, the outcome measures described above allow for a much more fine-grained differentiation of possible types of (incomplete) updating as a response to misinformation corrections. Now, we are going to examine the role of media preferences and the ability to choose information sources as predictors of changes in beliefs, interpretations, and opinions.
 
-<!-- ## Corrective information and media choice -->
-
-\clearpage
 
 ## Free Choice Enables Opinion Change
 
-<!-- People Change their Minds if They are Allowed to Choose their Information Source  -->
+As a first step, we examine the average treatment effects of the forced exposure and free choice condition for each of the five outcome measures compared to the control group that did not have access to the tweet or news article. For each dependent variable, we estimate a linear regression with two treatment indicators (the control condition is the reference category) while controlling for a set of pre-treatment covariates and sociodemographic characteristics to increase statistical power [e.g., @bowers2011making; @clifford2020increasing]. Accordingly, the first set of coefficients examining belief change can be interpreted as linear probability models, whereas the remaining coefficients can be interpreted as treatment effects where the (quasi-)continuous outcome variable was rescaled to range from zero to one.
 
-```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
+```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results presented in the appendix."}
 p1
 ```
 
+Compared to the control condition, the proportion of participants who read the tweet and news story who were able to provide correct responses to the factual questions regarding the employment and total value of sales by immigrant-owned businesses was about 20-30% higher.
+
+The effects are smaller for interpretations and opinions, a result that is consistent with Hypothesis 1.
+
+These results suggest that belief and opinion change as a response to misinformation corrections is relatively common and independent of how people gain access to them. Only if people are allowed to choose their information source, however, do we observe that they change their minds about the issue. While this is at least suggestive evidence that selective exposure and discretion over media diets is a potentially important factor facilitating opinion change, it should be noted that the difference between both treatment effects themselves is not statistically significant [@gelman2006difference]. Overall, however, these results lend at least suggestive support for Hypothesis 2.
+
 ## Opinion Change is Driven by Voluntary Exposure to Inconsistent Sources
 
-```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
+```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results presented in the appendix."}
 p2
 ```
 
 <!-- ## Voluntary and Involuntary Exposure to Inconsistent Sources -->
 
-```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Difference in treatment effects of forced exposure and free choice manipulation conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% confidence intervals based on robust standard errors. Full model results included in the appendix."}
+```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Difference in treatment effects of forced exposure and free choice manipulation conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% confidence intervals based on robust standard errors. Full model results presented in the appendix."}
 p4
 ```
 
+Recall that regardless of the news organization, the actual content of the tweet and article was constant across all treatments. 
 
 # Discussion and Conclusion
+
+Causal interpretation is problematic since we are conditioning on post-treatment actions (at least in the free-choice condition).
 
 <!-- discuss future directions -->
 
