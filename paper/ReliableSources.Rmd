@@ -118,13 +118,13 @@ Figure \ref{fig:flow} displays an overview of the experimental design. Participa
 knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 ```
 
-Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC:
+Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either Fox News or MSNBC:
 
 > In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
 
 Participants in the forced exposure condition read almost the same message, the only difference being that it omitted the bold sentence telling them that they can choose from which Twitter account the random tweet will be drawn. Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the following tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. It is important to note that both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant.
 
-```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (FoxNews or MSNBC)."}
+```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (Fox News or MSNBC)."}
 knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
 ```
 
@@ -180,28 +180,50 @@ The finding that estimated treatment effects are smaller for interpretations and
 
 ## Opinion Change is Driven by Voluntary Exposure to Inconsistent Sources
 
-At the begnning of our survey experiment, respondents were asked a battery of questions regarding their usual media diet.
+At the begnning of our survey experiment, we included a battery of questions regarding people's usual media diet. Among other items, participants were asked the following question:
+
+> On average, how often do you watch political news on the following TV channels (including online content)?
+
+The question was followed by a list of five news outlets including Fox News and MSNBC. Based on this item, we can distinguish whether participants in the treatment conditions were exposed to an information source that is consistent or inconsistent with their usual media preferences (if they usually prefer to watch more Fox News than MSNBC and vice versa), or if the information source is neutral (if they prefer neither Fox Nes or MSNBC as part of their usual media diet). Figure \ref{fig:m2} repeats the previous analysis examining treatment effects on beliefs, interpretations, and opinions---but now differentiating participants in the forced exposure and free choice conditions by source consistency.
 
 ```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% confidence intervals based on robust standard errors. Full model results presented in the appendix."}
 p2
 ```
 
+Focusing first on beliefs and interpretations as outcomes, we observe slightly larger treatment effects for participants who were exposed to an information source that is consistent with their usual media diet---a pattern that holds in the forced exposure as well as the free choice condition. In fact, in three out of four analyses, the information treatment had no statistically significant effect on people's interpretations regarding the economic benefits of legal immigration if it came from an inconsistent source, whereas exposure to a consistent source was always associated with more favorable interpretations. This result is largely consistent with Hypothesis 3.
 
-As a final step, we can examine whether voluntary and involuntary exposure to inconsistent sources 
-<!-- ## Voluntary and Involuntary Exposure to Inconsistent Sources -->
+Interestingly, the pattern for opinion change as a response to the news story appears to be reversed. To the extent that the positive treatment effect of the free choice condition on opinions reported in Figure \ref{fig:m1} is driven by people's tendency to seek out consistent sources, we would expect a similar effect when focusing on forced exposure to consistent sources. This is not the case. Regardless of whether participants were given a news source that is consistent with their usual media diet, the information treatment in the forced exposure condition had no effect on subsequent opinions regarding the desired level of immigration in the U.S. In the free choice condition, on the other hand, we do find evidence for opinion change compared to control condition. Surprisingly, however, it is exposure to *inconsistent* sources in the free choice condition that ultimately results in significant opinion change.
+
+To further corroborate this finding, we now directly compare the effect of voluntary and involuntary exposure to inconsistent sources. Specifically, we reduce the sample to include only participants who were exposed to a news source that was inconsistent with their usual media diet. We then run regressions using the same specifications as before, now only including a single treatment indicator for the free choice condition. Note that since this specification omits the control group and instead uses forced exposure to inconsistent sources as the reference category, the coefficients can be interpreted as the differences in treatment effects between the free choice and forced exposure condition. The results are displayed in Figure \ref{fig:m4}.
 
 ```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4} Difference in treatment effects of forced exposure and free choice manipulation conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% confidence intervals based on robust standard errors. Full model results presented in the appendix."}
 p4
 ```
 
-Recall that regardless of the news organization, the actual content of the tweet and article was constant across all treatments. 
+Conditional on exposure to an inconsistent source, there are no clear differences in treatment effects on beliefs and related interpretations. However, participants who were exposed to inconsistent sources in the free choice condition reported more favorable opinions towards immigrants than participants who were exposed to inconsistent sources in the forced exposure condition. This finding is quite remarkable considering the fact that regardless of the news organization, the actual content of the tweet and article was constant across all treatments.
+
+In sum, changing people's minds by giving them free choice over their media diet is not driven by the ability to choose consistent news sources. On the contrary, only participants who voluntarily accessed inconsistent information reported significantly different opinions than the control group.
+
 
 # Discussion and Conclusion
+
+- Correcting factual **beliefs** is easy, changing **opinions** is hard.
+- Being exposed to **consistent** sources $\neq$ ability to **choose** sources.
+- Encouraging people to **voluntarily access alternative sources** may be more effective to combat misinformation than providing **fact-checks** alone.
+
+
+As always, the findings presented here do not come without limitations.
 
 Causal interpretation is problematic since we are conditioning on post-treatment actions (at least in the free-choice condition).
 
 We are capturing a predisposition to be open to opinion change or rather the effect of being exposed to new information.
 
-<!-- discuss future directions -->
+Future directions:
+
+- We need a pre-registered replication with larger sample size.
+- Different issue/policy area.
+
+\clearpage
+
 
 # References
