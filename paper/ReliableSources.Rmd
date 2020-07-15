@@ -213,6 +213,8 @@ Our study fills this gap in the literature by employing an experimental design t
 
 Of course, our findings are not without limitations. Most importantly, it is worth noting that conditioning on (in)consistent exposure in the free choice condition makes it difficult to provide a clear causal interpretation of the effects. While our analyses control for political predispositions and pre-treatmtent immigration attitudes, we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different attitudes irrespective of the treatment instead of being more receptive to the corrective information. The fact that we do observe significant treatment effects for the free choice condition (and not for the forced exposure condition) across the entire sample somewhat alleviates this concern, since this overall relationship cannot be explained purely by self-selection into inconsistent exposure. As such, it seems more likely that the patterns are driven by people's underlying openness to consider alternative views than by differences in baseline attitudes. Ultimately, while more work is necessary to corroborate this conclusion, we find at least suggestive evidence that discretion over information sources facilitates opinion change in response to corrective information. In order to further substantiate these findings, we are planning a pre-registered replication of this study focusing on a different policy area and using a larger sample size.
 
+<!-- add discussion of literature on accuracy motivation and related predispositions to be open-minded -->
+
 \clearpage
 
 
