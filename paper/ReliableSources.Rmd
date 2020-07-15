@@ -207,21 +207,11 @@ In sum, changing people's minds by giving them free choice over their media diet
 
 # Discussion and Conclusion
 
-- Correcting factual **beliefs** is easy, changing **opinions** is hard.
-- Being exposed to **consistent** sources $\neq$ ability to **choose** sources.
-- Encouraging people to **voluntarily access alternative sources** may be more effective to combat misinformation than providing **fact-checks** alone.
+The apparent pervasiveness of misinformation across a wide range of political issues is exacerbated by an increasingly polarized media environment where people have unprecedented access to a wide variety of media sources. When it comes to the effectiveness of corrective interventions, revising people's factual *beliefs* is relatively easy, while changing their underlying *opinions* is hard. Yet, previous research in this context neglected the role of selective exposure and endogenous information search as a determinant of the potential attitudinal impact of corrective information.
 
+Our study fills this gap in the literature by employing an experimental design that allows a subset of participants to choose their information source. Holding the actual content constant, we find that the ability to choose news sources facilitates opinion change. However, the effect of people's discretion over their information intake is not driven by their tendency to access sources that are consistent with their usual media diet. Rather, it is the voluntary exposure to inconsistent sources that results in opinion change. Accordingly, encouraging people to voluntarily access alternative sources may be a more effective strategy to combat misinformation than providing fact-checks alone.
 
-As always, the findings presented here do not come without limitations.
-
-Causal interpretation is problematic since we are conditioning on post-treatment actions (at least in the free-choice condition).
-
-We are capturing a predisposition to be open to opinion change or rather the effect of being exposed to new information.
-
-Future directions:
-
-- We need a pre-registered replication with larger sample size.
-- Different issue/policy area.
+Of course, our findings are not without limitations. Most importantly, it is worth noting that conditioning on (in)consistent exposure in the free choice condition makes it difficult to provide a clear causal interpretation of the effects. While our analyses control for political predispositions and pre-treatmtent immigration attitudes, we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different attitudes irrespective of the treatment instead of being more receptive to the corrective information. The fact that we do observe significant treatment effects for the free choice condition (and not for the forced exposure condition) across the entire sample somewhat alleviates this concern, since this overall relationship cannot be explained purely by self-selection into inconsistent exposure. As such, it seems more likely that the patterns are driven by people's underlying openness to consider alternative views than by differences in baseline attitudes. Ultimately, while more work is necessary to corroborate this conclusion, we find at least suggestive evidence that discretion over information sources facilitates opinion change in response to corrective information. In order to further substantiate these findings, we are planning a pre-registered replication of this study focusing on a different policy area and using a larger sample size.
 
 \clearpage
 
