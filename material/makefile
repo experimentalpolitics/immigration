@@ -20,7 +20,7 @@ RM=/bin/rm
 
 PANDOC=/usr/bin/pandoc
 
-PANDOC_OPTIONS=--smart --standalone --template ../../resources/templates/eisvogel.tex
+PANDOC_OPTIONS=--standalone --template ../../resources/templates/eisvogel.tex
 
 PANDOC_PDF_OPTIONS=
 PANDOC_DOCX_OPTIONS=
