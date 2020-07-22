@@ -1,8 +1,8 @@
 ---
-title: "Reliable Sources?"
+title: "Reliable Sources?^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit for helpful comments on previous versions of this manuscript.]"
 subtitle: "Correcting Misinformation in Polarized Media Environments"
 author:
-  - Patrick W. Kraft
+  - "Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]"
   - Nicholas R. Davis
   - Taraleigh Davis
   - Amanda Heideman
