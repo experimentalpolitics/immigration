@@ -6,13 +6,13 @@
     - Media usage
     - Stereotype battery
     - Political attitudes & participation
+    - Attitude uncertainty measure 
 - Experimental manipulation:
     - Tweets
     - Full story
     - Attention checks & article evaluation
 - Post-treatment measures:
     - Attitudes towards immigration
-    - Trust in news sources
     - Sociodemographics
 
 ## Treatment Overview
@@ -30,13 +30,13 @@
     - Attitudes towards immigration (see post-treatment section).
     - Trust in news sources (see post-treatment section).
 
-## MTurk Details
+## Survey Details
 
 - *Title:* Media Usage and News Consumption
 - *Description:* Answer a short survey (less than 30 minutes) about your personal media diet and issues currently discussed in the news.
 - *Instructions:* We are conducting an academic survey about media usage and news consumption. We need to understand your opinion about different media outlets and current issues discussed in the news. Select the link below to complete the survey. Note that you are only eligible to participate if you are currently located in the United States and that we are going to confirm your location at the beginning of the survey. Completing the survey should take less than 30 minutes. At the end, you will receive a code to paste into the box below to receive credit for taking our survey.
 - *Length:* <30 min
-- *Reward:* $2
+- *Reward:* 
 - *Requirements:* 90% approval rate, 100 HITs minimum, location US
 
 ## Pre-treatment measures
@@ -45,22 +45,6 @@
 
 First, we want to ask a few questions about your current media diet.
 
-**[smedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms?
-
-- YouTube
-- Facebook
-- Instagram
-- Twitter
-- Tumblr
-
-1. Several times a day
-2. About once a day
-3. 3 to 6 days a week
-4. 1 to 2 days a week
-5. Every few weeks
-6. Less often
-7. Never
-8. Don’t Know
 
 **[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels (including online content)?
 
@@ -318,17 +302,11 @@ _(randomize order of remaining questions)_
 
 - 0 (Generally take out more) - 10 (Generally put in more)
 
-**[taxes_oe]** Please explain your answer to the previous question in a few short sentences.
-
-- *TEXTBOX*
 
 **[jobs]** On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
 
 - 0 (Take jobs away) - 10 (Create additional jobs)
 
-**[jobs_oe]** Please explain your answer to the previous question in a few short sentences.
-
-- *TEXTBOX*
 
 ### Block 2: Trust in news sources
 
