@@ -34,13 +34,11 @@ This document describes the planned analyses for a follow-up online survey exper
 
 ## Ethics
 
-This may need to be updated (Tara)?
-
 This study has been granted exempt status by the University of Wisconsin-Milwaukee's Institutional Review Board (#20.044) and has been granted approval to waive documentation of informed consent. All participants could stop participation at any time in the study and were debriefed at the end.
 
 ## Sample
 
-This will need to be updated (ShinYoung)
+This will need to be updated.
 
 This study will be conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 30 minutes and the reward will be $2. MTurk workers are required to have a 90% approval rate and have to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
 
@@ -54,23 +52,29 @@ Our study builds on the Preference-Incorporating Choice and Assignment Design pr
 
 ## Outcome measures
 
-Some of these may need to change if we exclude them from the shorter survey part II.
+Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. Building on a framework developed in Gaines et al. (2007), we define the difference between three interrelated terms: beliefs, interpretations, and opinions. We define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore either be true or false. *Interpretations* involve taking these beliefs and adding an immediate evaluative component to the underlying belief. For example, the statement "immigrant-owned businesses employed almost 8 million American workers in 2019" is factual belief; whereas, "immigrants improve the U.S. economy by creating additional jobs" is an interpretation of the above belief. Finally, *opinions* are described as an evaluative judgment that is formed about the state of the world, but are not necessarily based on verifiable facts. 
 
-We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (again, please reference the full questionnaire at the end of the pre-analysis plan for specific question wording). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
+In our analysis, we consider 5 separate outcome measure that correspond to our conceptualization of beliefs, interpretations, and opinions related to the economic impact of legal immigration in the US. A full question overview of these 5 outcome variables is listed below. 
 
-**Economic impact of immigration:** Our first outcome of interest captures the perceived economic impact of legal immigration. The news article includes specific information about the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. As part of the survey, participants are asked two questions covering these issues and our goal is to examine whether the news article is sufficient to correct related factual misperceptions (i.e., increase the proportion of correct responses on two questions covering this information). Two additional questions (analyzed separately) capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs. Here, the outcome of interest is whether participants think that on balance, legal immigration has a more positive impact rather than creating a financial burden for society as a whole.
+**Beliefs**
 
-**Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. Specifically, we ask participants whether they think that the number of immigrants in the US should be increased or decreased. This item allows us to assess whether the news article not only corrects factual misperceptions but additionally induces attitude change.
+To target factual beliefs, we directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue generated by immigrant-owned business. Both of these questions offer five responses, of which one is correct. The actual answer is mentioned in both the tweet and the extended news story.
 
-**Trust in news sources:** As an additional check, we also include a battery of items measuring trust in different news sources including FoxNews and MSNBC. Since the content of the news article is held constant between both news organizations, we can examine how exposure to an atypical news story (in this case published by FoxNews) impacts people's perception of the source itself.
+**Interpretations**
 
-In addition to these main variables, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the experimental design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
+To measure interpretations, we ask respondents two additional questions about whether they believe that immigrants add to the economy by creating jobs and whether they contribute more by paying taxes than they take out by using social services. These responses are both measured using a standard 11-point scale.
+
+**Opinions**
+
+To measure opinions, we ask respondents' general preference regarding the number of immigrants from foreign countries who are permitted to come to the US. These responses are measured on a 5-point scale which ranges from "increased a lot" to "decreased a lot."
+
+*Insert Table 1 from paper here*
+
+In addition to these main outcome measures, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the experimental design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
 
 **Engagement with tweet:** As described above, the tweet shown to participants consists of a link to a news article. While the link itself is not active and participants are never explicitly asked to click on it, we can examine whether participants nevertheless try access the article. Whether they attempt to do so is used as an unobstrusive measure of the degree to which participants are interested in further engaging with the content voluntarily.
 
 **Response latencies:** In order to further assess the extent to which respondents are interested in the article and comply with the instructions to read it carefully, we also measure the amount of time that individuals spend viewing the tweet and reading the news story.
-
-<!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
 
 **Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or whether they would be likely to seek out more information regarding the topic of the tweet and story.
 
@@ -79,10 +83,6 @@ In addition to these main variables, we evaluate four additional outcomes and co
 **Manipulation Check:** In order to assess whether the tweet and news article were actually read by participants, we include a brief manipulation check. Specifically, respondents are asked which news organization published the story and what topic was covered by it.
 
 ## Hypotheses
-
-<!-- QUESTION on wording assigned source instead of forced exposure?  -->
-
-Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. Building on a framework developed in Gaines et al. (2007), we define the difference between three interrelated terms: beliefs, interpretations, and opinions. We define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore either be true or false. *Interpretations* involve taking these beliefs and adding an immediate evaluative component to the underlying belief. For example, the statement "immigrant-owned businesses employed almost 8 million American workers in 2019" is factual belief; whereas, "immigrants improve the U.S. economy by creating additional jobs" is an interpretation of the above belief. Finally, *opinions* are described as an evaluative judgment that is formed about the state of the world, but are not necessarily based on verifiable facts. 
 
 This conceptualization of beliefs, interpretations, and opinions help us to understand the impact of corrective information and formulate our three main hypotheses below:
 
@@ -100,9 +100,25 @@ This hypothesis represents the classic source credibility argument since people 
 
 # Previous Results & Estimation strategy
 
-## Results from Previous Study
+## Results from Pilot Study
 
-Write up Results from Study 1 here
+Due to our use of the outcome measures described above, we are able to differentiate between the possible types of (incomplete) updating as a response to misinformation corrections. In our initial pilot study, we found rather strong evidence to support our expected results from Hypothesis 1:
+
+- Respondents who were in the treatment arm of the experiment, compared with those in the control arm who did not recieve the tweet and story, were able to give correct responses regarding the employment and total value of sales by immigrant owned business by about 20 - 30 percentage points.
+- Respondents who read the tweet and story also provided a more favorable assessment of the number of jobs created by immigrants as well as the relative size of their tax contributions.
+- Finally, regarding beliefs, the effect of the treatment was significant as well.
+
+*Insert Figure 3 here*
+
+The finding that estimated treatment effects are smaller for interpretations and opinions than for beliefs strongly supports Hypothesis 1. However, only if people are allowed to choose their information source do we observe that they change their opinion about the issue. This does lend some credence to Hypothesis 2; however, it should be noted that the difference between both treatment effects themselves is not statistically significant. Further examination of this phenomenon in our follow-up study should clarify whether the ability to choose has a legitimate impact on the likelihood of misinformation corrections. 
+
+In order to test Hypothesis 3, we included a battery of questions regarding respondents' usual media diets. Based on these results, we can distinguish whether participants in the treatment conditions were exposed to an information source that was consistent or inconsistent with their usual media preferences or if the information source is neutral. The results below repeats our analysis from above, but differentiates participants in the forced exposure and free choice conditions by source consistency:
+
+*Insert Figure 4 here*
+
+These results show a slightly larger treatment effect on beliefs and interpretations as outcomes for participants who were exposed to an information source that is consistent with their usual media diet. In three out of four analyses, the information treatment had no statistically significant effect on people's interpretations regarding the economic benefits of legal immigration if it came from an inconsistent news source, whereas consistent exposure was always associated with more favorable interpretations. These results are largely consistent with our expectations outlined in Hypothesis 3.
+
+In the end, these results indicate at least some suggestive evidence that discretion over information sources facilitates opinion change in response to corrective information. In order to further substantiate these findings, we will be running the follow-up study outlined in this document using a larger sample size.
 
 ## Statistical significance
 
