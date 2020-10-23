@@ -95,9 +95,33 @@ topfeatures(docs_dfm, 100)
 # drops features appearing in only one document
 docs_dfm <- dfm_trim(docs_dfm, min_docfreq = 2, docfreq_type = "count")
 nfeat(docs_dfm) # 1,323 features (~51% reduction)
+
 # 3. select algorithms & apply to data; 10-fold CV
-# 	- Note that the original paper runs four algorithms over the data for each legislative session to classify party. They indicate that the best performing (highest accuracy in CV) is chosen for each session. They also create inversely proportional weights to balance the classes in each session. For our purposes, we do not have temporally segmented data. It remains to be seen if we have very different class frequencies. 
-# 	- It is not clear to me that we need to use these four; in fact, the advice from the authors is to use Naive Bayes or some other fast, scalable option (and then to check with a few different alternatives).
+#   - Note that the original paper runs four algorithms over the data for each legislative session to classify party. They indicate that the best performing (highest accuracy in CV) is chosen for each session. They also create inversely proportional weights to balance the classes in each session. For our purposes, we do not have temporally segmented data. It remains to be seen if we have very different class frequencies.
+
+# first split the data into training and test sets by randomly pulling a sample of 50% of the data. if we want to weight by label or by question we can do so. we can also change how much of the data we use to train
+
+# first create train and test sets by randomly holding out 50% of data
+set.seed(42)
+train_ids <- base::sample(docnames(docs_dfm),
+    round(nrow(docs_dfm) * 0.5), replace = FALSE)
+test_ids <- docnames(docs_dfm)[!(docnames(docs_dfm) %in% train_ids)]
+length(test_ids[test_ids %in% train_ids]) # must evaluate to zero; it does
+
+# get training set
+dfmat_train <- docs_dfm[train_ids, ]
+# get test set
+dfmat_test <- docs_dfm[test_ids, ]
+
+
+#   - It is not clear to me that we need to use these four; in fact, the advice from the authors is to use Naive Bayes or some other fast, scalable option (and then to check with a few different alternatives).
+
+
+
+
 # 4. accuracy (all true / all obs) where class is determined by a p >=.5
-# 	- Note that the original authors are using balanced classes, and can get away with simple accuracy as a metric of classification error. However, there are different approaches to measuring classification error that are better for class imbalanced data, such as F1 (harmonic mean of precision, recall).
+#   - Note that the original authors are using balanced classes, and can get away with simple accuracy as a metric of classification error. However, there are different approaches to measuring classification error that are better for class imbalanced data, such as F1 (harmonic mean of precision, recall).
+
+
 # 5. Establish ambivalence from overall accuracy, where low accuracy means high ambivalence.
+
