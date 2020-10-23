@@ -1,0 +1,174 @@
+---
+title: "Demographic Tables"
+author: "Jason Neumeyer"
+date: "10/21/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(qwraps2_markup = "markdown")
+```
+
+# load data & packages
+
+```{r, results='asis'}
+setwd("C:/Users/19204/OneDrive/Desktop")
+imm <- read.csv("immigration_2019_clean.csv")
+
+#install.packages("qwraps2")
+library(qwraps2)
+
+#View(imm)
+
+#names(imm)
+```
+
+
+# Full Sample Demographics
+
+```{r, results='asis'}
+age <- imm$age
+sex <- na.omit(imm$male)
+race <- imm$race
+educ <- imm$educ
+money <- na.omit(imm$income)
+
+full_sample <-
+  list("Age" =
+         list("Minimum"       = ~ min(age),
+              "Maximum"       = ~ max(age),
+              "Mean (Standard Deviation)" = ~ qwraps2::mean_sd(age)),
+       "Sex" =
+         list("Male"      = ~ n_perc(sex == 1),
+              "Female"    = ~ n_perc(sex == 0)),
+       "Race" = 
+         list("White"     = ~ n_perc(race == "Caucasian/White (non-Hispanic)"),
+              "Asian/Pacific Islander"     = ~ n_perc(race == "Asian/Pacific Islanders"), 
+              "Black"     = ~ n_perc(race == "Black or African-American (non-Hispanic)"),
+              "Hispanic"  = ~ n_perc(race == "Hispanic or Latino"),
+              "Middle Eastern" = ~ n_perc(race == "Middle Eastern"),
+              "Native American" = ~ n_perc(race == "Native American or Aleut"),
+              "Other" = ~ n_perc(race == "Other")),
+       "Highest Education Level" = 
+         list("Post-Graduate Degree"   = ~ n_perc(educ == "Completed post-graduate or professional school, with degree"),
+              "4-year Degree"     = ~ n_perc(educ == "Graduated 4-year college"),
+              "2-year Degree"     = ~ n_perc(educ == "Graduated 2-year college"),
+              "Some College"      = ~ n_perc(educ == "Some college but no college degree"),
+              "High School"       = ~ n_perc(educ == "Graduated high school or GED"),
+              "Less than High School"  = ~ n_perc(educ == "Less than a high school diploma")),
+       "Income Level" =
+         list("$120,000"      = ~ n_perc(money == 1.0000000),
+              "$119,999 - $100,000"   = ~ n_perc(money == 0.8333333),
+              "$99,999 - $80,000"     = ~ n_perc(money == 0.6666667),
+              "$79,999 - $60,000"     = ~ n_perc(money == 0.5000000),
+              "$59,999 - $40,000"     = ~ n_perc(money == 0.3333333),
+              "$39,999 - $20,000"     = ~ n_perc(money == 0.1666667),
+              "< $20,000"       = ~ n_perc(money == 0.0000000))
+       
+  )
+
+full_sample_dem <- qwraps2::summary_table(imm, full_sample)
+full_sample_dem
+```
+
+# Treatment Sample
+
+```{r, results='asis'}
+
+imm_treat <- subset(imm, tweet == "fox" | tweet == "msnbc")
+
+age_treat <- imm_treat$age
+sex_treat <- na.omit(imm_treat$male)
+race_treat <- imm_treat$race
+educ_treat <- imm_treat$educ
+income_treat <- imm_treat$income
+
+treatment_sample <-
+  list("Age" =
+         list("Minimum"       = ~ min(age_treat),
+              "Maximum"       = ~ max(age_treat),
+              "Mean (Standard Deviation)" = ~ qwraps2::mean_sd(age_treat)),
+       "Sex" =
+         list("Male"      = ~ n_perc(sex_treat == 1),
+              "Female"    = ~ n_perc(sex_treat == 0)),
+       "Race" = 
+         list("White"     = ~ n_perc(race_treat == "Caucasian/White (non-Hispanic)"),
+              "Asian/Pacific Islander"     = ~ n_perc(race_treat == "Asian/Pacific Islanders"), 
+              "Black"     = ~ n_perc(race_treat == "Black or African-American (non-Hispanic)"),
+              "Hispanic"  = ~ n_perc(race_treat == "Hispanic or Latino"),
+              "Middle Eastern" = ~ n_perc(race_treat == "Middle Eastern"),
+              "Native American" = ~ n_perc(race_treat == "Native American or Aleut"),
+              "Other" = ~ n_perc(race_treat == "Other")),
+       "Highest Education Level" = 
+         list("Post-Graduate Degree"   = ~ n_perc(educ_treat == "Completed post-graduate or professional school, with degree"),
+              "4-year Degree"     = ~ n_perc(educ_treat == "Graduated 4-year college"),
+              "2-year Degree"     = ~ n_perc(educ_treat == "Graduated 2-year college"),
+              "Some College"      = ~ n_perc(educ_treat == "Some college but no college degree"),
+              "High School"       = ~ n_perc(educ_treat == "Graduated high school or GED"),
+              "Less than High School"  = ~ n_perc(educ_treat == "Less than a high school diploma")),
+       "Income Level" =
+         list("$120,000 +"      = ~ n_perc(income_treat == "1.0000000"),
+              "$119,999 - $100,000"   = ~ n_perc(income_treat == "0.8333333"),
+              "$99,999 - $80,000"     = ~ n_perc(income_treat == "0.6666667"),
+              "$79,999 - $60,000"     = ~ n_perc(income_treat == "0.5"),
+              "$59,999 - $40,000"     = ~ n_perc(income_treat == "0.3333333"),
+              "$39,999 - $20,000"     = ~ n_perc(income_treat == "0.1666667"),
+              "< $20,000"       = ~ n_perc(income_treat == "0"))
+       
+  )
+
+treatment_sample <- qwraps2::summary_table(imm_treat, treatment_sample)
+treatment_sample
+```
+
+# Control Sample
+
+```{r, results='asis'}
+
+imm_control <- subset(imm, tweet == "control")
+
+age_control <- imm_control$age
+sex_control <- na.omit(imm_control$male)
+race_control <- imm_control$race
+educ_control <- imm_control$educ
+income_control <- imm_control$income
+
+control_sample <-
+  list("Age" =
+         list("Minimum"       = ~ min(age_control),
+              "Maximum"       = ~ max(age_control),
+              "Mean (Standard Deviation)" = ~ qwraps2::mean_sd(age_control)),
+       "Sex" =
+         list("Male"      = ~ n_perc(sex_control == 1),
+              "Female"    = ~ n_perc(sex_control == 0)),
+       "Race" = 
+         list("White"     = ~ n_perc(race_control == "Caucasian/White (non-Hispanic)"),
+              "Asian/Pacific Islander"     = ~ n_perc(race_control == "Asian/Pacific Islanders"), 
+              "Black"     = ~ n_perc(race_control == "Black or African-American (non-Hispanic)"),
+              "Hispanic"  = ~ n_perc(race_control == "Hispanic or Latino"),
+              "Middle Eastern" = ~ n_perc(race_control == "Middle Eastern"),
+              "Native American" = ~ n_perc(race_control == "Native American or Aleut"),
+              "Other" = ~ n_perc(race_control == "Other")),
+       "Highest Education Level" = 
+         list("Post-Graduate Degree"   = ~ n_perc(educ_control == "Completed post-graduate or professional school, with degree"),
+              "4-year Degree"     = ~ n_perc(educ_control == "Graduated 4-year college"),
+              "2-year Degree"     = ~ n_perc(educ_control == "Graduated 2-year college"),
+              "Some College"      = ~ n_perc(educ_control == "Some college but no college degree"),
+              "High School"       = ~ n_perc(educ_control == "Graduated high school or GED"),
+              "Less than High School"  = ~ n_perc(educ_control == "Less than a high school diploma")),
+       "Income Level" =
+         list("$120,000 +"      = ~ n_perc(income_control == "1.0000000"),
+              "$119,999 - $100,000"   = ~ n_perc(income_control == "0.8333333"),
+              "$99,999 - $80,000"     = ~ n_perc(income_control == "0.6666667"),
+              "$79,999 - $60,000"     = ~ n_perc(income_control == "0.5000000"),
+              "$59,999 - $40,000"     = ~ n_perc(income_control == "0.3333333"),
+              "$39,999 - $20,000"     = ~ n_perc(income_control == "0.1666667"),
+              "< $20,000"             = ~ n_perc(income_control == "0.0000000"))
+       
+  )
+
+control_sample <- qwraps2::summary_table(imm_control, control_sample)
+control_sample
+
+```
