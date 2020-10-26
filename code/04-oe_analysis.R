@@ -43,6 +43,12 @@ dat <- tmp %>%
     left_join(dat, ., by = "id")
 rm(tmp)
 
+# correlation between closed ended responses and tentativeness
+cor(dat$taxes_pos, dat$tentat_taxes)
+cor(dat$jobs_pos, dat$tentat_jobs)
+
+plot(dat$taxes_pos, dat$tentat_taxes, type = "p")
+
 # "Bag-of-words" vector space model of text data.
 
 # isolate the relevant data; can be rejoined later
