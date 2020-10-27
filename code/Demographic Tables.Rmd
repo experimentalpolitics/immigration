@@ -33,6 +33,10 @@ sex <- na.omit(imm$male)
 race <- imm$race
 educ <- imm$educ
 money <- na.omit(imm$income)
+money <- round(money, digits = 3)
+PID <- round(imm$pid_rep, digits = 3)
+ideo <- na.omit(imm$ideol_con)
+ideo <- round(ideo, digits = 3)
 
 full_sample <-
   list("Age" =
@@ -50,6 +54,22 @@ full_sample <-
               "Middle Eastern" = ~ n_perc(race == "Middle Eastern"),
               "Native American" = ~ n_perc(race == "Native American or Aleut"),
               "Other" = ~ n_perc(race == "Other")),
+        "Party ID" = 
+         list("Strong Republican"     = ~ n_perc(PID == 1.00),
+              "Republican"            = ~ n_perc(PID == 0.833),
+              "Lean Republican"       = ~ n_perc(PID == 0.667),
+              "Independent"           = ~ n_perc(PID == 0.500),
+              "Lean Democrat"         = ~ n_perc(PID == 0.333),
+              "Democrat"              = ~ n_perc(PID == 0.167),
+              "Strong Democrat"       = ~ n_perc(PID == 0.00)),
+       "Ideology" = 
+         list("Very Conservative"     = ~ n_perc(ideo == 1.00),
+              "Conservative"          = ~ n_perc(ideo == 0.833),
+              "Slightly Conservative" = ~ n_perc(ideo == 0.667),
+              "Moderate"              = ~ n_perc(ideo == 0.500),
+              "Slightly Liberal"      = ~ n_perc(ideo == 0.333),
+              "Liberal"               = ~ n_perc(ideo == 0.167),
+              "Very Liberal"          = ~ n_perc(ideo == 0.00)),
        "Highest Education Level" = 
          list("Post-Graduate Degree"   = ~ n_perc(educ == "Completed post-graduate or professional school, with degree"),
               "4-year Degree"     = ~ n_perc(educ == "Graduated 4-year college"),
@@ -58,13 +78,13 @@ full_sample <-
               "High School"       = ~ n_perc(educ == "Graduated high school or GED"),
               "Less than High School"  = ~ n_perc(educ == "Less than a high school diploma")),
        "Income Level" =
-         list("$120,000"      = ~ n_perc(money == 1.0000000),
-              "$119,999 - $100,000"   = ~ n_perc(money == 0.8333333),
-              "$99,999 - $80,000"     = ~ n_perc(money == 0.6666667),
-              "$79,999 - $60,000"     = ~ n_perc(money == 0.5000000),
-              "$59,999 - $40,000"     = ~ n_perc(money == 0.3333333),
-              "$39,999 - $20,000"     = ~ n_perc(money == 0.1666667),
-              "< $20,000"       = ~ n_perc(money == 0.0000000))
+         list("$120,000+"      = ~ n_perc(money == 1.00),
+              "$119,999 - $100,000"   = ~ n_perc(money == 0.833),
+              "$99,999 - $80,000"     = ~ n_perc(money == 0.667),
+              "$79,999 - $60,000"     = ~ n_perc(money == 0.500),
+              "$59,999 - $40,000"     = ~ n_perc(money == 0.333),
+              "$39,999 - $20,000"     = ~ n_perc(money == 0.167),
+              "< $20,000"       = ~ n_perc(money == 0.00))
        
   )
 
@@ -82,7 +102,11 @@ age_treat <- imm_treat$age
 sex_treat <- na.omit(imm_treat$male)
 race_treat <- imm_treat$race
 educ_treat <- imm_treat$educ
-income_treat <- imm_treat$income
+money_treat <- na.omit(imm_treat$income)
+money_treat <- round(money_treat, digits = 3)
+PID_treat <- round(imm_treat$pid_rep, digits = 3)
+ideo_treat <- na.omit(imm_treat$ideol_con)
+ideo_treat <- round(ideo_treat, digits = 3)
 
 treatment_sample <-
   list("Age" =
@@ -100,6 +124,22 @@ treatment_sample <-
               "Middle Eastern" = ~ n_perc(race_treat == "Middle Eastern"),
               "Native American" = ~ n_perc(race_treat == "Native American or Aleut"),
               "Other" = ~ n_perc(race_treat == "Other")),
+       "Party ID" = 
+         list("Strong Republican"     = ~ n_perc(PID_treat == 1.00),
+              "Republican"            = ~ n_perc(PID_treat == 0.833),
+              "Lean Republican"       = ~ n_perc(PID_treat == 0.667),
+              "Independent"           = ~ n_perc(PID_treat == 0.500),
+              "Lean Democrat"         = ~ n_perc(PID_treat == 0.333),
+              "Democrat"              = ~ n_perc(PID_treat == 0.167),
+              "Strong Democrat"       = ~ n_perc(PID_treat == 0.00)),
+       "Ideology" = 
+         list("Very Conservative"     = ~ n_perc(ideo_treat == 1.00),
+              "Conservative"          = ~ n_perc(ideo_treat == 0.833),
+              "Slightly Conservative" = ~ n_perc(ideo_treat == 0.667),
+              "Moderate"              = ~ n_perc(ideo_treat == 0.500),
+              "Slightly Liberal"      = ~ n_perc(ideo_treat == 0.333),
+              "Liberal"               = ~ n_perc(ideo_treat == 0.167),
+              "Very Liberal"          = ~ n_perc(ideo_treat == 0.00)),
        "Highest Education Level" = 
          list("Post-Graduate Degree"   = ~ n_perc(educ_treat == "Completed post-graduate or professional school, with degree"),
               "4-year Degree"     = ~ n_perc(educ_treat == "Graduated 4-year college"),
@@ -108,13 +148,13 @@ treatment_sample <-
               "High School"       = ~ n_perc(educ_treat == "Graduated high school or GED"),
               "Less than High School"  = ~ n_perc(educ_treat == "Less than a high school diploma")),
        "Income Level" =
-         list("$120,000 +"      = ~ n_perc(income_treat == "1.0000000"),
-              "$119,999 - $100,000"   = ~ n_perc(income_treat == "0.8333333"),
-              "$99,999 - $80,000"     = ~ n_perc(income_treat == "0.6666667"),
-              "$79,999 - $60,000"     = ~ n_perc(income_treat == "0.5"),
-              "$59,999 - $40,000"     = ~ n_perc(income_treat == "0.3333333"),
-              "$39,999 - $20,000"     = ~ n_perc(income_treat == "0.1666667"),
-              "< $20,000"       = ~ n_perc(income_treat == "0"))
+         list("$120,000 +"      = ~ n_perc(money_treat == 1.00),
+              "$119,999 - $100,000"   = ~ n_perc(money_treat == 0.833),
+              "$99,999 - $80,000"     = ~ n_perc(money_treat == 0.667),
+              "$79,999 - $60,000"     = ~ n_perc(money_treat == 0.500),
+              "$59,999 - $40,000"     = ~ n_perc(money_treat == 0.333),
+              "$39,999 - $20,000"     = ~ n_perc(money_treat == 0.167),
+              "< $20,000"       = ~ n_perc(money_treat == 0.00))
        
   )
 
@@ -132,7 +172,11 @@ age_control <- imm_control$age
 sex_control <- na.omit(imm_control$male)
 race_control <- imm_control$race
 educ_control <- imm_control$educ
-income_control <- imm_control$income
+money_control <- na.omit(imm_control$income)
+money_control <- round(money_control, digits = 3)
+PID_control <- round(imm_control$pid_rep, digits = 3)
+ideo_control <- na.omit(imm_control$ideol_con)
+ideo_control <- round(ideo_control, digits = 3)
 
 control_sample <-
   list("Age" =
@@ -150,6 +194,22 @@ control_sample <-
               "Middle Eastern" = ~ n_perc(race_control == "Middle Eastern"),
               "Native American" = ~ n_perc(race_control == "Native American or Aleut"),
               "Other" = ~ n_perc(race_control == "Other")),
+       "Party ID" = 
+         list("Strong Republican"     = ~ n_perc(PID_control == 1.00),
+              "Republican"            = ~ n_perc(PID_control == 0.833),
+              "Lean Republican"       = ~ n_perc(PID_control == 0.667),
+              "Independent"           = ~ n_perc(PID_control == 0.500),
+              "Lean Democrat"         = ~ n_perc(PID_control == 0.333),
+              "Democrat"              = ~ n_perc(PID_control == 0.167),
+              "Strong Democrat"       = ~ n_perc(PID_control == 0.00)),
+       "Ideology" = 
+         list("Very Conservative"     = ~ n_perc(ideo_control == 1.00),
+              "Conservative"          = ~ n_perc(ideo_control == 0.833),
+              "Slightly Conservative" = ~ n_perc(ideo_control == 0.667),
+              "Moderate"              = ~ n_perc(ideo_control == 0.500),
+              "Slightly Liberal"      = ~ n_perc(ideo_control == 0.333),
+              "Liberal"               = ~ n_perc(ideo_control == 0.167),
+              "Very Liberal"          = ~ n_perc(ideo_control == 0.00)),
        "Highest Education Level" = 
          list("Post-Graduate Degree"   = ~ n_perc(educ_control == "Completed post-graduate or professional school, with degree"),
               "4-year Degree"     = ~ n_perc(educ_control == "Graduated 4-year college"),
@@ -158,13 +218,13 @@ control_sample <-
               "High School"       = ~ n_perc(educ_control == "Graduated high school or GED"),
               "Less than High School"  = ~ n_perc(educ_control == "Less than a high school diploma")),
        "Income Level" =
-         list("$120,000 +"      = ~ n_perc(income_control == "1.0000000"),
-              "$119,999 - $100,000"   = ~ n_perc(income_control == "0.8333333"),
-              "$99,999 - $80,000"     = ~ n_perc(income_control == "0.6666667"),
-              "$79,999 - $60,000"     = ~ n_perc(income_control == "0.5000000"),
-              "$59,999 - $40,000"     = ~ n_perc(income_control == "0.3333333"),
-              "$39,999 - $20,000"     = ~ n_perc(income_control == "0.1666667"),
-              "< $20,000"             = ~ n_perc(income_control == "0.0000000"))
+         list("$120,000 +"      = ~ n_perc(money_control == 1.00),
+              "$119,999 - $100,000"   = ~ n_perc(money_control == 0.833),
+              "$99,999 - $80,000"     = ~ n_perc(money_control == 0.667),
+              "$79,999 - $60,000"     = ~ n_perc(money_control == 0.500),
+              "$59,999 - $40,000"     = ~ n_perc(money_control == 0.333),
+              "$39,999 - $20,000"     = ~ n_perc(money_control == 0.167),
+              "< $20,000"             = ~ n_perc(money_control == 0.000))
        
   )
 
