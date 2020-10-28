@@ -11,8 +11,10 @@ cd("~/Dropbox/github-local//experimentalpolitics/immigration")
 library(here)
 library(readr)
 library(tidyverse)
+library(caret)
 library(quanteda)
 quanteda_options(threads = RcppParallel::defaultNumThreads()) # max threads for parallel processing
+library(quanteda.textmodels)
 
 # prep the data for LIWC program
 dat <- read_csv(here("data/immigration_20191219_clean.csv"))
@@ -80,8 +82,9 @@ oe_dat <- oe_dat %>%
 docs <- corpus(oe_dat$response)
 # assign document names that id unique responses
 docnames(docs) <- paste(oe_dat$id, oe_dat$question, sep = "_")
-# additional document meta data (don't want to lose this information)
+# additional document meta data (don't want to lose this information). The `_` is to make sure you don't mix these up with features of the same name
 docvars(docs, "id_") <- oe_dat$id
+docvars(docs, "label_") <- oe_dat$label
 docvars(docs, "question_") <- oe_dat$question
 docvars(docs, "condition_") <- oe_dat$condition
 
@@ -103,7 +106,7 @@ docs_dfm <- dfm_trim(docs_dfm, min_docfreq = 2, docfreq_type = "count")
 nfeat(docs_dfm) # 1,323 features (~51% reduction)
 
 # 3. select algorithms & apply to data; 10-fold CV
-#   - Note that the original paper runs four algorithms over the data for each legislative session to classify party. They indicate that the best performing (highest accuracy in CV) is chosen for each session. They also create inversely proportional weights to balance the classes in each session. For our purposes, we do not have temporally segmented data. It remains to be seen if we have very different class frequencies.
+#   - Note that the original paper runs four algorithms over the data for each legislative session to classify party. They indicate that the best performing (highest accuracy in CV) is chosen for each session. They also create inversely proportional weights to balance the classes in each session. For our purposes, we do not have temporally segmented data. We do have very different class frequencies.
 
 # first split the data into training and test sets by randomly pulling a sample of 50% of the data. if we want to weight by label or by question we can do so. we can also change how much of the data we use to train
 
@@ -119,11 +122,63 @@ dfmat_train <- docs_dfm[train_ids, ]
 # get test set
 dfmat_test <- docs_dfm[test_ids, ]
 
-
 #   - It is not clear to me that we need to use these four; in fact, the advice from the authors is to use Naive Bayes or some other fast, scalable option (and then to check with a few different alternatives).
 
+# https://rpubs.com/FaiHas/197581 --perceptron
+# Stochastic Gradient Descent, which is better for large data (http://deeplearning.stanford.edu/tutorial/supervised/OptimizationStochasticGradientDescent/)
+# "passive-agressive" GLM with hinge-loss parameter would need to be hand-coded
+# logit with specific loss, regularization parameters fit with stochastic average gradient descent would also need to be coded by hand in R
 
+# we have decided to use Naive Bayes, Support Vector Machine(s) instead. this can be done in quanteda
 
+# ensure compatible dimensionality of train, test sets
+dfmat_matched <- dfm_match(dfmat_test, featnames(dfmat_train))
+
+# set the seed to get reproducible results
+set.seed(42)
+# NB model
+mod_nb <- textmodel_nb(dfmat_train, docvars(dfmat_train, "label_"))
+# set the actual labels vector for evaluation, using the matched test labels
+actual_class <- docvars(dfmat_matched, "label_")
+# generate predictions of labels based on NB model, using the matched test data
+predicted_class <- predict(mod_nb, newdata = dfmat_matched)
+# store the label matrix
+tab_class <- table(actual_class, predicted_class)
+# print the label matrix in the console and look at F1. `caret` is the package I use here, and you need to explicitly set the positive class in order to get sensible results; the mode argument allows for F1 to print
+caret::confusionMatrix(tab_class, positive = "positive", mode = "everything")
+
+# SVMs using different weighting schemes; note that this uses the actual class from the NB model (not model dependent)
+
+# unweighted SVM
+dfm(dfmat_train) %>%
+    textmodel_svm(docvars(dfmat_train, "label_")) %>%
+    predict(., newdata = dfmat_matched) %>%
+    table(actual_class, .) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# proportional weight SVM
+dfm(dfmat_train) %>%
+    dfm_weight(scheme = "prop") %>%
+    textmodel_svm(docvars(dfmat_train, "label_")) %>%
+    predict(., newdata = dfmat_matched) %>%
+    table(actual_class, .) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# SVM with tf-idf
+dfm(dfmat_train) %>%
+    dfm_tfidf() %>%
+    textmodel_svm(docvars(dfmat_train, "label_")) %>%
+    predict(., newdata = dfmat_matched) %>%
+    table(actual_class, .) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# SVM with tf-idf weighted by docfreq
+dfm(dfmat_train) %>%
+    dfm_tfidf() %>%
+    textmodel_svm(docvars(dfmat_train, "label_"), weight = "docfreq") %>%
+    predict(., newdata = dfmat_matched) %>%
+    table(actual_class, .) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
 
 # 4. accuracy (all true / all obs) where class is determined by a p >=.5
 #   - Note that the original authors are using balanced classes, and can get away with simple accuracy as a metric of classification error. However, there are different approaches to measuring classification error that are better for class imbalanced data, such as F1 (harmonic mean of precision, recall).
