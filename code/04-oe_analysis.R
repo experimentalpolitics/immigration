@@ -45,11 +45,20 @@ dat <- tmp %>%
     left_join(dat, ., by = "id")
 rm(tmp)
 
-# correlation between closed ended responses and tentativeness
-cor(dat$taxes_pos, dat$tentat_taxes)
-cor(dat$jobs_pos, dat$tentat_jobs)
+# create "folded" measures to get at the intensity of answer
+dat$folded_taxes <- abs(as.numeric(scale(dat$taxes_pos, center = TRUE, scale = FALSE)))
+dat$folded_jobs <- abs(as.numeric(scale(dat$jobs_pos, center = TRUE, scale = FALSE)))
 
-plot(dat$taxes_pos, dat$tentat_taxes, type = "p")
+# correlation between closed ended responses and tentativeness
+cor.test(dat$taxes_pos, dat$tentat_taxes)
+cor.test(dat$jobs_pos, dat$tentat_jobs)
+
+# correlation between folded responses and tentativeness
+cor.test(dat$folded_taxes, dat$tentat_taxes)
+cor.test(dat$folded_jobs, dat$tentat_jobs)
+
+# we want to understand if the association of the first pair is smaller than the association of the second pair. Since the first pair is not stat. sig. we would say that the relationship of the second pair is indeed stronger (0 < ~0.15). The sign of the first correlation is negative, meaning more "extreme" answers are less tentative.
+
 
 # "Bag-of-words" vector space model of text data.
 
