@@ -158,6 +158,7 @@ tribble(
   kableExtra::column_spec(2, width = "6cm") %>%
   kableExtra::column_spec(3, width = "5cm")
 ```
+Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk) workplace.<!--What were the exact dates?? We should probs be more specific.--> It is important to note that MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
 
 # Results 
 
