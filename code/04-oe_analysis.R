@@ -154,7 +154,7 @@ predicted_class <- predict(mod_nb, newdata = dfmat_matched)
 # store the label matrix
 tab_class <- table(actual_class, predicted_class)
 # print the label matrix in the console and look at F1. `caret` is the package I use here, and you need to explicitly set the positive class in order to get sensible results; the mode argument allows for F1 to print
-caret::confusionMatrix(tab_class, positive = "positive", mode = "everything")
+confusionMatrix(tab_class, positive = "positive", mode = "everything")
 
 # SVMs using different weighting schemes; note that this uses the actual class from the NB model (not model dependent)
 
@@ -193,5 +193,44 @@ dfm(dfmat_train) %>%
 #   - Note that the original authors are using balanced classes, and can get away with simple accuracy as a metric of classification error. However, there are different approaches to measuring classification error that are better for class imbalanced data, such as F1 (harmonic mean of precision, recall).
 
 
-# 5. Establish ambivalence from overall accuracy, where low accuracy means high ambivalence.
+# 5. Establish ambivalence from accuracy, where low accuracy means high ambivalence.
 
+# We will need to obtain class probabilities rather than bins. This will be done with the predict() function and setting type = "probability". We can then use that class probability to make a measure of "certainty" of language. Note that the probabilities are for the positive label, so we may want to do a "folding" type of thing here where values nearest to 0.5 are most uncertain.
+
+# get the class probabilities for just the test set
+nb_preds <- predict(mod_nb, newdata = dfmat_matched, type = "probability")
+
+# create folded measure from the positive pred probs
+tmp <- abs(nb_preds[, 2] - .5) %>%
+    cbind(., t(sapply(str_split(names(.), "_"), unlist))) %>%
+    as_tibble
+names(tmp) <- c("folded_ml_x", "id", "question")
+tmp$id <- as.numeric(tmp$id)
+tmp$folded_ml_x <- as.numeric(tmp$folded_ml_x)
+
+# add to oe data
+oe_dat <- oe_dat %>%
+    left_join(., tmp)
+rm(tmp)
+
+# add to total data
+dat$folded_ml_jobs <- oe_dat %>%
+    filter(., question == "jobs") %>%
+    .[match(dat$id, .$id), "folded_ml_x"] %>%
+    unlist
+
+dat$folded_ml_taxes <- oe_dat %>%
+    filter(., question == "taxes") %>%
+    .[match(dat$id, .$id), "folded_ml_x"] %>%
+    unlist
+
+# correlation between closed ended responses and folded ml classifier
+cor.test(dat$taxes_pos, dat$folded_ml_taxes)
+cor.test(dat$jobs_pos, dat$folded_ml_jobs)
+
+# correlation between folded responses and folded ml classifier
+cor.test(dat$folded_taxes, dat$folded_ml_taxes)
+cor.test(dat$folded_jobs, dat$folded_ml_jobs)
+
+# is this the right thing?
+# we need to use all sample?
