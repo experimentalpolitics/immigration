@@ -234,3 +234,24 @@ cor.test(dat$folded_jobs, dat$folded_ml_jobs)
 
 # is this the right thing?
 # we need to use all sample?
+# add the class probabilities
+tmp <- nb_preds[, 2] %>%
+    cbind(., t(sapply(str_split(names(.), "_"), unlist))) %>%
+    as_tibble
+names(tmp) <- c("prob_ml_x", "id", "question")
+tmp$id <- as.numeric(tmp$id)
+tmp$prob_ml_x <- as.numeric(tmp$prob_ml_x)
+
+oe_dat <- oe_dat %>%
+    left_join(., tmp)
+rm(tmp)
+
+dat$prob_ml_jobs <- oe_dat %>%
+    filter(., question == "jobs") %>%
+    .[match(dat$id, .$id), "prob_ml_x"] %>%
+    unlist
+
+dat$prob_ml_taxes <- oe_dat %>%
+    filter(., question == "taxes") %>%
+    .[match(dat$id, .$id), "prob_ml_x"] %>%
+    unlist
