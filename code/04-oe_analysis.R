@@ -62,13 +62,13 @@ cor.test(dat$folded_jobs, dat$tentat_jobs)
 
 # "Bag-of-words" vector space model of text data.
 
+# 1. dichotomize data (label)
+dat$taxes_label <- ifelse(dat$taxes_pos >= .5, "positive", "negative")
+dat$jobs_label <- ifelse(dat$jobs_pos >= .5, "positive", "negative")
+
 # isolate the relevant data; can be rejoined later
 oe_dat <- dat %>%
-    select(., id, condition, taxes_pos, taxes_oe, jobs_pos, jobs_oe)
-
-# 1. dichotomize data (label)
-oe_dat$taxes_label <- ifelse(oe_dat$taxes_pos >= .5, "positive", "negative")
-oe_dat$jobs_label <- ifelse(oe_dat$jobs_pos >= .5, "positive", "negative")
+    select(., id, condition, taxes_label, taxes_oe, jobs_label, jobs_oe)
 
 # check for imbalance (splits about 70-30 for each)
 table(oe_dat$taxes_label)
