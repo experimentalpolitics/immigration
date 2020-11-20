@@ -255,3 +255,49 @@ dat$prob_ml_taxes <- oe_dat %>%
     filter(., question == "taxes") %>%
     .[match(dat$id, .$id), "prob_ml_x"] %>%
     unlist
+
+# re-label & indicate congruent news source for subsetting
+dat$label_ml_taxes <- ifelse(dat$prob_ml_taxes >= .5, "positive", "negative")
+dat$label_ml_jobs <- ifelse(dat$prob_ml_jobs >= .5, "positive", "negative")
+
+dat <- dat %>%
+    mutate(.,
+        prefer = (tv_fox - tv_msnbc == 0) + 2 * (tv_fox - tv_msnbc > 0),
+        prefer = factor(prefer, labels = c("msnbc", "neutral", "fox")),
+        exposure = ((prefer == "fox" & tweet == "msnbc") | (prefer == "msnbc" & tweet == "fox")) +
+           2 * (prefer =="neutral" & tweet !="control") + 3 * (prefer == tweet),
+        exposure = factor(exposure, labels = c("control", "inconsistent", "neutral", "consistent")))
+
+# check confusion matrix on all obs
+confusionMatrix(table(dat$taxes_label, dat$label_ml_taxes),
+    positive = "positive", mode = "everything")
+
+# now filter to subset and run again
+dat %>%
+    filter(., exposure == "consistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+dat %>%
+    filter(., exposure == "inconsistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# for taxes, it looks like there isn't a difference between accuracy (F1) from consistency or not
+
+dat %>%
+    filter(., exposure == "consistent" & !is.na(label_ml_jobs)) %>%
+    select(., jobs_label, label_ml_jobs) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+dat %>%
+    filter(., exposure == "inconsistent" & !is.na(label_ml_jobs)) %>%
+    select(., jobs_label, label_ml_jobs) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# for jobs there is a slight difference, but not sure it is enough
+# OVERALL: if we think this is the right way to do this, it suggests again that ambivalence is not driving
