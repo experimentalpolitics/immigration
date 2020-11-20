@@ -57,7 +57,7 @@ cor.test(dat$jobs_pos, dat$tentat_jobs)
 cor.test(dat$folded_taxes, dat$tentat_taxes)
 cor.test(dat$folded_jobs, dat$tentat_jobs)
 
-# we want to understand if the association of the first pair is smaller than the association of the second pair. Since the first pair is not stat. sig. we would say that the relationship of the second pair is indeed stronger (0 < ~0.15). The sign of the first correlation is negative, meaning more "extreme" answers are less tentative.
+# we want to understand if the association of the first pair is smaller than the association of the second pair. Since the first pair is not stat. sig. we would say that the relationship of the second pair is indeed stronger (0 < ~0.15). The sign of the second correlation is negative, meaning more "extreme" answers are less tentative.
 
 
 # "Bag-of-words" vector space model of text data.
@@ -232,8 +232,10 @@ cor.test(dat$jobs_pos, dat$folded_ml_jobs)
 cor.test(dat$folded_taxes, dat$folded_ml_taxes)
 cor.test(dat$folded_jobs, dat$folded_ml_jobs)
 
-# is this the right thing?
-# we need to use all sample?
+# we want to understand if the association of the first pair is smaller than the association of the second pair. Since the SECOND pair is not stat. sig. we would say that the relationship of the second pair is NOT stronger (~0.15 > 0). Assuming the same interpretation as before, this cannot support our claim around ambivalence. [CHECK INTERPRETATION!]
+
+# do this another way - compare accuracies between groups
+
 # add the class probabilities
 tmp <- nb_preds[, 2] %>%
     cbind(., t(sapply(str_split(names(.), "_"), unlist))) %>%
