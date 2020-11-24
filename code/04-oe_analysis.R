@@ -5,7 +5,7 @@
 # Summary: Explore/analyze OE responses using different methods.
 # =================================================================== #
 
-cd("~/Dropbox/github-local//experimentalpolitics/immigration")
+cd("~/Dropbox/github-local/experimentalpolitics/immigration")
 
 # packages
 library(here)
@@ -19,14 +19,14 @@ library(quanteda.textmodels)
 # prep the data for LIWC program
 dat <- read_csv(here("data/immigration_20191219_clean.csv"))
 
-# write out
-dat %>%
-    select(., id, taxes_oe) %>%
-    write_csv(., "data/taxes_oe.csv")
+# write out -- !DON'T PROCESS THIS AFTER FIRST RUN! (commented out)
+# dat %>%
+#     select(., id, taxes_oe) %>%
+#     write_csv(., "data/taxes_oe.csv")
 
-dat %>%
-    select(., id, jobs_oe) %>%
-    write_csv(., "data/jobs_oe.csv")
+# dat %>%
+#     select(., id, jobs_oe) %>%
+#     write_csv(., "data/jobs_oe.csv")
 
 # read back in processed scores
 tmp <- read_csv(here("data/LIWC2015 Results (taxes_oe).csv"))
