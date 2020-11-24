@@ -45,6 +45,15 @@ dat <- tmp %>%
     left_join(dat, ., by = "id")
 rm(tmp)
 
+# create `prefer` and `exposure`
+dat <- dat %>%
+    mutate(.,
+        prefer = (tv_fox - tv_msnbc == 0) + 2 * (tv_fox - tv_msnbc > 0),
+        prefer = factor(prefer, labels = c("msnbc", "neutral", "fox")),
+        exposure = ((prefer == "fox" & tweet == "msnbc") | (prefer == "msnbc" & tweet == "fox")) +
+           2 * (prefer == "neutral" & tweet != "control") + 3 * (prefer == tweet),
+        exposure = factor(exposure, labels = c("control", "inconsistent", "neutral", "consistent")))
+
 # create "folded" measures to get at the intensity of answer
 dat$folded_taxes <- abs(as.numeric(scale(dat$taxes_pos, center = TRUE, scale = FALSE)))
 dat$folded_jobs <- abs(as.numeric(scale(dat$jobs_pos, center = TRUE, scale = FALSE)))
@@ -258,17 +267,9 @@ dat$prob_ml_taxes <- oe_dat %>%
     .[match(dat$id, .$id), "prob_ml_x"] %>%
     unlist
 
-# re-label & indicate congruent news source for subsetting
+# re-label
 dat$label_ml_taxes <- ifelse(dat$prob_ml_taxes >= .5, "positive", "negative")
 dat$label_ml_jobs <- ifelse(dat$prob_ml_jobs >= .5, "positive", "negative")
-
-dat <- dat %>%
-    mutate(.,
-        prefer = (tv_fox - tv_msnbc == 0) + 2 * (tv_fox - tv_msnbc > 0),
-        prefer = factor(prefer, labels = c("msnbc", "neutral", "fox")),
-        exposure = ((prefer == "fox" & tweet == "msnbc") | (prefer == "msnbc" & tweet == "fox")) +
-           2 * (prefer =="neutral" & tweet !="control") + 3 * (prefer == tweet),
-        exposure = factor(exposure, labels = c("control", "inconsistent", "neutral", "consistent")))
 
 # check confusion matrix on all obs
 confusionMatrix(table(dat$taxes_label, dat$label_ml_taxes),
