@@ -68,6 +68,23 @@ cor.test(dat$folded_jobs, dat$tentat_jobs)
 
 # we want to understand if the association of the first pair is smaller than the association of the second pair. Since the first pair is not stat. sig. we would say that the relationship of the second pair is indeed stronger (0 < ~0.15). The sign of the second correlation is negative, meaning more "extreme" answers are less tentative.
 
+# This first step indicates that we have a reasonable measure of ambivalence because the correlation is stronger with the folded (extremity) indicator than the positional indicator. We then want to test whether there is a difference in the measure of ambivalence between choice treated which select consistent and those which select inconsistent media.
+
+dat$exposure2 <- ifelse(dat$exposure %in% c("control", "neutral"), NA, dat$exposure) %>%
+    factor(., labels = c("inconsistent", "consistent"))
+
+dat %>%
+    filter(., condition == "assigned" & !is.na(exposure2)) %>%
+    t.test(tentat_taxes ~ exposure2, data = .)
+
+# the sample is not balanced (48 incons vs 74 cons), but we might think that this finding indicates assigning does not change ambivalence
+
+dat %>%
+    filter(., condition == "choice" & !is.na(exposure2)) %>%
+    t.test(tentat_taxes ~ exposure2, data = .)
+
+# here we are seeing that there isn't a difference, meaning that whether they choose consistent or inconsistent sources ambivalence is not stat. different. Samples are very unbalance; 21 incons and 102 consistent
+
 
 # "Bag-of-words" vector space model of text data.
 
