@@ -86,6 +86,17 @@ dat %>%
 # here we are seeing that there isn't a difference, meaning that whether they choose consistent or inconsistent sources ambivalence is not stat. different. Samples are very unbalance; 21 incons and 102 consistent
 
 
+# run with jobs as well
+dat %>%
+    filter(., condition == "assigned" & !is.na(exposure2)) %>%
+    t.test(tentat_jobs ~ exposure2, data = .)
+
+dat %>%
+    filter(., condition == "choice" & !is.na(exposure2)) %>%
+    t.test(tentat_jobs ~ exposure2, data = .)
+
+# once again, no stat. sig difference here, meaning the treatment doesn't explain ambivalence nor does choice have a selection bias among ambivalent people
+
 # "Bag-of-words" vector space model of text data.
 
 # 1. dichotomize data (label)
@@ -104,7 +115,7 @@ table(oe_dat$jobs_label)
 oe_dat <- oe_dat %>%
     select(., id, condition, taxes_oe, jobs_oe, taxes_label, jobs_label) %>%
     gather(., key, value, -id, -condition)
-oe_dat$question <- ifelse(rownames(oe_dat) %in%grep("taxes", oe_dat$key, fixed = TRUE), "taxes", "jobs")
+oe_dat$question <- ifelse(rownames(oe_dat) %in% grep("taxes", oe_dat$key, fixed = TRUE), "taxes", "jobs")
 oe_dat$key <- gsub("taxes_", "", oe_dat$key, fixed = TRUE)
 oe_dat$key <- gsub("jobs_", "", oe_dat$key, fixed = TRUE)
 oe_dat$key <- gsub("oe", "response", oe_dat$key, fixed = FALSE)
