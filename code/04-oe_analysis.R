@@ -332,3 +332,34 @@ dat %>%
 
 # for jobs there is a slight difference, but not sure it is enough
 # OVERALL: if we think this is the right way to do this, it suggests again that ambivalence is not driving
+
+# step 2 of this approach, actually look at the group differences as before
+
+# now filter to subset and run again with specific groups
+dat %>%
+    filter(., condition == "assigned" & exposure == "consistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+dat %>%
+    filter(., condition == "assigned" & exposure == "inconsistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# the accuracy (F1) is not meaningfully different between consistent and inconsistent in assigned group
+
+dat %>%
+    filter(., condition == "choice" & exposure == "consistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+dat %>%
+    filter(., condition == "choice" & exposure == "inconsistent" & !is.na(label_ml_taxes)) %>%
+    select(., taxes_label, label_ml_taxes) %>%
+    table(.) %>%
+    confusionMatrix(., positive = "positive", mode = "everything")
+
+# while the accuracy is a little higher in the inconsistent group (ambivalence is lower) this is not a large difference
