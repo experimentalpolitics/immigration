@@ -225,6 +225,10 @@ It could also be the case that those viewing information from what we deem as 'i
 In order to shed light on the underlying mechanism at play, we provide a secondary analysis leveraging open-ended responses...[what should we find if it's option 1? what do the results look like if it's the latter mechanism at play?]
 <!--add analysis of open-ended responses. -->
 
+## The Role of Ambivalence
+
+
+
 # Discussion and Conclusion
 
 The apparent pervasiveness of misinformation across a wide range of political issues is exacerbated by an increasingly polarized media environment where people have unprecedented access to a wide variety of media sources. When it comes to the effectiveness of corrective interventions, revising people's factual *beliefs* is relatively easy, while changing their underlying *opinions* is hard. Yet, previous research in this context neglected the role of selective exposure and endogenous information search as a determinant of the potential attitudinal impact of corrective information.
