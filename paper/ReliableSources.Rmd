@@ -1,20 +1,21 @@
 ---
-title: "Reliable Sources?^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit for helpful comments on previous versions of this manuscript.]"
+title: "Reliable Sources?"
+#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit for helpful comments on previous versions of this manuscript.]"
 subtitle: "Correcting Misinformation in Polarized Media Environments"
-author:
-  - "Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]"
-  - Nicholas R. Davis
-  - Taraleigh Davis
-  - Amanda Heideman
-  - Jason T. Neumeyer
-  - Shin Young Park
-date: |
-  |
-  | University of Wisconsin-Milwaukee 
-  |
-  | \today
-  |
-  |
+#author:
+#  - "Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]"
+#  - Nicholas R. Davis
+#  - Taraleigh Davis
+#  - Amanda Heideman
+#  - Jason T. Neumeyer
+#  - Shin Young Park
+#date: |
+#  |
+#  | University of Wisconsin-Milwaukee 
+#  |
+#  | \today
+#  |
+#  |
 abstract: >-
   Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus pandemic--are imbued with misinformation. A growing body of research therefore explores the potential impact of providing corrective information. However, while such interventions appear to reduce people's factual misperceptions, they have little to no effect on their underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our results illustrate how people's media choice moderates the effectiveness of corrective information: While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
 reference-section-title: References
@@ -42,7 +43,11 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 source("../code/02-analysis.R")
 ```
 
+\thispagestyle{empty}
+
 \clearpage
+
+\setcounter{page}{1}
 
 
 Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. 
