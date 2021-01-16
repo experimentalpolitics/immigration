@@ -11,10 +11,6 @@
 library(here)
 library(readr)
 library(tidyverse)
-library(caret)
-library(quanteda)
-quanteda_options(threads = RcppParallel::defaultNumThreads()) # max threads for parallel processing
-library(quanteda.textmodels)
 
 
 # Load & recode data ------------------------------------------------------------
@@ -42,7 +38,7 @@ if (!"LIWC2015 Results (taxes_oe).csv" %in% dir(here("data/"))) {
     stop("LIWC2015 Results (taxes_oe).csv is missing, code will not run")
 } else {
     dat <- read_csv(here("data/LIWC2015 Results (taxes_oe).csv")) %>%
-        rename(tmp, id = `Source (A)`, tentat_taxes = tentat, certain_taxes = certain) %>%
+        rename(id = `Source (A)`, tentat_taxes = tentat, certain_taxes = certain) %>%
         select(id, tentat_taxes, certain_taxes) %>%
         right_join(dat)
 }
@@ -63,45 +59,51 @@ if (!"LIWC2015 Results (jobs_oe).csv" %in% dir(here("data/"))) {
 
 # LIWC analysis -----------------------------------------------------------
 
-### CONTINUE HERE ###
-
-
-
 # correlation between closed ended responses and tentativeness
 cor.test(dat$taxes_pos, dat$tentat_taxes)
 cor.test(dat$jobs_pos, dat$tentat_jobs)
+cor.test(dat$taxes_pos, dat$certain_taxes)
+cor.test(dat$jobs_pos, dat$certain_jobs)
 
 # correlation between folded responses and tentativeness
 cor.test(dat$folded_taxes, dat$tentat_taxes)
 cor.test(dat$folded_jobs, dat$tentat_jobs)
+cor.test(dat$folded_taxes, dat$certain_taxes)
+cor.test(dat$folded_jobs, dat$certain_jobs)
 
-# we want to understand if the association of the first pair is smaller than the association of the second pair. Since the first pair is not stat. sig. we would say that the relationship of the second pair is indeed stronger (0 < ~0.15). The sign of the second correlation is negative, meaning more "extreme" answers are less tentative.
+# we want to understand if the association of the first pair is smaller than 
+# the association of the second pair. Since the first pair is not stat. sig. 
+# we would say that the relationship of the second pair is indeed stronger 
+# (0 < ~0.15). The sign of the second correlation is negative, meaning more 
+# "extreme" answers are less tentative. Certainty is not correlated with either.
 
-# This first step indicates that we have a reasonable measure of ambivalence because the correlation is stronger with the folded (extremity) indicator than the positional indicator. We then want to test whether there is a difference in the measure of ambivalence between choice treated which select consistent and those which select inconsistent media.
+# This first step indicates that tentativeness is a reasonable measure of ambivalence 
+# because the correlation is stronger with the folded (extremity) indicator 
+# than the positional indicator. We then want to test whether there is a 
+# difference in the measure of ambivalence between choice treated which select 
+# consistent and those which select inconsistent media.
 
-dat$exposure2 <- ifelse(dat$exposure %in% c("control", "neutral"), NA, dat$exposure) %>%
-    factor(., labels = c("inconsistent", "consistent"))
+t.test(tentat_taxes ~ condition, 
+       data = filter(dat, exposure == "inconsistent"))
 
-dat %>%
-    filter(., condition == "assigned" & !is.na(exposure2)) %>%
-    t.test(tentat_taxes ~ exposure2, data = .)
+t.test(tentat_jobs ~ condition, 
+       data = filter(dat, exposure == "inconsistent"))
 
-# the sample is not balanced (48 incons vs 74 cons), but we might think that this finding indicates assigning does not change ambivalence
-
-dat %>%
-    filter(., condition == "choice" & !is.na(exposure2)) %>%
-    t.test(tentat_taxes ~ exposure2, data = .)
-
-# here we are seeing that there isn't a difference, meaning that whether they choose consistent or inconsistent sources ambivalence is not stat. different. Samples are very unbalance; 21 incons and 102 consistent
-
-
-# run with jobs as well
-dat %>%
-    filter(., condition == "assigned" & !is.na(exposure2)) %>%
-    t.test(tentat_jobs ~ exposure2, data = .)
+# No stat. sig. difference in tentativeness between forced and voluntary 
+# inconsistent exposure -> makes ambivalence unlikely as an explanation
 
 dat %>%
-    filter(., condition == "choice" & !is.na(exposure2)) %>%
-    t.test(tentat_jobs ~ exposure2, data = .)
-
-# once again, no stat. sig difference here, meaning the treatment doesn't explain ambivalence nor does choice have a selection bias among ambivalent people
+    filter(exposure == "inconsistent") %>%
+    select(condition, tentat_jobs, tentat_taxes) %>%
+    pivot_longer(-condition) %>% 
+    group_by(condition, name) %>% 
+    summarize(mean = mean(value, na.rm = T),
+              sd = sd(value, na.rm = T),
+              n = n(),
+              se = sd/sqrt(n),
+              cilo = mean - 1.96 * se,
+              cihi = mean + 1.96 * se) %>%
+    ggplot(aes(x = name, y = mean, fill = condition,
+               ymin = cilo, ymax = cihi)) +
+    geom_col(position = "dodge") + 
+    geom_linerange(position = position_dodge(width=.9))
