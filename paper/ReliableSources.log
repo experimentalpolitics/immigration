@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  18 JAN 2021 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  18 JAN 2021 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -758,11 +758,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14711 strings out of 481239
- 214688 string characters out of 5920377
+ 14713 strings out of 481239
+ 214704 string characters out of 5920377
  504747 words of memory out of 5000000
  29458 multiletter control sequences out of 15000+600000
- 608704 words of font info for 149 fonts, out of 8000000 for 9000
+ 608805 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,42p,885b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
@@ -771,7 +771,7 @@ hare/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (23 pages, 892010 bytes).
+Output written on ReliableSources.pdf (23 pages, 892002 bytes).
 PDF statistics:
  294 PDF objects out of 1000 (max. 8388607)
  242 compressed objects within 3 object streams

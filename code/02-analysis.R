@@ -49,6 +49,7 @@ m1robust <- m1 %>%
 p1 <- m1robust %>%
   map_dfr(tidy, .id = "dv") %>%
   bind_cols(map_dfr(m1robust, confint_tidy)) %>%
+  #bind_cols(map_dfr(m1robust, confint_tidy, conf.level = 0.9)) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",

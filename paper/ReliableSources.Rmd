@@ -17,7 +17,7 @@ subtitle: "Correcting Misinformation in Polarized Media Environments"
 #  |
 #  |
 abstract: >-
-  Various pressing issues at the center of today's politics--such as immigration, climate change, or the recent coronavirus pandemic--are imbued with misinformation. A growing body of research therefore explores the potential impact of providing corrective information. However, while such interventions appear to reduce people's factual misperceptions, they have little to no effect on their underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our results illustrate how people's media choice moderates the effectiveness of corrective information: While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
+  Various pressing issues at the center of today's politics---such as immigration, climate change, or the recent coronavirus pandemic---are imbued with misinformation and a growing body of research explores potential corrective measures. However, while interventions can be effective in reducing people's factual misperceptions, they have little to no effect on their underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our results illustrate how people's media choice moderates the effectiveness of corrective information: While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -49,7 +49,6 @@ source("../code/03-liwc.R")
 \clearpage
 
 \setcounter{page}{1}
-
 
 Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [e.g., @alesina2019immigration]. 
 <!--SY: While I was reading out paper with fresh eyes, I thought it would be nice to have a line to explain why this is a problem so why various studies, including us, examined the impact of corrective information on people's attitudes. 
@@ -90,7 +89,7 @@ How does this conceptualization of beliefs, interpretations, and opinions help u
 1. **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 2. **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 3. **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
-4. **Opinion Disconnect:** \hspace{0.85em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
+4. **Opinion Disconnect:** \hspace{0.4em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
 
 Under complete updating, new factual information directly shapes beliefs about the state of the world, which in turn affects relevant interpretations, and ultimately results in opinion change. Consequently, incomplete updating despite new information could be due to a lack of belief updating (fact avoidance), interpretations that resist altered beliefs (meaning avoidance), or opinions driven by predispositions alone (opinion disconnect). Within this framework and considering the arguments outlined above, we can state the first hypothesis regarding the effectiveness of misinformation as follows:
 
@@ -171,6 +170,8 @@ tribble(
   kableExtra::column_spec(3, width = "5cm")
 ```
 Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk) workplace.<!--What were the exact dates?? We should probs be more specific.--> It is important to note that MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
+
+<!-- TODO: add discussion of pre-registration -->
 
 # Results 
 
