@@ -41,6 +41,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 ```{r code}
 ## Load packages, data, analyses
 source("../code/02-analysis.R")
+source("../code/03-liwc.R")
 ```
 
 \thispagestyle{empty}
@@ -232,6 +233,10 @@ In order to shed light on the underlying mechanism at play, we provide a seconda
 
 ## The Role of Ambivalence
 
+
+```{r m5, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m5}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 95\\% confidence intervals."}
+p5
+```
 
 
 # Discussion and Conclusion

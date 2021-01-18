@@ -30,8 +30,8 @@ dat <- read_csv(here("data/immigration_20191219_clean.csv")) %>%
         exposure = factor(exposure, labels = c("control", "inconsistent", "neutral", "consistent")),
         
         # Create "folded" measures to get at the intensity of answer
-        folded_taxes = abs(as.numeric(scale(taxes_pos, center = TRUE, scale = FALSE))),
-        folded_jobs = abs(as.numeric(scale(jobs_pos, center = TRUE, scale = FALSE)))
+        folded_taxes = abs(taxes_pos - 0.5),
+        folded_jobs = abs(jobs_pos - 0.5)
     )
 
 
@@ -39,17 +39,22 @@ dat <- read_csv(here("data/immigration_20191219_clean.csv")) %>%
 
 # 1. dichotomize data (label)
 dat$taxes_label <- ifelse(dat$taxes_pos >= .5, "positive", "negative")
+dat$taxes_label[dat$taxes_pos == .5] <- NA
 dat$jobs_label <- ifelse(dat$jobs_pos >= .5, "positive", "negative")
+dat$jobs_label[dat$jobs_pos == .5] <- NA
+
+## NOTE: Neutral answers should be omitted
 
 # isolate the relevant data; can be rejoined later
 oe_dat <- dat %>%
-    select(., id, condition, taxes_label, taxes_oe, jobs_label, jobs_oe)
+    select(id, condition, taxes_label, taxes_oe, jobs_label, jobs_oe)
 
-# check for imbalance (splits about 70-30 for each)
+# check for imbalance (splits about 60-40 for each)
 table(oe_dat$taxes_label)
 table(oe_dat$jobs_label)
 
-# recast data to "pool" observations -- we do this to to maximize data available. Also, we believe there is a common data generating process and these can be pooled
+# recast data to "pool" observations -- we do this to to maximize data available. 
+# Also, we believe there is a common data generating process and these can be pooled
 oe_dat <- oe_dat %>%
     select(., id, condition, taxes_oe, jobs_oe, taxes_label, jobs_label) %>%
     gather(., key, value, -id, -condition)

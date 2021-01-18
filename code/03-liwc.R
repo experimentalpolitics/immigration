@@ -26,8 +26,8 @@ dat <- read_csv(here("data/immigration_20191219_clean.csv")) %>%
         exposure = factor(exposure, labels = c("control", "inconsistent", "neutral", "consistent")),
         
         # Create "folded" measures to get at the intensity of answer
-        folded_taxes = abs(as.numeric(scale(taxes_pos, center = TRUE, scale = FALSE))),
-        folded_jobs = abs(as.numeric(scale(jobs_pos, center = TRUE, scale = FALSE)))
+        folded_taxes = abs(taxes_pos - 0.5),
+        folded_jobs = abs(jobs_pos - 0.5)
     )
 
 # Prepare taxes OEs file for LIWC if it doesn't exist already
@@ -92,7 +92,7 @@ t.test(tentat_jobs ~ condition,
 # No stat. sig. difference in tentativeness between forced and voluntary 
 # inconsistent exposure -> makes ambivalence unlikely as an explanation
 
-dat %>%
+p5 <- dat %>%
     filter(exposure == "inconsistent") %>%
     select(condition, tentat_jobs, tentat_taxes) %>%
     pivot_longer(-condition) %>% 
@@ -103,7 +103,19 @@ dat %>%
               se = sd/sqrt(n),
               cilo = mean - 1.96 * se,
               cihi = mean + 1.96 * se) %>%
-    ggplot(aes(x = name, y = mean, fill = condition,
+    mutate(condition = recode_factor(condition,
+                                     `assigned` = "Forced exposure",
+                                     `choice` = "Free choice"),
+           name = recode_factor(name,
+                                `tentat_jobs` = "Immigrants create jobs",
+                                `tentat_taxes` = "Immigrants pay taxes")) %>% 
+    ggplot(aes(x = condition, y = mean, fill = condition,
                ymin = cilo, ymax = cihi)) +
-    geom_col(position = "dodge") + 
-    geom_linerange(position = position_dodge(width=.9))
+    geom_col() + 
+    geom_linerange() +
+    theme_light(base_size = 8) + 
+    facet_wrap(~name) +
+    theme(legend.position = "none") +
+    labs(y = "Tentative words (%)",
+         x = NULL) +
+    scale_fill_brewer(palette = "Paired")

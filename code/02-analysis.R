@@ -77,7 +77,8 @@ p1 <- m1robust %>%
        col = "Experimental\ncondition",
        shape = "Experimental\ncondition") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
-  scale_colour_manual(values = c("darkred","darkblue"))
+  scale_color_brewer(palette = "Paired")
+
 
 
 ## ----model-2, cache = TRUE------------------------------------------------------------------------------
@@ -197,7 +198,7 @@ p2 <- bind_rows(m2df, m3df) %>%
        col = "Media\nexposure",
        shape = "Media\nexposure") +
   facet_grid(condition~group, scales = "free_x") +
-  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
+  scale_color_brewer(palette = "Dark2")
 
 
 ## ----model-4, cache = TRUE------------------------------------------------------------------------------
@@ -256,5 +257,4 @@ p4 <- m4robust %>%
   geom_errorbar(width=0, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Effect of free choice\nvs. forced exposure condition") +
-  facet_wrap(~group, scales = "free_x", ncol = 3) +
-  scale_colour_manual(values = c("darkred","darkblue"))
+  facet_wrap(~group, scales = "free_x", ncol = 3)
