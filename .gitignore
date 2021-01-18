@@ -9,6 +9,10 @@
 *.rdx
 *_cache/
 
+# folders
+/data/
+/notes/
+
 # cache file for prereg markdown document
 prereg/*_cache/
 
