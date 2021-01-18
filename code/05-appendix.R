@@ -72,7 +72,7 @@ p5 <- ggplot(m5, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
        col = "Media\npreference",
        shape = "Media\npreference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
-  scale_colour_manual(values = c("darkred","darkgreen","darkblue"))
+  scale_color_brewer(palette = "Dark2")
 
 
 ## ----model-6x, cache = TRUE-----------------------------------------------------------------------------
@@ -130,7 +130,7 @@ p6 <- ggplot(m6, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
        col = "Media\npreference",
        shape = "Media\npreference") +
   facet_wrap(~group, scales = "free_x", ncol=3) +
-  scale_colour_manual(values = c("darkred","darkgreen","darkblue")) +
+  scale_color_brewer(palette = "Dark2") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ## -------------------------------------------------------------------------------------------------------

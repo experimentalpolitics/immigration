@@ -4,18 +4,19 @@ subtitle: |
   | Correcting Misinformation in Polarized Media Environments
   |
   | \Large Supplementary Material
-author:
-  - Patrick W. Kraft
-  - Nicholas R. Davis
-  - Taraleigh Davis
-  - Amanda Heideman
-  - Jason T. Neumeyer
-  - Shin Young Park
-date: |
-  |
-  | University of Wisconsin-Milwaukee 
-  |
-  | \today
+# author:
+  # - Patrick W. Kraft
+  # - Nicholas R. Davis
+  # - Taraleigh Davis
+  # - Amanda Heideman
+  # - Jason T. Neumeyer
+  # - Shin Young Park
+# date: |
+  # |
+  # | University of Wisconsin-Milwaukee
+  # |
+  # | \today
+toc : true
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -29,6 +30,7 @@ output:
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
   \usepackage{float}
+  \usepackage{censor}
   \floatplacement{figure}{H}
   \floatplacement{table}{H}
 ---
@@ -39,8 +41,9 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 ```{r analyses, include=FALSE}
 ## Load packages, data, analyses
+library(DeclareDesign)
 source("../code/02-analysis.R")
-source("../code/03-appendix.R")
+source("../code/05-appendix.R")
 ```
 
 \clearpage
@@ -197,13 +200,11 @@ df %>%
                                     `neutral` = "Neither",
                                     `msnbc` = "MSNBC",
                                     .ordered = TRUE)) %>%
-ggplot(aes(x = Preference, fill = Preference)) + 
+ggplot(aes(x = Preference)) + 
   geom_bar(position = position_dodge()) +
   theme_light(base_size = 8) +
-  labs(y = "Number of Observations", 
-       x = "Media preference") +
-  scale_fill_manual(values = c("darkred","darkgreen","darkblue")) +
-  theme(legend.position = "none")
+  labs(y = "Number of observations", 
+       x = "Media preference")
 ```
 
 ```{r consistency, fig.height=4, fig.width=5}
@@ -222,7 +223,7 @@ ggplot(aes(fill = exposure, x = condition)) +
   theme_light(base_size = 8) +
   labs(y = "Number of observations", fill = "Media\nexpsoure",
        x = "Experimental condition") +
-  scale_fill_manual(values = c("darkred","darkgreen","darkblue"))
+  scale_fill_brewer(palette = "Dark2")
 ```
 
 \clearpage
@@ -242,9 +243,221 @@ p6
 \singlespace
 
 
-# Full Questionnaire
+# Pre-Analysis Plan
 
-## Survey Flow Overview
+## Summary
+
+This document describes the planned analyses for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. As part of the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants are asked to freely choose, or are assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
+
+## Research Design
+
+### Ethics
+
+This study has been granted exempt status by \censor{the University of Wisconsin-Milwaukee's} Institutional Review Board (IRB No. \censor{20.044}) and has been granted approval to waive documentation of informed consent. All participants could stop participation at any time in the study and were debriefed at the end.
+
+### Sample
+
+This study will be conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 30 minutes and the reward will be $2. MTurk workers are required to have a 90% approval rate and have to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
+
+### Overview
+
+Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC) but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 above as well as the full questionnaire including all treatment conditions at the end of this pre-analysis plan.
+
+![Survey flow and overview of the experimental design.](../prereg/Lab-Graphic.jpg)
+
+### Outcome measures
+
+We consider several outcome measures to capture immigration attitudes and how the news story is received by participants. This section briefly describes each outcome and outlines relevant items in the questionnaire (see also full question wording at the end of the pre-analysis plan). Unless otherwise specified, outcomes that are measured using multiple variables will be combined in a additive scale. We are going to ensure that all items load properly on a single factor and exclude those that do not. Furthermore, we will report results using individual items in the appendix.
+
+**Economic impact of immigration:** Our first outcome of interest captures the perceived economic impact of legal immigration. The news article includes specific information about the number of people in the US who are employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. As part of the survey, participants are asked two questions covering these issues and our goal is to examine whether the news article is sufficient to correct related factual misperceptions (i.e., increase the proportion of correct responses on two questions covering this information). Two additional questions (analyzed separately) capture respondents' beliefs about how much immigrants contribute to society by paying taxes and creating jobs. Here, the outcome of interest is whether participants think that on balance, legal immigration has a more positive impact rather than creating a financial burden for society as a whole.
+
+**Attitudes towards immigration:** Our second outcome measure focuses on people's attitudes towards legal immigration. Specifically, we ask participants whether they think that the number of immigrants in the US should be increased or decreased. This item allows us to assess whether the news article not only corrects factual misperceptions but additionally induces attitude change.
+
+**Trust in news sources:** As an additional check, we also include a battery of items measuring trust in different news sources including FoxNews and MSNBC. Since the content of the news article is held constant between both news organizations, we can examine how exposure to an atypical news story (in this case published by FoxNews) impacts people's perception of the source itself.
+
+In addition to these main variables, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the experimental design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
+
+**Engagement with tweet:** As described above, the tweet shown to participants consists of a link to a news article. While the link itself is not active and participants are never explicitly asked to click on it, we can examine whether participants nevertheless try access the article. Whether they attempt to do so is used as an unobstrusive measure of the degree to which participants are interested in further engaging with the content voluntarily.
+
+**Response latencies:** In order to further assess the extent to which respondents are interested in the article and comply with the instructions to read it carefully, we also measure the amount of time that individuals spend viewing the tweet and reading the news story.
+
+<!-- This may also help us to identify those people who were assigned to the source which was opposed to their priors -- someone who watches MSNBC daily may be less likely to engage with a story published by FoxNews. -->
+
+**Sharing the article:** After reading the article, participants are asked to report their willingness to share it on social media, discuss it with friends, or whether they would be likely to seek out more information regarding the topic of the tweet and story.
+
+**Evaluation of the article:** Our final outcome measure consists of a basic evaluation of the article, asking participants to disclose if they found the article fair or unfair, hostile or friendly, bad or good, skewed or balanced, American or un-American, and accurate or inaccurate.
+
+**Manipulation Check:** In order to assess whether the tweet and news article were actually read by participants, we include a brief manipulation check. Specifically, respondents are asked which news organization published the story and what topic was covered by it.
+
+### Hypotheses
+
+<!-- QUESTION on wording assigned source instead of forced exposure?  -->
+
+Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted; @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. In general, we expect that those who were able to choose a news agency are more likely to pick a source similar to their usual media diet. Additionally, we expect those who read a news story from a trusted news source (and who are able to pick the news agency) are more inclined to evaluate the article positively and change their attitudes in the direction of the news article.
+<!-- Specifically, we not only expect that people choose news sources that are likely to confirm their prior beliefs, but those allowed to choose their preferred source will be more likely to update their beliefs than those who have no discretion over which source to access.  -->
+
+#### Main analysis
+
+For the main outcome measures described above (i.e., immigration attitudes and perceived economic impact), our analysis begins with two basic comparisons between each treatment group and the control group:
+
+- **H1a** [control vs. forced exposure]: Participants who are assigned to a random news organization update their beliefs and attitudes in the direction of the article .
+- **H1b** [control vs. free choice]: Participants who are free to choose a news organization update their beliefs and attitudes in the direction of the article.
+
+In the context of the outcomes described previously, updating beliefs and attitudes in the direction of the article refers to a decrease in factual misperceptions about the economic impact of legal immigration and more positive attitudes towards legal immigration more generally. Of course, our main interest is to assess whether corrective information is more effective if people are allowed to choose their preferred information source than if they are assiged to one. We therefore hypothesize that the free choice condition leads to a stronger attitude/belief change than the forced exposure condition:
+
+- **H1c** [forced exposure vs. free choice]: Participants who are given the opportunity to choose a news organization are more likely to update their beliefs and attitudes in the direction of the article than participants who are randomly assigned to a news organization.
+
+Note that this last comparison (*H1c*) can also be evaluated using the additional outcome measures described above (trust in news sources, engagement with tweet, response latencies, sharing the article, evaluation of the article), which are not included in the control group. For each of these outcomes, we expect that the ability to choose their preferred information source will increase engagement with the article and therefore lead to more positive evaluations. Here, we also plan to explore conditional treatment effects based on pre-treatment measures of people's political predispositions (stereotypes towards immigrants, whether immigration is seen as a major issue, ideology, partisanship) and we will further examine whether the differences in *H1c* are conditional on participants being exposed to a news source that is congruent with their usual media diet. Any difference between the forced exposure and free choice condition could theoretically be driven either by the fact that participants in the free choice condition tend to select news organizations they are more sympathetic towards, or by the fact alone that they are able to choose a source (i.e., the selection process itself makes the information more effective). In order to distinguish both possibilities, we will conduct an additional test where we isolate the effect of forced exposure vs. free choice while holding the underlying news organization constant. Specifically, we are planning to compare both conditions within groups of individuals who were exposed to a congruent as compared to an incongruent source (either by choice or by random assignment). Additional analyses outlined below will allow us to further assess how endogeneous media exposure impacts the effectiveness of corrective information.
+
+#### Determinants of media choice
+
+Beyond this main analysis comparing the free choice and forced exposure conditions, we are going to confirm whether respondents indeed choose information sources that are consistent with their ideological predisposition and usual media diet. This part of the analysis therefore only focuses on the free choice arm of the experiment. Participants are expected to engage in a biased search process, seeking out information that is likely to support their preconceptions and avoiding evidence that undercuts their beliefs [see @Taber2006]. This leads to the following set of hypotheses regarding endogenous information search:
+
+- **H2a:** When free to choose a news organization, conservatives (liberals) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H2b:** When free to choose a news organization, Republicans (Democrats) are more likely to pick FoxNews (MSNBC) than vice versa.
+- **H2c:** When free to choose a news organization, participants who report viewing FoxNews (MSNBC) more regularly are more likely to pick FoxNews (MSNBC).
+
+#### Effects of corrective information conditional on preferred media choice
+
+Lastly, we plan to examine whether there are systematic differences in the effectiveness of corrective information by news sources themselves (i.e., FoxNews vs. MSNBC). The pre-treatment section of the questionnaire includes items on respondents' usual media diet and political predispositions. Respondents should be more inclined to update their attitudes and beliefs if the article is published by a news organization that is usually consistent with their priors:
+
+- **H3a:** Conservatives (liberals) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
+- **H3b:** Republicans (Democrats) update their beliefs and attitudes more if they are randomly assigned to FoxNews (MSNBC).
+- **H3c**: Participants who were randomly assigned to a news organization that is part of their regular media diet update their beliefs more than those who were assigned to a different news organization.
+
+As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H3c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
+
+## Estimation strategy
+
+### Statistical significance
+
+Throughout this study, we will use two-sided tests with an $\alpha$-value of 0.05 as the cutoff for statistical significance. In our graphical displays we will additionally plot 90% intervals to signal statistical significance at $p<0.10$.
+
+### Missing data
+
+Respondents who report "don't know" on the outcome measures (if applicable) or who skipped the question will be treated as missing and excluded from the respective analysis (basic listwise deletion). While we are going to use the manipulation checks to evaluate whether respondents read the information provided to them, we decided not to drop respondents who failed to pass the manipulation checks in the subsequent analyses [see for example @aronow2018note].
+
+### Main analyses
+
+To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference between both treatment conditions themselves. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. Howver, we can only detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions) and we will explore average choice-specific treatment effects (ACTE) following @knox2019design. Unfortunately, our power analysis below suggests that our sample size is too small to reliably detect these conditional treatment effects.
+
+
+#### Power analysis: basic 3-arm design (ATE w/o differentiating sources)
+
+```{r, cache = TRUE}
+N <- 600
+outcome_means <- c(0, .1, .3)
+sd_i <- 1
+
+population <- declare_population(
+  N = N, u = rnorm(N, sd = sd_i))
+
+potential_outcomes <- declare_potential_outcomes(
+  formula = Y ~ outcome_means[1] * (Z == "0") +
+    outcome_means[2] * (Z == "1") +
+    outcome_means[3] * (Z == "2") + u,
+  conditions = c("0", "1", "2"),
+  assignment_variables = Z)
+
+estimand <- declare_estimands(
+  ate_Y_1_0 = mean(Y_Z_1 - Y_Z_0),
+  ate_Y_2_0 = mean(Y_Z_2 - Y_Z_0),
+  ate_Y_2_1 = mean(Y_Z_2 - Y_Z_1))
+
+assignment <- declare_assignment(
+  num_arms = 3,
+  conditions = c("0", "1", "2"),
+  assignment_variable = Z)
+
+reveal_Y <- declare_reveal(
+  assignment_variables = Z)
+
+estimator <- declare_estimator(
+  handler = function(data) {
+    estimates <- rbind.data.frame(
+      ate_Y_1_0 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "0", condition2 = "1"),
+      ate_Y_2_0 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "0", condition2 = "2"),
+      ate_Y_2_1 = difference_in_means(formula = Y ~ Z, data = data, 
+                                      condition1 = "1", condition2 = "2"))
+    names(estimates)[names(estimates) == "N"] <- "N_DIM"
+    estimates$estimator_label <- c("DIM (Z_1 - Z_0)", "DIM (Z_2 - Z_0)",
+                                   "DID (Z_2 - Z_1)")
+    estimates$estimand_label <- rownames(estimates)
+    estimates$estimate <- estimates$coefficients
+    estimates$term <- NULL
+    return(estimates)
+  })
+
+multi_arm_design <- population + potential_outcomes + 
+  assignment + reveal_Y + estimand + estimator
+
+# diagnose design based on 500 simulations
+diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+  select = c("power", "bias")))
+```
+
+#### Power analysis: conditional effects depending on media preference (ACTE following Knox) 
+
+```{r, chache = TRUE}
+Nforced <- round(N/3)
+Sfox_Afox <- .2 # note: S = preferred treatment, A = actual treatment
+Sfox_Amsnbc <- .0
+Smsnbc_Afox <- .3
+Smsnbc_Amsnbc <- .4
+sd_i <- 1
+
+population <- declare_population(
+  N = Nforced, u = rnorm(Nforced, sd = sd_i))
+
+potential_outcomes <- declare_potential_outcomes(
+  formula = Y ~ 0 +
+    Sfox_Afox * (Z == "1") +
+    Sfox_Amsnbc * (Z == "2") +
+    Smsnbc_Afox * (Z == "3") +
+    Smsnbc_Amsnbc * (Z == "4") + u,
+  conditions = c("1", "2", "3","4"),
+  assignment_variables = Z)
+
+estimand <- declare_estimands(
+  acte_Y_fox = mean(Y_Z_1 - Y_Z_2),
+  acte_Y_msnbc = mean(Y_Z_4 - Y_Z_3))
+
+assignment <- declare_assignment(
+  num_arms = 4,
+  conditions = c("1", "2", "3", "4"),
+  assignment_variable = Z)
+
+reveal_Y <- declare_reveal(
+  assignment_variables = Z)
+
+estimator <- declare_estimator(
+  handler = function(data) {
+    estimates <- rbind.data.frame(
+      acte_Y_fox = difference_in_means(formula = Y ~ Z, data = data, 
+                                       condition1 = "2", condition2 = "1"),
+      acte_Y_msnbc = difference_in_means(formula = Y ~ Z, data = data, 
+                                         condition1 = "3", condition2 = "4"))
+    names(estimates)[names(estimates) == "N"] <- "N_DIM"
+    estimates$estimator_label <- c("DIM (Z_1 - Z_2)", "DIM (Z_4 - Z_3)")
+    estimates$estimand_label <- rownames(estimates)
+    estimates$estimate <- estimates$coefficients
+    estimates$term <- NULL
+    return(estimates)
+  })
+
+multi_arm_design <- population + potential_outcomes + 
+  assignment + reveal_Y + estimand + estimator
+
+# diagnose design based on 500 simulations
+diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
+  select = c("power", "bias")))
+```
+
+## Full Questionnaire
+
+### Survey Flow Overview
 
 - Pre-treatment measures:
     - Media usage
@@ -259,9 +472,9 @@ p6
     - Trust in news sources
     - Sociodemographics
 
-## Pre-treatment measures
+### Pre-treatment measures
 
-### Block 1: Media usage
+#### Block 1: Media usage
 
 First, we want to ask a few questions about your current media diet.
 
@@ -316,7 +529,7 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-### Block 2: Stereotype battery
+#### Block 2: Stereotype battery
 
 Next are some questions about different groups in our society.
 
@@ -347,7 +560,7 @@ Next are some questions about different groups in our society.
 
 (1) Generous - (7) Selfish, (8) DK
 
-### Block 3: Political attitudes & participation
+#### Block 3: Political attitudes & participation
 
 Next, we would like you to answer a few questions about your political viewpoints.
 
@@ -398,9 +611,9 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 1. Strong
 2. Not very strong
 
-## Experimental manipulation
+### Experimental manipulation
 
-### Instructions for participants
+#### Instructions for participants
 
 - **If treatment condition = choice**
     - In the following section, we are going to show you a random tweet drawn from the accounts of two large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
@@ -416,13 +629,13 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
         1. Fox News
         2. MSNBC
 
-### Tweets
+#### Tweets
 
 ![Fox News](../material/tweets/fox_popular.png){width=50%}
 
 ![MSNBC](../material/tweets/msnbc_popular.png){width=50%}
 
-### Introduction for full story
+#### Introduction for full story
 
 Next, we will show you the content of the article linked in the previous tweet. **Please read the story carefully.** Keep in mind that we will ask you questions about the content of the article afterwards.
 
@@ -450,7 +663,7 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 *William Hall is a Business Reporter for [Fox News/MSNBC].*
 
-### Attention checks & article evaluation
+#### Attention checks & article evaluation
 
 Please answer the following questions about the tweet as well as the article you just read.
 
@@ -489,9 +702,9 @@ Please answer the following questions about the tweet as well as the article you
 - [american] (1) American - (5) Un-American
 - [accurate] (1) Accurate - (5) Inaccurate
 
-## Post-treatment measures
+### Post-treatment measures
 
-### Block 1: Attitudes towards immigration
+#### Block 1: Attitudes towards immigration
 
 _(only show this message in the control condition)_ In this section, we want to ask you a few questions about immigration.
 
@@ -539,7 +752,7 @@ _(randomize order of remaining questions)_
 
 - *TEXTBOX*
 
-### Block 2: Trust in news sources
+#### Block 2: Trust in news sources
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
@@ -573,7 +786,7 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-### Block 3: Sociodemographics
+#### Block 3: Sociodemographics
 
 This almost completes our survey, we only need some additional information about your background.
 
@@ -664,4 +877,6 @@ This almost completes our survey, we only need some additional information about
 
 - *TEXTBOX*
 
-**[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).
+**[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator \censor{Dr. Patrick Kraft (kraftp@uwm.edu)}.
+
+
