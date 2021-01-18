@@ -6,6 +6,7 @@ library(lmtest)
 library(car)
 library(here)
 
+
 ## ----data, cache = TRUE---------------------------------------------------------------------------------
 ## Load data
 df <- read_csv(here("data/immigration_20191219_clean.csv")) %>%
@@ -49,7 +50,9 @@ m1robust <- m1 %>%
 p1 <- m1robust %>%
   map_dfr(tidy, .id = "dv") %>%
   bind_cols(map_dfr(m1robust, confint_tidy)) %>%
-  #bind_cols(map_dfr(m1robust, confint_tidy, conf.level = 0.9)) %>%
+  rename(cilo95 = conf.low, cihi95 = conf.high) %>%
+  bind_cols(map_dfr(m1robust, confint_tidy, conf.level = 0.9)) %>%
+  rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -68,18 +71,18 @@ p1 <- m1robust %>%
          Condition = recode_factor(term,
                                    `conditionassigned` = "Forced\nexposure",
                                    `conditionchoice` = "Free\nchoice")) %>%
-  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+  ggplot(aes(y = estimate, x = outcome,
              shape = Condition, col = Condition)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  geom_point(size = 3, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Experimental\ncondition",
        shape = "Experimental\ncondition") +
   facet_wrap(~group, scales = "free_x", ncol = 3) +
   scale_color_brewer(palette = "Paired")
-
 
 
 ## ----model-2, cache = TRUE------------------------------------------------------------------------------
@@ -114,6 +117,9 @@ m2robust <- m2 %>%
 m2df <- m2robust %>%
   map_dfr(tidy, .id = "dv") %>%
   bind_cols(map_dfr(m2robust, confint_tidy)) %>%
+  rename(cilo95 = conf.low, cihi95 = conf.high) %>%
+  bind_cols(map_dfr(m2robust, confint_tidy, conf.level = 0.9)) %>%
+  rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -134,6 +140,7 @@ m2df <- m2robust %>%
                                   `exposureneutral` = "Neutral",
                                   `exposureconsistent` = "Consistent"),
          condition = "Forced exposure")
+
 
 ## ----model-3, cache = TRUE------------------------------------------------------------------------------
 ## model 3: forced exposure vs. free choice while holding consistency constant
@@ -167,6 +174,9 @@ m3robust <- m3 %>%
 m3df <- m3robust %>%
   map_dfr(tidy, .id = "dv") %>%
   bind_cols(map_dfr(m3robust, confint_tidy)) %>%
+  rename(cilo95 = conf.low, cihi95 = conf.high) %>%
+  bind_cols(map_dfr(m3robust, confint_tidy, conf.level = 0.9)) %>%
+  rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -189,11 +199,12 @@ m3df <- m3robust %>%
          condition = "Free choice")
 
 p2 <- bind_rows(m2df, m3df) %>%
-  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome,
+  ggplot(aes(y = estimate, x = outcome,
              shape = Exposure, col = Exposure)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  geom_point(size = 3, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Media\nexposure",
@@ -234,6 +245,9 @@ m4robust <- m4 %>%
 p4 <- m4robust %>%
   map_dfr(tidy, .id = "dv") %>%
   bind_cols(map_dfr(m4robust, confint_tidy)) %>%
+  rename(cilo95 = conf.low, cihi95 = conf.high) %>%
+  bind_cols(map_dfr(m4robust, confint_tidy, conf.level = 0.9)) %>%
+  rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
                                `employ_correct` = "Belief",
@@ -252,10 +266,11 @@ p4 <- m4robust %>%
          Condition = recode_factor(term,
                                    `conditionassigned` = "Forced\nexposure",
                                    `conditionchoice` = "Free\nchoice")) %>%
-  ggplot(aes(y = estimate, ymin = conf.low, ymax = conf.high, x = outcome)) + 
+  ggplot(aes(y = estimate, x = outcome)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  geom_point(size = 3, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Effect of free choice\nvs. forced exposure condition") +
   facet_wrap(~group, scales = "free_x", ncol = 3)

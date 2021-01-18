@@ -26,11 +26,14 @@ df_assigned <- df %>%
   split(.$prefer)
 
 extractDiff <- function(formula, data){
-  tmp <- t.test(as.formula(formula), data=data)
-  tibble(comparison = tmp$data.name,
-         diff = diff(rev(tmp$estimate)),
-         cilo = tmp$conf.int[1],
-         cihi = tmp$conf.int[2])
+  tmp95 <- t.test(as.formula(formula), data=data)
+  tmp90 <- t.test(as.formula(formula), data=data, conf.level = .9)
+  tibble(comparison = tmp95$data.name,
+         diff = diff(rev(tmp95$estimate)),
+         cilo95 = tmp95$conf.int[1],
+         cihi95 = tmp95$conf.int[2],
+         cilo90 = tmp90$conf.int[1],
+         cihi90 = tmp90$conf.int[2])
 }
 
 
@@ -62,11 +65,12 @@ m5 <- bind_rows(
                                  `immig_increased` = "Immigration should be increased",
                                  .ordered = TRUE))
 
-p5 <- ggplot(m5, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+p5 <- ggplot(m5, aes(y = diff, x = outcome,
                shape = Preference, col = Preference)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  geom_point(size = 3, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
        col = "Media\npreference",
@@ -120,11 +124,12 @@ m6 <- bind_rows(
                                  `actions_post` = "Post on social media",
                                  .ordered = TRUE))
 
-p6 <- ggplot(m6, aes(y = diff, ymin = cilo, ymax = cihi, x = outcome,
+p6 <- ggplot(m6, aes(y = diff, x = outcome,
              shape = Preference, col = Preference)) + 
   geom_hline(yintercept = 0, col = "grey") +
-  geom_point(position=position_dodge(width=0.4)) +
-  geom_errorbar(width=0, position=position_dodge(width=0.4)) +
+  geom_point(size = 3, position=position_dodge(width=0.6)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.6)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.6)) +
   theme_light(base_size = 8) + 
   labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
        col = "Media\npreference",

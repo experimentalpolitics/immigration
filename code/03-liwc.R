@@ -101,18 +101,20 @@ p5 <- dat %>%
               sd = sd(value, na.rm = T),
               n = n(),
               se = sd/sqrt(n),
-              cilo = mean - 1.96 * se,
-              cihi = mean + 1.96 * se) %>%
+              cilo95 = mean - 1.96 * se,
+              cihi95 = mean + 1.96 * se,
+              cilo90 = mean - 1.64 * se,
+              cihi90 = mean + 1.64 * se) %>%
     mutate(condition = recode_factor(condition,
                                      `assigned` = "Forced exposure",
                                      `choice` = "Free choice"),
            name = recode_factor(name,
                                 `tentat_jobs` = "Immigrants create jobs",
                                 `tentat_taxes` = "Immigrants pay taxes")) %>% 
-    ggplot(aes(x = condition, y = mean, fill = condition,
-               ymin = cilo, ymax = cihi)) +
+    ggplot(aes(x = condition, y = mean, fill = condition)) +
     geom_col() + 
-    geom_linerange() +
+    geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+    geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
     theme_light(base_size = 8) + 
     facet_wrap(~name) +
     theme(legend.position = "none") +
