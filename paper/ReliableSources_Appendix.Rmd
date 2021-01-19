@@ -245,7 +245,7 @@ p6
 
 # Additional Analyses: Predictive Accuracy in OE responses
 
-```{r m8, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m6}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 90\\% (thin line) and 95\\% (thick line) confidence intervals."}
+```{r m8, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m6}Accuracy of Naive Bayes classifier to predict attitudes based on language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition."}
 p8
 ```
 
