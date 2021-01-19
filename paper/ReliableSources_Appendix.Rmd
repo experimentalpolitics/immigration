@@ -43,6 +43,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 ## Load packages, data, analyses
 library(DeclareDesign)
 source("../code/02-analysis.R")
+source("../code/04-predictive-accuracy.R")
 source("../code/05-appendix.R")
 ```
 
@@ -237,6 +238,15 @@ p5
 
 ```{r m6, fig.height=2.7, fig.width=7, fig.cap="\\label{fig:m4}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on article evaluations and subsequent engagement."}
 p6
+```
+
+
+\clearpage
+
+# Additional Analyses: Predictive Accuracy in OE responses
+
+```{r m8, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m6}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 90\\% (thin line) and 95\\% (thick line) confidence intervals."}
+p8
 ```
 
 \clearpage
