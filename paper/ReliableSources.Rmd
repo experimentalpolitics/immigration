@@ -125,42 +125,30 @@ In addition the hypothesized effect of people's ability to choose in and of itse
 
 \noindent This hypothesis follows directly from the aforementioned arguments surrounding source credibility since people should perceive their preferred media outlets as more trustworthy. As such, it can be expected that meaning avoidance and opinion disconnect is less common if people are exposed to information provided by a news organization they view favorably.
 
-It is worth emphasizing that while Hypothesis 2 and 3 are clearly related, they focus on two conceptually distinct mechanisms. The former examines how constraints on people's freedom to choose sources reduces their willingness to incorporate misinformation corrections---regardless of individual predisposition towards a particular source itself. The latter hypothesis, on the other hand, explores the impact of people's perceived credibility of a given source---irrespective of whether it was accessed voluntarily or not. It is ultimately an empirical question to what extent either of these mechanisms enable opinion change in response to corrective information and their distinction has crucial implications to develop effective interventions to mitigate misinformation. Fortunately, our experimental design---to which we are going to turn next---allows us to disentangle the relative impact of discretion over media sources predispositions towards particular outlets.
+It is worth emphasizing that while Hypothesis 2 and 3 are clearly related, they focus on two conceptually distinct mechanisms. The former examines how constraints on people's freedom to choose sources reduces their willingness to incorporate misinformation corrections---regardless of individual predisposition towards a particular source itself. The latter hypothesis, on the other hand, explores the impact of people's perceived credibility of a given source---irrespective of whether it was accessed voluntarily or not. It is ultimately an empirical question to what extent either of these mechanisms enable opinion change in response to corrective information and their distinction has crucial implications to develop effective interventions to mitigate misinformation. Fortunately, our experimental design---which we are going to turn to next---allows us to disentangle the relative impact of discretion over media sources predispositions towards particular outlets.
 
 
 # Research Design
 
-With a sample of 600 participants recruited via Amazon's Mechanical Turk, this study aims to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. Such a setup allows us to observe the moderating effect of individual media diet and the information they decide to access.
+The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. Figure \ref{fig:flow} displays an overview of our study. The survey begins with a set of pre-treatment questions regarding their media preferences and immigration attitudes. Next, we randomly assign participants to a free choice, forced exposure, or control condition. Participants in the free choice treatment are asked to decide whether they want to view a recent breaking news tweet from either Fox News or MSNBC. Participants in the forced exposure condition are simply informed that they will be shown a breaking news tweet from a random media outlet.
 
-<!-- Add discussion of specific advantages of this design -->
-
-Figure \ref{fig:flow} displays an overview of the experimental design. Participants are first asked to answer a set of pre-treatment questions regarding their media preferences and their attitudes towards immigration. Subsequently, they are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. 
-
-```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix for further details such as question wording and information treatments."}
+```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix for further details. such as question wording and information treatments."}
 knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 ```
 
-\noindent Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either Fox News or MSNBC:
-
-> In the following section, we are going to show you a random tweet drawn from the accounts of [two/several] large news organizations. **You can choose from which Twitter account the random tweet will be drawn.** Afterwards, we are going to ask you some questions about the content of the news story.
-
-\noindent Participants in the forced exposure condition read almost the same message, the only difference being that it omitted the bold sentence telling them that they can choose from which Twitter account the random tweet will be drawn. Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the following tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. It is important to note that both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant.
+\noindent Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. Importantly, both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant. After viewing one of the tweets, participants are asked to read the corresponding article. As before, the content of the news article is held constant across sources in either condition.[^1]
 
 \vspace{1em}
 
-```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (Fox News or MSNBC)."}
+```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (Fox News or MSNBC). Participants only view one of the tweets."}
 knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
 ```
 
-After viewing one of the tweets, participants are asked to read the corresponding article. As before, the content of the news article is held constant across sources in either condition.[^1] Compared to previous implementations of the PICA framework where the content was not held constant across sources [@benedictis2019persuading; @knox2019design], our design allows us to directly compare the effects of free choice and forced exposure by ensuring that differences between treatment groups are not the result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery to the post-treatment outcome measures.
+\noindent Compared to previous implementations of the PICA framework where the content was not held constant across sources [@benedictis2019persuading; @knox2019design], our design allows us to directly compare the effects of free choice and forced exposure while ensuring that differences between treatment groups are not the result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery to the outcome measures.
 
-[^1]: See Appendix for full article.
+[^1]: See Appendix for question wording and the full article.
 
-In our analysis, we consider five different outcome measures that correspond to beliefs, interpretations, and opinions related to the economic impact of legal immigration in the U.S. The full question overview is displayed in Table \ref{tab:outcomes}. Two items targeting factual *beliefs* directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Both questions offer five response options (one of which is accurate) and the correct information is mentioned in the tweet as well as the news article.
-
-In order to measure *interpretations* consistent with the theoretical conceptualization discussed above, we asked respondents two additional questions about whether they believe that immigrants add to the economy by creating additional jobs and whether they contribute more by paying taxes than they take out by using health and social services. Responses for both items are measured on an 11-point scale.
-
-Lastly, we measure *opinions* by asking for the participants' general preference regarding the number of immigrants from foreign countries who are permitted to come to the U.S. Responses for this item are measured on a 5-point scale ranging from "increased a lot" to "decreased a lot."
+For our analysis, we consider five different outcomes that correspond to beliefs, interpretations, and opinions related to the economic impact of legal immigration. The full question overview is displayed in Table \ref{tab:outcomes}. Two items targeting factual *beliefs* directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Both questions offer five response options,  (one of which is accurate) and the correct information is mentioned in the tweet as well as the news article. In order to measure *interpretations* consistent with the theoretical conceptualization discussed above, we asked respondents two additional questions about whether they believe that immigrants add to the economy by creating additional jobs and whether they contribute more by paying taxes than they take out by using health and social services. Lastly, we measure *opinions* by asking for the participants' general preference regarding the number of legal immigrants to the U.S.
 
 ```{r outcomes}
 tribble(
@@ -177,12 +165,13 @@ tribble(
                booktabs = TRUE) %>%
   kableExtra::column_spec(1, width = "4cm") %>%
   kableExtra::column_spec(2, width = "6cm") %>%
-  kableExtra::column_spec(3, width = "5cm")
+  kableExtra::column_spec(3, width = "5cm") %>% 
+  kableExtra::kable_styling(latex_options =c("hold_position"))
 ```
 
-Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk) workplace.<!--What were the exact dates?? We should probs be more specific.--> It is important to note that MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
+<!-- TODO: add discussion of pre-registration, sample characteristics, balance, etc. -->
 
-<!-- TODO: add discussion of pre-registration -->
+\noindent Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk). MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
 
 # Results 
 
