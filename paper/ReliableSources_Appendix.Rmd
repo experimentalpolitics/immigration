@@ -19,12 +19,12 @@ subtitle: |
 toc : true
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
-fontsize: 12pt
+fontsize: 11pt
 geometry: margin=1in
-linestretch: 1.5
+linestretch: 1
 output: 
   pdf_document:
-    number_sections: false
+    number_sections: true
     template: null
     fig_caption: yes
 header-includes:
@@ -37,19 +37,377 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+options(qwraps2_markup = "markdown")
 ```
 
 ```{r analyses, include=FALSE}
 ## Load packages, data, analyses
-library(DeclareDesign)
 source("../code/02-analysis.R")
-source("../code/04-predictive-accuracy.R")
-source("../code/05-appendix.R")
+library(DeclareDesign)
+library(tidyverse)
+library(sandwich)
+library(stargazer)
+library(qwraps2)
+library(lmtest)
+library(broom)
+library(car)
+library(here)
 ```
+
 
 \clearpage
 
-# Full Model Results
+# Sample Overview
+
+## Basic Demographics Across Treatment Conditions
+
+```{r, results='asis'}
+list(
+  "Age" =
+    list("Minimum"       = ~ min(age),
+         "Maximum"       = ~ max(age),
+         "Mean (Standard Deviation)" = ~ qwraps2::mean_sd(age)),
+  "Sex" =
+    list("Male"      = ~ n_perc(male == 1, na_rm = TRUE)),
+  "Race" =
+    list("White"     = ~ n_perc(race == "Caucasian/White (non-Hispanic)"),
+         "Black or African-American"     = ~ n_perc(race == "Black or African-American (non-Hispanic)"),
+         "Hispanic or Latino"  = ~ n_perc(race == "Hispanic or Latino"),
+         "Other" = ~ n_perc(race %in% c("Other",
+                                        "Middle Eastern",
+                                        "Asian/Pacific Islanders",
+                                        "Native American or Aleut"))),
+  "Party Identification" =
+    list("Strong Republican"     = ~ n_perc(pid_rep == 1, na_rm = TRUE),
+         "Republican"            = ~ n_perc(pid_rep == 5/6, na_rm = TRUE),
+         "Lean Republican"       = ~ n_perc(pid_rep == 4/6, na_rm = TRUE),
+         "Independent"           = ~ n_perc(pid_rep == 3/6, na_rm = TRUE),
+         "Lean Democrat"         = ~ n_perc(pid_rep == 2/6, na_rm = TRUE),
+         "Democrat"              = ~ n_perc(pid_rep == 1/6, na_rm = TRUE),
+         "Strong Democrat"       = ~ n_perc(pid_rep == 0, na_rm = TRUE)),
+  "Ideology" =
+    list("Very Conservative"     = ~ n_perc(ideol_con == 1, na_rm = TRUE),
+         "Conservative"          = ~ n_perc(ideol_con == 5/6, na_rm = TRUE),
+         "Slightly Conservative" = ~ n_perc(ideol_con == 4/6, na_rm = TRUE),
+         "Moderate"              = ~ n_perc(ideol_con == 3/6, na_rm = TRUE),
+         "Slightly Liberal"      = ~ n_perc(ideol_con == 2/6, na_rm = TRUE),
+         "Liberal"               = ~ n_perc(ideol_con == 1/6, na_rm = TRUE),
+         "Very Liberal"          = ~ n_perc(ideol_con == 0, na_rm = TRUE)),
+  "Highest Education Level" =
+    list("Post-Graduate Degree"   = ~ n_perc(educ == "Completed post-graduate or professional school, with degree"),
+         "4-year Degree"     = ~ n_perc(educ == "Graduated 4-year college"),
+         "2-year Degree"     = ~ n_perc(educ == "Graduated 2-year college"),
+         "Some College"      = ~ n_perc(educ == "Some college but no college degree"),
+         "High School"       = ~ n_perc(educ == "Graduated high school or GED"),
+         "Less than High School"  = ~ n_perc(educ == "Less than a high school diploma")),
+  "Income Level" =
+    list("$120,000+"      = ~ n_perc(income == 1, na_rm = TRUE),
+         "$119,999 - $100,000"   = ~ n_perc(income == 5/6, na_rm = TRUE),
+         "$99,999 - $80,000"     = ~ n_perc(income == 4/6, na_rm = TRUE),
+         "$79,999 - $60,000"     = ~ n_perc(income == 3/6, na_rm = TRUE),
+         "$59,999 - $40,000"     = ~ n_perc(income == 2/6, na_rm = TRUE),
+         "$39,999 - $20,000"     = ~ n_perc(income == 1/6, na_rm = TRUE),
+         "< $20,000"       = ~ n_perc(income == 0, na_rm = TRUE))
+) %>%
+  summary_table(
+    mutate(
+      df,
+      condition = recode_factor(condition,
+                                `control` = "Control",
+                                `assigned` = "Forced exposure",
+                                `choice` = "Free choice")), 
+    ., by = "condition")
+```
+
+
+\clearpage
+
+## Media Preferences and Source Consistency
+
+```{r preference, fig.height=4, fig.width=4.05}
+df %>%
+  filter(!is.na(prefer)) %>%
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE)) %>%
+ggplot(aes(x = Preference)) + 
+  geom_bar(position = position_dodge()) +
+  theme_light(base_size = 8) +
+  labs(y = "Number of observations", 
+       x = "Media preference")
+```
+
+```{r consistency, fig.height=4, fig.width=5}
+df %>%
+  filter(!is.na(exposure),
+         exposure != "control") %>%
+  mutate(condition = recode_factor(condition,
+                                   `assigned` = "Forced exposure",
+                                   `choice` = "Free choice"),
+         exposure = recode_factor(exposure,
+                                  `inconsistent` = "Inconsistent",
+                                  `neutral` = "Neutral",
+                                  `consistent` = "Consistent")) %>%
+ggplot(aes(fill = exposure, x = condition)) + 
+  geom_bar(position = position_dodge()) +
+  theme_light(base_size = 8) +
+  labs(y = "Number of observations", fill = "Media\nexpsoure",
+       x = "Experimental condition") +
+  scale_fill_brewer(palette = "Dark2")
+```
+
+
+\clearpage
+
+## Determinants of Choosing Fox News
+
+```{r foxplot, fig.height=3, fig.width=7, fig.cap="\\label{fig:foxplot}Determinants of choosing Fox News in the free choice condition."}
+df %>%
+  filter(condition == "choice") %>%
+  mutate(prefer_fox = tv_fox - tv_msnbc,
+         choose_fox = as.numeric(tweet == "fox")) %>%
+  dplyr::select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
+  gather(variable, value, -choose_fox) %>%
+  ggplot(aes(x=value, y = choose_fox)) +
+  geom_jitter(alpha = .1, height = .1) + 
+  geom_smooth(method = "lm") +
+  facet_grid(~variable, scales = "free_x", 
+             labeller = labeller(variable = c(
+               ideol_con = "Ideology", 
+               pid_rep = "Party Identification", 
+               prefer_fox = "Fox vs. MSNBC Media Diet"))) +
+  theme_light(base_size = 8) +
+  labs(y = "Choose Fox News", x = "") +
+  scale_y_continuous(breaks=c(0,1))
+```
+
+```{r foxtable, results='asis'}
+df$choose_fox <- as.numeric(df$tweet == "fox")
+df$prefer_fox <- df$tv_fox - df$tv_msnbc
+
+list(
+  fox1 = lm(choose_fox ~ ideol_con + age + male + white + college, 
+            data = filter(df, condition == "choice")),
+  fox2 = lm(choose_fox ~ pid_rep + age + male + white + college, 
+            data = filter(df, condition == "choice")),
+  fox3 = lm(choose_fox ~ prefer_fox + age + male + white + college, 
+            data = filter(df, condition == "choice"))
+) %>% 
+  stargazer(
+    dep.var.caption = "",
+    dep.var.labels = "Choose Fox News", 
+    covariate.labels = c("Ideology", "Party Identification", "Fox vs. MSNBC Media Diet",
+                         "Age", "Male", "White", "College", 
+                         "Constant"),
+    column.sep.width = "0pt", 
+    title = "Determinants of choosing Fox News in the free choice condition. Coefficients are based on linear regression models. Positive coefficients indicate larger probability of to choose Fox News rather than MSNBC. Standard errors in parentheses.", 
+    table.placement = "ht",
+    label = "tab:fox",
+    font.size = "footnotesize",
+    header = FALSE,
+    no.space = TRUE,
+    keep.stat = c("n", "rsq"))
+```
+
+
+\clearpage
+
+# Additional Analyses
+
+## Average Choice-Specifc Treatment Effects (ACTEs)
+
+```{r m5, fig.height=2, fig.width=7, fig.cap="\\label{fig:m3}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on beliefs, interpretations, and opinions."}
+df_assigned <- df %>%
+  filter(condition == "assigned") %>%
+  split(.$prefer)
+
+extractDiff <- function(formula, data){
+  tmp95 <- t.test(as.formula(formula), data=data)
+  tmp90 <- t.test(as.formula(formula), data=data, conf.level = .9)
+  tibble(comparison = tmp95$data.name,
+         diff = diff(rev(tmp95$estimate)),
+         cilo95 = tmp95$conf.int[1],
+         cihi95 = tmp95$conf.int[2],
+         cilo90 = tmp90$conf.int[1],
+         cihi90 = tmp90$conf.int[2])
+}
+
+
+m5 <- bind_rows(
+  map_dfr(df_assigned, ~extractDiff(employ_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(sales_correct~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(jobs_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(taxes_pos~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(immig_increased~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `employ_correct` = "Belief",
+                               `sales_correct` = "Belief",
+                               `jobs_pos` = "Interpretation",
+                               `taxes_pos` = "Interpretation",
+                               `immig_increased` = "Opinion",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `employ_correct` = "Employment correct",
+                                 `sales_correct` = "Sales correct",
+                                 `jobs_pos` = "Immigrants create jobs",
+                                 `taxes_pos` = "Immigrants pay taxes",
+                                 `immig_increased` = "Immigration should be increased",
+                                 .ordered = TRUE))
+
+p5 <- ggplot(m5, aes(y = diff, x = outcome,
+               shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(size = 3, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
+  theme_light(base_size = 8) + 
+  labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
+       col = "Media\npreference",
+       shape = "Media\npreference") +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
+  scale_color_brewer(palette = "Dark2")
+p5
+```
+
+```{r m6, fig.height=2.7, fig.width=7, fig.cap="\\label{fig:m4}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on article evaluations and subsequent engagement."}
+m6 <- bind_rows(
+  map_dfr(df_assigned, ~extractDiff(wp_accurate~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_fair~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_balanced~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_good~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_friendly~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(wp_american~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_seek~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_discuss~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_forward~tweet, .), .id = "prefer"),
+  map_dfr(df_assigned, ~extractDiff(actions_post~tweet, .), .id = "prefer")
+) %>% 
+  mutate(Preference = recode_factor(prefer,
+                                    `fox` = "Fox",
+                                    `neutral` = "Neither",
+                                    `msnbc` = "MSNBC",
+                                    .ordered = TRUE),
+         comparison = gsub(" by tweet", "", comparison),
+         group = recode_factor(comparison, 
+                               `wp_balanced` = "Article evaluation",
+                               `wp_accurate` = "Article evaluation",
+                               `wp_fair` = "Article evaluation",
+                               `wp_good` = "Article evaluation",
+                               `wp_friendly` = "Article evaluation",
+                               `wp_american` = "Article evaluation",
+                               `actions_seek` = "Subsequent engagement",
+                               `actions_discuss` = "Subsequent engagement",
+                               `actions_forward` = "Subsequent engagement",
+                               `actions_post` = "Subsequent engagement",
+                               .ordered = TRUE),
+         outcome = recode_factor(comparison, 
+                                 `wp_balanced` = "Balanced",
+                                 `wp_accurate` = "Accurate",
+                                 `wp_fair` = "Fair",
+                                 `wp_good` = "Good",
+                                 `wp_friendly` = "Friendly",
+                                 `wp_american` = "American",
+                                 `actions_seek` = "Seek more info",
+                                 `actions_discuss` = "Discuss with friends",
+                                 `actions_forward` = "Forward via email",
+                                 `actions_post` = "Post on social media",
+                                 .ordered = TRUE))
+
+p6 <- ggplot(m6, aes(y = diff, x = outcome,
+             shape = Preference, col = Preference)) + 
+  geom_hline(yintercept = 0, col = "grey") +
+  geom_point(size = 3, position=position_dodge(width=0.6)) +
+  geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.6)) +
+  geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.6)) +
+  theme_light(base_size = 8) + 
+  labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
+       col = "Media\npreference",
+       shape = "Media\npreference") +
+  facet_wrap(~group, scales = "free_x", ncol=3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p6
+```
+
+```{r m7, eval=FALSE}
+m7 <- list(wp_balanced = lm(wp_balanced ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           wp_accurate = lm(wp_accurate ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           wp_fair = lm(wp_fair ~ condition
+                        + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                        + age + male + usborn + white + college
+                        , data = df),
+           wp_good = lm(wp_good ~ condition
+                        + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                        + age + male + usborn + white + college
+                        , data = df),
+           wp_friendly = lm(wp_friendly ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           wp_american = lm(wp_american ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           actions_seek = lm(actions_seek ~ condition
+                             + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                             + age + male + usborn + white + college
+                             , data = df),
+           actions_discuss = lm(actions_discuss ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df),
+           actions_forward = lm(actions_forward ~ condition
+                                + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                                + age + male + usborn + white + college
+                                , data = df),
+           actions_post = lm(actions_post ~ condition
+                             + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                             + age + male + usborn + white + college
+                             , data = df),
+           tweet_click = lm(tweet_click ~ condition
+                             + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                             + age + male + usborn + white + college
+                             , data = df),
+           tweet_time = lm(log(tweet_time) ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df),
+           story_time = lm(log(story_time) ~ condition
+                            + lazy_hispanics + problem_immigration + ideol_con + pid_rep
+                            + age + male + usborn + white + college
+                            , data = df)) %>%
+  map(~coeftest(., vcov. = vcovHC(.)))
+```
+
+
+\clearpage
+
+## Predictive Accuracy of Open-Ended Responses
+
+```{r m8, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m6}Accuracy of Naive Bayes classifier to predict attitudes based on language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition."}
+source("../code/04-predictive_accuracy.R")
+p8
+```
+
+
+\clearpage
+
+# Regression Tables for Models Reported in Main Text
 
 ```{r m1, results='asis'}
 stargazer(m1, 
@@ -139,119 +497,10 @@ stargazer(m4,
           keep.stat = c("n", "rsq"))
 ```
 
-\clearpage
-
-# Determinants of Choosing Fox News
-
-```{r foxplot, fig.height=3, fig.width=7, fig.cap="\\label{fig:foxplot}Determinants of choosing Fox News in the free choice condition."}
-labels_FOX <- c(ideol_con = "Ideology", pid_rep = "Party Identification", prefer_fox = "Fox vs. MSNBC Media Diet")
-
-choose_fox <- df %>%
-  filter(condition == "choice") %>%
-  mutate(prefer_fox = tv_fox - tv_msnbc,
-         choose_fox = as.numeric(tweet == "fox")) %>%
-  dplyr::select(choose_fox, ideol_con, pid_rep, prefer_fox) %>%
-  gather(variable, value, -choose_fox) %>%
-  ggplot(aes(x=value, y = choose_fox)) +
-  geom_jitter(alpha = .1, height = .1) + 
-  geom_smooth(method = "lm") +
-  facet_grid(~variable, scales = "free_x", labeller = labeller(variable = labels_FOX)) +
-  theme_light(base_size = 8) +
-  labs(y = "Choose Fox News", x = "") +
-  scale_y_continuous(breaks=c(0,1))
-
-choose_fox
-```
-
-```{r foxtable, results='asis'}
-choose_fox = as.numeric(df$tweet == "fox")
-prefer_fox <- df$tv_fox - df$tv_msnbc
-
-fox1 <- lm(choose_fox ~ ideol_con + age + male + white + college, data = df)
-fox2 <- lm(choose_fox ~ pid_rep + age + male + white + college, data = df)
-fox3 <- lm(choose_fox ~ prefer_fox + age + male + white + college, data = df)
-
-stargazer(fox1, fox2, fox3, 
-          dep.var.caption = "",
-          dep.var.labels = "Choose Fox News", 
-          covariate.labels = c("Ideology", "Party Identification", "Fox vs. MSNBC Media Diet",
-                               "Age", "Male", "White", "College", 
-                               "Constant"),
-          column.sep.width = "0pt", 
-          title = "Determinants of choosing Fox News in the free choice condition. Coefficients are based on linear regression models. Positive coefficients indicate larger probability of to choose Fox News rather than MSNBC. Standard errors in parentheses.", 
-          table.placement = "ht",
-          label = "tab:fox",
-          font.size = "footnotesize",
-          header = FALSE,
-          no.space = TRUE,
-          keep.stat = c("n", "rsq"))
-
-```
 
 \clearpage
 
-
-# Overview of Media Preferences and Source Consistency
-
-```{r preference, fig.height=4, fig.width=4.05}
-df %>%
-  filter(!is.na(prefer)) %>%
-  mutate(Preference = recode_factor(prefer,
-                                    `fox` = "Fox",
-                                    `neutral` = "Neither",
-                                    `msnbc` = "MSNBC",
-                                    .ordered = TRUE)) %>%
-ggplot(aes(x = Preference)) + 
-  geom_bar(position = position_dodge()) +
-  theme_light(base_size = 8) +
-  labs(y = "Number of observations", 
-       x = "Media preference")
-```
-
-```{r consistency, fig.height=4, fig.width=5}
-df %>%
-  filter(!is.na(exposure),
-         exposure != "control") %>%
-  mutate(condition = recode_factor(condition,
-                                   `assigned` = "Forced exposure",
-                                   `choice` = "Free choice"),
-         exposure = recode_factor(exposure,
-                                  `inconsistent` = "Inconsistent",
-                                  `neutral` = "Neutral",
-                                  `consistent` = "Consistent")) %>%
-ggplot(aes(fill = exposure, x = condition)) + 
-  geom_bar(position = position_dodge()) +
-  theme_light(base_size = 8) +
-  labs(y = "Number of observations", fill = "Media\nexpsoure",
-       x = "Experimental condition") +
-  scale_fill_brewer(palette = "Dark2")
-```
-
-\clearpage
-
-
-# Additional Analyses: ACTEs
-
-```{r m5, fig.height=2, fig.width=7, fig.cap="\\label{fig:m3}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on beliefs, interpretations, and opinions."}
-p5
-```
-
-```{r m6, fig.height=2.7, fig.width=7, fig.cap="\\label{fig:m4}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on article evaluations and subsequent engagement."}
-p6
-```
-
-
-\clearpage
-
-# Additional Analyses: Predictive Accuracy in OE responses
-
-```{r m8, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m6}Accuracy of Naive Bayes classifier to predict attitudes based on language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition."}
-p8
-```
-
-\clearpage
 \singlespace
-
 
 # Pre-Analysis Plan
 

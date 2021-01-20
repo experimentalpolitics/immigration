@@ -120,7 +120,6 @@ nfeat(docs_dfm) # 1,323 features (~51% reduction)
 # first split the data into training and test sets by randomly pulling a sample of 50% of the data. if we want to weight by label or by question we can do so. we can also change how much of the data we use to train
 
 # first create train and test sets by randomly holding out 50% of data
-set.seed(42)
 train_ids <- docnames(docs_dfm)[docvars(docs_dfm, "training_")]
 test_ids <- docnames(docs_dfm)[!(docnames(docs_dfm) %in% train_ids)]
 length(test_ids[test_ids %in% train_ids]) # must evaluate to zero; it does
