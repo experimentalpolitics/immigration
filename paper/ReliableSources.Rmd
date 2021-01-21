@@ -242,10 +242,15 @@ Discuss ACTE analysis
 
 ## The Role of Ambivalence
 
+Note that these were not part of the pre-registered hypotheses!
+
+The last analysis in the main text uses the well-established LIWC dictionary [@tausczik2010psychological; @pennebaker2015development] to examine differences in tentative language in two open-ended responses where participants explain their previous assessment of the immigrant community's contribution to society by creating jobs and paying taxes. The goal was to investigate whether the observed opinion change in response to voluntary exposure to inconsistent sources could be explained by the fact that people who chose to access an inconsistent source have more ambivalent immigration attitudes prior to receiving the treatment. Our analysis in the main text suggest that this is unlikely to be the case since there were no significant differences in tentative language between the forced exposure and free choice condition (conditional on exposure to an inconsistent source).
+
 ```{r m5, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m5}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 95\\% (thin line) and 90\\% (thick line) confidence intervals."}
 p5
 ```
 
+<!-- [^1]: See Appendix D.III for full question wording. -->
 
 # Discussion and Conclusion
 
