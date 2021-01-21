@@ -1,6 +1,6 @@
 ---
 title: "Reliable Sources?"
-#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit for helpful comments on previous versions of this manuscript.]"
+#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
 subtitle: >
   Correcting Misinformation in Polarized Media Environments \vspace{10em}
 #author:
@@ -32,6 +32,7 @@ output:
 header-includes:
   \renewcommand{\familydefault}{\sfdefault}
   \usepackage{float}
+  \usepackage{censor}
   \floatplacement{figure}{H}
   \parskip=0pt
   \parindent=20pt
@@ -171,7 +172,12 @@ tribble(
 
 <!-- TODO: add discussion of pre-registration, sample characteristics, balance, etc. -->
 
-\noindent Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk). MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
+\noindent We preregistered our design on \censor{EGAP (Registration ID: 20191119AC)}[^2]
+
+Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk). MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
+
+[^2]: A anonimyzed 
+
 
 # Results 
 

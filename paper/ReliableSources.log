@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  21 JAN 2021 11:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  21 JAN 2021 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,68 +333,99 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box47
 \@float@everytoks=\toks25
 \@floatcapt=\box48
+) (/usr/share/texlive/texmf-dist/tex/latex/censor/censor.sty
+Package: censor 2018/11/15 3.22Provides capability for redaction of sensitive i
+nformation
+(/usr/share/texlive/texmf-dist/tex/latex/pbox/pbox.sty
+Package: pbox 2011/12/07 v1.2 Dynamic parboxes
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count272
+\calc@Bcount=\count273
+\calc@Adimen=\dimen159
+\calc@Bdimen=\dimen160
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count274
+\calc@Cskip=\skip56
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\pb@xlen=\skip57
+) (/usr/share/texlive/texmf-dist/tex/latex/ifnextok/ifnextok.sty
+Package: ifnextok 2011/06/27 v0.3 test next token (UL)
+)
+\censorruledepth=\skip58
+\censorruleheight=\skip59
+\periodrlap=\skip60
+\afterperiodlap=\skip61
+\lletterlap=\skip62
+\rletterlap=\skip63
+\afterspacelap=\skip64
 ) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen159
-\lightrulewidth=\dimen160
-\cmidrulewidth=\dimen161
-\belowrulesep=\dimen162
-\belowbottomsep=\dimen163
-\aboverulesep=\dimen164
-\abovetopsep=\dimen165
-\cmidrulesep=\dimen166
-\cmidrulekern=\dimen167
-\defaultaddspace=\dimen168
-\@cmidla=\count272
-\@cmidlb=\count273
-\@aboverulesep=\dimen169
-\@belowrulesep=\dimen170
-\@thisruleclass=\count274
-\@lastruleclass=\count275
-\@thisrulewidth=\dimen171
+\heavyrulewidth=\dimen161
+\lightrulewidth=\dimen162
+\cmidrulewidth=\dimen163
+\belowrulesep=\dimen164
+\belowbottomsep=\dimen165
+\aboverulesep=\dimen166
+\abovetopsep=\dimen167
+\cmidrulesep=\dimen168
+\cmidrulekern=\dimen169
+\defaultaddspace=\dimen170
+\@cmidla=\count275
+\@cmidlb=\count276
+\@aboverulesep=\dimen171
+\@belowrulesep=\dimen172
+\@thisruleclass=\count277
+\@lastruleclass=\count278
+\@thisrulewidth=\dimen173
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip54
-\LTright=\skip55
-\LTpre=\skip56
-\LTpost=\skip57
-\LTchunksize=\count276
-\LTcapwidth=\dimen172
+\LTleft=\skip65
+\LTright=\skip66
+\LTpre=\skip67
+\LTpost=\skip68
+\LTchunksize=\count279
+\LTcapwidth=\dimen174
 \LT@head=\box49
 \LT@firsthead=\box50
 \LT@foot=\box51
 \LT@lastfoot=\box52
-\LT@cols=\count277
-\LT@rows=\count278
-\c@LT@tables=\count279
-\c@LT@chunks=\count280
+\LT@cols=\count280
+\LT@rows=\count281
+\c@LT@tables=\count282
+\c@LT@chunks=\count283
 \LT@p@ftn=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen173
+\col@sep=\dimen175
 \ar@mcellbox=\box53
-\extrarowheight=\dimen174
+\extrarowheight=\dimen176
 \NC@list=\toks27
-\extratabsurround=\skip58
-\backup@length=\skip59
+\extratabsurround=\skip69
+\backup@length=\skip70
 \ar@cellbox=\box54
 ) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip60
-\multirow@cntb=\count281
-\multirow@dima=\skip61
-\bigstrutjot=\dimen175
+\multirow@colwidth=\skip71
+\multirow@cntb=\count284
+\multirow@dima=\skip72
+\bigstrutjot=\dimen177
 ) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen176
-\WF@size=\dimen177
-\c@WF@wrappedlines=\count282
+\wrapoverhang=\dimen178
+\WF@size=\dimen179
+\c@WF@wrappedlines=\count285
 \WF@box=\box55
 \WF@everypar=\toks28
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks29
-\minrowclearance=\skip62
+\minrowclearance=\skip73
 ) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
@@ -407,32 +438,32 @@ mediate FMi
 (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box56
-\sift@deathcycles=\count283
-\@vwid@loff=\dimen178
-\@vwid@roff=\dimen179
+\sift@deathcycles=\count286
+\@vwid@loff=\dimen180
+\@vwid@roff=\dimen181
 )
-\c@taburow=\count284
-\tabu@nbcols=\count285
-\tabu@cnt=\count286
-\tabu@Xcol=\count287
-\tabu@alloc=\count288
-\tabu@nested=\count289
-\tabu@target=\dimen180
-\tabu@spreadtarget=\dimen181
-\tabu@naturalX=\dimen182
-\tabucolX=\dimen183
-\tabu@Xsum=\dimen184
-\extrarowdepth=\dimen185
-\abovetabulinesep=\dimen186
-\belowtabulinesep=\dimen187
-\tabustrutrule=\dimen188
+\c@taburow=\count287
+\tabu@nbcols=\count288
+\tabu@cnt=\count289
+\tabu@Xcol=\count290
+\tabu@alloc=\count291
+\tabu@nested=\count292
+\tabu@target=\dimen182
+\tabu@spreadtarget=\dimen183
+\tabu@naturalX=\dimen184
+\tabucolX=\dimen185
+\tabu@Xsum=\dimen186
+\extrarowdepth=\dimen187
+\abovetabulinesep=\dimen188
+\belowtabulinesep=\dimen189
+\tabustrutrule=\dimen190
 \tabu@thebody=\toks30
 \tabu@footnotes=\toks31
 \tabu@box=\box57
 \tabu@arstrutbox=\box58
 \tabu@hleads=\box59
 \tabu@vleads=\box60
-\tabu@cellskip=\skip63
+\tabu@cellskip=\skip74
 ) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box61
@@ -443,39 +474,27 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip64
+\TPTL@width=\skip75
 ) (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box62
 \UL@hyphenbox=\box63
-\UL@skip=\skip65
+\UL@skip=\skip76
 \UL@hook=\toks32
-\UL@height=\dimen189
-\UL@pe=\count290
-\UL@pixel=\dimen190
+\UL@height=\dimen191
+\UL@pe=\count293
+\UL@pixel=\dimen192
 \ULC@box=\box64
 Package: ulem 2019/11/18
-\ULdepth=\dimen191
+\ULdepth=\dimen193
 ) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen192
-\c@nlinenum=\count291
+\rotheadsize=\dimen194
+\c@nlinenum=\count294
 \TeXr@lab=\toks33
 )
-\cslhangindent=\skip66
-\csllabelwidth=\skip67
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count292
-\calc@Bcount=\count293
-\calc@Adimen=\dimen193
-\calc@Bdimen=\dimen194
-\calc@Askip=\skip68
-\calc@Bskip=\skip69
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count294
-\calc@Cskip=\skip70
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+\cslhangindent=\skip77
+\csllabelwidth=\skip78
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count295
 \l__pdf_internal_box=\box65
@@ -702,78 +721,78 @@ same identifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.573 
-      ]
-<ReliableSources_files/figure-latex/m1-1.pdf, id=79, 494.84875pt x 138.5175pt>
+l.567 O
+       ur experiment was administered in December 2019 on Amazon's Mechanical]
+<ReliableSources_files/figure-latex/m1-1.pdf, id=80, 494.84875pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m1-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 606.
+nput line 608.
 (pdftex.def)             Requested size: 469.75632pt x 131.49364pt.
 [10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.656 
+l.658 
        <./ReliableSources_files/figure-latex/m1-1.pdf>]
-<ReliableSources_files/figure-latex/m2-1.pdf, id=101, 502.87875pt x 246.9225pt>
+<ReliableSources_files/figure-latex/m2-1.pdf, id=103, 502.87875pt x 246.9225pt>
 
 File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m2-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 685.
+nput line 687.
 (pdftex.def)             Requested size: 469.75186pt x 230.65659pt.
 [12] [13pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.724 
+l.726 
        <./ReliableSources_files/figure-latex/m2-1.pdf>]
-<ReliableSources_files/figure-latex/m4-1.pdf, id=123, 465.74pt x 138.5175pt>
+<ReliableSources_files/figure-latex/m4-1.pdf, id=125, 465.74pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m4-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 739.
+nput line 741.
 (pdftex.def)             Requested size: 465.73886pt x 138.51715pt.
 [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.784 
+l.786 
        <./ReliableSources_files/figure-latex/m4-1.pdf>]
-<ReliableSources_files/figure-latex/m5-1.pdf, id=140, 321.2pt x 138.5175pt>
+<ReliableSources_files/figure-latex/m5-1.pdf, id=142, 321.2pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
-nput line 806.
+nput line 808.
 (pdftex.def)             Requested size: 321.19922pt x 138.51715pt.
 [16] [17pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.859 
+l.861 
        <./ReliableSources_files/figure-latex/m5-1.pdf>] [18] [19
 
 ] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1022.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1024.
 [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1022.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1024.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1022.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1022.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1024.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1024.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14784 strings out of 481239
- 215787 string characters out of 5920377
- 506085 words of memory out of 5000000
- 29537 multiletter control sequences out of 15000+600000
+ 14954 strings out of 481239
+ 218046 string characters out of 5920377
+ 507181 words of memory out of 5000000
+ 29691 multiletter control sequences out of 15000+600000
  608094 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,42p,885b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -783,10 +802,10 @@ hare/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (22 pages, 890198 bytes).
+Output written on ReliableSources.pdf (22 pages, 890730 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
  16500 words of extra memory for PDF output out of 17280 (max. 10000000)
 
