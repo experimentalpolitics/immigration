@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  21 JAN 2021 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  21 JAN 2021 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,25 +662,25 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <../prereg/Lab-Graphic.jpg, id=50, 6343.7pt x 1678.27pt>
 File: ../prereg/Lab-Graphic.jpg Graphic file (type jpg)
 <use ../prereg/Lab-Graphic.jpg>
-Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 496.
+Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 497.
 (pdftex.def)             Requested size: 469.75557pt x 124.2771pt.
 [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 512.
+(Font)              <5> on input line 513.
 <../material/tweets/fox_popular.png, id=60, 590.205pt x 271.0125pt>
 File: ../material/tweets/fox_popular.png Graphic file (type png)
 <use ../material/tweets/fox_popular.png>
 Package pdftex.def Info: ../material/tweets/fox_popular.png  used on input line
- 517.
+ 518.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
 <../material/tweets/msnbc_popular.png, id=62, 590.205pt x 271.0125pt>
 File: ../material/tweets/msnbc_popular.png Graphic file (type png)
 <use ../material/tweets/msnbc_popular.png>
 Package pdftex.def Info: ../material/tweets/msnbc_popular.png  used on input li
-ne 517.
+ne 518.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
 
-Overfull \hbox (2.59811pt too wide) in paragraph at lines 517--517
+Overfull \hbox (2.59811pt too wide) in paragraph at lines 518--518
 [][] []
  []
 
@@ -689,90 +689,90 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.529 
+l.530 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.529 
+l.530 
        <../prereg/Lab-Graphic.jpg> <../material/tweets/fox_popular.png> <../mat
 erial/tweets/msnbc_popular.png>] [9pdfTeX warning (ext4): destination with the 
 same identifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.571 
+l.572 
       ]
 <ReliableSources_files/figure-latex/m1-1.pdf, id=79, 494.84875pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m1-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 604.
+nput line 605.
 (pdftex.def)             Requested size: 469.75632pt x 131.49364pt.
 [10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.654 
+l.655 
        <./ReliableSources_files/figure-latex/m1-1.pdf>]
 <ReliableSources_files/figure-latex/m2-1.pdf, id=101, 502.87875pt x 246.9225pt>
 
 File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m2-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 683.
+nput line 684.
 (pdftex.def)             Requested size: 469.75186pt x 230.65659pt.
 [12] [13pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.722 
+l.723 
        <./ReliableSources_files/figure-latex/m2-1.pdf>]
 <ReliableSources_files/figure-latex/m4-1.pdf, id=123, 465.74pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m4-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 737.
+nput line 738.
 (pdftex.def)             Requested size: 465.73886pt x 138.51715pt.
 [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.782 
+l.783 
        <./ReliableSources_files/figure-latex/m4-1.pdf>]
 <ReliableSources_files/figure-latex/m5-1.pdf, id=140, 321.2pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
-nput line 804.
+nput line 805.
 (pdftex.def)             Requested size: 321.19922pt x 138.51715pt.
 [16] [17pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.857 
+l.858 
        <./ReliableSources_files/figure-latex/m5-1.pdf>] [18] [19
 
 ] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1020.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1021.
 [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1020.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1021.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1020.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1020.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1021.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1021.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  14784 strings out of 481239
- 215799 string characters out of 5920377
- 506178 words of memory out of 5000000
+ 215787 string characters out of 5920377
+ 506172 words of memory out of 5000000
  29537 multiletter control sequences out of 15000+600000
  608094 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
