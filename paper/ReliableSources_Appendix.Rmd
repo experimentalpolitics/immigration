@@ -54,8 +54,11 @@ library(car)
 library(here)
 ```
 
-
 \clearpage
+\renewcommand\thesection{\Alph{section}}
+\renewcommand\thesubsection{\Roman{subsection}}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
 
 # Sample Overview
 
@@ -217,6 +220,8 @@ list(
 # Additional Analyses
 
 ## Average Choice-Specifc Treatment Effects (ACTEs)
+
+In addition to the analyses reported in the main text, we explore average choice-specific treatment effects (ACTE) following @knox2019design and @benedictis2019persuading. In the context of our design, the ACTE describes the average effects of reading the article from Fox News instead of MSNBC among those who would usually prefer to read Fox News, MSNBC, or neither. A negative coefficient indicates that the expected value of the respective outcome measure is smaller among participants who were assigned to the Fox News story than among participants who were assigned to MSNBC. As such, the results in Figure \ref{fig:m4} suggest that people who usually prefer MSNBC evaluated the Fox News article less positively and were less likely to share it with others than the MSNBC article---despite the fact that the content itself was held constant across news outlets.
 
 ```{r m5, fig.height=2, fig.width=7, fig.cap="\\label{fig:m3}Average choice-specific treatment effects comparing the effect of exposure to Fox vs. MSNBC in forced choice condition conditional on media preferences on beliefs, interpretations, and opinions."}
 df_assigned <- df %>%
@@ -497,15 +502,14 @@ stargazer(m4,
           keep.stat = c("n", "rsq"))
 ```
 
-\clearpage
 
-\singlespace
+\clearpage\singlespace
 
 # Full Questionnaire
 
 ## Pre-treatment measures
 
-### Block 1: Media usage
+**Block 1: Media usage**
 
 First, we want to ask a few questions about your current media diet.
 
@@ -560,7 +564,9 @@ First, we want to ask a few questions about your current media diet.
 7. Never
 8. Don’t Know
 
-### Block 2: Stereotype battery
+\vspace{1em}
+
+**Block 2: Stereotype battery**
 
 Next are some questions about different groups in our society.
 
@@ -591,7 +597,9 @@ Next are some questions about different groups in our society.
 
 (1) Generous - (7) Selfish, (8) DK
 
-### Block 3: Political attitudes & participation
+\vspace{1em}
+
+**Block 3: Political attitudes & participation**
 
 Next, we would like you to answer a few questions about your political viewpoints.
 
@@ -644,7 +652,7 @@ Would you consider yourself a strong Republican/Democrat or a not very strong Re
 
 ## Information treatment
 
-### Tweets
+**Tweets**
 
 **[choice]** *(if `condition == choice`, randomize order)* In the following section, we are going to show you a random tweet drawn from the accounts of two large news organizations. You can choose from which Twitter account the random tweet will be drawn. Afterwards, we are going to ask you some questions about the content of the news story.
 
@@ -664,8 +672,9 @@ Next, we will show you the content of the article linked in the previous tweet. 
 
 _There will be a brief pause on the next screen so you can read the story._ At the end of the pause, an arrow will appear at the bottom of the screen. Once the arrow appears, you may move on to the next screen of the survey by clicking on the arrow.
 
+\vspace{1em}
 
-### Full Story: Immigrant-owned Businesses on the Rise
+**Full Story: Immigrant-owned Businesses on the Rise**
 
 William Hall | [Fox News/MSNBC]
 
@@ -687,7 +696,9 @@ The Rodriguez's story is just one of many. As more immigrants look to open their
 
 *William Hall is a Business Reporter for [Fox News/MSNBC].*
 
-### Attention checks & article evaluation
+\vspace{1em}
+
+**Attention checks & article evaluation**
 
 Please answer the following questions about the tweet as well as the article you just read.
 
@@ -728,7 +739,7 @@ Please answer the following questions about the tweet as well as the article you
 
 ## Post-treatment measures
 
-### Block 1: Attitudes towards immigration
+**Block 1: Attitudes towards immigration**
 
 _(only show this message in the control condition)_ In this section, we want to ask you a few questions about immigration.
 
@@ -776,7 +787,9 @@ _(randomize order of remaining questions)_
 
 - *TEXTBOX*
 
-### Block 2: Trust in news sources
+\vspace{1em}
+
+**Block 2: Trust in news sources**
 
 Let's briefly return to the different media sources mentioned at the beginning of the survey.
 
@@ -810,7 +823,9 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-### Block 3: Sociodemographics
+\vspace{1em}
+
+**Block 3: Sociodemographics**
 
 This almost completes our survey, we only need some additional information about your background.
 
@@ -906,8 +921,6 @@ This almost completes our survey, we only need some additional information about
 
 \clearpage
 
-\singlespace
-
 # Pre-Analysis Plan / De-identified Preregistration
 
 ## General Information About the Project
@@ -986,11 +999,11 @@ As a first step, these comparisons exclude the free choice arm of the experiment
 
 **Missing data:** Respondents who report "don't know" on the outcome measures (if applicable) or who skipped the question will be treated as missing and excluded from the respective analysis (basic listwise deletion). While we are going to use the manipulation checks to evaluate whether respondents read the information provided to them, we decided not to drop respondents who failed to pass the manipulation checks in the subsequent analyses [see for example @aronow2018note].
 
-**Main analyses:** To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference between both treatment conditions themselves. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. Howver, we can only detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions) and we will explore average choice-specific treatment effects (ACTE) following @knox2019design. Unfortunately, our power analysis below suggests that our sample size is too small to reliably detect these conditional treatment effects.
+**Main analyses:** To test our hypotheses, we will rely on simple differences-in-means and OLS estimators to compare the outcome measures between each treatment and the control group, respectively. The main analyses will focus on the average treatment effects relative to the control as well as the difference between both treatment conditions themselves. The power analyses reported below shows that given our sample size of 600, we have 85% power to detect a 0.3 standard deviation effect between the treatment and control group. However, we can only detect a 0.2 standard deviation effect between both treatment conditions with 53% power. We will also consider heterogeneous treatment effects by pre-treatment covariates (stereotypes towards immigrants, whether immigration is seen as a major issue, and basic political predispositions) and we will explore average choice-specific treatment effects (ACTE) following @knox2019design. Unfortunately, our power analysis below suggests that our sample size is too small to reliably detect these conditional treatment effects.
 
 **Power analysis: basic 3-arm design (ATE w/o differentiating sources)**
 
-```{r, cache = TRUE}
+```{r power_ate, cache = TRUE}
 N <- 600
 outcome_means <- c(0, .1, .3)
 sd_i <- 1
@@ -1046,7 +1059,7 @@ diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
 
 **Power analysis: conditional effects depending on media preference (ACTE following Knox)**
 
-```{r, chache = TRUE}
+```{r power_acte, chache = TRUE}
 Nforced <- round(N/3)
 Sfox_Afox <- .2 # note: S = preferred treatment, A = actual treatment
 Sfox_Amsnbc <- .0

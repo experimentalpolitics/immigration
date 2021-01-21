@@ -238,6 +238,8 @@ It could also be the case that those viewing information from what we deem as 'i
 In order to shed light on the underlying mechanism at play, we provide a secondary analysis leveraging open-ended responses...[what should we find if it's option 1? what do the results look like if it's the latter mechanism at play?]
 <!--add analysis of open-ended responses. -->
 
+Discuss ACTE analysis
+
 ## The Role of Ambivalence
 
 ```{r m5, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m5}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 95\\% (thin line) and 90\\% (thick line) confidence intervals."}
