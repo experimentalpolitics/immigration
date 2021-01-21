@@ -139,7 +139,7 @@ knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 
 \noindent Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. Importantly, both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant. After viewing one of the tweets, participants are asked to read the corresponding article. As before, the content of the news article is held constant across sources in either condition.[^1]
 
-[^1]: See Appendix for the full article and further details such as survey instructions and question wording.
+[^1]: See Appendix D for the complete questionnaire as well as the full news article.
 
 \vspace{1em}
 
@@ -148,8 +148,6 @@ knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/twe
 ```
 
 \noindent Compared to previous implementations of the PICA framework where the content was not held constant across sources [@benedictis2019persuading; @knox2019design], our design allows us to directly compare the effects of free choice and forced exposure while ensuring that differences between treatment groups are not the result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery to the outcome measures.
-
-For our analysis, we consider five different outcomes that correspond to beliefs, interpretations, and opinions related to the economic impact of legal immigration. The full question overview is displayed in Table \ref{tab:outcomes}. Two items targeting factual *beliefs* directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Both questions offer five response options,  (one of which is accurate) and the correct information is mentioned in the tweet as well as the news article. In order to measure *interpretations* consistent with the theoretical conceptualization discussed above, we asked respondents two additional questions about whether they believe that immigrants add to the economy by creating additional jobs and whether they contribute more by paying taxes than they take out by using health and social services. Lastly, we measure *opinions* by asking for the participants' overall preference regarding the number of immigrants who should be allowed to move to and live in United States.
 
 ```{r outcomes}
 tribble(
@@ -170,25 +168,30 @@ tribble(
   kableExtra::kable_styling(latex_options =c("hold_position"))
 ```
 
-<!-- TODO: add discussion of pre-registration, sample characteristics, balance, etc. -->
-
-\noindent We preregistered our design on \censor{EGAP (Registration ID: 20191119AC)}[^2]
-
-Our experiment was administered in December 2019 on Amazon's Mechanical Turk (MTurk). MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). Our sample of 600 respondents reflects these dynamics, and summary statistics are provided in the Appendix. <!--note that we need to reference the table specifically once we decide where it lives.-->
-
-[^2]: A anonimyzed 
+For our analysis, we consider five different outcomes that correspond to beliefs, interpretations, and opinions related to the economic impact of legal immigration. The full question overview is displayed in Table \ref{tab:outcomes}. Two items targeting factual *beliefs* directly ask for statistics regarding the number of workers employed by immigrant-owned businesses as well as the total amount of sales revenue of immigrant-owned businesses. Both questions offer five response options,  (one of which is accurate) and the correct information is mentioned in the tweet as well as the news article. In order to measure *interpretations* consistent with the theoretical conceptualization discussed above, we asked respondents two additional questions about whether they believe that immigrants add to the economy by creating additional jobs and whether they contribute more by paying taxes than they take out by using health and social services. Lastly, we measure *opinions* by asking for the participants' overall preference regarding the number of immigrants who should be allowed to move to and live in United States. Together, these outcome measures allow for a more fine-grained differentiation of possible types of (incomplete) updating than previous studies on the effectiveness of misinformation corrections.
 
 
 # Results 
 
-Compared to previous studies, the outcome measures described above allow for a much more fine-grained differentiation of possible types of (incomplete) updating as a response to misinformation corrections. Now, we are going to examine the role of media preferences and the ability to choose information sources as predictors of changes in beliefs, interpretations, and opinions.
+\noindent We preregistered our study on \censor{EGAP (Registration ID: 20191119AC)} prior to data collection.[^2] The survey was fielded on Amazon's Mechanical Turk (MTurk) in December 2019 with a sample of 600 respondents. As such, while our sample is certainly not representative of the broader U.S. population, it is more diverse than other convenience samples such as college students. We provide a summary of our sample demographics across treatment conditions in Appendix A.
+
+MTurk respondents are generally younger, more liberal, and more likely to identify with the Democratic party than respondents in surveys using nationally representative samples (Huff and Tingely 2015). However, MTurk respondents have been found to be more representative of the American population than other types of convinience samples (Huff and Tingley 2015). 
+
+[^2]: A de-identified version of the registration and pre-analysis plan is included in Appendix E. 
+
+
+<!-- TODO: sample characteristics, balance, etc. identifying bots, etc. -->
+
+@huff2015these @krupnikov2014cross @berinsky2012evaluating
+
+
 
 
 ## Free Choice Enables Opinion Change
 
-As a first step, we examine the average treatment effects of the forced exposure and free choice conditions for each of the five outcome measures compared to the control group that did not have access to the tweet or news article. For each dependent variable, we estimate a linear regression with two treatment indicators (the control condition is the reference category) while controlling for a set of pre-treatment covariates and sociodemographic characteristics to increase statistical power [e.g., @bowers2011making; @clifford2020increasing]. Figure \ref{fig:m1} focuses on the estimated effect of the treatment indicators and the full regression table including controls can be found in the Appendix. Since the measures of factual beliefs are dichotomous, the first set of coefficients examining belief change can be interpreted as linear probability models, whereas the remaining coefficients can be interpreted as treatment effects where the (quasi-)continuous outcome variable was rescaled to range from zero to one.
+As a first step, we examine the average treatment effects of the forced exposure and free choice conditions for each of the five outcome measures compared to the control group that did not have access to the tweet or news article. For each dependent variable, we estimate a linear regression with two treatment indicators (the control condition is the reference category) while controlling for a set of pre-treatment covariates and sociodemographic characteristics to increase statistical power [e.g., @bowers2011making; @clifford2020increasing]. Figure \ref{fig:m1} focuses on the estimated effect of the treatment indicators and the full regression table including controls can be found in Appendix C. Since the measures of factual beliefs are dichotomous, the first set of coefficients examining belief change can be interpreted as linear probability models, whereas the remaining coefficients can be interpreted as treatment effects where the (quasi-)continuous outcome variable was rescaled to range from zero to one.
 
-```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 90\\% (thick line) and 95\\% (thin line) confidence intervals based on robust standard errors. Full model results presented in the appendix."}
+```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 90\\% (thick line) and 95\\% (thin line) confidence intervals based on robust standard errors. Full model results presented in Appendix C."}
 p1
 ```
 
@@ -209,7 +212,7 @@ At the beginning of our survey experiment, we included a battery of questions re
 
 The question was followed by a list of five news outlets including Fox News and MSNBC.<!--need more descriptives here (ex. # of people in each category).--> Based on this item, we can distinguish whether participants in the treatment conditions were exposed to an information source that is consistent or inconsistent with their usual media preferences (if they usually prefer to watch more Fox News than MSNBC and vice versa), or if the information source is neutral (if they prefer neither Fox News or MSNBC as part of their usual media diet). Figure \ref{fig:m2} repeats the previous analysis examining treatment effects on beliefs, interpretations, and opinions---but now differentiating participants in the forced exposure and free choice conditions by source consistency.
 
-```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Full model results presented in the appendix."}
+```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Full model results presented in Appendix C."}
 p2
 ```
 
@@ -219,7 +222,7 @@ Interestingly, the pattern for opinion change as a response to the news story ap
 
 To further corroborate this finding, we now directly compare the effect of voluntary and involuntary exposure to inconsistent sources. Specifically, we reduce the sample to include only participants who were exposed to a news source that was inconsistent with their usual media diet. We then run regressions using the same specifications as before, now only including a single treatment indicator for the free choice condition. Note that since this specification omits the control group and instead uses forced exposure to inconsistent sources as the reference category, the coefficients can be interpreted as the differences in treatment effects between the free choice and forced exposure condition. The results are displayed in Figure \ref{fig:m4}.
 
-```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4}Difference in treatment effects of free choice manipulation (vs. forced exposure) conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Full model results presented in the appendix."}
+```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4}Difference in treatment effects of free choice manipulation (vs. forced exposure) conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Full model results presented in Appendix C."}
 p4
 ```
 
