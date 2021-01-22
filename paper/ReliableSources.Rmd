@@ -51,6 +51,7 @@ source("../code/03-liwc.R")
 \thispagestyle{empty}
 \clearpage
 \setcounter{page}{1}
+\doublespace
 
 \noindent Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [@alesina2019immigration]. These factual misperceptions are reinforced by the news media and, in turn, can foster biased attitudes and stereotypes [@Wright2020]. Given the extensive spread of misinformation, researchers from various disciplines started examining how corrective information may affect people's underlying attitudes [see @flynn2017nature for a review]. However, while corrective information may alleviate some factual misperceptions, it rarely affects people's underlying attitudes [@hopkins2019muted; @swire2020they].
 
@@ -82,22 +83,22 @@ Lastly, we define *opinions* as evaluative judgments that are formed about the s
 
 How does this conceptualization of beliefs, interpretations, and opinions help us understand potential impact of corrective information? @gaines2007same uses this framework to differentiate four different types of updating as a response to a changing state of the world:
 
-\vspace{.5em}
+\singlespace
 
 1. **Complete Updating:** \hspace{0.5em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 2. **Fact Avoidance:** \hspace{2.4em} reality **| |** beliefs $\rightarrow$ interpretations $\rightarrow$ opinions
 3. **Meaning Avoidance:** \hspace{0.4em} reality $\rightarrow$ beliefs **| |** interpretations $\rightarrow$ opinions
 4. **Opinion Disconnect:** \hspace{0.4em} reality $\rightarrow$ beliefs $\rightarrow$ interpretations **| |** opinions
 
-\vspace{.5em}
+\vspace{1em}\doublespace
 
 \noindent Under complete updating, new factual information directly shapes beliefs about the state of the world, which in turn affects relevant interpretations, and ultimately results in opinion change. Consequently, incomplete updating despite new information could be due to a lack of belief updating (fact avoidance), interpretations that resist altered beliefs (meaning avoidance), or opinions driven by predispositions alone (opinion disconnect). Within this framework and considering the arguments outlined above, we therefore state our first hypothesis as follows:
 
-\vspace{.5em}
+\singlespace
 
 > *Hypothesis 1:* Misinformation corrections have stronger effects on people's factual **beliefs** than their related **interpretations** or **opinions**.
 
-\vspace{.5em}
+\vspace{1em}\doublespace
 
 \noindent Consistent with past research, we expect fact avoidance to be relatively rare when people encounter corrective information. Meaning avoidance and (especially) opinion disconnect, however, may be considerably more common. Unfortunately, since few studies on misinformation corrections rely on an explicit distinction between these types of incomplete updating, surprisingly little is known about the determinants that make one type more likely than another. In the following section, we argue that the source of corrective information is a crucial moderator in this context.
 
@@ -108,21 +109,21 @@ Notwithstanding the burgeoning interdisciplinary research on misinformation corr
 
 Building on our differentiation between beliefs, interpretations, and opinions, we argue that media choice is a key mechanism that influences whether misinformation corrections ultimately result in complete updating, opinion disconnect, meaning avoidance, or even fact avoidance. Prior studies suggest that people are willing to update their factual *beliefs* in response to corrective information regardless of whether they were able to choose a source. However, the reason that they seem less inclined to incorporate corrections in their *interpretations* and subsequent *opinions* may be because they are exposed to information that they did not seek out themselves---as it usually happens in most misinformation experiments. This argument is grounded in work by @stroud2019consequences, who develop a theoretical framework that explains how varying circumstances of information exposure---i.e., whether it was accessed voluntarily or not---impact individual responses to said information. Specifically, being forced to view content without freedom of choice generates reactance (i.e., negative affect and counter-arguing) and cognitive dissonance, even among those who are assigned to preferred content [@stroud2019consequences]. Thus, we can formulate the following expectation regarding the impact of being able to choose information sources:
 
-\vspace{.5em}
+\singlespace
 
 > *Hypothesis 2:* Misinformation corrections have stronger effects if people are able to **choose** their information source. These differences are more pronounced for **opinions** and **interpretations** than for beliefs.
 
-\vspace{.5em}
+\vspace{1em}\doublespace
 
 \noindent In sum, we expect that meaning avoidance and opinion disconnect are less common if people have discretion over what information to access. For instance, a large component of news articles consists of contextualizing information and thereby providing suitable interpretations of the underlying facts. The initial ability to select a news source may make people more willing to adopt the interpretations provided therein along with the factual information itself.
 
 In addition to the hypothesized effect of people's ability to choose in and of itself, we consider a closely related mechanism centered on the impact of a given source itself. Although previous research on misinformation corrections has largely ignored the potential impact of people's freedom to select content, what has been studied extensively is the effect of the perceived credibility of a given source. For example, @guillory2013correcting find that corrective information is especially effective if it comes from a source perceived to be trustworthy. Similarly, @berinsky2017rumors presents evidence that the rebuttal of rumors in the context of health care reform was more effective when politicians issuing the correction act counter to their personal and political interests. Other studies, however, indicate that the source is less consequential for the effectiveness of corrections [e.g., @swire2017processing]. Notwithstanding, we expect that people's media preferences should influence the receptivity to corrective information:
 
-\vspace{.5em}
+\singlespace
 
 > *Hypothesis 3:* Misinformation corrections have stronger effects if the information source is **consistent** with people's media preferences. These differences are more pronounced for **opinions** and **interpretations** than for beliefs.
 
-\vspace{.5em}
+\vspace{1em}\doublespace
 
 \noindent This hypothesis follows directly from the aforementioned arguments surrounding source credibility since people should perceive their preferred media outlets as more trustworthy. As such, it can be expected that meaning avoidance and opinion disconnect is less common if people are exposed to information provided by a news organization they view favorably.
 
@@ -133,23 +134,29 @@ It is worth emphasizing that while Hypothesis 2 and 3 are clearly related, they 
 
 The goal of our study is to explore how the way people access corrective information influences its potential to change related beliefs, interpretations, and opinions. Our experimental framework builds on the Preference-Incorporating Choice and Assignment (PICA) design [@benedictis2019persuading; @knox2019design], where one group of participants is randomly assigned to information treatments from different sources while another group is allowed to freely choose which source to access. Figure \ref{fig:flow} displays an overview of our study. The survey begins with a set of pre-treatment questions regarding their media preferences and immigration attitudes. Next, we randomly assign participants to a free choice, forced exposure, or control condition. Participants who receive the free choice treatment are informed that they will be shown a breaking news tweet and they are asked to decide from which media outlet the tweet should be taken (either Fox News or MSNBC). Participants in the forced exposure condition are not offered such a choice but are simply informed that they will be shown a breaking news tweet from a random media outlet.
 
+\singlespace
+
 ```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix D for the complete questionnaire."}
 knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 ```
+
+\doublespacing
 
 \noindent Depending on their preference (in the free choice condition) or random assignment (in the forced exposure condition), participants are then shown one of the tweets displayed in Figure \ref{fig:tweets}, which links to a news story focusing on immigrant-owned businesses in the U.S. Importantly, both tweets contain exactly the same information, so regardless of which news organization participants chose (or were assigned to), the information itself is held constant. After viewing one of the tweets, participants are asked to read the corresponding article. As before, the content of the news article is held constant across sources in either condition.[^2]
 
 [^2]: See Appendix D for the full news article.
 
-\vspace{1em}
+\singlespace
 
-```{r tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (Fox News or MSNBC). Participants only view one of the tweets."}
+```{r fig_tweets, fig.show="hold", out.width="50%", fig.cap="\\label{fig:tweets}Information treatment on the size of immigrant-owned businesses in the U.S. from two different sources (Fox News or MSNBC). Participants only view one of the tweets."}
 knitr::include_graphics(c("../material/tweets/fox_popular.png", "../material/tweets/msnbc_popular.png"))
 ```
 
+\doublespace
+
 \noindent Compared to previous implementations of the PICA framework where the content was not held constant across sources [@benedictis2019persuading; @knox2019design], our design allows us to directly compare the effects of free choice and forced exposure while ensuring that differences between treatment groups are not the result of the structure, content, or tone of different stories. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery to the outcome measures.
 
-```{r outcomes}
+```{r tab_outcomes}
 tribble(
   ~Belief, ~Interpretation, ~Opinion,
   "Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses?",
@@ -184,11 +191,13 @@ As a first step, we examine average treatment effects of the forced exposure and
 
 [^4]: Full regression tables including controls can be found in Appendix C.
 
-\vspace{1em}
+\singlespace
 
 ```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 90\\% (thick line) and 95\\% (thin line) confidence intervals based on robust standard errors. Appendix C displays full model results."}
 p1
 ```
+
+\doublespace
 
 \noindent Compared to the control condition, the proportion of correct responses regarding the employment and total value of sales by immigrant-owned businesses is about 20 to 30 percentage points higher among participants who read the tweet and news story. This is a substantively large effect and it is illustrative of the fact that participants systematically underestimated the economic contributions of immigrant-owned business if they were not given any additional information.
 
@@ -196,28 +205,32 @@ Turning to the effect of corrective information on interpretations, we find smal
 
 Lastly, the treatment effect of forced exposure to corrective information largely diminishes when focusing on opinion change as the outcome of interest, which is consistent with previous experimental evidence [e.g., @hopkins2019muted]. In contrast, however, we do observe a small but statistically significant increase in general support for legal immigration among participants in the free choice condition compared to the control group. The finding that people's opinions toward legal immigration only change in response to *voluntary* exposure to corrective information is consistent with the argument that freedom of choice reduces negative affect and counter-arguing towards the source [@stroud2019consequences]. Before drawing any definite conclusions regarding this proposed mechanism, however, we need to explore the impact of media preferences and source consistency in this context. This will be the focus of the subsequent section.
 
-Summarizing our results thus far, the finding that estimated treatment effects are smaller for interpretations and opinions than for beliefs strongly supports Hypothesis 1. In addition, differences between the forced exposure and free choice conditions appear fairly limited across outcomes. Updating beliefs and interpretations as a response to misinformation corrections is relatively common and independent of how people gain access to them. Only if people are allowed to choose their information source, however, do we observe that they change their opinions about the issue. While this is at least suggestive evidence that discretion over media diets is a potentially important factor facilitating opinion change, it should be noted that the difference between both treatment effects themselves is not statistically significant [@gelman2006difference]. Overall, these results lend at least some support to Hypothesis 2. Next, we are going to incorporate people's preferences over specific media sources in the analysis to further corroborate our findings.
+Summarizing our results thus far, the finding that estimated treatment effects are smaller for interpretations and opinions than for beliefs strongly supports Hypothesis 1. In addition, differences between the forced exposure and free choice conditions appear fairly limited across outcomes. Updating beliefs and interpretations as a response to misinformation corrections is relatively common and independent of how people gain access to them. Only if people are allowed to choose their information source, however, do we observe that they change their opinions about the issue. While this is at least suggestive evidence that discretion over media diets is a potentially important factor facilitating opinion change, it should be noted that the difference between both treatment effects themselves is not statistically significant [see also @gelman2006difference]. Overall, these results lend at least some support to Hypothesis 2. Next, we are going to incorporate people's preferences over specific media sources in the analysis to further corroborate our findings.
 
 
 ## Opinion Change is Driven by Voluntary Exposure to Inconsistent Sources
 
 At the beginning of our survey experiment, we included a battery of questions regarding people's usual media diet. Based on these items, we can distinguish whether participants in the treatment conditions were exposed to an information source that is consistent or inconsistent with their usual media preferences (if they usually prefer to watch more Fox News than MSNBC and vice versa), or if the information source is neutral (if they prefer neither Fox News nor MSNBC as part of their usual media diet). Figure \ref{fig:m2} repeats the previous analysis examining treatment effects on beliefs, interpretations, and opinions---but now differentiating participants in the forced exposure and free choice conditions by source consistency.
 
-\vspace{1em}
+\singlespace
 
 ```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Appendix C displays full model results."}
 p2
 ```
 
+\doublespace
+
 \noindent Focusing first on beliefs and interpretations as outcomes, we observe slightly larger treatment effects for participants who were exposed to an information source that is consistent with their usual media diet---a pattern that holds in the forced exposure as well as the free choice condition. In fact, in three out of four analyses, the information treatment had no statistically significant effect on people's interpretations regarding the economic benefits of legal immigration if it came from an inconsistent source, whereas exposure to a consistent source was always associated with more favorable interpretations. This result largely supports our third hypothesis that corrections will have stronger effects if the information source is consistent with respondents' media preferences.
 
 Interestingly, this pattern is reversed for opinion change as a response to the news story. To the extent that the positive treatment effect of the free choice condition on opinions reported in Figure \ref{fig:m1} is solely driven by people's tendency to seek out consistent sources, we would expect a similar effect when focusing on forced exposure to consistent sources. This is not the case. Regardless of whether participants were given a news source that is consistent with their usual media diet, the information treatment in the forced exposure condition had no effect on subsequent opinions regarding the desired level of immigration in the U.S. In the free choice condition, on the other hand, we do find evidence for opinion change compared to control condition. Surprisingly, however, it is exposure to *inconsistent* sources in the free choice condition that ultimately results in significant opinion change.
 
-\vspace{1em}
+\singlespace
 
 ```{r m4, fig.height=2, fig.width=6.5, fig.cap="\\label{fig:m4}Difference in treatment effects of free choice manipulation (vs. forced exposure) conditional on exposure to information source that is inconsistent with media preference. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Appendix C displays full model results."}
 p4
 ```
+
+\doublespace
 
 To further corroborate this finding, we now directly compare the effect of voluntary and involuntary exposure to inconsistent sources. Specifically, we reduce the sample to include only participants who were exposed to a news source that was inconsistent with their usual media diet. We then run regressions using the same specifications as before, now only including a single treatment indicator for the free choice condition. Note that since this specification omits the control group and instead uses forced exposure to inconsistent sources as the reference category, the coefficients can be directly interpreted as the differences in treatment effects between the free choice and forced exposure condition. The results are displayed in Figure \ref{fig:m4}.
 
@@ -265,11 +278,13 @@ In order to shed light on the underlying mechanism at play, we provide a seconda
 
 The last analysis in the main text uses the well-established LIWC dictionary [@tausczik2010psychological; @pennebaker2015development] to examine differences in tentative language in two open-ended responses where participants explain their previous assessment of the immigrant community's contribution to society by creating jobs and paying taxes. The goal was to investigate whether the observed opinion change in response to voluntary exposure to inconsistent sources could be explained by the fact that people who chose to access an inconsistent source have more ambivalent immigration attitudes prior to receiving the treatment. Our analysis in the main text suggests that this is unlikely to be the case since there were no significant differences in tentative language between the forced exposure and free choice condition (conditional on exposure to an inconsistent source).
 
-\vspace{1em}
+\singlespace
 
 ```{r m5, fig.height=2, fig.width=4.5, fig.cap="\\label{fig:m5}Difference in tentative language in open-ended responses of respondents who were exposed to inconsistent information in the free choice and forced exposure condition. Tentative words based on LIWC dictionary, including 95\\% (thin line) and 90\\% (thick line) confidence intervals."}
 p5
 ```
+
+\doublespace
 
 <!-- [^1]: See Appendix D.III for full question wording. -->
 
@@ -287,5 +302,5 @@ Of course, our findings are not without limitations. Most importantly, it is wor
 SWITCH TO WITHIN-SUBJECTS DESIGN!
 
 \clearpage
-
 \parskip=10pt
+\singlespace

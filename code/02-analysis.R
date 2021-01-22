@@ -62,11 +62,11 @@ p1 <- m1robust %>%
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(dv, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
+                                 `employ_correct` = "Employment\ncorrect",
+                                 `sales_correct` = "Sales\ncorrect",
+                                 `jobs_pos` = "Immigrants\ncreate jobs",
+                                 `taxes_pos` = "Immigrants\npay taxes",
+                                 `immig_increased` = "Immigration should\nbe increased",
                                  .ordered = TRUE),
          Condition = recode_factor(term,
                                    `conditionassigned` = "Forced\nexposure",
@@ -77,7 +77,7 @@ p1 <- m1robust %>%
   geom_point(size = 3, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 8) + 
+  theme_light(base_size = 10) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Experimental\ncondition",
        shape = "Experimental\ncondition") +
@@ -129,11 +129,11 @@ m2df <- m2robust %>%
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(dv, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
+                                 `employ_correct` = "Employment\ncorrect",
+                                 `sales_correct` = "Sales\ncorrect",
+                                 `jobs_pos` = "Immigrants\ncreate jobs",
+                                 `taxes_pos` = "Immigrants\npay taxes",
+                                 `immig_increased` = "Immigration should\nbe increased",
                                  .ordered = TRUE),
          Exposure = recode_factor(term,
                                   `exposureinconsistent` = "Inconsistent",
@@ -186,11 +186,11 @@ m3df <- m3robust %>%
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(dv, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
+                                 `employ_correct` = "Employment\ncorrect",
+                                 `sales_correct` = "Sales\ncorrect",
+                                 `jobs_pos` = "Immigrants\ncreate jobs",
+                                 `taxes_pos` = "Immigrants\npay taxes",
+                                 `immig_increased` = "Immigration should\nbe increased",
                                  .ordered = TRUE),
          Exposure = recode_factor(term,
                                   `exposureinconsistent` = "Inconsistent",
@@ -205,7 +205,7 @@ p2 <- bind_rows(m2df, m3df) %>%
   geom_point(size = 3, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 8) + 
+  theme_light(base_size = 10) + 
   labs(x = NULL, y = "Coefficient", 
        col = "Media\nexposure",
        shape = "Media\nexposure") +
@@ -257,11 +257,11 @@ p4 <- m4robust %>%
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(dv, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
+                                 `employ_correct` = "Employment\ncorrect",
+                                 `sales_correct` = "Sales\ncorrect",
+                                 `jobs_pos` = "Immigrants\ncreate jobs",
+                                 `taxes_pos` = "Immigrants\npay taxes",
+                                 `immig_increased` = "Immigration should\nbe increased",
                                  .ordered = TRUE),
          Condition = recode_factor(term,
                                    `conditionassigned` = "Forced\nexposure",
@@ -271,6 +271,6 @@ p4 <- m4robust %>%
   geom_point(size = 3, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 8) + 
+  theme_light(base_size = 10) + 
   labs(x = NULL, y = "Effect of free choice\nvs. forced exposure condition") +
   facet_wrap(~group, scales = "free_x", ncol = 3)

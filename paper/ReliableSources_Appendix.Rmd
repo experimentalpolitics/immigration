@@ -127,7 +127,7 @@ list(
 
 ## Media Preferences and Source Consistency
 
-```{r preference, fig.height=4, fig.width=4.05}
+```{r preference, fig.height=4, fig.width=3.85}
 df %>%
   filter(!is.na(prefer)) %>%
   mutate(Preference = recode_factor(prefer,
@@ -137,7 +137,7 @@ df %>%
                                     .ordered = TRUE)) %>%
 ggplot(aes(x = Preference)) + 
   geom_bar(position = position_dodge()) +
-  theme_light(base_size = 8) +
+  theme_light(base_size = 10) +
   labs(y = "Number of observations", 
        x = "Media preference")
 ```
@@ -155,7 +155,7 @@ df %>%
                                   `consistent` = "Consistent")) %>%
 ggplot(aes(fill = exposure, x = condition)) + 
   geom_bar(position = position_dodge()) +
-  theme_light(base_size = 8) +
+  theme_light(base_size = 10) +
   labs(y = "Number of observations", fill = "Media\nexpsoure",
        x = "Experimental condition") +
   scale_fill_brewer(palette = "Dark2")
@@ -181,7 +181,7 @@ df %>%
                ideol_con = "Ideology", 
                pid_rep = "Party Identification", 
                prefer_fox = "Fox vs. MSNBC Media Diet"))) +
-  theme_light(base_size = 8) +
+  theme_light(base_size = 10) +
   labs(y = "Choose Fox News", x = "") +
   scale_y_continuous(breaks=c(0,1))
 ```
@@ -261,11 +261,11 @@ m5 <- bind_rows(
                                `immig_increased` = "Opinion",
                                .ordered = TRUE),
          outcome = recode_factor(comparison, 
-                                 `employ_correct` = "Employment correct",
-                                 `sales_correct` = "Sales correct",
-                                 `jobs_pos` = "Immigrants create jobs",
-                                 `taxes_pos` = "Immigrants pay taxes",
-                                 `immig_increased` = "Immigration should be increased",
+                                 `employ_correct` = "Employment\ncorrect",
+                                 `sales_correct` = "Sales\ncorrect",
+                                 `jobs_pos` = "Immigrants\ncreate jobs",
+                                 `taxes_pos` = "Immigrants\npay taxes",
+                                 `immig_increased` = "Immigration\nshould be increased",
                                  .ordered = TRUE))
 
 p5 <- ggplot(m5, aes(y = diff, x = outcome,
@@ -274,7 +274,7 @@ p5 <- ggplot(m5, aes(y = diff, x = outcome,
   geom_point(size = 3, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
-  theme_light(base_size = 8) + 
+  theme_light(base_size = 10) + 
   labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
        col = "Media\npreference",
        shape = "Media\npreference") +
@@ -321,10 +321,10 @@ m6 <- bind_rows(
                                  `wp_good` = "Good",
                                  `wp_friendly` = "Friendly",
                                  `wp_american` = "American",
-                                 `actions_seek` = "Seek more info",
-                                 `actions_discuss` = "Discuss with friends",
-                                 `actions_forward` = "Forward via email",
-                                 `actions_post` = "Post on social media",
+                                 `actions_seek` = "Seek\nmore info",
+                                 `actions_discuss` = "Discuss\nwith friends",
+                                 `actions_forward` = "Forward\nvia email",
+                                 `actions_post` = "Post on\nsocial media",
                                  .ordered = TRUE))
 
 p6 <- ggplot(m6, aes(y = diff, x = outcome,
@@ -333,7 +333,7 @@ p6 <- ggplot(m6, aes(y = diff, x = outcome,
   geom_point(size = 3, position=position_dodge(width=0.6)) +
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.6)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.6)) +
-  theme_light(base_size = 8) + 
+  theme_light(base_size = 10) + 
   labs(x = NULL, y = "Treatment effect of reading\nFox rather than MSNBC",
        col = "Media\npreference",
        shape = "Media\npreference") +
@@ -1121,3 +1121,5 @@ multi_arm_design <- population + potential_outcomes +
 diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
   select = c("power", "bias")))
 ```
+
+\clearpage

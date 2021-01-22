@@ -192,7 +192,7 @@ p8 <- nb_dat %>%
                                     `taxes` = "Immigrants pay taxes")) %>% 
     ggplot(aes(x = condition, y = Accuracy, fill = condition)) +
     geom_col() + 
-    theme_light(base_size = 8) + 
+    theme_light(base_size = 10) + 
     facet_wrap(~question) +
     theme(legend.position = "none") +
     labs(y = "Predictive Accuracy",

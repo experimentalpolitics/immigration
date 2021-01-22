@@ -115,7 +115,7 @@ p5 <- dat %>%
     geom_col() + 
     geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
     geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
-    theme_light(base_size = 8) + 
+    theme_light(base_size = 10) + 
     facet_wrap(~name) +
     theme(legend.position = "none") +
     labs(y = "Tentative words (%)",
