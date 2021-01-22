@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  22 JAN 2021 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  22 JAN 2021 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,36 +762,36 @@ nput line 743.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.766 
-       <./ReliableSources_files/figure-latex/m4-1.pdf>] [15]
-<ReliableSources_files/figure-latex/m5-1.pdf, id=149, 321.2pt x 138.5175pt>
+       <./ReliableSources_files/figure-latex/m4-1.pdf>] [15] [16]
+<ReliableSources_files/figure-latex/m5-1.pdf, id=153, 321.2pt x 138.5175pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
-nput line 856.
+nput line 871.
 (pdftex.def)             Requested size: 321.19922pt x 138.51715pt.
-[16] [17pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.6}) has been already used, duplicate ignored
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.909 
+l.902 
        <./ReliableSources_files/figure-latex/m5-1.pdf>] [18] [19
 
 ] [20] [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1110.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1132.
 [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1132.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1110.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1110.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1132.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1132.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14974 strings out of 481239
- 218400 string characters out of 5920377
- 506697 words of memory out of 5000000
+ 14975 strings out of 481239
+ 218444 string characters out of 5920377
+ 506706 words of memory out of 5000000
  29691 multiletter control sequences out of 15000+600000
  608794 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -802,10 +802,10 @@ hare/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (23 pages, 896350 bytes).
+Output written on ReliableSources.pdf (23 pages, 897331 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 96 named destinations out of 1000 (max. 500000)
  16500 words of extra memory for PDF output out of 17280 (max. 10000000)
 

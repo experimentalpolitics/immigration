@@ -228,11 +228,20 @@ In sum, changing people's minds by giving them free choice over their media diet
 <!--JJ comments: in this section, need to say more about why consistent sources are more persuasive for changing interpretations but inconsistent sources are more persuasive when it comes to changing opinions.-->
 
 
-## What About Self-Selection and Ambivalence?[^5]
+## The Role of Self-Selection and Attitude Ambivalence[^5]
 
 [^5]: The analyses in this section were not preregistered and should therefore be considered exploratory.
 
-Discuss ACTE analysis: it is worth noting that the ACTE analysis suggest that people who usually prefer MSNBC are more critical of Fox News than people who usually prefer Fox News.
+Note: Most people choose consistent sources if they are given the choice (see Appendix A.II and A.III), so the natural question to ask is what is different about those people 
+
+Explanation 1: Inconsistent sources are picked up by people who prefer MSNBC rather than Fox. But this is not the case, Fox News vs. MSNBC are split evenly among respondents who picked inconsistent exposure in the free choice condition. Furthermore, additional analyses in Appendix B.I suggest that there are no differences in average choice-specific treatment effects between people who prefer Fox or MSNBC [see @knox2019design] and that---if anything---people who usually prefer MSNBC are more critical of the Fox News article than people who usually prefer Fox News are of the MSNBC article.
+
+Explanation 2: People who select inconsistent sources have different pre-treatment attitudes. But we control for pre-treatment attitudes
+
+Explanation 3: People who select inconsistent sources may have more ambivalent attitudes and are therefore more open to attitude change [e.g., @lavine2012ambivalent].
+
+
+
 
 Much like other studies of information seeking behavior, we find there are subjects who voluntarily seek out information from sources that are counter to our expectations [CITES-Redlawsk??]. We find that these subjects are also more likely to exhibit opinion change/are more receptive to corrective information. <!--briefly recap findings from previous section (1-2 sentences)--> 
 
@@ -248,8 +257,6 @@ In order to shed light on the underlying mechanism at play, we provide a seconda
 
 
 Most importantly, it is worth noting that conditioning on (in)consistent exposure in the free choice condition makes it difficult to provide a clear causal interpretation of the effects. While our analyses control for political predispositions and pre-treatment immigration attitudes, we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different attitudes irrespective of the treatment instead of being more receptive to the corrective information<!--they also could be different in how they process new information-->. 
-
-Note that these were not part of the pre-registered hypotheses!
 
 The last analysis in the main text uses the well-established LIWC dictionary [@tausczik2010psychological; @pennebaker2015development] to examine differences in tentative language in two open-ended responses where participants explain their previous assessment of the immigrant community's contribution to society by creating jobs and paying taxes. The goal was to investigate whether the observed opinion change in response to voluntary exposure to inconsistent sources could be explained by the fact that people who chose to access an inconsistent source have more ambivalent immigration attitudes prior to receiving the treatment. Our analysis in the main text suggests that this is unlikely to be the case since there were no significant differences in tentative language between the forced exposure and free choice condition (conditional on exposure to an inconsistent source).
 
@@ -271,6 +278,8 @@ Of course, our findings are not without limitations. Most importantly, it is wor
 
 <!-- add discussion of literature on accuracy motivation and related predispositions to be open-minded -->
 <!-- mention small sample size in last analysis as additional limitation -->
+
+SWITCH TO WITHIN-SUBJECTS DESIGN!
 
 \clearpage
 
