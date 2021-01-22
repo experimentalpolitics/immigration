@@ -272,5 +272,5 @@ p4 <- m4robust %>%
   geom_linerange(aes(ymin = cilo95, ymax = cihi95), size=.75, position=position_dodge(width=0.4)) +
   geom_linerange(aes(ymin = cilo90, ymax = cihi90), size=1.5, position=position_dodge(width=0.4)) +
   theme_light(base_size = 10) + 
-  labs(x = NULL, y = "Effect of free choice\nvs. forced exposure condition") +
+  labs(x = NULL, y = "Effect of free choice vs.\nforced exposure condition") +
   facet_wrap(~group, scales = "free_x", ncol = 3)

@@ -1001,7 +1001,7 @@ Note that this last comparison (*H1c*) can also be evaluated using the additiona
 As a first step, these comparisons exclude the free choice arm of the experiment and estimate treatment effects based on the randomly assigned news organizations alone. Additionally, we are going to explore the average choice-specific treatment effect (ACTE) following @knox2019design to quantify the effect of corrective information conditional on endogeneous media search (*H3c*). This quantity of interest captures the conditional average treatment effect for the subset of participants who would choose a particular treatment option (i.e., the effect of the article among those who would have chosen FoxNews or MSNBC voluntarily).
 
 
-## Estimation strategy
+## Estimation Strategy
 
 **Statistical significance:** Throughout this study, we will use two-sided tests with an $\alpha$-value of 0.05 as the cutoff for statistical significance. In our graphical displays we will additionally plot 90% intervals to signal statistical significance at $p<0.10$.
 
