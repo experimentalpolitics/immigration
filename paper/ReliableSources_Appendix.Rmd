@@ -931,6 +931,8 @@ This almost completes our survey, we only need some additional information about
 
 # Pre-Analysis Plan / De-identified Preregistration
 
+<!--SY: Do we present an origial document of our PAP here? Readers may be confused by some sentences in the text (e.g. See pre-analysis plan for more detailed information / see also full question wording at the end of the pre-analysis plan") --> 
+
 ## General Information about the Project
 
 **Summary:** This document describes the planned analyses for an online survey experiment on the effectiveness of corrective information on misperceptions about the economic impact of legal immigration. As part of the experiment, participants are asked to answer questions about their use of different media sources, political leanings, and attitudes toward current issues covered in the news. Depending on the experimental condition, participants are asked to freely choose, or are assigned to, an article published by different news channels (Fox News vs. MSNBC), which discusses the economic impact of legal immigration. After reading the article, participants are asked to evaluate the news story and answer general questions about their attitudes towards immigration.
