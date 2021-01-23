@@ -245,13 +245,21 @@ In sum, changing people's minds by giving them free choice over their media diet
 
 [^5]: The analyses in this section were not preregistered and should therefore be considered exploratory.
 
-In light of the remarkable differences between voluntary and involuntary exposure to inconsistent sources, we have to keep in mind that conditioning on source selection in the free choice condition makes it difficult to provide a clear causal interpretation of the effects. In other words, people who decide to access inconsistent information may be systematically different from people who do not choose to do so. (a) hold systematically different pre-treatment attitudes or (b) respond differently to the information treatment. Approach the treatment in a different way?
+Conditioning on source selection in the free choice condition makes it difficult to provide a clear causal interpretation of the differences between voluntary and involuntary exposure to inconsistent sources. In other words, only people with certain characteristics may self-select to access inconsistent sources and the resulting imbalance in pre-treatment confounders would jeopardize our inferences.[^6] Given that we are working with a between-subjects design, the crucial question then becomes whether people who are willing to access inconsistent sources (a) hold systematically different pre-treatment attitudes or (b) respond differently to the treatment itself?
 
-While our analyses control for political predispositions and pre-treatment immigration attitudes, we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different attitudes irrespective of the treatment instead of being more receptive to the corrective information<!--they also could be different in how they process new information-->.
+[^6]: See Appendix A.II for an overview of respondents' media preferences and source consistency across treatment groups, and Appendix and A.III for the determinants of choosing Fox News in the free choice condition.
+
+The most straightforward explanation for diverging opinions in response to voluntary and involuntary exposure to inconsistent sources would that both groups have systematically different immigration attitudes to begin with. However, keep in mind tha all our analyses presented hitherto include controls for pre-treatment immigration attitudes, ideology, partisanship, and basic sociodemographics.
 
 
 
-Note: Most people choose consistent sources if they are given the choice (see Appendix A.II and A.III), so the natural question to ask is what is different about those people 
+For example, this could work if MSNBC viewers are more likely to choose inconsistent sources (since they are more liberal)
+
+The message is pro-immigrant, so it's more coherent with MSNBC narrative than Fox narrative. Balance between Fox News and MSNBC exposure is the same in free-choice and forced exposure condition
+
+
+In sum, while we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different pre-treatment attitudes, we view this explanation as less convincing than the argument that they may be more receptive to corrective information.
+
 
 Explanation 1: Inconsistent sources are picked up by people who prefer MSNBC rather than Fox. But this is not the case, Fox News vs. MSNBC are split evenly among respondents who picked inconsistent exposure in the free choice condition. Furthermore, additional analyses in Appendix B.I suggest that there are no differences in average choice-specific treatment effects between people who prefer Fox or MSNBC [see @knox2019design] and that---if anything---people who usually prefer MSNBC are more critical of the Fox News article than people who usually prefer Fox News are of the MSNBC article.
 
