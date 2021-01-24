@@ -48,6 +48,8 @@ source("../code/02-analysis.R")
 source("../code/03-liwc.R")
 ```
 
+<!-- Page count: 6183 -->
+
 \thispagestyle{empty}
 \clearpage
 \setcounter{page}{1}

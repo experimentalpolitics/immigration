@@ -1,0 +1,51 @@
+---
+title: "Reliable Sources?"
+#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
+subtitle: >
+  Correcting Misinformation in Polarized Media Environments \vspace{1em}
+author:
+  - "Patrick W. Kraft^[Assistant Professor, University of Wisconsin-Milwaukee, kraftp@uwm.edu (corresponding author)]"
+  - "Nicholas R. Davis^[Independent researcher, Argosy Foundation, nick@argosyfnd.org]"
+  - "Taraleigh Davis^[PhD Student, University of Wisconsin-Milwaukee, taraleig@uwm.edu]"
+  - "Amanda Heideman^[Postdoctoral Fellow, University of Wisconsin-Milwaukee, heidem24@uwm.edu]"
+  - "Jason T. Neumeyer^[Lecturer, University of Wisconsin Oshkosh, neumeyerj@uwosh.edu]"
+  - "Shin Young Park^[PhD Candidate, University of Wisconsin-Milwaukee, parksy@uwm.edu]"
+#date: |
+#  |
+#  | University of Wisconsin-Milwaukee
+#  |
+#  | \today
+#  |
+#  |
+abstract: >-
+  \noindent Various pressing issues at the center of today's politics---such as immigration, climate change, or the recent coronavirus pandemic---are imbued with misinformation. While a growing body of research demonstrates how corrective information can mitigate factual misperceptions among the public, these interventions tend to have little to no effect on people's underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our results illustrate how people's media choice moderates the effectiveness of corrective information. While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
+reference-section-title: References
+bibliography: '../../bibliography/Lab.bib'
+fontsize: 12pt
+geometry: margin=1in
+linestretch: 1.5
+output: 
+  pdf_document:
+    number_sections: false
+    template: null
+    fig_caption: yes
+header-includes:
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{float}
+  \usepackage{censor}
+  \floatplacement{figure}{H}
+  \parskip=0pt
+  \parindent=20pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+```
+
+```{r code}
+## Load packages, data, analyses
+source("../code/02-analysis.R")
+source("../code/03-liwc.R")
+```
+
+\thispagestyle{empty}
