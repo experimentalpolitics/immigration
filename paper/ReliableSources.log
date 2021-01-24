@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  24 JAN 2021 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  24 JAN 2021 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,11 +794,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1176.
 ### semi simple group (level 1) entered at line 144 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14984 strings out of 481239
- 218589 string characters out of 5920377
+ 14986 strings out of 481239
+ 218615 string characters out of 5920377
  511732 words of memory out of 5000000
  29693 multiletter control sequences out of 15000+600000
- 608895 words of font info for 150 fonts, out of 8000000 for 9000
+ 609041 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,42p,885b,969s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
@@ -807,7 +807,7 @@ f/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmss
 ts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (24 pages, 903065 bytes).
+Output written on ReliableSources.pdf (24 pages, 903135 bytes).
 PDF statistics:
  321 PDF objects out of 1000 (max. 8388607)
  268 compressed objects within 3 object streams
