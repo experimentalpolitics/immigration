@@ -30,13 +30,13 @@
     - Attitudes towards immigration (see post-treatment section).
     - Trust in news sources (see post-treatment section).
 
-## Survey Details
+## Lucid Details
 
 - *Title:* Media Usage and News Consumption
-- *Description:* Answer a short survey (less than 30 minutes) about your personal media diet and issues currently discussed in the news.
-- *Instructions:* We are conducting an academic survey about media usage and news consumption. We need to understand your opinion about different media outlets and current issues discussed in the news. Select the link below to complete the survey. Note that you are only eligible to participate if you are currently located in the United States and that we are going to confirm your location at the beginning of the survey. Completing the survey should take less than 30 minutes. At the end, you will receive a code to paste into the box below to receive credit for taking our survey.
-- *Length:* <30 min
-- *Reward:* 
+- *Description:* Answer a short survey (less than 15 minutes) about your personal media diet and issues currently discussed in the news.
+- *Instructions:* We are conducting an academic survey about media usage and news consumption. We need to understand your opinion about different media outlets and current issues discussed in the news. Select the link below to complete the survey. Note that you are only eligible to participate if you are currently located in the United States and that we are going to confirm your location at the beginning of the survey. Completing the survey should take less than 15 minutes. At the end, you will receive a code to paste into the box below to receive credit for taking our survey.
+- *Length:* <15 min
+- *Reward: $1
 - *Requirements:* 90% approval rate, 100 HITs minimum, location US
 
 ## Pre-treatment measures
@@ -131,6 +131,22 @@ Next, we would like you to answer a few questions about your political viewpoint
 4. Health Care
 5. Environment
 
+**[conflict1]** (randomize order) How conflicted do you feel when you think about each of the following issues? 
+
+1. Economy
+2. Immigration 
+3. Health Care 
+4. Climate Change 
+(1) Conflicted - (7) Not Conflicted, (8) DK 
+
+**[conflict2]** To what extent is your opinion about each of the following issues one-sided or mixed? 
+
+1. Economy  
+2. Immigration 
+3. Health Care 
+4. Climate Change 
+(1) Conflicted - (7) Not Conflicted, (8) DK 
+
 **[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
 1. Very liberal
@@ -142,25 +158,6 @@ Next, we would like you to answer a few questions about your political viewpoint
 7. Very conservative
 8. Not sure
 
-**[pid]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
-
-1. Republican
-2. Democrat
-3. Independent
-4. Other
-
-**[pid_lean]** *(if [pid] == other | independent)*
-Do you think of yourself as CLOSER to the Republican party or to the Democratic party?
-
-1. Republican party
-2. Democratic party
-3. Neither party
-
-**[pid_rep/pid_dem]** *(if [pid] == Republican | Democrat)*
-Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
-
-1. Strong
-2. Not very strong
 
 <!-- \newpage -->
 
@@ -198,21 +195,17 @@ _There will be a brief pause on the next screen so you can read the story._ At t
 
 William Hall | [Fox News/MSNBC]
 
-A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2019, up from 2018 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
-
-These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
+The latest report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2019, up from 2018 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period. It is all but guaranteed that these numbers will decline in 2020 resulting from the COVID-19 pandemic; however, if the economy is to regain its pre-pandemic success, small businesses, including many of these new immigrant-owned businesses, will need to be the driving force behind the resurgence. 
 
 ![Percent of Immigrant Entrepreneurs](fig/immig_entrepreneurs.png){width=45%}
 
-Eduardo Rodriguez, a 62 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000--less than half of the national average--the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez.  He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico.
+The high-water mark for immigrant-owned business in 2019 was borne out of hundreds of success stories across many different sectors of the economy, especially the service industry. Eduardo Rodriguez, a 62-year-old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000–less than half of the national average–the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez. He currently owns and operates four Dulcelandia stores in 
 
-After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. "People seem to really like what we are doing, and I'm grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice -- we're fulfilling a niche market that people really want to buy from."
+Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico. After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. “People seem to really like what we are doing, and I’m grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice – we’re fulfilling a niche market that people really want to buy from.” 
 
-Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors.
+Following in her father’s footsteps, Rodriguez’s daughter, Eve Rodriguez Montoya, has also opened a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors. “Our community is very strong and hard-working – resilient and resourceful,” she said. “I’d say come to our community, get to know our people. Shop at our locations and see for yourself – Little Village is full of people who came to this country to achieve the American Dream.” 
 
-"Our community is very strong and hard-working -- resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself -- Little Village is full of people who came to this country to achieve the American Dream."
-
-The Rodriguez's story is just one of many. As more immigrants look to open their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide more fuel to an already strong economy.
+The Rodriguez’s story is just one of many. As more immigrants look to start their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide the necessary lift to the recovering economy. 
 
 *William Hall is a Business Reporter for [Fox News/MSNBC].*
 
@@ -246,14 +239,6 @@ Please answer the following questions about the tweet as well as the article you
 
 (1) Very likely - (4) Not likely, (7) Not sure
 
-**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
-
-- [fair] (1) Fair - (5) Unfair
-- [hostile] (1) Hostile - (5) Friendly
-- [bad] (1) Bad - (5) Good
-- [skewed] (1) Skewed - (5) balanced
-- [american] (1) American - (5) Un-American
-- [accurate] (1) Accurate - (5) Inaccurate
 
 ### Sources for story
 
@@ -346,16 +331,6 @@ Let's briefly return to the different media sources mentioned at the beginning o
 
 This almost completes our survey, we only need some additional information about your background.
 
-**[age]** What is your age?
-
-- *TEXTBOX*
-
-**[gender]** Do you consider yourself Male, Female, or other?
-
-1. Male
-2. Female
-3. Other
-
 **[usborn]** Were you born in the United States?
 
 1. Yes
@@ -364,58 +339,6 @@ This almost completes our survey, we only need some additional information about
 **[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
 
 - *TEXTBOX*
-
-**[zip]** What is your zip code?
-
-- *TEXTBOX* *(response not required)*
-
-**[zip_time]** *(only ask if zip code is entered)* And how long have you lived at your current zip code?
-
-1. Less than a year
-2. 1 to 3 years
-3. 3 to 5 years
-4. More than 5 years
-5. Don't Know
-
-**[race]** What racial or ethnic group best describes you?
-
-1. Asian/Pacific Islanders
-2. Black or African-American (non-Hispanic)
-3. Caucasian/White (non-Hispanic)
-4. Hispanic or Latino
-5. Middle eastern
-6. Native American or Aleut
-7. Other
-
-**[educ]** What is the highest level of education that you have completed?
-
-1. Less than a high school diploma
-2. Graduated high school or GED
-3. Some college but no college degree
-4. Graduated 2-year college
-5. Graduated 4-year college
-6. Completed post-graduate or professional school, with degree
-7. Don't know
-
-**[income]** Thinking back over the last year, what was your family's annual income?
-
-1. Less than $20,000
-2. $20,000 - $39,999
-3. $40,000 - $59,999
-4. $60,000 - $79,999
-5. $80,000 - $99,999
-6. $100,000 - $119,999
-7. $120,000 or more
-8. Prefer not to say
-
-**[marital]** Which of the following best describes your marital status?
-
-1. Single, never married
-2. Married
-3. Divorced
-4. Separated
-5. Widowed
-6. Living with partner
 
 **[church]** Not counting weddings and funerals, how often do you attend religious services?
 
