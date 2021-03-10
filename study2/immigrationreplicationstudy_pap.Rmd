@@ -372,25 +372,21 @@ Next, we would like you to answer a few questions about your political viewpoint
 4. Health Care
 5. Environment
 
-**[ambiv_conflicted]** *(randomize order)* How conflicted do you feel when you think about the following issues?
+**[conflict1]** *(randomize order)* How conflicted do you feel when you think about the following issues?
 
-1. Economy
-2. Terrorism
-3. Immigration
-4. Health Care
-5. Environment
+1. Immigration
+2. Health Care
+3. Environment
 
-(1) Not conflicted at all - (9) Very conflicted, (0) Not sure
+(1) Not conflicted at all - (7) Very conflicted, (9) Not sure
 
-**[ambiv_one-sided]** *(randomize order)* To what extent is your opinion on the following issues one-sided or mixed?
+**[conflict2]** *(randomize order)* To what extent is your opinion on the following issues one-sided or mixed?
 
-1. Economy
-2. Terrorism
-3. Immigration
-4. Health Care
-5. Environment
+1. Immigration
+2. Health Care
+3. Environment
 
-(1) Completely one-sided - (9) Completely mixed, (0) Not sure
+(1) Completely one-sided - (7) Completely mixed, (9) Not sure
 
 **[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
@@ -505,15 +501,6 @@ Please answer the following questions about the tweet as well as the article you
 
 (1) Very likely - (4) Not likely, (7) Not sure
 
-**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
-
-- [fair] (1) Fair - (5) Unfair
-- [hostile] (1) Hostile - (5) Friendly
-- [bad] (1) Bad - (5) Good
-- [skewed] (1) Skewed - (5) balanced
-- [american] (1) American - (5) Un-American
-- [accurate] (1) Accurate - (5) Inaccurate
-
 ## Post-treatment measures
 
 ### Block 1: Attitudes towards immigration
@@ -598,12 +585,35 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-### Block 3: Debriefing
+## Block 3: Sociodemographics
 
-**[comments]** Thank you for answering our survey. Do you have any comments for us?
+This almost completes our survey, we only need some additional information about your background.
 
-- *TEXTBOX*
+[usborn] Were you born in the United States?
 
-**[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).
+1. Yes
+2. No
+
+[usborn_year] (only ask if [usborn]==0) When did you first arrive to live in the US?
+
+TEXTBOX
+
+[church] Not counting weddings and funerals, how often do you attend religious services?
+
+1. Never
+2. Less than once a year
+3. Once a year
+4. Several times a year
+5. Once a month
+6. Two to three times a month
+7. Nearly every week
+8. Every week
+9. More than once per week
+
+[comments] Thank you for answering our survey. Do you have any comments for us?
+
+TEXTBOX
+
+[debriefing] (do not show in control condition) Note: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).
 
 # References
