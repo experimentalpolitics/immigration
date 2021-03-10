@@ -48,8 +48,9 @@ This study will be conducted using a sample of 600 participants recruited via Am
 
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC) but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire including all treatment conditions at the end of this pre-analysis plan.
 
-![Survey Flow](Lab-Graphic.jpg)
-
+```{r}
+#![Survey Flow](Lab-Graphic.jpg)
+```
 ## Outcome measures
 
 Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. Building on a framework developed in Gaines et al. (2007), we define the difference between three interrelated terms: beliefs, interpretations, and opinions. We define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore either be true or false. *Interpretations* involve taking these beliefs and adding an immediate evaluative component to the underlying belief. For example, the statement "immigrant-owned businesses employed almost 8 million American workers in 2019" is factual belief; whereas, "immigrants improve the U.S. economy by creating additional jobs" is an interpretation of the above belief. Finally, *opinions* are described as an evaluative judgment that is formed about the state of the world, but are not necessarily based on verifiable facts. 
@@ -351,7 +352,7 @@ Next are some questions about different groups in our society.
 
 (1) Generous - (7) Selfish, (8) DK
 
-### Block 3: Political attitudes & participation
+### Block 3: Political attitudes & ambivalence
 
 Next, we would like you to answer a few questions about your political viewpoints.
 
@@ -370,6 +371,26 @@ Next, we would like you to answer a few questions about your political viewpoint
 3. Immigration
 4. Health Care
 5. Environment
+
+**[ambiv_conflicted]** *(randomize order)* How conflicted do you feel when you think about the following issues?
+
+1. Economy
+2. Terrorism
+3. Immigration
+4. Health Care
+5. Environment
+
+(1) Not conflicted at all - (9) Very conflicted, (0) Not sure
+
+**[ambiv_one-sided]** *(randomize order)* To what extent is your opinion on the following issues one-sided or mixed?
+
+1. Economy
+2. Terrorism
+3. Immigration
+4. Health Care
+5. Environment
+
+(1) Completely one-sided - (9) Completely mixed, (0) Not sure
 
 **[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
@@ -577,99 +598,12 @@ Let's briefly return to the different media sources mentioned at the beginning o
 5. Never
 6. Don’t Know
 
-### Block 3: Sociodemographics
-
-This almost completes our survey, we only need some additional information about your background.
-
-**[age]** What is your age?
-
-- *TEXTBOX*
-
-**[gender]** Do you consider yourself Male, Female, or other?
-
-1. Male
-2. Female
-3. Other
-
-**[usborn]** Were you born in the United States?
-
-1. Yes
-2. No
-
-**[usborn_year]** *(only ask if [usborn]==0)* When did you first arrive to live in the US?
-
-- *TEXTBOX*
-
-**[zip]** What is your zip code?
-
-- *TEXTBOX* *(response not required)*
-
-**[zip_time]** *(only ask if zip code is entered)* And how long have you lived at your current zip code?
-
-1. Less than a year
-2. 1 to 3 years
-3. 3 to 5 years
-4. More than 5 years
-5. Don't Know
-
-**[race]** What racial or ethnic group best describes you?
-
-1. Asian/Pacific Islanders
-2. Black or African-American (non-Hispanic)
-3. Caucasian/White (non-Hispanic)
-4. Hispanic or Latino
-5. Middle eastern
-6. Native American or Aleut
-7. Other
-
-**[educ]** What is the highest level of education that you have completed?
-
-1. Less than a high school diploma
-2. Graduated high school or GED
-3. Some college but no college degree
-4. Graduated 2-year college
-5. Graduated 4-year college
-6. Completed post-graduate or professional school, with degree
-7. Don't know
-
-**[income]** Thinking back over the last year, what was your family's annual income?
-
-1. Less than $20,000
-2. $20,000 - $39,999
-3. $40,000 - $59,999
-4. $60,000 - $79,999
-5. $80,000 - $99,999
-6. $100,000 - $119,999
-7. $120,000 or more
-8. Prefer not to say
-
-**[marital]** Which of the following best describes your marital status?
-
-1. Single, never married
-2. Married
-3. Divorced
-4. Separated
-5. Widowed
-6. Living with partner
-
-**[church]** Not counting weddings and funerals, how often do you attend religious services?
-
-1. Never
-2. Less than once a year
-3. Once a year
-4. Several times a year
-5. Once a month
-6. Two to three times a month
-7. Nearly every week
-8. Every week
-9. More than once per week
+### Block 3: Debriefing
 
 **[comments]** Thank you for answering our survey. Do you have any comments for us?
 
 - *TEXTBOX*
 
 **[debriefing]** _(do not show in control condition)_ _Note_: The news article you read was written specifically for the purpose of this study. While the information provided in the article is accurate, it was not originally published in this format. If you have any questions or concerns, please contact the principal investigator Dr. Patrick Kraft (kraftp@uwm.edu).
-
-
 
 # References
