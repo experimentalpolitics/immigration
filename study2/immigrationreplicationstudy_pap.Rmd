@@ -501,6 +501,15 @@ Please answer the following questions about the tweet as well as the article you
 
 (1) Very likely - (4) Not likely, (7) Not sure
 
+**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
+
+- [fair] (1) Fair - (5) Unfair
+- [hostile] (1) Hostile - (5) Friendly
+- [bad] (1) Bad - (5) Good
+- [skewed] (1) Skewed - (5) balanced
+- [american] (1) American - (5) Un-American
+- [accurate] (1) Accurate - (5) Inaccurate
+
 ## Post-treatment measures
 
 ### Block 1: Attitudes towards immigration
