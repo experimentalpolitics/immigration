@@ -30,14 +30,6 @@
     - Attitudes towards immigration (see post-treatment section).
     - Trust in news sources (see post-treatment section).
 
-## Lucid Details
-
-- *Title:* Media Usage and News Consumption
-- *Description:* Answer a short survey (less than 15 minutes) about your personal media diet and issues currently discussed in the news.
-- *Instructions:* We are conducting an academic survey about media usage and news consumption. We need to understand your opinion about different media outlets and current issues discussed in the news. Select the link below to complete the survey. Note that you are only eligible to participate if you are currently located in the United States and that we are going to confirm your location at the beginning of the survey. Completing the survey should take less than 15 minutes. At the end, you will receive a code to paste into the box below to receive credit for taking our survey.
-- *Length:* <15 min
-- *Reward: $1
-- *Requirements:* 90% approval rate, 100 HITs minimum, location US
 
 ## Pre-treatment measures
 
@@ -145,7 +137,7 @@ Next, we would like you to answer a few questions about your political viewpoint
 2. Immigration 
 3. Health Care 
 4. Climate Change 
-(1) Conflicted - (7) Not Conflicted, (8) DK 
+(1) One Sided - (7) Mixed, (8) DK 
 
 **[ideol]** Thinking about politics these days, how would you describe your own political viewpoint?
 
@@ -287,10 +279,17 @@ _(randomize order of remaining questions)_
 
 - 0 (Generally take out more) - 10 (Generally put in more)
 
+**[taxes_oe]** Please explain your answer to the previous question in a few short sentences.
+
+- *TEXTBOX*
 
 **[jobs]** On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?
 
 - 0 (Take jobs away) - 10 (Create additional jobs)
+
+**[jobs_oe]** Please explain your answer to the previous question in a few short sentences.
+
+- *TEXTBOX*
 
 
 ### Block 2: Trust in news sources
