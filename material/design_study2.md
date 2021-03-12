@@ -339,18 +339,6 @@ This almost completes our survey, we only need some additional information about
 
 - *TEXTBOX*
 
-**[church]** Not counting weddings and funerals, how often do you attend religious services?
-
-1. Never
-2. Less than once a year
-3. Once a year
-4. Several times a year
-5. Once a month
-6. Two to three times a month
-7. Nearly every week
-8. Every week
-9. More than once per week
-
 **[comments]** Thank you for answering our survey. Do you have any comments for us?
 
 - *TEXTBOX*
