@@ -11,7 +11,7 @@ author:
 date: \today
 abstract:
   "Various important issues at the center of today's politics---such as immigration or climate change---are imbued with citizens' misperceptions. A growing body of research therefore explores whether such misperceptions can be mitigated by providing corrective information. However, while such corrections have been shown to reduce factual misperceptions, they appear to have little to no effect on underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our initial results from a 600 participant survey illustrate how people's media choice moderates the effectiveness of corrective information: While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alretnative sources. We hope to further validate these conclusions through an additional survey, outlined below."
-##bibliography: '../../bibliography/Lab.bib'
+bibliography: '../../bibliography/Lab.bib'
 output: 
   pdf_document:
     number_sections: true
@@ -22,8 +22,15 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE, message = FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.height = 2.5, fig.width = 5)
+knitr::opts_chunk$set(echo = FALSE, fig.height = 2.5, fig.width = 5)
 library(DeclareDesign)
+library(tidyverse)
+```
+
+```{r code, message=FALSE}
+## Load packages, data, analyses
+source("../code/02-analysis.R")
+source("../code/03-liwc.R")
 ```
 
 # Summary
@@ -48,9 +55,8 @@ This study will be conducted using a sample of 600 participants recruited via Am
 
 Our study builds on the Preference-Incorporating Choice and Assignment Design proposed by @benedictis2019persuading and @knox2019design. Participants are randomly assigned to a free choice treatment condition, a forced exposure treatment condition, or a control group. Participants in the free choice condition are asked to choose whether they want to see a recent breaking news tweet from either FoxNews or MSNBC. After viewing the tweet, which links to a news story focusing on immigrant-owned businesses in the US, participants are asked to read the corresponding article. In the forced exposure condition, participants do not have the option to choose a news organization (FoxNews or MSNBC) but are randomly assigned to one or the other. In either condition, the content of the news article is held constant across sources. Finally, participants who are randomly assigned to the control group skip the tweet and article entirely and move directly from the pre-treatment battery (questions on media usage, stereotyping, and political attitudes/behavior) to the post-treatment battery (questions on attitudes toward immigrantion and trust in different media sources). For more details on the design, see Figure 1 below as well as the full questionnaire including all treatment conditions at the end of this pre-analysis plan.
 
-```{r}
-#![Survey Flow](Lab-Graphic.jpg)
-```
+![Survey Flow](../prereg/Lab-Graphic.jpg)
+
 ## Outcome measures
 
 Previous research examining the effectiveness of corrective information showed that it does not always lead to attitude change even if misperceptions are reduced [@hopkins2019muted, @thompson2019might]. However, others find that media exposure can persuade people to change their attitudes under certain conditions [e.g., @benedictis2019persuading]. Our study explores how the way people access corrective information influences the likelihood of its success in reducing misperceptions. Building on a framework developed in Gaines et al. (2007), we define the difference between three interrelated terms: beliefs, interpretations, and opinions. We define factual *beliefs* as assessments of the state of the world that are (at least in principle) intersubjectively observable and can therefore either be true or false. *Interpretations* involve taking these beliefs and adding an immediate evaluative component to the underlying belief. For example, the statement "immigrant-owned businesses employed almost 8 million American workers in 2019" is factual belief; whereas, "immigrants improve the U.S. economy by creating additional jobs" is an interpretation of the above belief. Finally, *opinions* are described as an evaluative judgment that is formed about the state of the world, but are not necessarily based on verifiable facts. 
@@ -69,7 +75,24 @@ To measure interpretations, we ask respondents two additional questions about wh
 
 To measure opinions, we ask respondents' general preference regarding the number of immigrants from foreign countries who are permitted to come to the US. These responses are measured on a 5-point scale which ranges from "increased a lot" to "decreased a lot."
 
-*Insert Table 1 from paper here*
+```{r tab_outcomes}
+tribble(
+  ~Belief, ~Interpretation, ~Opinion,
+  "Across the United States, how many workers--immigrant and US-born--do you think are employed by immigrant-owned businesses?",
+  "On average, would you say that people who come to live here from other countries will take jobs away from people already here or add to the economy by creating additional jobs?",
+  "Do you think the number of immigrants from foreign countries who are permitted to come to the United States to live should be [increased/left the same/decreased]", "", "", "",
+  "Taking your best guess, what was the total amount of sales revenue of immigrant-owned businesses in the last year?",
+  "Most people who come to live in the U.S. work and pay taxes. They also use health and social services. On balance, do you think people who come here take out more than they put in or put in more than they take out?",
+  ""
+) %>%
+  knitr::kable("latex", 
+               caption = "\\label{tab:outcomes}Overview of outcome variables measuring beliefs, interpretation, and opinions related to the economic impact of legal immigration in the U.S.",
+               booktabs = TRUE) %>%
+  kableExtra::column_spec(1, width = "4cm") %>%
+  kableExtra::column_spec(2, width = "6cm") %>%
+  kableExtra::column_spec(3, width = "5cm") %>% 
+  kableExtra::kable_styling(latex_options =c("hold_position"))
+```
 
 In addition to these main outcome measures, we evaluate four additional outcomes and conduct a simple manipulation check. Note that by the nature of the experimental design, these items can only be measured in the two treatment arms of the experiment and are not included in the control group.
 
@@ -109,13 +132,25 @@ Due to our use of the outcome measures described above, we are able to different
 - Respondents who read the tweet and story also provided a more favorable assessment of the number of jobs created by immigrants as well as the relative size of their tax contributions.
 - Finally, regarding beliefs, the effect of the treatment was significant as well.
 
-*Insert Figure 3 here*
+<!-- \singlespace -->
+
+```{r m1, fig.height=2, fig.width=7, fig.cap="\\label{fig:m1}Treatment effects of forced exposure and free choice manipulation (vs. control). Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 90\\% (thick line) and 95\\% (thin line) confidence intervals based on robust standard errors. Appendix C displays full model results."}
+p1
+```
+
+<!-- \doublespace -->
 
 The finding that estimated treatment effects are smaller for interpretations and opinions than for beliefs strongly supports Hypothesis 1. However, only if people are allowed to choose their information source do we observe that they change their opinion about the issue. This does lend some credence to Hypothesis 2; however, it should be noted that the difference between both treatment effects themselves is not statistically significant. Further examination of this phenomenon in our follow-up study should clarify whether the ability to choose has a legitimate impact on the likelihood of misinformation corrections. 
 
 In order to test Hypothesis 3, we included a battery of questions regarding respondents' usual media diets. Based on these results, we can distinguish whether participants in the treatment conditions were exposed to an information source that was consistent or inconsistent with their usual media preferences or if the information source is neutral. The results below repeats our analysis from above, but differentiates participants in the forced exposure and free choice conditions by source consistency:
 
-*Insert Figure 4 here*
+<!-- \singlespace -->
+
+```{r m2, fig.height=3.5, fig.width=7.1, fig.cap="\\label{fig:m2}Treatment effects of forced exposure and free choice manipulation (vs. control) conditional on consistency between media preference and information source. Coefficients are based on linear regression models controlling for pre-treatment immigration attitudes, political predispositions, and sociodemographics. Positive coefficients indicate larger probability of correct responses (Belief) or more liberal immigration attitudes (Interpretation \\& Opinion). 95\\% (thin line) and 90\\% (thick line) confidence intervals based on robust standard errors. Appendix C displays full model results."}
+p2
+```
+
+<!-- \doublespace -->
 
 These results show a slightly larger treatment effect on beliefs and interpretations as outcomes for participants who were exposed to an information source that is consistent with their usual media diet. In three out of four analyses, the information treatment had no statistically significant effect on people's interpretations regarding the economic benefits of legal immigration if it came from an inconsistent news source, whereas consistent exposure was always associated with more favorable interpretations. These results are largely consistent with our expectations outlined in Hypothesis 3.
 
@@ -127,7 +162,7 @@ Throughout this study, we will use two-sided tests with an $\alpha$-value of 0.0
 
 ## Missing data
 
-Respondents who report "don't know" on the outcome measures (if applicable) or who skipped the question will be treated as missing and excluded from the respective analysis (basic listwise deletion). While we are going to use the manipulation checks to evaluate whether respondents read the information provided to them, we decided not to drop respondents who failed to pass the manipulation checks in the subsequent analyses [see for example @aronow2018note].
+Respondents who report "don't know" on the outcome measures (if applicable) or who skipped the question will be treated as missing and excluded from the respective analysis (basic listwise deletion). While we are going to use the manipulation checks to evaluate whether respondents read the information provided to them, we decided not to drop respondents who failed to pass the manipulation checks in the subsequent analyses [see for example @aronow2019note].
 
 ## Main analyses
 

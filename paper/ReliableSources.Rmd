@@ -139,7 +139,9 @@ The goal of our study is to explore how the way people access corrective informa
 
 \singlespace
 
-```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix D for the complete questionnaire."}
+![\label{fig:flow}Survey flow and overview of the experimental design. See Appendix D for the complete questionnaire.](../prereg/Lab-Graphic.jpg)
+
+```{r flow, fig.cap="\\label{fig:flow}Survey flow and overview of the experimental design. See Appendix D for the complete questionnaire.", eval = FALSE}
 knitr::include_graphics("../prereg/Lab-Graphic.jpg")
 ```
 
