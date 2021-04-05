@@ -47,7 +47,7 @@ This study has been granted exempt status by the University of Wisconsin-Milwauk
 
 This will need to be updated.
 
-This study will be conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 30 minutes and the reward will be $2. MTurk workers are required to have a 90% approval rate and have to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
+This study will be conducted using a sample of 3000 participants recruited via Lucid Theorem. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 15 minutes and will be compensated through Lucid. Lucid respondents are required to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
 
 <!-- Add more details on how to identify bots -->
 
@@ -172,7 +172,7 @@ To test our hypotheses, we will rely on simple differences-in-means and OLS esti
 ### Power analysis: basic 3-arm design (ATE w/o differentiating sources)
 
 ```{r, cache = TRUE}
-N <- 600
+N <- 3000
 outcome_means <- c(0, .1, .3)
 sd_i <- 1
 
