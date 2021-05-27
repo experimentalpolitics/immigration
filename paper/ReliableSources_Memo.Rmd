@@ -1,0 +1,42 @@
+---
+title: "Review Memo"
+#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
+subtitle: >
+  Reliable Sources? Correcting Misinformation in Polarized Media Environments
+fontsize: 12pt
+geometry: margin=1in
+output: 
+  pdf_document:
+    number_sections: false
+    template: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+```
+
+
+We thank the reviewe for their helpful comments etc. We respond to each point below.
+
+> 1.	My main concern is with the methodology and thus the conclusions of the paper. Specifically, I failed to understand how the authors arrive at such conclusions without having a clear and identifiable set of pretreatment questions that map precisely to the post-treatment outcomes. As I understand, the logic behind the experiment is to implement some pretest-posttest to manipulate whether participants are allowed to chose Fox or MSNBC; however, there are no pretreatment questions that could serve as a baseline. If, however, the objective of the paper is to test the manipulation without a baseline, then it needs to refine and clarify the language of the research design that is highly confusing at the very least.  If the objective of the experiment is to test the manipulation (freely to choose or assigned to a media outlet), the distribution between treatment and control groups are everything but balanced (I assume that the table in Appendix A describes the sample after randomization), which makes me question if the differences that exist between treatment conditions will on average disappear after randomization, the distributions are all over the place. Simply by looking at table I and without more information, it is impossible to ascertain if the randomization worked or not as it is presented; the data suggests that there are significant problems. For example, given that there seem to be substantial differences between groups, how can we be sure that there is about a 20 to 30 pp difference?
+
+Refer to Hopkins piece as well as recent Clifford piece on quasi pretest-posttest designs. Show that many people get it wrong in the control group.
+
+> 2.	The authors also need to discuss the flaws inherent with MTurk data and the use of VPNs outside the U.S. that may significantly bias the quality of the data. The authors need to present a more balanced view of the data and address the concerns that many researchers have with such data. 
+
+Check language from other journals
+
+> 3.	The authors also need to discuss why they decided to implement OLS when the outcome variable is dichotomous, as indicated on page 11. 
+
+- Run logit models: DONE.
+- Add logit tables to appendix.
+- Add language in main text describing linear probability model. Cite?
+- Add reference in main text to logistic regression results.
+
+> 4.	My last concern has to do with how credible it is for Fox News to publish such a positive article on immigration. Are there any potential issues with such a treatment that may not be believable and/or trustworthy?
+
+Check evaluation of news articles in the appendix.
+
+## Other stuff
+
+update code: condint vs. confint_tidy
