@@ -47,7 +47,7 @@ This study has been granted exempt status by the University of Wisconsin-Milwauk
 
 This will need to be updated.
 
-This study will be conducted using a sample of 600 participants recruited via Amazon's Mechanical Turk. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 30 minutes and the reward will be $2. MTurk workers are required to have a 90% approval rate and have to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
+This study will be conducted using a sample of 3000 participants recruited via Lucid Theorem. It will be advertised as a survey on "Media Usage and News Consumption," where participants are asked to answer a short survey about your personal media diet and issues currently discussed in the news. The approximate length of the survey is 15 minutes and will be compensated through Lucid. Lucid respondents are required to be located in the United States in order to be eligible to participate. In line with current best practices, we are going to identify and screen out bots [see @kennedy2018shape].
 
 <!-- Add more details on how to identify bots -->
 
@@ -172,7 +172,7 @@ To test our hypotheses, we will rely on simple differences-in-means and OLS esti
 ### Power analysis: basic 3-arm design (ATE w/o differentiating sources)
 
 ```{r, cache = TRUE}
-N <- 600
+N <- 3000
 outcome_means <- c(0, .1, .3)
 sd_i <- 1
 
@@ -290,6 +290,7 @@ diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
     - Media usage
     - Stereotype battery
     - Political attitudes & participation
+    - Attitude uncertainty measure
 - Experimental manipulation:
     - Tweets
     - Full story
@@ -297,7 +298,6 @@ diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
 - Post-treatment measures:
     - Attitudes towards immigration
     - Trust in news sources
-    - Sociodemographics
 
 ## Pre-treatment measures
 
@@ -305,22 +305,6 @@ diagnose_design(multi_arm_design, diagnosands = declare_diagnosands(
 
 First, we want to ask a few questions about your current media diet.
 
-**[smedia]** *(show same response options for each, randomize order)* On average, how often do you use the following social media platforms?
-
-- YouTube
-- Facebook
-- Instagram
-- Twitter
-- Tumblr
-
-1. Several times a day
-2. About once a day
-3. 3 to 6 days a week
-4. 1 to 2 days a week
-5. Every few weeks
-6. Less often
-7. Never
-8. Don’t Know
 
 **[tv]** *(show same response options for each, randomize order)* On average, how often do you watch _political_ news on the following TV channels (including online content)?
 
@@ -434,25 +418,6 @@ Next, we would like you to answer a few questions about your political viewpoint
 7. Very conservative
 8. Not sure
 
-**[pid]** Generally speaking, do you think of yourself as a Republican, a Democrat, an independent, or other?
-
-1. Republican
-2. Democrat
-3. Independent
-4. Other
-
-**[pid_lean]** *(if [pid] == other | independent)*
-Do you think of yourself as CLOSER to the Republican party or to the Democratic party?
-
-1. Republican party
-2. Democratic party
-3. Neither party
-
-**[pid_rep/pid_dem]** *(if [pid] == Republican | Democrat)*
-Would you consider yourself a strong Republican/Democrat or a not very strong Republican/Democrat?
-
-1. Strong
-2. Not very strong
 
 ## Experimental manipulation
 
@@ -488,21 +453,16 @@ _There will be a brief pause on the next screen so you can read the story._ At t
 
 William Hall | [Fox News/MSNBC]
 
-A recent report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2019, up from 2018 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period.
-
-These statistics are borne out of hundreds of success stories across many different sectors of the economy, especially the service industry.
+The latest report released using U.S. Census Bureau data states that immigrant-owned businesses employed over 8 million workers in fiscal year 2019, up from 2018 totals. These businesses also experienced an increase in the total amount of sales revenue, which rose to almost $1.3 trillion during the same period. It is all but guaranteed that these numbers will decline in 2020 resulting from the COVID-19 pandemic; however, if the economy is to regain its pre-pandemic success, small businesses, including many of these new immigrant-owned businesses, will need to be the driving force behind the resurgence.
 
 ![Percent of Immigrant Entrepreneurs](../material/fig/immig_entrepreneurs.png){width=45%}
 
-Eduardo Rodriguez, a 62 year old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000--less than half of the national average--the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez.  He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico.
+The high-water mark for immigrant-owned business in 2019 was borne out of hundreds of success stories across many different sectors of the economy, especially the service industry. Eduardo Rodriguez, a 62-year-old immigrant living in the Little Village neighborhood of Chicago, is a perfect example of this success. In an area of the city that has an unemployment rate of 13 percent and an annual median income of $30,000–less than half of the national average–the Little Village community faces considerable economic challenges. However, these conditions have not stopped Rodriguez. He currently owns and operates four Dulcelandia stores in Little Village, each one packed with over 1,000 types of delicious candies from his home country of Mexico. After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. “People seem to really like what we are doing, and I’m grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice – we’re fulfilling a niche market that people really want to buy from.” 
 
-After immigrating here in 1966, Rodriguez opened his first store and it became an instant gathering spot in the neighborhood. "People seem to really like what we are doing, and I'm grateful that I had the opportunity to do this in the United States. It takes a lot of work and sacrifice -- we're fulfilling a niche market that people really want to buy from."
+Following in her father’s footsteps, Rodriguez’s daughter, Eve Rodriguez Montoya, has also opened a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors. “Our community is very strong and hard-working – resilient and resourceful,” she said. “I’d say come to our community, get to know our people. Shop at our locations and see for yourself – Little Village is full of people who came to this country to achieve the American Dream.” 
 
-Following in her father's footsteps, Rodriguez's daughter, Eve Rodriguez Montoya, has also opened up a handful of shops that specialize in healthy frozen yogurts with some Mexican-inspired flavors.
+The Rodriguez’s story is just one of many. As more immigrants look to start their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide the necessary lift to the recovering economy. 
 
-"Our community is very strong and hard-working -- resilient and resourceful," she said. "I'd say come to our community, get to know our people. Shop at our locations and see for yourself -- Little Village is full of people who came to this country to achieve the American Dream."
-
-The Rodriguez's story is just one of many. As more immigrants look to open their own businesses and employ more workers, many markets, both broad and niche, will continue to expand and provide more fuel to an already strong economy.
 
 *William Hall is a Business Reporter for [Fox News/MSNBC].*
 
@@ -536,14 +496,6 @@ Please answer the following questions about the tweet as well as the article you
 
 (1) Very likely - (4) Not likely, (7) Not sure
 
-**[wordpairs]** *(randomize order)* Below, you will find a list of pairs of words. Please rate the news article you just read on each of the pairs of words.
-
-- [fair] (1) Fair - (5) Unfair
-- [hostile] (1) Hostile - (5) Friendly
-- [bad] (1) Bad - (5) Good
-- [skewed] (1) Skewed - (5) balanced
-- [american] (1) American - (5) Un-American
-- [accurate] (1) Accurate - (5) Inaccurate
 
 ## Post-treatment measures
 
@@ -641,18 +593,6 @@ This almost completes our survey, we only need some additional information about
 [usborn_year] (only ask if [usborn]==0) When did you first arrive to live in the US?
 
 TEXTBOX
-
-[church] Not counting weddings and funerals, how often do you attend religious services?
-
-1. Never
-2. Less than once a year
-3. Once a year
-4. Several times a year
-5. Once a month
-6. Two to three times a month
-7. Nearly every week
-8. Every week
-9. More than once per week
 
 [comments] Thank you for answering our survey. Do you have any comments for us?
 
