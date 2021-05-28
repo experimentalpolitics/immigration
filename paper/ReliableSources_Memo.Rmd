@@ -23,7 +23,10 @@ We thank the reviewer for their helpful comments etc. We respond to each point b
 - `TODO:` Cite Hopkins in main text
 - `TODO:` Cite Clifford on quasi pretest-posttest designs
 - `TODO:` Show that many people get it wrong in the control group.
-- `TODO:` Improve balance checks using figures instead of table. Explain that perceived imbalance was due to our presentation...
+- `DONE:` Improve balance checks using figures instead of table. 
+- `TODO:` Explain that perceived imbalance was due to our presentation...
+- `TODO:` Add model predicting treatment condition
+- `TODO:` Mention that even if there is a certain level of imbalance, we are including controls for various pre-treatment covariates, so it shouldn't be a problem.
 
 > 2.	The authors also need to discuss the flaws inherent with MTurk data and the use of VPNs outside the U.S. that may significantly bias the quality of the data. The authors need to present a more balanced view of the data and address the concerns that many researchers have with such data. 
 

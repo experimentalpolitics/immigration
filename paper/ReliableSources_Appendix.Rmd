@@ -52,6 +52,7 @@ library(lmtest)
 library(broom)
 library(car)
 library(here)
+library(cowplot)
 ```
 
 \clearpage
@@ -64,7 +65,7 @@ library(here)
 
 ## Basic Demographics across Treatment Conditions
 
-```{r, results='asis'}
+```{r balance_table, results='asis', eval = FALSE}
 list(
   "Age" =
     list("Minimum"       = ~ min(age),
@@ -120,6 +121,103 @@ list(
                                 `assigned` = "Forced exposure",
                                 `choice` = "Free choice")), 
     ., by = "condition")
+```
+
+```{r balance_plot, fig.height=7, fig.width=7}
+df <- df %>% mutate(
+  Condition = recode_factor(condition,
+                            `control` = "Control",
+                            `assigned` = "Forced exposure",
+                            `choice` = "Free choice"),
+  Sex = recode_factor(male,
+                      `0` = "Female",
+                      `1` = "Male"),
+  `Born in US` = recode_factor(usborn,
+                               `0` = "No",
+                               `1` = "Yes"),
+  Race = recode_factor(race,
+                       `Caucasian/White (non-Hispanic)` = "White",
+                       `Black or African-American (non-Hispanic)` = "Black/\nAfrican-American",
+                       `Hispanic or Latino` = "Hispanic/\nLatino",
+                       `Other` = "Other",
+                       `Middle Eastern` = "Other",
+                       `Asian/Pacific Islanders` = "Other",
+                       `Native American or Aleut` = "Other"),
+  `Party Identification` = recode_factor(pid_rep * 6,
+                                         `6` = "Republican",
+                                         `5` = "Republican",
+                                         `4` = "Independent",
+                                         `3` = "Independent",
+                                         `2` = "Independent",
+                                         `1` = "Democrat",
+                                         `0` = "Democrat"),
+  Ideology = recode_factor(ideol_con * 6,
+                           `6` = "Conservative",
+                           `5` = "Conservative",
+                           `4` = "Conservative",
+                           `3` = "Moderate",
+                           `2` = "Liberal",
+                           `1` = "Liberal",
+                           `0` = "Liberal"),
+  `College Degree` = recode_factor(as.numeric(college),
+                                   `0` = "No",
+                                   `1` = "Yes"))
+
+plot_grid(
+  
+  ggplot(df, aes(x = age, fill = Condition)) +
+    geom_density(alpha=.3) +
+    theme_light(base_size = 8) +
+    labs(y = "Density", 
+         x = "Age (in years)",
+         title = "Age"),
+  
+  ggplot(df, aes(x = income * 12 + 1, 
+                 fill = Condition)) +
+    geom_density(alpha=.3) +
+    theme_light(base_size = 8) +
+    labs(y = "Density", 
+         x = "Yearly Household Income (in $10,000)",
+         title = "Income"),
+  
+  ggplot(df, aes(x = Condition, fill = Sex)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Sex") +
+    theme(legend.title = element_blank()),
+  
+  ggplot(df, aes(x = Condition, fill = `Born in US`)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Born in US") +
+    theme(legend.title = element_blank()),
+  
+  ggplot(df, aes(x = Condition, fill = `College Degree`)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "College Degree") +
+    theme(legend.title = element_blank()),
+  
+  ggplot(df, aes(x = Condition, fill = Race)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Race") +
+    theme(legend.title = element_blank()),
+  
+  ggplot(df, aes(x = Condition, fill = `Party Identification`)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Party Identification") +
+    theme(legend.title = element_blank()),
+  
+  ggplot(df, aes(x = Condition, fill = Ideology)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Ideology") +
+    theme(legend.title = element_blank()),
+  
+  ncol = 2
+)
 ```
 
 
