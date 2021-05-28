@@ -1,6 +1,5 @@
 ---
 title: "Review Memo"
-#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
 subtitle: >
   Reliable Sources? Correcting Misinformation in Polarized Media Environments
 fontsize: 12pt
