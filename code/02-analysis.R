@@ -153,13 +153,13 @@ m2df <- m2robust %>%
          condition = "Forced exposure")
 
 
-## model 2 w/ logit: forced exposure vs. free choice -------------------------------------------------------------
+## model 2 w/ logit: inconsistent vs. consistent forced exposure -----------------------------------------
 m2logit <- list(
-  employ_correct = glm(employ_correct ~ condition
+  employ_correct = glm(employ_correct ~ exposure
                        + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                        + age + male + usborn + white + college
                        , data = df_nochoice, family = binomial("logit")),
-  sales_correct = glm(sales_correct ~ condition
+  sales_correct = glm(sales_correct ~ exposure
                       + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                       + age + male + usborn + white + college
                       , data = df_nochoice, family = binomial("logit")))
@@ -236,13 +236,13 @@ p2 <- bind_rows(m2df, m3df) %>%
   scale_color_brewer(palette = "Dark2")
 
 
-## model 3 w/ logit: forced exposure vs. free choice -------------------------------------------------------------
+## model 3 w/ logit: forced exposure vs. free choice while holding consistency constant ------------------
 m3logit <- list(
-  employ_correct = glm(employ_correct ~ condition
+  employ_correct = glm(employ_correct ~ exposure
                        + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                        + age + male + usborn + white + college
                        , data = df_noforce, family = binomial("logit")),
-  sales_correct = glm(sales_correct ~ condition
+  sales_correct = glm(sales_correct ~ exposure
                       + lazy_hispanics + problem_immigration + ideol_con + pid_rep
                       + age + male + usborn + white + college
                       , data = df_noforce, family = binomial("logit")))
@@ -311,7 +311,7 @@ p4 <- m4robust %>%
   facet_wrap(~group, scales = "free_x", ncol = 3)
 
 
-## model 4 w/ logit: forced exposure vs. free choice -------------------------------------------------------------
+## model 4 w/ logit: forced exposure vs. free choice (holding inconsistent exposure) ---------------------
 m4logit <- list(
   employ_correct = glm(employ_correct ~ condition
                        + lazy_hispanics + problem_immigration + ideol_con + pid_rep

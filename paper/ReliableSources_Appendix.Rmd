@@ -420,6 +420,95 @@ p8
 
 \clearpage
 
+## Replicating Linear Probability Models using Logistic Regression
+
+```{r m1logit, results='asis'}
+stargazer(m1logit, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales"), 
+          covariate.labels = c("Forced Exposure", "Free Choice", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Ideology", "Party Identification", 
+                               "Age", "Male", "Born in US", "White", "College", 
+                               "Constant"),
+          column.labels = "Belief",
+          column.separate = 2,
+          column.sep.width = "0pt", 
+          title = "Treatment effects of forced exposure and free choice manipulation (vs. control). Replication of linear probability models reported in Figure 3 (main text) and Table \\ref{tab:m1} (Appendix) using logistic regression. Positive coefficients indicate larger probability of correct responses. Standard errors in parentheses.", 
+          table.placement = "ht",
+          label = "tab:m1logit",
+          font.size = "footnotesize",
+          header = FALSE,
+          no.space = TRUE)
+```
+
+```{r m2logit, results='asis'}
+stargazer(m2logit, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales"), 
+          covariate.labels = c("Inconsistent", "Neutral", "Consistent", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Ideology", "Party Identification", 
+                               "Age", "Male", "Born in US", "White", "College", 
+                               "Constant"),
+          column.labels = "Belief",
+          column.separate = 2,
+          column.sep.width = "0pt", 
+          title = "Treatment effects of consistent/neutral/inconsistent information source (vs. control) in forced exposure  condition. Replication of linear probability models reported in Figure 4 (main text) and Table \\ref{tab:m2} (Appendix) using logistic regression. Positive coefficients indicate larger probability of correct responses. Standard errors in parentheses.", 
+          table.placement = "ht",
+          label = "tab:m2logit",
+          font.size = "footnotesize",
+          header = FALSE,
+          no.space = TRUE,
+          keep.stat = c("n", "rsq"))
+```
+
+```{r m3logit, results='asis'}
+stargazer(m3logit, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales"), 
+          covariate.labels = c("Inconsistent", "Neutral", "Consistent", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Ideology", "Party Identification", 
+                               "Age", "Male", "Born in US", "White", "College", 
+                               "Constant"),
+          column.labels = "Belief",
+          column.separate = 2,
+          column.sep.width = "0pt", 
+          title = "Treatment effects of consistent/neutral/inconsistent information source (vs. control) in free choice condition. Replication of linear probability models reported in Figure 4 (main text) and Table \\ref{tab:m3} (Appendix) using logistic regression. Positive coefficients indicate larger probability of correct responses. Standard errors in parentheses.", 
+          table.placement = "ht",
+          label = "tab:m3logit",
+          font.size = "footnotesize",
+          header = FALSE,
+          no.space = TRUE,
+          keep.stat = c("n", "rsq"))
+```
+
+```{r m4logit, results='asis'}
+stargazer(m4logit, 
+          dep.var.caption = "",
+          dep.var.labels = c("Employment", "Sales"), 
+          covariate.labels = c("Free Choice", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Ideology", "Party Identification", 
+                               "Age", "Male", "Born in US", "White", "College", 
+                               "Constant"),
+          column.labels = "Belief",
+          column.separate = 2,
+          column.sep.width = "0pt", 
+          title = "Difference in treatment effects of free choice manipulation (vs. forced exposure) conditional on exposure to information source that is inconsistent with media preference. Replication of linear probability models reported in Figure 5 (main text) and Table \\ref{tab:m4} (Appendix) using logistic regression. Positive coefficients indicate larger treatment effect for voluntary (vs. involuntary) exposure to inconsistent source. Standard errors in parentheses.", 
+          table.placement = "ht",
+          label = "tab:m4logit",
+          font.size = "footnotesize",
+          header = FALSE,
+          no.space = TRUE,
+          keep.stat = c("n", "rsq"))
+```
+
+
+\clearpage\singlespace
+
+
 # Regression Tables for Models Reported in Main Text
 
 ```{r m1, results='asis'}
