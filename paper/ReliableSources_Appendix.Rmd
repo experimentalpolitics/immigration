@@ -50,12 +50,13 @@ library(stargazer)
 library(qwraps2)
 library(lmtest)
 library(broom)
+library(nnet)
 library(car)
 library(here)
 library(cowplot)
 ```
 
-\clearpage
+
 \renewcommand\thesection{\Alph{section}}
 \renewcommand\thesubsection{\Roman{subsection}}
 \counterwithin{figure}{section}
@@ -63,7 +64,7 @@ library(cowplot)
 
 # Sample Overview
 
-## Basic Demographics across Treatment Conditions
+## Basic Demographics and Balance Checks
 
 ```{r balance_table, results='asis', eval = FALSE}
 list(
@@ -123,7 +124,7 @@ list(
     ., by = "condition")
 ```
 
-```{r balance_plot, fig.height=7, fig.width=7}
+```{r balance_plot, fig.height=8.5, fig.width=7}
 df <- df %>% mutate(
   Condition = recode_factor(condition,
                             `control` = "Control",
@@ -216,8 +217,48 @@ plot_grid(
     labs(y = "Proportion", x = "Condition", title = "Ideology") +
     theme(legend.title = element_blank()),
   
+  ggplot(df, aes(x = lazy_hispanics, fill = Condition)) +
+    geom_bar(position = "dodge") +
+    theme_light(base_size = 8) +
+    scale_x_continuous(breaks = c(0,.5,1)) +
+    labs(y = "Count", 
+         x = "Racial Prejudice",
+         title = "Racial Prejudice"),
+  
+  ggplot(df, aes(x = as.factor(problem_immigration * 4), fill = Condition)) +
+    geom_bar(position = "dodge") +
+    theme_light(base_size = 8) +
+    labs(y = "Count", 
+         x = "Immigration Problem",
+         title = "Immigration Problem"),
+  
   ncol = 2
 )
+```
+
+```{r balance_reg, results='hide'}
+m_balance <- multinom(Condition ~ age + income + male + usborn + college + white + 
+                        pid_rep + ideol_con + lazy_hispanics + problem_immigration, 
+                      data = df)
+```
+
+```{r balance_tab, results='asis'}
+stargazer(m_balance,
+          dep.var.caption = "",
+          covariate.labels = c("Age", "Income", 
+                               "Male", "Born in US", 
+                               "College", "White", 
+                               "Party Identification", "Ideology", 
+                               "Racial Prejudice", "Immigration Problem", 
+                               "Constant"),
+          column.sep.width = "0pt", 
+          title = "Balance tests for treatment conditions (vs. control condition as reference). Coefficients are based on multinomial logit model. Positive coefficients indicate larger probability of treatment assignment. Standard errors in parentheses.", 
+          table.placement = "ht",
+          label = "tab:balance",
+          font.size = "footnotesize",
+          header = FALSE,
+          no.space = TRUE,
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 
@@ -309,8 +350,19 @@ list(
     font.size = "footnotesize",
     header = FALSE,
     no.space = TRUE,
-    keep.stat = c("n", "rsq"))
+    keep.stat = c("n", "rsq"),
+    star.cutoffs = c(.05,.01,.001))
 ```
+
+
+\clearpage
+
+## Article Evaluation Conditional on Source and Media Preference
+
+```{r}
+
+```
+
 
 
 \clearpage
@@ -537,7 +589,8 @@ stargazer(m1logit,
           label = "tab:m1logit",
           font.size = "footnotesize",
           header = FALSE,
-          no.space = TRUE)
+          no.space = TRUE,
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m2logit, results='asis'}
@@ -558,7 +611,8 @@ stargazer(m2logit,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m3logit, results='asis'}
@@ -579,7 +633,8 @@ stargazer(m3logit,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m4logit, results='asis'}
@@ -600,7 +655,8 @@ stargazer(m4logit,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 
@@ -628,7 +684,8 @@ stargazer(m1,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m2, results='asis'}
@@ -650,7 +707,8 @@ stargazer(m2,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m3, results='asis'}
@@ -672,7 +730,8 @@ stargazer(m3,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 ```{r m4, results='asis'}
@@ -694,7 +753,8 @@ stargazer(m4,
           font.size = "footnotesize",
           header = FALSE,
           no.space = TRUE,
-          keep.stat = c("n", "rsq"))
+          keep.stat = c("n", "rsq"),
+          star.cutoffs = c(.05,.01,.001))
 ```
 
 
@@ -928,7 +988,7 @@ Please answer the following questions about the tweet as well as the article you
 - [fair] (1) Fair - (5) Unfair
 - [hostile] (1) Hostile - (5) Friendly
 - [bad] (1) Bad - (5) Good
-- [skewed] (1) Skewed - (5) balanced
+- [skewed] (1) Skewed - (5) Balanced
 - [american] (1) American - (5) Un-American
 - [accurate] (1) Accurate - (5) Inaccurate
 
