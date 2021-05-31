@@ -40,7 +40,9 @@ We thank the reviewer for their helpful comments etc. We respond to each point b
 
 > 4.	My last concern has to do with how credible it is for Fox News to publish such a positive article on immigration. Are there any potential issues with such a treatment that may not be believable and/or trustworthy?
 
-- `TODO:` Check evaluation of news articles in the appendix.
+- `DONE:` Check evaluation of news articles in the appendix.
+- `TODO:` Add discussion / footnote in main text.
+- `TODO:` Make connection to ACTE results as well.
 
 ## Other stuff
 

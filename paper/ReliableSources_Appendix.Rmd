@@ -169,28 +169,31 @@ plot_grid(
   ggplot(df, aes(x = age, fill = Condition)) +
     geom_density(alpha=.3) +
     theme_light(base_size = 8) +
+    scale_fill_brewer(palette = "Dark2") +
     labs(y = "Density", 
          x = "Age (in years)",
          title = "Age"),
   
-  ggplot(df, aes(x = income * 12 + 1, 
-                 fill = Condition)) +
+  ggplot(df, aes(x = income * 12 + 1, fill = Condition)) +
     geom_density(alpha=.3) +
     theme_light(base_size = 8) +
+    scale_fill_brewer(palette = "Dark2") +
     labs(y = "Density", 
          x = "Yearly Household Income (in $10,000)",
          title = "Income"),
-  
-  ggplot(df, aes(x = Condition, fill = Sex)) +
-    geom_bar(position = "fill") +
-    theme_light(base_size = 8) +
-    labs(y = "Proportion", x = "Condition", title = "Sex") +
-    theme(legend.title = element_blank()),
   
   ggplot(df, aes(x = Condition, fill = `Born in US`)) +
     geom_bar(position = "fill") +
     theme_light(base_size = 8) +
     labs(y = "Proportion", x = "Condition", title = "Born in US") +
+    theme(legend.title = element_blank()),
+  
+  df %>% 
+    filter(!is.na(Sex)) %>% 
+    ggplot(aes(x = Condition, fill = Sex)) +
+    geom_bar(position = "fill") +
+    theme_light(base_size = 8) +
+    labs(y = "Proportion", x = "Condition", title = "Sex") +
     theme(legend.title = element_blank()),
   
   ggplot(df, aes(x = Condition, fill = `College Degree`)) +
@@ -205,40 +208,42 @@ plot_grid(
     labs(y = "Proportion", x = "Condition", title = "Race") +
     theme(legend.title = element_blank()),
   
-  ggplot(df, aes(x = Condition, fill = `Party Identification`)) +
-    geom_bar(position = "fill") +
-    theme_light(base_size = 8) +
-    labs(y = "Proportion", x = "Condition", title = "Party Identification") +
-    theme(legend.title = element_blank()),
-  
   ggplot(df, aes(x = Condition, fill = Ideology)) +
     geom_bar(position = "fill") +
     theme_light(base_size = 8) +
     labs(y = "Proportion", x = "Condition", title = "Ideology") +
     theme(legend.title = element_blank()),
   
-  ggplot(df, aes(x = lazy_hispanics, fill = Condition)) +
-    geom_bar(position = "dodge") +
+  ggplot(df, aes(x = Condition, fill = `Party Identification`)) +
+    geom_bar(position = "fill") +
     theme_light(base_size = 8) +
-    scale_x_continuous(breaks = c(0,.5,1)) +
-    labs(y = "Count", 
-         x = "Racial Prejudice",
-         title = "Racial Prejudice"),
+    labs(y = "Proportion", x = "Condition", title = "Party Identification") +
+    theme(legend.title = element_blank()),
   
   ggplot(df, aes(x = as.factor(problem_immigration * 4), fill = Condition)) +
     geom_bar(position = "dodge") +
     theme_light(base_size = 8) +
+    scale_fill_brewer(palette = "Dark2") +
     labs(y = "Count", 
          x = "Immigration Problem",
          title = "Immigration Problem"),
+  
+  ggplot(df, aes(x = lazy_hispanics, fill = Condition)) +
+    geom_bar(position = "dodge") +
+    theme_light(base_size = 8) +
+    scale_fill_brewer(palette = "Dark2") +
+    scale_x_continuous(breaks = c(0,.5,1)) +
+    labs(y = "Count", 
+         x = "Racial Prejudice",
+         title = "Racial Prejudice"),
   
   ncol = 2
 )
 ```
 
 ```{r balance_reg, results='hide'}
-m_balance <- multinom(Condition ~ age + income + male + usborn + college + white + 
-                        pid_rep + ideol_con + lazy_hispanics + problem_immigration, 
+m_balance <- multinom(Condition ~ age + income + usborn + male + college + white + 
+                        ideol_con + pid_rep + problem_immigration + lazy_hispanics, 
                       data = df)
 ```
 
@@ -246,10 +251,10 @@ m_balance <- multinom(Condition ~ age + income + male + usborn + college + white
 stargazer(m_balance,
           dep.var.caption = "",
           covariate.labels = c("Age", "Income", 
-                               "Male", "Born in US", 
+                               "Born in US", "Male", 
                                "College", "White", 
-                               "Party Identification", "Ideology", 
-                               "Racial Prejudice", "Immigration Problem", 
+                               "Ideology", "Party Identification", 
+                               "Immigration Problem", "Racial Prejudice", 
                                "Constant"),
           column.sep.width = "0pt", 
           title = "Balance tests for treatment conditions (vs. control condition as reference). Coefficients are based on multinomial logit model. Positive coefficients indicate larger probability of treatment assignment. Standard errors in parentheses.", 
@@ -359,10 +364,51 @@ list(
 
 ## Article Evaluation Conditional on Source and Media Preference
 
-```{r}
-
+```{r, fig.width=7, fig.height=7}
+df %>% 
+  filter(tweet != "control") %>% 
+  select(wp_accurate, wp_fair, wp_balanced,
+         wp_good, wp_friendly, wp_american,
+         actions_discuss, actions_forward, 
+         actions_post, actions_seek, 
+         tweet, prefer) %>% 
+  pivot_longer(starts_with("wp_")) %>% 
+  group_by(tweet, prefer, name) %>% 
+  summarize(mean = mean(value, na.rm = TRUE),
+            n = n(),
+            sd = sd(value, na.rm = TRUE),
+            se = sd/sqrt(n),
+            cilo90 = mean-1.68*se,
+            cihi90 = mean+1.68*se,
+            cilo95 = mean-1.96*se,
+            cihi95 = mean+1.96*se) %>% 
+  na.omit() %>% 
+  mutate(outcome = recode_factor(name, 
+                                 `wp_balanced` = "Balanced",
+                                 `wp_accurate` = "Accurate",
+                                 `wp_fair` = "Fair",
+                                 `wp_good` = "Good",
+                                 `wp_friendly` = "Friendly",
+                                 `wp_american` = "American",
+                                 .ordered = TRUE),
+         `Media Preference` = recode_factor(prefer,
+                                            `fox` = "Fox",
+                                            `neutral` = "Neither",
+                                            `msnbc` = "MSNBC",
+                                            .ordered = TRUE),
+         Source = recode_factor(tweet,
+                                  `fox` = "Fox",
+                                  `msnbc` = "MSNBC")) %>% 
+  ggplot(aes(y = mean, x = `Media Preference`, fill = Source)) +
+  geom_col(position = "dodge") + 
+  geom_linerange(aes(x = `Media Preference`, ymin = cilo95, ymax = cihi95), 
+                 position = position_dodge(width = .9), size = .75) +
+  geom_linerange(aes(x = `Media Preference`, ymin = cilo90, ymax = cihi90), 
+                 position = position_dodge(width = .9), size = 1.5) +
+  facet_wrap(.~outcome, ncol = 2) + 
+  theme_light(base_size = 10) +
+  ylim(0,1)
 ```
-
 
 
 \clearpage
