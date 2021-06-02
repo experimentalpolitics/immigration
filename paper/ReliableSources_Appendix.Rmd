@@ -370,7 +370,7 @@ df %>%
   select(wp_accurate, wp_fair, wp_balanced,
          wp_good, wp_friendly, wp_american,
          actions_discuss, actions_forward, 
-         actions_post, actions_seek, 
+         actions_post, actions_seek,
          tweet, prefer) %>% 
   pivot_longer(starts_with("wp_")) %>% 
   group_by(tweet, prefer, name) %>% 
