@@ -48,10 +48,9 @@ m1robust <- m1 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
   
 p1 <- m1robust %>%
-  map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m1robust, tidy, conf.int = TRUE)) %>%
+  map_dfr(tidy, .id = "dv", conf.int = TRUE) %>%
   rename(cilo95 = conf.low, cihi95 = conf.high) %>%
-  bind_cols(map_dfr(m1robust, confint_tidy, conf.level = 0.9)) %>%
+  left_join(map_dfr(m1robust, tidy, .id = "dv", conf.int = TRUE, conf.level = .9)) %>%
   rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
@@ -126,10 +125,9 @@ m2robust <- m2 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
 m2df <- m2robust %>%
-  map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m2robust, confint_tidy)) %>%
+  map_dfr(tidy, .id = "dv", conf.int = TRUE) %>%
   rename(cilo95 = conf.low, cihi95 = conf.high) %>%
-  bind_cols(map_dfr(m2robust, confint_tidy, conf.level = 0.9)) %>%
+  left_join(map_dfr(m2robust, tidy, .id = "dv", conf.int = TRUE, conf.level = .9)) %>%
   rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
@@ -195,10 +193,9 @@ m3robust <- m3 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
 m3df <- m3robust %>%
-  map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m3robust, confint_tidy)) %>%
+  map_dfr(tidy, .id = "dv", conf.int = TRUE) %>%
   rename(cilo95 = conf.low, cihi95 = conf.high) %>%
-  bind_cols(map_dfr(m3robust, confint_tidy, conf.level = 0.9)) %>%
+  left_join(map_dfr(m3robust, tidy, .id = "dv", conf.int = TRUE, conf.level = .9)) %>%
   rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("exposureinconsistent", "exposureneutral", "exposureconsistent")) %>%
   mutate(group = recode_factor(dv, 
@@ -278,10 +275,9 @@ m4robust <- m4 %>%
   map(~coeftest(., vcov. = vcovHC(.)))
 
 p4 <- m4robust %>%
-  map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m4robust, confint_tidy)) %>%
+  map_dfr(tidy, .id = "dv", conf.int = TRUE) %>%
   rename(cilo95 = conf.low, cihi95 = conf.high) %>%
-  bind_cols(map_dfr(m4robust, confint_tidy, conf.level = 0.9)) %>%
+  left_join(map_dfr(m4robust, tidy, .id = "dv", conf.int = TRUE, conf.level = .9)) %>%
   rename(cilo90 = conf.low, cihi90 = conf.high) %>%
   filter(term %in% c("conditionassigned", "conditionchoice")) %>%
   mutate(group = recode_factor(dv, 
