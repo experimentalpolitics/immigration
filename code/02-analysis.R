@@ -49,7 +49,7 @@ m1robust <- m1 %>%
   
 p1 <- m1robust %>%
   map_dfr(tidy, .id = "dv") %>%
-  bind_cols(map_dfr(m1robust, confint_tidy)) %>%
+  bind_cols(map_dfr(m1robust, tidy, conf.int = TRUE)) %>%
   rename(cilo95 = conf.low, cihi95 = conf.high) %>%
   bind_cols(map_dfr(m1robust, confint_tidy, conf.level = 0.9)) %>%
   rename(cilo90 = conf.low, cihi90 = conf.high) %>%
