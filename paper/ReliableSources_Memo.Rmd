@@ -1,6 +1,8 @@
 ---
 title: "Letter to Reviewer"
-subtitle: "Reliable Sources? Correcting Misinformation in Polarized Media Environments"
+subtitle: |
+  | Reliable Sources?
+  | Correcting Misinformation in Polarized Media Environments
 fontsize: 12pt
 geometry: margin=1in
 output: 
@@ -50,7 +52,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 > `This is another important point and we agree with the reviewer that the credibility of the Fox News article is a potential concern. When writing the news article we tried to implement multiple details to make it more believable. First, we said that the author was "Fox Business," and the article focuses on business activity. Second, it includes graphical information.`
 
-> `As part of our survey, we also included a set of items asking respondents to evaluate the news article after receiving the treatment (asking to what extent they would describe the article as balanced, accurate, fair, good, friendly, and American; see the relevant part of the questionnaire in Appendix D II). We now added a summary of these evaluations conditional on the source and pre-treatment media preference in Appendix A IV. While we didn't ask respondents directly whether they consider the article to be believable or authentic, the results presented there suggest that they did. Across the evaluative dimensions outlined above, respondents who prefer MSNBC evaluated the article more negatively if it was published by Fox News, which suggests that they viewed the ascribed publisher as credible. We see a reverse pattern for respondents who prefer Fox News, although the differences here do not reach concentional levels of statistical significance. We added a bried discussion of this point in footnote 2 (p. 11).`
+> `As part of our survey, we also included a set of items asking respondents to evaluate the news article after receiving the treatment (asking to what extent they would describe the article as balanced, accurate, fair, good, friendly, and American; see the relevant part of the questionnaire in Appendix D II). We now added a summary of these evaluations conditional on the source and pre-treatment media preference in Appendix A IV. While we didn't ask respondents directly whether they consider the article to be believable or authentic, the results presented there suggest that they did. Across the evaluative dimensions outlined above, respondents who prefer MSNBC evaluated the article more negatively if it was published by Fox News, which suggests that they viewed the ascribed publisher as credible. We see a reverse pattern for respondents who prefer Fox News, although the differences here do not reach conventional levels of statistical significance. We added a bried discussion of this point in footnote 1 (p. 11).`
 
 > `ACTE results play a role here as well!`
 

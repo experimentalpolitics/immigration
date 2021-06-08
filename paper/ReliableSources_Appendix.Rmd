@@ -364,6 +364,10 @@ list(
 
 ## Article Evaluation Conditional on Source and Media Preference
 
+While we didn't ask respondents directly whether they consider the article to be authentic (in order to avoid priming respondents accordingly), we asked participants to evaluate the news article on various dimensions such as "good vs. bad" or "accurate vs. inaccurate" (see Appendix A IV). The response patterns conditional on the article source and the participants' media preference suggest that they viewed the ascribed publisher as credible.
+
+: In particular, respondents who prefer MSNBC evaluated the article more negatively if it was published by Fox News, while we observe a reverse pattern for respondents who prefer Fox News (although the differences here do not reach conventional levels of statistical significance).
+
 ```{r, fig.width=7, fig.height=7}
 df %>% 
   filter(tweet != "control") %>% 
@@ -374,20 +378,20 @@ df %>%
          tweet, prefer) %>% 
   pivot_longer(starts_with("wp_")) %>% 
   group_by(tweet, prefer, name) %>% 
-  summarize(mean = mean(value, na.rm = TRUE),
+  summarize(Average = mean(value, na.rm = TRUE),
             n = n(),
             sd = sd(value, na.rm = TRUE),
             se = sd/sqrt(n),
-            cilo90 = mean-1.68*se,
-            cihi90 = mean+1.68*se,
-            cilo95 = mean-1.96*se,
-            cihi95 = mean+1.96*se) %>% 
+            cilo90 = Average-1.68*se,
+            cihi90 = Average+1.68*se,
+            cilo95 = Average-1.96*se,
+            cihi95 = Average+1.96*se) %>% 
   na.omit() %>% 
   mutate(outcome = recode_factor(name, 
-                                 `wp_balanced` = "Balanced",
                                  `wp_accurate` = "Accurate",
-                                 `wp_fair` = "Fair",
                                  `wp_good` = "Good",
+                                 `wp_fair` = "Fair",
+                                 `wp_balanced` = "Balanced",
                                  `wp_friendly` = "Friendly",
                                  `wp_american` = "American",
                                  .ordered = TRUE),
@@ -399,15 +403,18 @@ df %>%
          Source = recode_factor(tweet,
                                   `fox` = "Fox",
                                   `msnbc` = "MSNBC")) %>% 
-  ggplot(aes(y = mean, x = `Media Preference`, fill = Source)) +
-  geom_col(position = "dodge") + 
+  ggplot(aes(y = Average, x = `Media Preference`, col = Source, group = Source)) +
+  geom_line() +
+  #geom_col(position = "dodge") + 
   geom_linerange(aes(x = `Media Preference`, ymin = cilo95, ymax = cihi95), 
-                 position = position_dodge(width = .9), size = .75) +
+                 position = position_dodge(width = .1), 
+                 size = .75) +
   geom_linerange(aes(x = `Media Preference`, ymin = cilo90, ymax = cihi90), 
-                 position = position_dodge(width = .9), size = 1.5) +
+                 position = position_dodge(width = .1), 
+                 size = 1.5) +
   facet_wrap(.~outcome, ncol = 2) + 
-  theme_light(base_size = 10) +
-  ylim(0,1)
+  theme_light(base_size = 10) #+
+  #ylim(0,1)
 ```
 
 
