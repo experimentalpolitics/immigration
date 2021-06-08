@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  8 JUN 2021 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  8 JUN 2021 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -719,6 +719,8 @@ ng>] [10pdfTeX warning (ext4): destination with the same identifier (name{table
                                                   \fi \fi 
 l.588 \section{Results}\label{results}}
                                        ] [11]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 660.
 <ReliableSources_files/figure-latex/m1-1.pdf, id=94, 491.8375pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m1-1.pdf>
@@ -732,7 +734,7 @@ e.3}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.713 
        <./ReliableSources_files/figure-latex/m1-1.pdf>]
-<ReliableSources_files/figure-latex/m2-1.pdf, id=116, 499.8675pt x 244.915pt>
+<ReliableSources_files/figure-latex/m2-1.pdf, id=117, 499.8675pt x 244.915pt>
 File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m2-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
@@ -745,7 +747,7 @@ e.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.793 
        <./ReliableSources_files/figure-latex/m2-1.pdf>]
-<ReliableSources_files/figure-latex/m4-1.pdf, id=136, 464.73625pt x 136.51pt>
+<ReliableSources_files/figure-latex/m4-1.pdf, id=137, 464.73625pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m4-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
@@ -758,7 +760,7 @@ nput line 798.
                                                   \fi \fi 
 l.833 
        <./ReliableSources_files/figure-latex/m4-1.pdf>] [17]
-<ReliableSources_files/figure-latex/m5-1.pdf, id=164, 320.19624pt x 136.51pt>
+<ReliableSources_files/figure-latex/m5-1.pdf, id=165, 320.19624pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
@@ -794,11 +796,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1252.
 ### semi simple group (level 1) entered at line 139 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15004 strings out of 481239
- 218900 string characters out of 5920377
- 512547 words of memory out of 5000000
- 29693 multiletter control sequences out of 15000+600000
- 609445 words of font info for 155 fonts, out of 8000000 for 9000
+ 15014 strings out of 481239
+ 219042 string characters out of 5920377
+ 512554 words of memory out of 5000000
+ 29696 multiletter control sequences out of 15000+600000
+ 612658 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,42p,885b,969s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
@@ -806,11 +808,12 @@ f/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmss
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (26 pages, 909605 bytes).
+ype1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on ReliableSources.pdf (26 pages, 929444 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
+ 346 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
  111 named destinations out of 1000 (max. 500000)
- 16500 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 18548 words of extra memory for PDF output out of 20736 (max. 10000000)
 

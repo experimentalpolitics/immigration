@@ -364,7 +364,7 @@ list(
 
 ## Article Evaluation Conditional on Source and Media Preference
 
-We asked participants to evaluate the news article on various dimensions such as "good vs. bad" or "accurate vs. inaccurate" (see Appendix A IV). Figure \ref{fig:article_eval} displays these average evaluations conditional on the respondents' media preferences and whether the source was Fox or MSNBC. The response patterns suggest that participants viewed the source attribution as believable since the article was evaluated more favorably if it was published their preferred news network.
+We asked participants to evaluate the news article on various dimensions such as "good vs. bad" or "accurate vs. inaccurate" (see Appendix A.IV). Figure \ref{fig:article_eval} displays these average evaluations conditional on the respondents' media preferences and whether the source was Fox or MSNBC. The response patterns suggest that participants viewed the source attribution as believable since the article was evaluated more favorably if it was published their preferred news network.
 
 ```{r, fig.width=7, fig.height=7, fig.cap="\\label{fig:article_eval}Average article evaluation conditional on participants' media preference and whether the source was Fox or MSNBC."}
 df %>% 
