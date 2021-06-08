@@ -39,7 +39,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 3. The authors also need to discuss why they decided to implement OLS when the outcome variable is dichotomous, as indicated on page 11.
 
-> `We added a discussion of our modeling choices in the results section and explained why we implemented a linear probability model instead of a logit/probit when the outcome vatiable is dichotomous (now on p. 12). In addition, we replicated all analyses with dichotomous outcome measures in the paper using logistic regression. The respective results are included in the Appendix B III. The substantive results remain unchanged.`
+> `We added a discussion of our modeling choices in the results section and explained why we implemented a linear probability model instead of a logit/probit when the outcome vatiable is dichotomous (now on p. 12). In addition, we replicated all analyses with dichotomous outcome measures in the paper using logistic regression (see Appendix B III). The substantive results are consistent across model specifications.`
 
 <!-- - `DONE:` Run logit models. -->
 <!-- - `DONE:` Add logit tables to appendix. -->
@@ -48,9 +48,13 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 4. My last concern has to do with how credible it is for Fox News to publish such a positive article on immigration. Are there any potential issues with such a treatment that may not be believable and/or trustworthy?
 
-- `DONE:` Check evaluation of news articles in the appendix.
-- `TODO:` Add discussion / footnote in main text.
-- `TODO:` Make connection to ACTE results as well.
+> `This is another important point and we agree with the reviewer that the credibility of the Fox News article is a potential concern. Luckily, we included a set of items asking respondents to evaluate the news article after receiving the treatment (asking to what extent they would describe the article as balanced, accurate, fair, good, friendly, and American; see the relevant part of the questionnaire in Appendix D II). We now added a summary of these evaluations conditional on the source and pre-treatment media preference in Appendix A IV. While we didn't ask respondents directly whether they consider the article to be believable or authentic, the results presented there suggest that they did.`
+
+> `ACTE results play a role here as well!`
+
+<!-- - `DONE:` Check evaluation of news articles in the appendix. -->
+<!-- - `DONE:` Add discussion / footnote in main text. -->
+<!-- - `DONE:` Make connection to ACTE results as well. -->
 
 <!-- ## Other stuff -->
 
