@@ -34,21 +34,24 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 > `This is a very important point. We elaborated on the data quality of MTurk samples as well as our measures to block VPNs in the beginning of our results section (p. 11).`
 
-- `DONE:` Check language from other journals.
+<!-- - `DONE:` Check language from other journals. -->
+<!-- - `DONE:` Add discussion in results section. -->
 
-> 3.	The authors also need to discuss why they decided to implement OLS when the outcome variable is dichotomous, as indicated on page 11. 
+3. The authors also need to discuss why they decided to implement OLS when the outcome variable is dichotomous, as indicated on page 11.
 
-- `DONE:` Run logit models.
-- `DONE:` Add logit tables to appendix.
-- `TODO:` Add language in main text describing linear probability model. Cite?
-- `TODO:` Add reference in main text to logistic regression results.
+> `We added a discussion of our modeling choices in the results section and explained why we implemented a linear probability model instead of a logit/probit when the outcome vatiable is dichotomous (now on p. 12). In addition, we replicated all analyses with dichotomous outcome measures in the paper using logistic regression. The respective results are included in the Appendix B III. The substantive results remain unchanged.`
 
-> 4.	My last concern has to do with how credible it is for Fox News to publish such a positive article on immigration. Are there any potential issues with such a treatment that may not be believable and/or trustworthy?
+<!-- - `DONE:` Run logit models. -->
+<!-- - `DONE:` Add logit tables to appendix. -->
+<!-- - `DONE:` Add language in main text describing linear probability model. Cite? -->
+<!-- - `DONE:` Add reference in main text to logistic regression results. -->
+
+4. My last concern has to do with how credible it is for Fox News to publish such a positive article on immigration. Are there any potential issues with such a treatment that may not be believable and/or trustworthy?
 
 - `DONE:` Check evaluation of news articles in the appendix.
 - `TODO:` Add discussion / footnote in main text.
 - `TODO:` Make connection to ACTE results as well.
 
-## Other stuff
+<!-- ## Other stuff -->
 
-- `DONE:` update code: condint vs. confint_tidy
+<!-- - `DONE:` update code: condint vs. confint_tidy -->
