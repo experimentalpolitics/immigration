@@ -124,7 +124,7 @@ list(
     ., by = "condition")
 ```
 
-```{r balance_plot, fig.height=8.5, fig.width=7}
+```{r balance_plot, fig.height=8, fig.width=7, fig.cap="\\label{fig:demographics}Overview of sample demographics and pre-treatment attitudes across experimental conditions."}
 df <- df %>% mutate(
   Condition = recode_factor(condition,
                             `control` = "Control",
@@ -257,7 +257,7 @@ stargazer(m_balance,
                                "Immigration Problem", "Racial Prejudice", 
                                "Constant"),
           column.sep.width = "0pt", 
-          title = "Balance tests for treatment conditions (vs. control group as reference category). Coefficients are based on multinomial logit model. Positive coefficients indicate larger probability of treatment assignment. Standard errors in parentheses.", 
+          title = "Balance checks for assignment to each treatment condition (vs. control group as reference category). Coefficients are based on multinomial logit model. Positive coefficients indicate larger probability of treatment assignment. Standard errors in parentheses.", 
           table.placement = "ht",
           label = "tab:balance",
           font.size = "footnotesize",
@@ -271,7 +271,7 @@ stargazer(m_balance,
 
 ## Media Preferences and Source Consistency
 
-```{r preference, fig.height=4, fig.width=3.85}
+```{r preference, fig.height=3, fig.width=3.85, fig.cap="\\label{fig:media_preferences}Sample overview of media preference for Fox News vs. MSNBC."}
 df %>%
   filter(!is.na(prefer)) %>%
   mutate(Preference = recode_factor(prefer,
@@ -286,7 +286,7 @@ ggplot(aes(x = Preference)) +
        x = "Media preference")
 ```
 
-```{r consistency, fig.height=4, fig.width=5}
+```{r consistency, fig.height=3, fig.width=5, fig.cap="\\label{fig:source_consistency}Source consistency in forced exposure vs. free choice condition."}
 df %>%
   filter(!is.na(exposure),
          exposure != "control") %>%
@@ -364,11 +364,9 @@ list(
 
 ## Article Evaluation Conditional on Source and Media Preference
 
-While we didn't ask respondents directly whether they consider the article to be authentic (in order to avoid priming respondents accordingly), we asked participants to evaluate the news article on various dimensions such as "good vs. bad" or "accurate vs. inaccurate" (see Appendix A IV). The response patterns conditional on the article source and the participants' media preference suggest that they viewed the ascribed publisher as credible.
+We asked participants to evaluate the news article on various dimensions such as "good vs. bad" or "accurate vs. inaccurate" (see Appendix A IV). Figure \ref{fig:article_eval} displays these average evaluations conditional on the respondents' media preferences and whether the source was Fox or MSNBC. The response patterns suggest that participants viewed the ascribed source as credible since the article was evaluated more favorably if it was published their preferred media outlet.
 
-: In particular, respondents who prefer MSNBC evaluated the article more negatively if it was published by Fox News, while we observe a reverse pattern for respondents who prefer Fox News (although the differences here do not reach conventional levels of statistical significance).
-
-```{r, fig.width=7, fig.height=7}
+```{r, fig.width=7, fig.height=7, fig.cap="\\label{fig:article_eval}Average article evaluation conditional on participants' media preference and whether the source was Fox or MSNBC."}
 df %>% 
   filter(tweet != "control") %>% 
   select(wp_accurate, wp_fair, wp_balanced,
@@ -405,7 +403,6 @@ df %>%
                                   `msnbc` = "MSNBC")) %>% 
   ggplot(aes(y = Average, x = `Media Preference`, col = Source, group = Source)) +
   geom_line() +
-  #geom_col(position = "dodge") + 
   geom_linerange(aes(x = `Media Preference`, ymin = cilo95, ymax = cihi95), 
                  position = position_dodge(width = .1), 
                  size = .75) +
@@ -413,8 +410,7 @@ df %>%
                  position = position_dodge(width = .1), 
                  size = 1.5) +
   facet_wrap(.~outcome, ncol = 2) + 
-  theme_light(base_size = 10) #+
-  #ylim(0,1)
+  theme_light(base_size = 10)
 ```
 
 
