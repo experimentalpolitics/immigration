@@ -16,21 +16,21 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 ```
 
 
-`We thank the reviewer and editor for engaging with our work and providing us with such helpful feedback. We have made a number of changes in response to the comments, which in our view, have considerably strengthened our manuscript. Below, we respond to the reviewer's comments in detail and summarize the resulting revisions.`
+`We thank the editor and reviewer for engaging with our work and providing us with such helpful feedback. We have made a number of changes in response to the comments, which in our view, have considerably strengthened our manuscript. Below, we respond to the reviewer's comments and summarize our corresponding revisions in the manuscript.`
 
 1.	My main concern is with the methodology and thus the conclusions of the paper. Specifically, I failed to understand how the authors arrive at such conclusions without having a clear and identifiable set of pretreatment questions that map precisely to the post-treatment outcomes. As I understand, the logic behind the experiment is to implement some pretest-posttest to manipulate whether participants are allowed to chose Fox or MSNBC; however, there are no pretreatment questions that could serve as a baseline. If, however, the objective of the paper is to test the manipulation without a baseline, then it needs to refine and clarify the language of the research design that is highly confusing at the very least.  If the objective of the experiment is to test the manipulation (freely to choose or assigned to a media outlet), the distribution between treatment and control groups are everything but balanced (I assume that the table in Appendix A describes the sample after randomization), which makes me question if the differences that exist between treatment conditions will on average disappear after randomization, the distributions are all over the place. Simply by looking at table I and without more information, it is impossible to ascertain if the randomization worked or not as it is presented; the data suggests that there are significant problems. For example, given that there seem to be substantial differences between groups, how can we be sure that there is about a 20 to 30 pp difference?
 
 > `We agree that our discussion of the quasi pretest-posttest design needed clarification and made multiple revisions to that effect on pages...`
 
-> `Regarding the issue of balance between our treatment and control conditions, we want to point out that per random assignment, our treatment conditions are balanced in expectation. However, our presentation of the distributions across treatment and control groups in a table was confusing, so we replaced it with a graphical comparison of distributions across treatment groups. We now supplement this graphical presentation with a multinomial logistic regression of assignment to each of the treatment groups (control group is reference category).`
+> `Regarding the issue of balance between our treatment and control conditions, we want to point out that per random assignment, our treatment conditions are balanced in expectation. However, our presentation of the distributions across treatment and control groups in a table was confusing, so we replaced it with a graphical comparison of distributions across treatment groups. We now supplement this graphical presentation with a multinomial logistic regression of assignment to each of the treatment groups (control group is reference category). Even if there is a certain level of imbalance, we are including controls for various pre-treatment covariates, so it shouldn't be a problem.`
 
-- `DONE:` Improve balance checks using figures instead of table. 
-- `DONE:` Add model predicting treatment condition
-- `TODO:` Cite Hopkins & ACTE papers in main text
-- `TODO:` Cite Clifford on quasi pretest-posttest designs
-- `TODO:` Show that many people get it wrong in the control group.
-- `TODO:` Explain that perceived imbalance was due to our presentation...
-- `TODO:` Mention that even if there is a certain level of imbalance, we are including controls for various pre-treatment covariates, so it shouldn't be a problem.
+<!-- - `DONE:` Improve balance checks using figures instead of table.  -->
+<!-- - `DONE:` Add model predicting treatment condition -->
+<!-- - `DONE:` Cite Hopkins & ACTE papers in main text -->
+<!-- - `DONE:` Cite Clifford on quasi pretest-posttest designs -->
+<!-- - `DONE:` Show that many people get it wrong in the control group. -->
+<!-- - `DONE:` Explain in letter that perceived imbalance was due to our presentation -->
+<!-- - `DONE:` Mention that even if there is a certain level of imbalance, we are including controls for various pre-treatment covariates, so it shouldn't be a problem. -->
 
 2. The authors also need to discuss the flaws inherent with MTurk data and the use of VPNs outside the U.S. that may significantly bias the quality of the data. The authors need to present a more balanced view of the data and address the concerns that many researchers have with such data. 
 
