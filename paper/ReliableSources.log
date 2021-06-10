@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  9 JUN 2021 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  10 JUN 2021 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,7 +662,7 @@ l.194
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 202.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 203.
 [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 308.
@@ -718,77 +718,77 @@ ng>] [10pdfTeX warning (ext4): destination with the same identifier (name{table
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.587 O
-       ur analytical strategy to identify treatment effects for each of these] 
+       ur analytical strategy to identify the news article's impact on each of]
 [11] [12]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 682.
-<ReliableSources_files/figure-latex/m1-1.pdf, id=102, 491.8375pt x 136.51pt>
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 700.
+<ReliableSources_files/figure-latex/m1-1.pdf, id=103, 491.8375pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m1-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 691.
+nput line 709.
 (pdftex.def)             Requested size: 469.7721pt x 130.38571pt.
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
- has been already used, duplicate ignored
+[13] [14pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.712 
-       <./ReliableSources_files/figure-latex/m1-1.pdf>] [14]
-<ReliableSources_files/figure-latex/m2-1.pdf, id=121, 499.8675pt x 244.915pt>
+l.754 
+       <./ReliableSources_files/figure-latex/m1-1.pdf>]
+<ReliableSources_files/figure-latex/m2-1.pdf, id=125, 499.8675pt x 244.915pt>
 File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m2-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 774.
+nput line 793.
 (pdftex.def)             Requested size: 469.76872pt x 230.16779pt.
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+[15] [16pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.834 
+       <./ReliableSources_files/figure-latex/m2-1.pdf>]
+<ReliableSources_files/figure-latex/m4-1.pdf, id=146, 464.73625pt x 136.51pt>
+File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
+<use ReliableSources_files/figure-latex/m4-1.pdf>
+Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
+nput line 839.
+(pdftex.def)             Requested size: 464.74928pt x 136.51382pt.
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.800 
-       <./ReliableSources_files/figure-latex/m2-1.pdf>]
-<ReliableSources_files/figure-latex/m4-1.pdf, id=137, 464.73625pt x 136.51pt>
-File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
-<use ReliableSources_files/figure-latex/m4-1.pdf>
-Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 820.
-(pdftex.def)             Requested size: 464.74928pt x 136.51382pt.
-[16] [17pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.862 
+l.874 
        <./ReliableSources_files/figure-latex/m4-1.pdf>] [18]
-<ReliableSources_files/figure-latex/m5-1.pdf, id=170, 320.19624pt x 136.51pt>
+<ReliableSources_files/figure-latex/m5-1.pdf, id=174, 320.19624pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
-nput line 937.
+nput line 956.
 (pdftex.def)             Requested size: 320.20033pt x 136.51173pt.
 [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.977 
+l.996 
        <./ReliableSources_files/figure-latex/m5-1.pdf>] [21] [22] [23
 
 ] [24] [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1279.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1294.
 [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1279.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1294.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1279.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1279.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1294.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1294.
  )
 (\end occurred inside a group at level 10)
 
-### semi simple group (level 10) entered at line 945 (\begingroup)
-### semi simple group (level 9) entered at line 832 (\begingroup)
-### semi simple group (level 8) entered at line 786 (\begingroup)
-### semi simple group (level 7) entered at line 702 (\begingroup)
+### semi simple group (level 10) entered at line 964 (\begingroup)
+### semi simple group (level 9) entered at line 851 (\begingroup)
+### semi simple group (level 8) entered at line 805 (\begingroup)
+### semi simple group (level 7) entered at line 720 (\begingroup)
 ### semi simple group (level 6) entered at line 537 (\begingroup)
 ### semi simple group (level 5) entered at line 448 (\begingroup)
 ### semi simple group (level 4) entered at line 412 (\begingroup)
@@ -797,9 +797,9 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1279.
 ### semi simple group (level 1) entered at line 139 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15022 strings out of 481239
- 219143 string characters out of 5920377
- 511805 words of memory out of 5000000
+ 15023 strings out of 481239
+ 219138 string characters out of 5920377
+ 512621 words of memory out of 5000000
  29696 multiletter control sequences out of 15000+600000
  612961 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -811,10 +811,10 @@ ts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (27 pages, 931433 bytes).
+Output written on ReliableSources.pdf (27 pages, 932898 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 114 named destinations out of 1000 (max. 500000)
  18548 words of extra memory for PDF output out of 20736 (max. 10000000)
 
