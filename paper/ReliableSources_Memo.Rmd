@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 3. The authors also need to discuss why they decided to implement OLS when the outcome variable is dichotomous, as indicated on page 11.
 
-> `We added a discussion of our modeling choices in the results section and explained why we implemented a linear probability model instead of a logit/probit when the outcome vatiable is dichotomous (now on p. 13). In addition, we replicated all analyses with dichotomous outcome measures in the paper using logistic regression (see Appendix B.III). The substantive results are consistent across model specifications.`
+> `We added a discussion of our modeling choices in the results section and explained why we implemented a linear probability model instead of a logit/probit when the outcome variable is dichotomous (now on p. 13). In addition, we replicated all analyses with dichotomous outcome measures in the paper using logistic regression (see Appendix B.III). The substantive results are consistent across model specifications.`
 
 <!-- - `DONE:` Run logit models. -->
 <!-- - `DONE:` Add logit tables to appendix. -->
