@@ -1,25 +1,23 @@
 ---
-title: "Reliable Sources?"
-#^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
+title: "Reliable Sources?^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
 subtitle: >
-  Correcting Misinformation in Polarized Media Environments \vspace{10em}
-#author:
-#  - "Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]"
-#  - Nicholas R. Davis
-#  - Taraleigh Davis
-#  - Amanda Heideman
-#  - Jason T. Neumeyer
-#  - Shin Young Park
-#date: |
-#  |
-#  | University of Wisconsin-Milwaukee 
-#  |
-#  | \today
-#  |
-#  |
+  Correcting Misinformation in Polarized Media Environments \vspace{1em}
+author:
+  - "Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]"
+  - Nicholas R. Davis
+  - Taraleigh Davis
+  - Amanda Heideman
+  - Jason T. Neumeyer
+  - Shin Young Park
+date: |
+  |
+  | University of Wisconsin-Milwaukee 
+  |
+  | \today
+  |
+  |
 abstract: >-
   \noindent Providing corrective information can reduce factual misperceptions among the public but it tends to have little effect on people's underlying attitudes. Our study examines how the impact of misinformation corrections is moderated by media choice. In our experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned. Our results demonstrate the importance of people's ability to choose: While factual misperceptions are easily corrected regardless of how people gained access to information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
-#Various pressing issues at the center of today's politics---such as immigration, climate change, or the recent coronavirus pandemic---are imbued with misinformation. While a growing body of research demonstrates how corrective information can mitigate factual misperceptions among the public, these interventions tend to have little to no effect on people's underlying attitudes. This study examines how the impact of corrective information on beliefs and attitudes is moderated by media choice. In our survey experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant across sources, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned to one of them. Our results illustrate how people's media choice moderates the effectiveness of corrective information. While factual misperceptions are easily corrected regardless of how people gained access to the information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
 fontsize: 12pt
@@ -256,8 +254,6 @@ Conditional on exposure to an inconsistent source, there are no clear difference
 
 In sum, changing people's minds by giving them free choice over their media diet is not driven by the ability to choose consistent news sources. On the contrary, only participants who voluntarily accessed information from an inconsistent source reported significantly different opinions than the control group. In the next section, we explore potential explanations for this striking result.
 
-<!--JJ comments: in this section, need to say more about why consistent sources are more persuasive for changing interpretations but inconsistent sources are more persuasive when it comes to changing opinions.-->
-
 
 ## The Role of Self-Selection, Pretreatment Attitudes, and Ambivalence[^6]
 
@@ -295,8 +291,6 @@ The apparent pervasiveness of misinformation across a wide range of political is
 Of course, our findings are not without limitations. Most importantly, it is worth emphasizing again that conditioning on (in)consistent exposure in the free choice condition makes it difficult to provide a clear causal interpretation of the effects. While our analyses control for political predispositions and pretreatment immigration attitudes, we cannot fully rule out the possibility that people who self-selected into exposure to an inconsistent source had substantively different or more ambivalent attitudes before receiving the treatment. However, given our exploratory examination of self-selection and ambivalence, it seems more likely that people who self-select inconsistent sources are ultimately more receptive to corrective information (rather than holding different baseline attitudes or being ambivalent). In addition, the fact that we do observe significant treatment effects for the free choice condition (and not for the forced exposure condition) across the entire sample further alleviates concerns about pretreatment confounding, since this relationship cannot be explained by self-selection alone. Notwithstanding, additional research is needed to further corroborate this conclusion by examining opinion change in response to misinformation corrections in the context of a within-subjects design.
 
 Overall, our findings indicate that discretion over information sources facilitates opinion change in response to corrective information---particularly when people are willing to consider alternative views. Future studies on misinformation should therefore incorporate endogenous information search as a crucial component of their experimental designs, and, from a theoretical perspective, re-orient their attention to people's underlying motivations to seek out different sources [e.g., @kunda1990case]. In terms of policy implications, our research strongly suggests that encouraging people to voluntarily access alternative media outlets may be a more effective strategy to combat misinformation than providing fact-checks alone.
-
-<!-- elaborate on accuracy motivation and related predispositions to be open-minded -->
 
 
 \clearpage

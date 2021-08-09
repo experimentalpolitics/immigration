@@ -4,18 +4,18 @@ subtitle: |
   | Correcting Misinformation in Polarized Media Environments
   |
   | \Large Supplementary Material
-# author:
-  # - Patrick W. Kraft
-  # - Nicholas R. Davis
-  # - Taraleigh Davis
-  # - Amanda Heideman
-  # - Jason T. Neumeyer
-  # - Shin Young Park
-# date: |
-  # |
-  # | University of Wisconsin-Milwaukee
-  # |
-  # | \today
+author:
+  - Patrick W. Kraft^[Corresponding author, kraftp@uwm.edu]
+  - Nicholas R. Davis
+  - Taraleigh Davis
+  - Amanda Heideman
+  - Jason T. Neumeyer
+  - Shin Young Park
+date: |
+  |
+  | University of Wisconsin-Milwaukee
+  |
+  | \today
 toc : true
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'
