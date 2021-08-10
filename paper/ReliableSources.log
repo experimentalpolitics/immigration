@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  9 AUG 2021 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  10 AUG 2021 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,7 +820,7 @@ type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb><
 public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (27 pages, 936521 bytes).
+Output written on ReliableSources.pdf (27 pages, 936516 bytes).
 PDF statistics:
  363 PDF objects out of 1000 (max. 8388607)
  305 compressed objects within 4 object streams

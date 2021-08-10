@@ -24,18 +24,19 @@ fontsize: 12pt
 geometry: margin=1in
 linestretch: 1.5
 output: 
-  word_document
-#   pdf_document:
-#     number_sections: false
-#     template: null
-#     fig_caption: yes
-# header-includes:
-#   \renewcommand{\familydefault}{\sfdefault}
-#   \usepackage{float}
-#   \usepackage{censor}
-#   \floatplacement{figure}{H}
-#   \parskip=0pt
-#   \parindent=20pt
+  # word_document
+  pdf_document:
+    keep_tex:  true
+    number_sections: false
+    template: null
+    fig_caption: yes
+header-includes:
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{float}
+  \usepackage{censor}
+  \floatplacement{figure}{H}
+  \parskip=0pt
+  \parindent=20pt
 ---
 
 ```{r setup, include=FALSE}
