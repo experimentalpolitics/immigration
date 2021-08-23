@@ -1,2 +1,3 @@
-# immigration
-Project repository: information search and immigration attitudes
+# Reliable Sources? Correcting Misinformation in Polarized Media Environments
+
+Providing corrective information can reduce factual misperceptions among the public but it tends to have little effect on people's underlying attitudes. Our study examines how the impact of misinformation corrections is moderated by media choice. In our experiment, participants are asked to read a news article published by Fox News or MSNBC, each highlighting the positive economic impact of legal immigration in the United States. While the news content is held constant, our treatment manipulates whether participants are allowed to freely choose a media outlet or are randomly assigned. Our results demonstrate the importance of people's ability to choose: While factual misperceptions are easily corrected regardless of how people gained access to information, subsequent opinion change is conditional on people's prior willingness to seek out alternative sources. As such, encouraging people to broaden their media diet may be more effective to combat misinformation than disseminating fact-checks alone.
