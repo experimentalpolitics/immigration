@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  10 AUG 2021 10:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.11)  23 AUG 2021 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,44 +669,44 @@ ination with the same identifier (name{page.1}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.204 
+l.206 
        [1
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 213.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 215.
 [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 318.
+(Font)              <8> on input line 320.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 318.
+(Font)              <6> on input line 320.
 [4] [5] [6] [7]
 <../prereg/Lab-Graphic.jpg, id=58, 6343.7pt x 1678.27pt>
 File: ../prereg/Lab-Graphic.jpg Graphic file (type jpg)
 <use ../prereg/Lab-Graphic.jpg>
-Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 508.
+Package pdftex.def Info: ../prereg/Lab-Graphic.jpg  used on input line 510.
 (pdftex.def)             Requested size: 469.75557pt x 124.2771pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.541 
+l.543 
        <../prereg/Lab-Graphic.jpg>]
 <../material/tweets/fox_popular.png, id=68, 590.205pt x 271.0125pt>
 File: ../material/tweets/fox_popular.png Graphic file (type png)
 <use ../material/tweets/fox_popular.png>
 Package pdftex.def Info: ../material/tweets/fox_popular.png  used on input line
- 545.
+ 547.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
 <../material/tweets/msnbc_popular.png, id=70, 590.205pt x 271.0125pt>
 File: ../material/tweets/msnbc_popular.png Graphic file (type png)
 <use ../material/tweets/msnbc_popular.png>
 Package pdftex.def Info: ../material/tweets/msnbc_popular.png  used on input li
-ne 545.
+ne 547.
 (pdftex.def)             Requested size: 234.87103pt x 107.84894pt.
 
-Overfull \hbox (2.59811pt too wide) in paragraph at lines 545--545
+Overfull \hbox (2.59811pt too wide) in paragraph at lines 547--547
 [][] []
  []
 
@@ -718,90 +718,90 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 
+l.599 
        <../material/tweets/fox_popular.png> <../material/tweets/msnbc_popular.p
 ng>] [10pdfTeX warning (ext4): destination with the same identifier (name{table
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.598 O
+l.600 O
        ur analytical strategy to identify the news article's impact on each of]
 [11] [12]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 711.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 713.
 <ReliableSources_files/figure-latex/m1-1.pdf, id=107, 491.8375pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m1-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m1-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m1-1.pdf  used on i
-nput line 720.
+nput line 722.
 (pdftex.def)             Requested size: 469.7721pt x 130.38571pt.
 [13] [14pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.765 
+l.767 
        <./ReliableSources_files/figure-latex/m1-1.pdf>]
 <ReliableSources_files/figure-latex/m2-1.pdf, id=129, 499.8675pt x 244.915pt>
 File: ReliableSources_files/figure-latex/m2-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m2-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m2-1.pdf  used on i
-nput line 804.
+nput line 806.
 (pdftex.def)             Requested size: 469.76872pt x 230.16779pt.
 [15] [16pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.845 
+l.847 
        <./ReliableSources_files/figure-latex/m2-1.pdf>]
 <ReliableSources_files/figure-latex/m4-1.pdf, id=150, 464.73625pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m4-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m4-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m4-1.pdf  used on i
-nput line 850.
+nput line 852.
 (pdftex.def)             Requested size: 464.74928pt x 136.51382pt.
 [17pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.885 
+l.887 
        <./ReliableSources_files/figure-latex/m4-1.pdf>] [18]
 <ReliableSources_files/figure-latex/m5-1.pdf, id=178, 320.19624pt x 136.51pt>
 File: ReliableSources_files/figure-latex/m5-1.pdf Graphic file (type pdf)
 <use ReliableSources_files/figure-latex/m5-1.pdf>
 Package pdftex.def Info: ReliableSources_files/figure-latex/m5-1.pdf  used on i
-nput line 967.
+nput line 969.
 (pdftex.def)             Requested size: 320.20033pt x 136.51173pt.
 [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1007 
+l.1009 
         <./ReliableSources_files/figure-latex/m5-1.pdf>] [21] [22] [23
 
 ] [24] [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1305.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1307.
 [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1305.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1307.
 (./ReliableSources.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1305.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1305.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1307.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1307.
  )
 (\end occurred inside a group at level 10)
 
-### semi simple group (level 10) entered at line 975 (\begingroup)
-### semi simple group (level 9) entered at line 862 (\begingroup)
-### semi simple group (level 8) entered at line 816 (\begingroup)
-### semi simple group (level 7) entered at line 731 (\begingroup)
-### semi simple group (level 6) entered at line 548 (\begingroup)
-### semi simple group (level 5) entered at line 458 (\begingroup)
-### semi simple group (level 4) entered at line 422 (\begingroup)
-### semi simple group (level 3) entered at line 354 (\begingroup)
-### semi simple group (level 2) entered at line 334 (\begingroup)
+### semi simple group (level 10) entered at line 977 (\begingroup)
+### semi simple group (level 9) entered at line 864 (\begingroup)
+### semi simple group (level 8) entered at line 818 (\begingroup)
+### semi simple group (level 7) entered at line 733 (\begingroup)
+### semi simple group (level 6) entered at line 550 (\begingroup)
+### semi simple group (level 5) entered at line 460 (\begingroup)
+### semi simple group (level 4) entered at line 424 (\begingroup)
+### semi simple group (level 3) entered at line 356 (\begingroup)
+### semi simple group (level 2) entered at line 336 (\begingroup)
 ### semi simple group (level 1) entered at line 149 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
@@ -811,7 +811,7 @@ Here is how much of TeX's memory you used:
  29738 multiletter control sequences out of 15000+600000
  617817 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,42p,885b,969s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,42p,885b,975s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
 f/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.
 enc}</usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/
@@ -820,7 +820,7 @@ type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb><
 public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmsy10.pfb>
-Output written on ReliableSources.pdf (27 pages, 936516 bytes).
+Output written on ReliableSources.pdf (27 pages, 936480 bytes).
 PDF statistics:
  363 PDF objects out of 1000 (max. 8388607)
  305 compressed objects within 4 object streams

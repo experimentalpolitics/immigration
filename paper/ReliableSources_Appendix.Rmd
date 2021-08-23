@@ -62,6 +62,8 @@ library(cowplot)
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 
+\StopCensoring
+
 # Sample Overview
 
 ## Basic Demographics and Balance Checks

@@ -56,6 +56,8 @@ source("../code/03-liwc.R")
 \setcounter{page}{1}
 \doublespace
 
+\StopCensoring
+
 \noindent Citizens in western democracies hold wide-ranging and systematic misperceptions about immigrants to their home countries. For example, people usually overestimate the total number of immigrants or the proportion of immigrants that are dependent on social welfare [@alesina2019immigration]. These factual misperceptions are reinforced by the news media and, in turn, can foster biased attitudes and stereotypes [@Wright2020]. Given the extensive spread of misinformation, researchers from various disciplines started examining how corrective information may affect people's underlying attitudes [see @flynn2017nature for a review]. However, while corrective information may alleviate some factual misperceptions, it rarely affects people's underlying attitudes [@hopkins2019muted; @swire2020they].
 
 A possible explanation for this apparent disconnect could be that factual information is simply irrelevant for attitude formation and---if anything---serves as a mere justification for people to rationalize their existing predispositions towards immigrant populations. Yet the extent to which people engage in such motivated reasoning is not without limits since they tend to update their prior beliefs after reaching a "tipping point" of counter-attitudinal information [@redlawsk2010affective]. Furthermore, recent studies on immigration attitudes demonstrate the persuasiveness of certain interventions such as canvassing [@kalla2020reducing].
