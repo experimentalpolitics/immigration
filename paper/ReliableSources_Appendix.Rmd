@@ -15,7 +15,7 @@ date: |
   |
   | University of Wisconsin-Milwaukee
   |
-  | \today
+  | August 23, 2021
 toc : true
 reference-section-title: References
 bibliography: '../../bibliography/Lab.bib'

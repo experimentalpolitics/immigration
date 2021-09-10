@@ -1,5 +1,5 @@
 ---
-title: "Reliable Sources?^[Presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments on previous versions of this manuscript.]"
+title: "Reliable Sources?^[Forthcoming at _American Politics Research_. A previous version of this manuscript has been presented at the 2020 Annual Meeting of the International Society for Political Psychology. We thank Jennifer Jerit, Emmy Lindstam, and Pirmin Stöckle for helpful comments.]"
 subtitle: >
   Correcting Misinformation in Polarized Media Environments \vspace{1em}
 author:
@@ -13,7 +13,7 @@ date: |
   |
   | University of Wisconsin-Milwaukee 
   |
-  | \today
+  | August 23, 2021
   |
   |
 abstract: >-
